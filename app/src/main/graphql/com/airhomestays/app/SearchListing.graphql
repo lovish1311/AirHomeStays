@@ -1,0 +1,105 @@
+query SearchListing (
+  $personCapacity: Int,
+  $currentPage: Int,
+  $dates: String,
+  $lat: Float,
+  $lng: Float,
+  $amenities: [Int],
+  $beds: Int,
+  $bedrooms: Int,
+  $bathrooms: Int,
+  $roomType: [Int],
+  $spaces: [Int],
+  $houseRules: [Int],
+  $priceRange: [Int],
+  $geoType: String,
+  $geography: String,
+  $bookingType: String,
+  $address: String,
+  $currency: String,
+  $isOneTotal:Boolean
+) {
+    searchListing: SearchListing (
+        personCapacity: $personCapacity,
+        currentPage: $currentPage,
+        dates: $dates,
+        lat: $lat,
+        lng: $lng,
+        amenities: $amenities,
+        beds: $beds,
+        bedrooms: $bedrooms,
+        bathrooms: $bathrooms,
+        roomType: $roomType,
+        spaces: $spaces,
+        houseRules: $houseRules,
+        priceRange: $priceRange,
+        geoType: $geoType,
+        geography: $geography,
+        bookingType: $bookingType,
+        address: $address,
+        currency: $currency
+        isOneTotal: $isOneTotal
+
+    ) {
+        count
+        results {
+          id
+          title
+          personCapacity
+          lat
+          lng
+           country
+           city
+           state
+          beds
+          bookingType
+          coverPhoto
+          roomType
+          reviewsCount
+          reviewsStarRating
+          listPhotoName
+          listPhotos {
+            id
+            name
+            type
+            status
+          }
+          listingData {
+            basePrice
+            currency
+            oneTotalPrice {
+            				   oneTotalPrice
+            					isAverage
+            					isDayTotal
+            					discount
+            					dayDifference
+            					cleaningPrice
+            					serviceFee
+            				}
+          }
+          settingsData {
+            listsettings {
+              id
+              itemName
+            }
+          }
+          wishListStatus
+          wishListGroupCount
+          isListOwner
+        }
+        status
+        errorMessage
+    }
+}
+
+query getRoomTypeSettings {
+	getRoomTypeSettings {
+		results {
+			id
+			typeId
+			itemName
+			isEnable
+			image
+		}
+	}
+}

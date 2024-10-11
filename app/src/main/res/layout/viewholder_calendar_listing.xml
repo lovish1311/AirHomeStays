@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="room"
+            type="String"/>
+        <variable
+            name="img"
+            type="String"/>
+        <variable
+            name="isSelected"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/iv_listing"
+            imgUrl="@{img}"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/relativei"
+            android:layout_width="match_parent"
+            android:gravity="top"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_listing"
+            >
+
+            <TextView
+                android:id="@+id/tv_listing_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:maxLines="2"
+                android:text="@{title}"
+                android:layout_marginTop="-2dp"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h2" />
+
+            <TextView
+                android:id="@+id/tv_listing_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_listing_name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:text="@{room}"
+                android:textColor="@color/room_type"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_listing"
+            android:layout_alignEnd="@id/iv_listing"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_right_calender"
+            android:visibility="@{isSelected ? View.VISIBLE : View.INVISIBLE}" />
+
+    </RelativeLayout>
+
+</layout>

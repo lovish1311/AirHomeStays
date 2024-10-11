@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_three.StepThreeViewModel.NextStep"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_three.StepThreeViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:background="@drawable/host_steps_bg"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/house_rule_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            layout="@layout/toolbar"/>
+
+            <include
+                android:id="@+id/chips"
+                layout="@layout/viewholder_step_three_chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/house_rule_toolbar"/>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_house_rule"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/chips"
+            android:layout_above="@id/container_bottom"
+            android:paddingTop="10dp" />
+        <RelativeLayout
+            android:id="@+id/container_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/pg_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="20"
+                android:progressTint="@color/colorPrimary"
+                android:scaleY="3" />
+
+
+            <TextView
+                android:id="@+id/tv_rightside_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:text="@string/save_and_exit"
+                android:textColor="@color/colorPrimary"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curve_button_red"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:onClick="@{() -> viewModel.onClick(NextStep.GUESTNOTICE)}"
+                android:paddingStart="25dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="10dp"
+                android:splitMotionEvents="false"
+                android:text="@string/next"
+                android:textColor="@android:color/white"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_17" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <plurals name="caps_bed_count">
+        <item quantity="other"> beds</item>
+        <item quantity="one"> bed</item>
+    </plurals>
+    <plurals name="bedroom_cap_count">
+        <item quantity="other"> Bedrooms</item>
+        <item quantity="one"> Bedroom</item>
+    </plurals>
+    <plurals name="guest_count">
+        <item quantity="other"> Guests</item>
+        <item quantity="one"> Guest</item>
+    </plurals>
+    <plurals name="guest_cap_count">
+        <item quantity="other"> Guests</item>
+        <item quantity="one"> Guest</item>
+    </plurals>
+    <plurals name="guest_singlular">
+        <item quantity="other"> Guests</item>
+        <item quantity="one"> Guest</item>
+    </plurals>
+    <plurals name="additional_guest_singlular">
+        <item quantity="other"> Additional Guests</item>
+        <item quantity="one"> Additional Guest</item>
+    </plurals>
+    <plurals name="additional_guest_count">
+        <item quantity="other"> Additional Guests</item>
+        <item quantity="one"> Additional Guest</item>
+    </plurals>
+    <plurals name="pet_singlular">
+        <item quantity="other"> Pets</item>
+        <item quantity="one"> Pet</item>
+    </plurals>
+    <plurals name="visitor_singlular">
+        <item quantity="other"> Visitors</item>
+        <item quantity="one"> Visitor</item>
+    </plurals>
+    <plurals name="infant_singlular">
+        <item quantity="other"> infants</item>
+        <item quantity="one"> infant</item>
+    </plurals>
+    <plurals name="infant_count">
+        <item quantity="other"> infants</item>
+        <item quantity="one"> infant</item>
+    </plurals>
+    <plurals name="pet_count">
+        <item quantity="other"> pets</item>
+        <item quantity="one"> pet</item>
+    </plurals>
+    <plurals name="visitor_count">
+        <item quantity="other"> visitors</item>
+        <item quantity="one"> visitor</item>
+    </plurals>
+    <plurals name="private_bath_count">
+        <item quantity="other"> Private Baths</item>
+        <item quantity="one"> Private Bath</item>
+    </plurals>
+    <plurals name="shared_bath_count">
+        <item quantity="other"> shared baths</item>
+        <item quantity="one"> shared bath</item>
+    </plurals>
+    <plurals name="bathroom_count">
+        <item quantity="other"> Bathrooms</item>
+        <item quantity="one"> Bathroom</item>
+    </plurals>
+    <plurals name="review_count">
+        <item quantity="other"> Reviews</item>
+        <item quantity="one"> Review</item>
+    </plurals>
+    <plurals name="night_count">
+        <item quantity="other"> nights</item>
+        <item quantity="one"> night</item>
+    </plurals>
+    <plurals name="night_cap_count">
+        <item quantity="other"> nights</item>
+        <item quantity="one"> night</item>
+    </plurals>
+    <plurals name="review_count_profile">
+        <item quantity="other">%1$d Reviews</item>
+        <item quantity="one">%1$d Review</item>
+    </plurals>
+    <plurals name="day_count">
+        <item quantity="other"> days</item>
+        <item quantity="one"> day</item>
+    </plurals>
+</resources>

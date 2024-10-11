@@ -1,0 +1,127 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="content"
+            type="String"/>
+        <variable
+            name="date"
+            type="String"/>
+        <variable
+            name="imgAvatar"
+            type="String"/>
+        <variable
+            name="info"
+            type="String"/>
+        <variable
+            name="infoDate"
+            type="String"/>
+        <variable
+            name="infoVisibility"
+            type="Boolean"/>
+        <variable
+            name="recieverClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="ltrDirection"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layoutDirection="locale">
+
+<!--        <RelativeLayout
+            android:id="@+id/sys_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{infoVisibility ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/text_color"
+                android:text="@{info}"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/infoDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_below="@id/info"
+                android:textColor="@color/text_color"
+                android:layout_marginBottom="10dp"
+                android:text="@{infoDate}"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/rel_backGround"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_message_sender"
+            android:scaleX="@{ltrDirection?1:-1}"
+            android:rotation="180"
+            android:layout_marginStart="-20dp"
+            android:backgroundTint="@color/chat_receiver_message"
+            android:layout_alignTop="@+id/rel_textContent"
+            android:layout_alignBottom="@+id/rel_textContent"/>
+
+        <RelativeLayout
+            android:id="@+id/rel_textContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="50dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/tv_Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@{content}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_Content"
+                android:layout_marginStart="20dp"
+                android:paddingTop="7dp"
+                android:text="@{date}"
+                android:textColor="@color/grey_font"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_inbox_receiver_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            imgInboxProfileReceiver="@{imgAvatar}"/>
+
+    </RelativeLayout>
+</layout>
+
+<!--android:onClick="@{receiverClick}"-->

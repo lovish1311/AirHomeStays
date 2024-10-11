@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="false" >
+    <translate
+        android:fromXDelta="100.0%p" android:toXDelta="0%"
+        android:duration="500" />
+</set>
+<!--
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:interpolator="@android:anim/anticipate_overshoot_interpolator" android:duration="@integer/n2_activity_transition_duration_ms" android:fromXDelta="0.0" android:toXDelta="10.000002%p" />
+    <alpha android:duration="@integer/n2_activity_transition_duration_ms" android:fromAlpha="1.0" android:toAlpha="0.5" />
+    <scale android:interpolator="@android:anim/anticipate_overshoot_interpolator" android:duration="@integer/n2_activity_transition_duration_ms" android:pivotX="50.0%" android:pivotY="50.0%" android:fromXScale="1.0" android:toXScale="0.97" android:fromYScale="1.0" android:toYScale="0.97" />
+</set>-->

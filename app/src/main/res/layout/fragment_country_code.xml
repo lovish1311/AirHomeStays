@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.confirmPhonenumber.ConfirmPhnoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar_navigateup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_clear_black_24dp"
+                tools:ignore="ContentDescription"
+                android:layout_centerVertical="true"
+                android:padding="0dp"
+                android:layout_margin="15dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_close"
+                android:background="@null"
+                android:hint="@string/search_here"
+                android:inputType="textCapWords"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.onSearchTextChanged(text)}"
+                android:selectAllOnFocus="true"
+                android:textCursorDrawable="@drawable/cursor_color"
+                tools:ignore="Autofill"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/linetocircular"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textDirection="locale"
+                android:textAlignment="viewStart"/>
+        </RelativeLayout>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rl_country_codes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_toolbar_navigateup"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+
+</layout>

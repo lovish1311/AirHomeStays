@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data><import type="android.view.View"/>
+        <variable
+            name="checkIn"
+            type="String"/>
+        <variable
+            name="checkOut"
+            type="String"/>
+        <variable
+            name="guest"
+            type="Integer"/>
+        <variable
+            name="additionalGuest"
+            type="Integer"/>
+        <variable
+            name="infant"
+            type="Integer"/>
+        <variable
+            name="pet"
+            type="Integer"/>
+        <variable
+            name="visitor"
+            type="Integer"/>
+        <variable
+            name="isEdit"
+            type="Boolean"/>
+        <variable
+            name="isPetVisible"
+            type="Boolean"/>
+        <variable
+            name="isInfantVisible"
+            type="Boolean"/>
+        <variable
+            name="isAdditionalGuestVisible"
+            type="Boolean"/>
+        <variable
+            name="isVisitorGuestVisible"
+            type="Boolean"/>
+
+        <variable
+            name="checkInOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="checkOutOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="guestOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="additionalGuestOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="infantOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="petOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="visitorOnClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/root_checkin"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/holder_checkin"
+                android:textSize="14sp"
+                android:text="@string/check_in_checkout"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/iv_edit"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:onClick="@{checkInOnClick}"
+                android:text="@string/edit"
+                android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="3dp"
+                android:paddingTop="3dp"
+                android:src="@drawable/ic_right_arrow_blue_small" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@id/relative"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:text="@{checkIn+ checkOut}"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/root_guest"
+            android:layout_below="@id/root_checkin"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relative_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holder_guest"
+                    android:textSize="14sp"
+                    android:text="@string/guests"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/iv_edit2"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:onClick="@{guestOnClick}"
+                    android:text="@string/edit"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_edit2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_right_arrow_blue_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_below="@id/relative_guest"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:text="@{(guest == 0)? (guest + @plurals/guest_singlular(guest) ) : (guest + @plurals/guest_count(guest))}"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/root__additional_guest"
+            android:layout_below="@id/root_guest"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isAdditionalGuestVisible?View.VISIBLE:View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/relative_additional_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holder_additional_guest"
+                    android:textSize="14sp"
+                    android:text="Additional guest"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/iv_edit5"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:onClick="@{additionalGuestOnClick}"
+                    android:text="@string/edit"
+                    android:visibility="@{isEdit?View.GONE:View.GONE}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_edit5"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:visibility="@{isEdit?View.GONE:View.GONE}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_right_arrow_blue_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_below="@id/relative_additional_guest"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:text="@{(additionalGuest == 0)? (additionalGuest + @plurals/additional_guest_singlular(additionalGuest) ) : (additionalGuest + @plurals/additional_guest_count(additionalGuest))}"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/root_infant"
+            android:layout_below="@id/root__additional_guest"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isInfantVisible?View.VISIBLE:View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/relative_infant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holder_infant"
+                    android:textSize="14sp"
+                    android:text="@string/infants"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/iv_edit3"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:onClick="@{infantOnClick}"
+                    android:text="@string/edit"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_edit3"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_right_arrow_blue_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_below="@id/relative_infant"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:text="@{(infant == 0)? (infant + @plurals/infant_singlular(infant) ) : (infant + @plurals/infant_count(infant))}"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/root_pet"
+            android:layout_below="@id/root_infant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isPetVisible?View.VISIBLE:View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/relative_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holder_pet"
+                    android:textSize="14sp"
+                    android:text="@string/pets"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/iv_edit4"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:onClick="@{petOnClick}"
+                    android:text="@string/edit"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_edit4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_right_arrow_blue_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_below="@id/relative_pet"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:text="@{(pet == 0)? (pet + @plurals/pet_singlular(pet) ) : (pet + @plurals/pet_count(pet))}"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/root_visitor"
+            android:layout_below="@id/root_pet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isVisitorGuestVisible?View.VISIBLE:View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/relative_visitor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holder_visitor"
+                    android:textSize="14sp"
+                    android:text="Visitors"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/iv_edit6"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:onClick="@{visitorOnClick}"
+                    android:text="@string/edit"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_edit6"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:visibility="@{isEdit?View.GONE:View.VISIBLE}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_right_arrow_blue_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_below="@id/relative_visitor"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:text="@{(visitor == 0)? (visitor + @plurals/visitor_singlular(visitor) ) : (visitor + @plurals/visitor_count(visitor))}"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

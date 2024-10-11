@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/tick_with_gb" android:state_checked="true" android:state_selected="true" />
+    <item android:drawable="@drawable/tick_without_bg" android:state_checked="true" android:state_selected="false"/>
+    <item android:drawable="@drawable/close_with_bg" android:state_checked="false" android:state_selected="true"/>
+    <item android:drawable="@drawable/close_without_bg" android:state_checked="false" android:state_selected="false"/>
+
+</selector>

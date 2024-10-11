@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="hint"
+            type="String" />
+
+        <variable
+            name="maxLength"
+            type="Integer" />
+
+        <variable
+            name="title"
+            type="String"/>
+
+        <variable
+            name="subTitle"
+            type="String" />
+
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/BecomeHostText"
+            android:text="@{title}"
+            android:layout_marginBottom="10dp"
+            android:textDirection="locale"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:fontFamily="@font/be_vietnampro_semibold"/>
+
+
+        <EditText
+            android:id="@+id/et_descriptionBox"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/editext_border"
+            android:textColor="@color/black"
+            android:hint="@{hint}"
+            android:padding="15dp"
+            android:gravity="start"
+            android:textColorHint="@color/edittext_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/tv_title"
+            android:textSize="@dimen/text_size_15"
+            android:layout_marginTop="10dp"
+            android:text="@={text}"
+            android:textDirection="locale"
+            />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            style="@style/BecomeHostText"
+            android:text="@{subTitle}"
+            android:textDirection="locale"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_below="@id/et_descriptionBox"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+</layout>

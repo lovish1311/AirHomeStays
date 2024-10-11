@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data> <import type="android.view.View"/>
+        <variable
+            name="desc"
+            type="String" />
+        <variable
+            name="size"
+            type="Float" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="isSelected"
+            type="Boolean"/>
+        <variable
+            name="txtColor"
+            type="Boolean"/>
+        <variable
+            name="iconVisible"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="image"
+            type="Integer"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:orientation="horizontal"
+        android:paddingEnd="20dp"
+        android:paddingTop="@{paddingTop ? @dimen/text_size_h3 : @dimen/no_padding}"
+        android:paddingBottom="@{paddingBottom ? @dimen/text_size_h3  : @dimen/no_padding}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/ic_icon"
+            drawableImage="@{image}"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:visibility="@{iconVisible? View.GONE : View.VISIBLE}"
+            iconColor="@{txtColor}"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{desc}"
+            textSize="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:maxLines="4"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            android:drawableEnd="@{isSelected ? @drawable/ic_tick_red: null }"
+            android:layout_marginEnd="20dp"
+            txtColor="@{txtColor}"
+            android:onClick="@{clickListener}"
+            android:textDirection="locale"
+            />
+
+    </LinearLayout>
+</layout>

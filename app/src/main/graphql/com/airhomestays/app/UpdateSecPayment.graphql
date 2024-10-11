@@ -1,0 +1,55 @@
+mutation updateSecPayment(
+  $userId: String!,
+  $country: String,
+  $address1: String,
+  $address2: String,
+  $city: String,
+  $state: String,
+  $zipcode: String,
+  $accountNumber: String,
+  $confirmAccountNumber: String,
+  $ifscCode: String,
+  $accountHolderName: String,
+  $gstNumber: String,
+  $panNumber: String,
+  $mobileNumber: String,
+  $accountType: String
+) {
+  updateSecPayment(
+    userId: $userId,
+    country: $country,
+    address1: $address1,
+    address2: $address2,
+    city: $city,
+    state: $state,
+    zipcode: $zipcode,
+    accountNumber: $accountNumber,
+    confirmAccountNumber: $confirmAccountNumber,
+    ifscCode: $ifscCode,
+    accountHolderName: $accountHolderName,
+    gstNumber: $gstNumber,
+    panNumber: $panNumber,
+    mobileNumber: $mobileNumber,
+    accountType: $accountType
+  ) {
+    status
+    errorMessage
+    result {
+      userId
+      country
+      address1
+      address2
+      city
+      state
+      zipcode
+      accountNumber
+      confirmAccountNumber
+      ifscCode
+      accountHolderName
+      gstNumber
+      panNumber
+      mobileNumber
+      accountType
+    }
+  }
+}

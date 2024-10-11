@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+            name="url"
+            type="String"/>
+        <variable
+            name="isLoading"
+            type="Boolean"/>
+        <variable
+            name="isRetry"
+            type="Boolean"/>
+        <variable
+            name="onSelected"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onRetryClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onClickq"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="deleteClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/listing_container_height"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:layoutDirection="locale">
+
+    <ImageView
+        android:id="@+id/tv_list_photos"
+        isLoadingStatus="@{isLoading}"
+        isRetry="@{isRetry}"
+        listingImage="@{url}"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listing_photo_height"
+        android:adjustViewBounds="true"
+        android:background="@drawable/container_image_placeholder_gray"
+        android:onClick="@{onClick}"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        isLoadingStatus="@{isLoading}"
+        isRetryStatus="@{isRetry}"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/curve_semi_trans_close"
+        android:onClick="@{deleteClick}"
+        android:padding="3dp"
+        android:src="@drawable/ic_close_white_24dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="@{isLoading? View.VISIBLE : View.GONE}"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_autorenew_red_24dp"
+        android:layout_centerInParent="true"
+        android:onClick="@{onRetryClick}"
+        android:visibility="@{isRetry? View.VISIBLE : View.GONE}"/>
+
+    <TextView
+        android:id="@+id/tv_cover_photo"
+        isLoadingStatus="@{isLoading}"
+        isRetryStatus="@{isRetry}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@{onSelected? @drawable/bg_curve_green : @drawable/curve_semi_trans}"
+        android:button="@android:color/transparent"
+        android:clickable="false"
+        android:drawableStart="@{onSelected?@drawable/ic_tick_white:null}"
+        android:drawablePadding="5dp"
+        android:duplicateParentState="true"
+        android:onClick="@{onClickq}"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="3dp"
+        android:text="@string/cover_photo"
+        android:textColor="@android:color/white"
+        android:textDirection="locale"
+        android:textSize="@dimen/text_size_h1" />
+
+</RelativeLayout>
+
+</layout>

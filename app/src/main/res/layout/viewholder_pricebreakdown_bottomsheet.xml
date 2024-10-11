@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.Gravity" />
+     <variable
+         name="isrtl"
+         type="Boolean" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layoutDirection="locale"
+        android:background="@color/transparent">
+
+
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_close"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_close"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:id="@+id/pricebreakdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/onetotal_pricebreakdown"
+                android:textColor="@color/black"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:textSize="@dimen/text_size_19"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_price"
+                android:layout_below="@id/pricebreakdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:id="@+id/days"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$722.12 x 8 nights"
+                        android:gravity="@{isrtl?Gravity.END:Gravity.START}"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                    <TextView
+                        android:id="@+id/priceofdays"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$5776.96"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="@{isrtl?Gravity.START:Gravity.END}"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_light"
+                android:layout_below="@id/ll_price"
+                />
+            <LinearLayout
+                android:id="@+id/discount_ll"
+                android:layout_below="@id/ll_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discounts"
+                        android:gravity="start"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                    <TextView
+                        android:id="@+id/discount_price"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$2"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="@{isrtl?Gravity.START:Gravity.END}"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_light"
+                android:layout_below="@id/discount_ll"
+                />
+            <LinearLayout
+                android:id="@+id/cleaning_fee"
+                android:layout_below="@id/discount_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cleaning_price"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:gravity="start"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                    <TextView
+                        android:id="@+id/cleaning_fee_price"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$2"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="@{isrtl?Gravity.START:Gravity.END}"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_light"
+                android:layout_below="@id/cleaning_fee"
+                />
+            <LinearLayout
+                android:id="@+id/service_fee"
+                android:layout_below="@id/cleaning_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_fee"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:gravity="start"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                    <TextView
+                        android:id="@+id/service_fee_price"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$5"
+                        android:textColor="@color/pricebreakdown_bottomsheet_textcolor"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="@{isrtl?Gravity.START:Gravity.END}"
+
+                        android:textSize="@dimen/text_size_17"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_light"
+                android:layout_below="@id/service_fee"
+                />
+            <LinearLayout
+                android:layout_below="@id/service_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_before_taxes"
+                        android:gravity="start"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/text_size_17"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/be_vietnampro_medium"
+                        />
+                    <TextView
+                        android:id="@+id/totalamount"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$5783.96"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="@{isrtl?Gravity.START:Gravity.END}"
+
+                        android:textSize="@dimen/text_size_17"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/be_vietnampro_medium"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

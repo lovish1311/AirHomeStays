@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string-array name="label_calender_week">
+        <item name="0"></item>
+        <item name="1">S</item>
+        <item name="2">M</item>
+        <item name="3">T</item>
+        <item name="4">W</item>
+        <item name="5">T</item>
+        <item name="6">F</item>
+        <item name="7">S</item>
+    </string-array>
+    <string name="clear">Claro</string>
+    <string name="dates_not_available">Essas datas não estão disponíveis</string>
+    <string name="save">Salve</string>
+    <string name="check_in">Check-in</string>
+    <string name="check_out">Confira</string>
+    <string name="start_date">Check-in</string>
+    <string name="end_date">Confira</string>
+    <string name="night_select">selecionada</string>
+    <string name="check_out_only">A data selecionada está disponível apenas para checkout</string>
+</resources>

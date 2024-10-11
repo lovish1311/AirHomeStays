@@ -1,0 +1,13 @@
+query getCountrycode{
+  getCountries{
+    errorMessage
+    status
+    results{
+      id
+      isEnable
+      countryCode
+      countryName
+      dialCode
+    }
+  }
+}

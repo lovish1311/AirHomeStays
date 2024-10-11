@@ -1,0 +1,169 @@
+import com.google.android.gms.*
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-parcelize'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.apollographql.apollo3'
+
+apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'com.google.firebase.crashlytics'
+
+apollo {
+    service("service") { packageName.set("com.airhomestays.app") }
+    generateKotlinModels.set(true)
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+android {
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.airhomestays.app"
+        minSdkVersion versions.min_sdk
+        targetSdkVersion versions.target_sdk
+        versionCode 5
+        vectorDrawables.useSupportLibrary = true
+        versionName "1.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resValue "string", "security_key", "JjQI:gHf+^=D"
+    }
+    buildTypes {
+        debug{
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"false"]
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"true"]
+
+        }
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    namespace 'com.airhomestays.app'
+
+}
+
+kapt {
+    generateStubs = true
+    correctErrorTypes = true
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':AirCalendar')
+    implementation project(':TimeSquare')
+    implementation deps.app_compat_v7
+    implementation deps.support_v4
+    implementation deps.annotation
+    implementation deps.design
+    implementation deps.cardview_v7
+    implementation deps.recyclerview_v7
+    implementation deps.constraintLayout
+    implementation deps.places
+    implementation deps.maps
+    implementation deps.apollo
+    implementation deps.apollo_rx2_support
+    implementation deps.lottie
+    implementation deps.glide
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+    kapt deps.glide_compiler
+    implementation deps.easypermission
+    implementation deps.android_img_cropper
+    implementation deps.circleImageView
+    implementation deps.epoxy
+    implementation deps.epoxy_paging
+    kapt deps.epoxy_compiler
+    implementation deps.viewModel_liveData
+    kapt deps.lifecycle_compiler
+    implementation deps.gson
+    implementation deps.timber
+    implementation deps.rxjava
+    implementation deps.rxandroid
+    implementation deps.dagger
+    kapt deps.dagger_compiler
+    kapt deps.dagger_processor
+    implementation deps.dagger_support
+    implementation deps.room
+    kapt deps.room_compiler
+    implementation 'com.github.gokukish:ahbottomnavigation:feature-SNAPSHOT'
+    implementation deps.google_auth
+    implementation deps.fb_login
+    implementation deps.firebase_messaging
+    implementation deps.joda_time
+    implementation deps.okHttp_logging
+    implementation 'com.stripe:stripe-android:20.37.4'
+    implementation 'net.gotev:uploadservice:4.9.2'
+    implementation 'com.airbnb.android:epoxy-databinding:5.1.4'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.9'
+    implementation 'com.google.maps.android:android-maps-utils:3.8.2'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v2.0.4'
+    implementation 'com.kyleduo.switchbutton:library:2.1.0'
+    implementation deps.crashActivity
+    debugImplementation deps.crashlytics
+    implementation deps.crashlytics
+    implementation 'com.google.firebase:firebase-auth:22.3.1'
+    implementation 'com.droidninja:filepicker:2.2.5'
+    implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
+    implementation 'com.github.splatte:ViewPagerIndicator:3.0.0'
+    implementation 'com.github.kizitonwose:CalendarView:0.3.4' // up upto breaking change
+   // implementation 'com.github.everhad:AndroidRatingStar:v1.0.4'
+    implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar' //skeleton loading
+    implementation "androidx.dynamicanimation:dynamicanimation:1.0.0" // spring animation
+    implementation 'com.github.Devit951:MagicTip:1.0.0'  //tooltip
+    implementation 'androidx.activity:activity-ktx:1.9.0'
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+    implementation ("com.github.shaon2016:ProPicker:1.0.5")
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation 'com.razorpay:checkout:1.6.38'
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+}
+
+configurations.all {
+    exclude group: 'com.android.support', module: 'support-v13'
+}
+

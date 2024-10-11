@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="desc"
+            type="String" />
+        <variable
+            name="span"
+            type="String" />
+        <variable
+            name="desc2"
+            type="String" />
+        <variable
+            name="desc3"
+            type="String" />
+        <variable
+            name="start"
+            type="Integer" />
+        <variable
+            name="end"
+            type="Integer" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="spanColor"
+            type="Integer" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="@{paddingBottom ? @dimen/paddingListing : @dimen/no_padding}"
+        android:onClick="@{clickListener}"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_h2"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textColor="@color/bottom_navigation_text_color"
+            textSpan="@{desc}"
+            start="@{start}"
+            end="@{end}"
+            android:text="@{desc}"/>
+    </RelativeLayout>
+</layout>

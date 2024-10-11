@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="amenitiesImage"
+            type="String" />
+        <variable
+            name="isIndicatorVisible"
+            type="Boolean" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="@{onClick}"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/iv_homeType"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            drawableAmenities="@{amenitiesImage}"
+            android:layout_marginBottom="12dp"
+            imageTint="@{isIndicatorVisible}" />
+
+        <TextView
+            android:id="@+id/tv_homeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="@{title}"
+            android:clickable="false"
+            android:textColor="@{isIndicatorVisible ? @color/black :@color/border_gray}"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textDirection="locale" />
+
+        <View
+            android:id="@+id/indicator"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:visibility="@{isIndicatorVisible ? View.VISIBLE : View.INVISIBLE}"
+            android:background="@color/black"
+            android:layout_height="2dp"/>
+
+    </LinearLayout>
+</layout>

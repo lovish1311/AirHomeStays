@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.confirmPhonenumber.ConfirmPhnoViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+
+        <FrameLayout
+            android:id="@+id/fl_auth_loading_bg"
+            goneUnless="@{viewModel.isLoading}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#40000000">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/lottie_background"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading_qwe" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_confPhno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

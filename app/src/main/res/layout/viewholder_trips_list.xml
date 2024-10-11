@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="status"
+            type="String"/>
+        <variable
+            name="namePrice"
+            type="String"/>
+        <variable
+            name="image"
+            type="String"/>
+        <variable
+            name="date"
+            type="String"/>
+        <variable
+            name="price"
+            type="String" />
+        <variable
+            name="imgUrl"
+            type="String" />
+        <variable
+            name="isAdmin"
+            type="Boolean" />
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="street"
+            type="String"/>
+        <variable
+            name="address"
+            type="String"/>
+        <variable
+            name="moreText"
+            type="String" />
+        <variable
+            name="phoneNumber"
+            type="String"/>
+        <variable
+            name="phoneNumberVisible"
+            type="Boolean" />
+        <variable
+            name="email"
+            type="String" />
+        <variable
+            name="moreTextVisibility"
+            type="Boolean" />
+        <variable
+            name="statusPending"
+            type="Boolean" />
+        <variable
+            name="statusCancelled"
+            type="Boolean" />
+        <variable
+            name="statusConfirmed"
+            type="Boolean" />
+        <variable
+            name="onShowMoreClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onMenuClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onSupportClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onAvatarClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onPhoneNumberClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onEmailClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layoutDirection="locale"
+        android:background="@drawable/container_trips">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rel_textViews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_profile"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imagenew"
+                        img="@{image}"
+                        android:layout_centerVertical="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:visibility="@{(title != null) ? View.VISIBLE : View.GONE}" />
+                    <TextView
+                        android:id="@+id/tv_host_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@id/imagenew"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/be_vietnampro_semibold"
+                        android:text="@{namePrice}"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:textDirection="locale"
+                        android:layout_toStartOf="@id/tv_price"
+                        android:textSize="@dimen/text_size_h2"
+                        android:visibility="@{(title != null) ? View.VISIBLE : View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{price}"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/be_vietnampro_medium"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h2"
+                        android:visibility="@{(title != null) ? View.VISIBLE : View.GONE}" />
+
+
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_country"
+                    android:layout_marginTop="5dp"
+                    android:text="@{date}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13"
+                    android:visibility="@{(title != null) ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_date_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{date}"
+                    android:layout_below="@id/rl_profile"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13"
+                    android:visibility="@{(title == null) ? View.VISIBLE : View.GONE}" />
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/tv_date"
+                    android:visibility="@{(title != null) ? View.VISIBLE : View.GONE}"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:onClick="@{onPhoneNumberClick}"
+                        android:text="@{` `+phoneNumber}"
+                        android:textColor="@color/colorPrimary"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_13"
+                        android:visibility="@{phoneNumberVisible ? View.VISIBLE : View.GONE}"
+                        app:drawableStartCompat="@drawable/ic_trip_phone" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/tv_phone"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:visibility="@{(email != null) ? View.VISIBLE : View.GONE}"
+                            android:src="@drawable/ic_trip_email"/>
+
+                        <TextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/image1"
+                            android:onClick="@{onEmailClick}"
+                            android:text="@{email}"
+                            android:layout_marginStart="3dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/text_size_13"
+                            android:visibility="@{(email != null) ? View.VISIBLE : View.GONE}" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_date_no"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:onClick="@{onClick}"
+                    android:text="@{(title != null) ? title : @string/no_list_found}"
+                    android:textColor="@{(title != null) ? @color/colorPrimary : @color/snackbar_text_red}"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+
+                <TextView
+                    android:id="@+id/tv_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/tv_title"
+                    android:text="@{address}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13"
+                    android:visibility="@{(address != null) ? View.VISIBLE : View.GONE}" />
+
+
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rel_textViews"
+                android:layout_marginTop="10dp"
+                android:background="@color/container_trips_menu" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2"
+                android:layout_marginTop="20dp"
+                android:text="@{status}"
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:drawablePadding="3dp"
+                android:textSize="@dimen/text_size_13"
+                android:layout_marginEnd="5dp"
+                statusBg="@{status}"
+                android:textColor="@android:color/white"
+                android:textDirection="locale"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@id/ic_contact_support"
+                    android:onClick="@{onSupportClick}"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/ic_support"
+                    android:visibility="@{statusCancelled ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/ic_contact_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{onSupportClick}"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/contact_support"
+                    android:textColor="@color/colorPrimary"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13"
+                    android:visibility="@{statusCancelled ? View.VISIBLE : View.GONE}" />
+
+                <RelativeLayout
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{onMenuClick}">
+
+                    <ImageView
+                        android:id="@+id/ic_menu"
+                        android:layout_width="12dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:paddingTop="3dp"
+                        android:src="@drawable/ic_trip_more"
+                        android:visibility="@{statusCancelled ? View.GONE : View.VISIBLE}" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_toStartOf="@id/ic_menu"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="3dp"
+                        android:text="@string/more"
+                        android:textColor="@color/colorPrimary"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h1_5"
+                        android:visibility="@{statusCancelled ? View.GONE : View.VISIBLE}" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/rl_search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/explore_header_bg">
+
+            <include
+                android:id="@+id/inl_toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize" />
+
+
+            <LinearLayout
+                android:id="@+id/card_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inl_toolbar"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/bg_corner"
+                android:elevation="3dp">
+
+
+                <ImageView
+                    android:id="@+id/search_icon_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@color/white"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/ic_search_gray"
+                    tools:ignore="ContentDescription" />
+
+                <EditText
+                    android:id="@+id/et_search_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="@string/search_box"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textCapSentences"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_h2"
+                    tools:ignore="Autofill" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:layout_below="@id/rl_search_toolbar"
+            android:id="@+id/rv_search_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+        <TextView
+            android:id="@+id/tv_noResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_results_found"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textDirection="locale"
+            />
+
+    </RelativeLayout>
+
+</layout>

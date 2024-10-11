@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnknownAttribute -->
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.util.binding.BindingConverters"/>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="currency"
+            type="String"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:onClick="@{clickListener}"
+        android:layoutDirection="locale">
+
+<!--
+        <ImageView
+            android:id="@+id/iv_item_listing_similar_image"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            imgListing="@{item.listPhotoName()}"
+            android:background="@color/search_text_color"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_item_listing_similar_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="@{item.roomType()}"
+            android:textColor="#A52903"
+            android:textStyle="bold"
+            android:ellipsize="marquee"
+            android:paddingTop="10dp"
+            android:textAllCaps="true"
+            android:layout_below="@id/iv_item_listing_similar_image"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_item_listing_similar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="@{item.title()}"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#484848"
+            android:textStyle="bold"
+            android:layout_below="@id/tv_item_listing_similar_type"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_item_listing_similar_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{currency}"
+            android:textSize="15sp"
+            android:textColor="#484848"
+            android:layout_below="@id/tv_item_listing_similar_title"
+            android:textDirection="locale"/>
+
+        &lt;!&ndash;<ImageView
+            android:id="@+id/iv_item_listing_instant_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            instantBook="@{item.bookingType()}"
+            android:layout_toEndOf="@id/tv_item_listing_similar_price"
+            android:layout_below="@id/tv_item_listing_similar_title"
+            tools:ignore="ContentDescription" />&ndash;&gt;
+
+        <RatingBar
+            android:id="@+id/tv_item_listing_similar_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            ratingCount="@{item.reviewsStarRating()}"
+            reviewsCount="@{item.reviewsCount()}"
+            android:progressTint="@color/status_bar_color"
+            android:secondaryProgressTint="@color/status_bar_color"
+            android:layout_below="@id/tv_item_listing_similar_price"
+            style="?android:attr/ratingBarStyleSmall"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_listing_similar_ratingNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@{BindingConverters.toString(item.reviewsCount())}"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            android:layout_below="@id/tv_item_listing_similar_price"
+            android:layout_toEndOf="@id/tv_item_listing_similar_rating"
+            android:textDirection="locale"
+            />
+-->
+
+    </RelativeLayout>
+
+</layout>

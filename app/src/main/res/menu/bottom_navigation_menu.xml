@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_explore"
+        android:checked="true"
+        android:title="@string/menu_1"
+        android:icon="@drawable/ic_magnifying_glass"  />
+    <item
+        android:id="@+id/menu_saved"
+        android:title="@string/saved"
+        android:icon="@drawable/ic_heart" />
+    <item
+        android:id="@+id/menu_trips"
+        android:title="@string/menu_2" />
+    <item
+        android:id="@+id/menu_inbox"
+        android:title="@string/menu_3"
+        android:icon="@drawable/ic_speech_bubble" />
+    <item
+        android:id="@+id/menu_profile"
+        android:title="@string/menu_4"
+        android:icon="@drawable/ic_user" />
+</menu>

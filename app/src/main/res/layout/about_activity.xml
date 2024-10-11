@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <include
+                android:id="@+id/action_bar"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                layout="@layout/toolbar_profile"
+                style="@style/Toolbar"
+                tools:ignore="IncludeLayoutParam" />
+
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/rv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/action_bar"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_sub_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutDirection="locale"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="list"
+            type="String" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="amenitiesImage"
+            type="String" />
+        <variable
+            name="needImage"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="@{paddingBottom ? @dimen/exploreListingLTR : @dimen/no_padding}"
+        android:layoutDirection="locale">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:visibility="@{needImage? View.VISIBLE :View.GONE}"
+            drawableAmenities="@{amenitiesImage}"
+            android:layout_width="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_height="20dp"
+            tools:ignore="UseAppTint"/>
+        <ImageView
+            android:id="@+id/image"
+            android:src="@{needImage?null:@drawable/ic_default_right_arrow}"
+            android:layout_width="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_height="20dp"/></FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textDirection="locale"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textColor="@color/bottom_navigation_text_color"/>
+
+    </LinearLayout>
+</layout>

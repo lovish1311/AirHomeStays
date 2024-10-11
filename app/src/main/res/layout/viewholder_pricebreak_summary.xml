@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils" />
+        <import type="java.util.Locale" />
+        <import type="android.view.Gravity" />
+        <variable
+            name="basePrice"
+            type="String"/>
+        <variable
+            name="basePriceNights"
+            type="String"/>
+        <variable
+            name="basePriceRight"
+            type="String"/>
+        <variable
+            name="cleaningPrice"
+            type="String"/>
+        <variable
+            name="servicePrice"
+            type="String"/>
+        <variable
+            name="infantPrice"
+            type="String"/>
+        <variable
+            name="petPrice"
+            type="String"/>
+        <variable
+            name="additionalPrice"
+            type="String"/>
+        <variable
+            name="totalPrice"
+            type="String"/>
+        <variable
+            name="discountVisibility"
+            type="Boolean"/>
+        <variable
+            name="cleaningPriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="servicePriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="additionalPriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="infantPriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="petPriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="visitorPriceVisibility"
+            type="Boolean"/>
+        <variable
+            name="discountPrice"
+            type="String"/>
+        <variable
+            name="discountText"
+            type="String"/>
+        <variable
+            name="spIconVisible"
+            type="Boolean"/>
+        <variable
+            name="taxesPriceVisibility"
+            type="Boolean" />
+        <variable
+            name="taxesPrice"
+            type="String" />
+        <variable
+            name="discount"
+            type="String" />
+        <variable
+            name="discountGstVisibility"
+            type="Boolean"/>
+        <variable
+            name="discountGstText"
+            type="String" />
+        <variable
+            name="gstNumber"
+            type="String" />
+        <variable
+            name="visitorPrice"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="20dp"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_msg_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:text="@string/price_breakdown"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2" />
+
+        <LinearLayout
+            android:id="@+id/prce_lays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_msg_placeholder"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/tv_listing_price_breakdown_night_price"
+            android:layout_toEndOf="@+id/specialPriceIcon"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_listing_price_breakdown_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:text="@{basePrice}"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textDirection="ltr"
+                android:textSize="@dimen/text_size_h1_5"
+                tools:text="$139.07 x 2" />
+
+            <TextView
+                android:id="@+id/tv_listing_price_breakdown_night_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{basePriceNights}"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h1_5"
+                tools:text="Nights" />
+        </LinearLayout>
+<!--        android:gravity="@{TextUtils.getLayoutDirectionFromLocale(Locale.getDefault())==View.LAYOUT_DIRECTION_RTL ? Gravity.END : Gravity.START  }"-->
+
+        <LinearLayout
+            android:id="@+id/spl_pricing_layout"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:backgroundTint="@color/text_color"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_h1"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/bottom_navigation_text_color"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:background="@drawable/curve_button"
+                android:text="@string/avg_rate_per_night"
+                android:textDirection="locale"/>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/specialPriceIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_msg_placeholder"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_quesi"
+            android:visibility="@{spIconVisible? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_night_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{basePriceRight}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/tv_msg_placeholder"
+            android:layout_alignParentEnd="true"
+            android:textDirection="locale"
+            />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_cleaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prce_lays"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_service_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="@string/cleaning_price"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{cleaningPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_cleaning_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cleaningPrice}"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{cleaningPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/prce_lays"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_cleaning"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_service_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="@string/service_fee"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{servicePriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_service_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{servicePrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{servicePriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_cleaning"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_additional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_service_price"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_additional_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="Additional Price"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{additionalPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_additional_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{additionalPrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{additionalPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_service_price"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_pet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_additional"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_pet_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="Pet Price"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{petPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_pet_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{petPrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{petPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_additional_price"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_infant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_pet"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_pet_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="Infant Price"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{infantPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_infant_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{infantPrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{infantPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_pet_price"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_visitor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_infant_price"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_pet_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="Visitor Price"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{visitorPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_visitor_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{visitorPrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{visitorPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_infant_price"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/price_breakdown_taxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_listing_price_breakdown_visitor"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_service_price"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="@string/gst"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{taxesPriceVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/price_breakdown_taxes_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{taxesPrice}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{taxesPriceVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_below="@id/tv_listing_price_breakdown_visitor_price"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_breakdown_taxes"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_discount_price"
+            android:text="@{discountText}"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:visibility="@{discountVisibility ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_discount_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{discountPrice}"
+            android:visibility="@{discountVisibility ? View.VISIBLE : View.GONE}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/price_breakdown_taxes_price"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_listing_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_listing_price_breakdown_discount"
+            android:layout_toStartOf="@id/tv_listing_discount_price"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:visibility="@{discountGstVisibility ? View.VISIBLE : View.GONE}"
+            android:text="@{discountGstText+`-`+gstNumber}"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5" />
+
+        <TextView
+            android:id="@+id/tv_listing_discount_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{discount}"
+            android:textSize="@dimen/text_size_h2"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:visibility="@{discountGstVisibility ? View.VISIBLE : View.GONE}"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/tv_listing_price_breakdown_discount"
+            android:textDirection="locale"/>
+
+        <View
+            android:id="@+id/view_price_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_listing_discount_price"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/gray_divider_light" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_price_divider"
+            android:layout_marginTop="15dp"
+            android:layout_toStartOf="@id/tv_listing_price_breakdown_total_price"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:text="@string/total"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2" />
+
+        <TextView
+            android:id="@+id/tv_listing_price_breakdown_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{totalPrice}"
+            android:textSize="@dimen/text_size_h2"
+           android:fontFamily="@font/be_vietnampro_medium"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/view_price_divider"
+            android:textDirection="locale"/>
+
+
+
+        <View
+            android:id="@+id/view_price_divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_listing_price_breakdown_total_price"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/gray_divider_light" />
+    </RelativeLayout>
+
+</layout>

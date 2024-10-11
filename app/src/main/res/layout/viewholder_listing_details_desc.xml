@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="desc"
+            type="String" />
+        <variable
+            name="size"
+            type="Float" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="@{paddingBottom ? @dimen/paddingListing_20 : @dimen/no_padding}"
+        android:onClick="@{clickListener}"
+        android:background="@null"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{desc}"
+            textSize="@{size}"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textColor="@color/grey_font"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:visibility="visible"
+            android:textDirection="locale" />
+
+        <TextView
+            android:id="@+id/tv_descTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{desc}"
+            textSize="@{size}"
+            android:textColor="@color/grey_font"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:visibility="invisible"
+            android:textDirection="locale" />
+
+    </RelativeLayout>
+</layout>
+<!--            android:textSize="@dimen/text_size_h1_5"
+-->

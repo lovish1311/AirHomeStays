@@ -1,0 +1,179 @@
+#Get Profile Details
+query GetProfile {
+ userAccount {
+   result {
+        userId
+        profileId
+        firstName
+        lastName
+        displayName
+        gender
+        dateOfBirth
+        email
+        userBanStatus
+        phoneNumber
+        preferredLanguage
+        preferredLanguageName
+        preferredCurrency
+        appTheme
+        location
+        info
+        createdAt
+        picture
+        country
+        loginUserType
+        isAddedList
+        verification {
+          id
+          isEmailConfirmed
+          isFacebookConnected
+          isGoogleConnected
+          isIdVerification
+          isPhoneVerified
+        }
+        userData {
+          type
+        }
+        verificationCode
+        countryCode
+        loginUserType
+           isAddedList
+   }
+   status
+   errorMessage
+ }
+}
+
+# Edit Profile
+mutation EditProfile (
+   $userId: String!,
+   $fieldName: String!,
+   $fieldValue: String,
+   $deviceType: String!,
+   $deviceId: String!) {
+   userUpdate (
+       userId: $userId,
+       fieldName: $fieldName,
+       fieldValue: $fieldValue,
+       deviceType: $deviceType,
+       deviceId: $deviceId,
+   ) {
+       status
+       errorMessage
+       userToken
+   }
+}
+
+#Preferred Languages
+query userPreferredLanguages{
+    userLanguages {
+        status
+        errorMessage
+        result {
+            label
+            value
+        }
+    }
+}
+
+#UserBan Status
+query UserBanStatus {
+  getUserBanStatus {
+    status
+    userBanStatus
+    errorMessage
+  }
+}
+
+#SendVerifyEmail
+query SendConfirmEmail{
+    resendConfirmEmail: ResendConfirmEmail {
+    results{
+      id
+      userId
+       profile {
+        firstName
+        userData {
+          email
+        }
+      }
+      token
+      email
+      status
+    }
+  	status
+    errorMessage
+
+  }
+}
+
+#Verify Confirm Code
+mutation CodeVerification(
+    $token: String!,
+    $email: String!,
+){
+    emailVerification : EmailVerification(
+        token: $token,
+        email: $email
+    ) {
+        status
+    errorMessage
+    }
+}
+
+#Social Login Verification
+mutation SocialLoginVerify(
+    $verificationType: String!,
+    $actionType: String!) {
+    socialVerification : SocialVerification(
+   verificationType: $verificationType,
+   actionType: $actionType ) {
+        status
+        errorMessage
+   }
+}
+
+#feedback
+mutation sendUserFeedback ($type: String, $message: String){
+  userFeedback(type: $type, message: $message){
+    status
+    errorMessage
+  }
+}
+
+#getStaticPageContent
+query getStaticPageContent($id: Int) {
+    getStaticPageContent(id: $id) {
+        status
+        errorMessage
+        result {
+            id
+            pageName
+            metaTitle
+            metaDescription
+            content
+            createdAt
+        }
+    }
+}
+
+#whyHost
+query getWhyHostData {
+    getWhyHostData {
+        status
+        errorMessage
+        results {
+            id
+            imageName
+            title
+            buttonLabel
+        }
+    }
+}
+
+
+
+
+
+
+

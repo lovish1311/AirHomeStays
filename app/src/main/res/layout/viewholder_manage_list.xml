@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="image"
+            type="String"/>
+        <variable
+            name="submissionStatus"
+            type="String" />
+        <variable
+            name="percent"
+            type="String"/>
+        <variable
+            name="listPercent"
+            type="Integer"/>
+        <variable
+            name="padding"
+            type="Boolean"/>
+        <variable
+            name="created"
+            type="String"/>
+        <variable
+            name="publishTxt"
+            type="Boolean"/>
+        <variable
+            name="preview"
+            type="Boolean"/>
+        <variable
+            name="publishVisible"
+            type="Boolean"/>
+        <variable
+            name="onPublishClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="previewClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onclick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.hostListing.HostListingViewModel"/>
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="@{padding? @dimen/paddingListing : @dimen/gray_text_padding}"
+        android:layoutDirection="locale">
+
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#FAFAFA"-->
+<!--            android:padding="10dp"-->
+<!--            app:cardCornerRadius="3dp"-->
+<!--            app:cardElevation="4dp"-->
+<!--            app:cardUseCompatPadding="true">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_host_list"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/deleteClickLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="@{onclick}">
+
+                <!--<ImageView-->
+                <!--android:id="@+id/delete"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_clear_black_24dp"-->
+                <!--android:padding="5dp"-->
+                <!--android:onClick="@{deleteClick}"-->
+                <!--android:layout_gravity="start"/>-->
+
+                <ImageView
+                    android:id="@+id/iv_listImage"
+                    listImages="@{image}"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/container_image_placeholder" />
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/iv_listImage"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/iv_listImage"
+                    android:maxLines="2"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    android:text="@{title}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_h2"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title1"
+                    android:layout_toEndOf="@+id/iv_listImage"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    android:text="@{created}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/gray_divider_light" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="@{onclick}">
+
+                <TextView
+                    android:id="@+id/progressTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@{percent}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13" />
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressTxt"
+                    android:layout_marginTop="10dp"
+                    android:max="100"
+                    android:progress="@{listPercent}"
+                    android:progressTint="@color/status_bar_color" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/gray_divider_light" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/curve_button_red"
+                    android:onClick="@{onclick}"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/edit_listing"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+
+                <TextView
+                    android:id="@+id/tv_publish_now"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@id/tv_edit"
+                    android:checkPublishStates="@{submissionStatus}"
+                    android:ellipsize="end"
+                    android:maxEms="11"
+                    android:maxLines="2"
+                    android:onClick="@{onPublishClick}"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/publish_now"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15"
+                    android:visibility="@{publishVisible? View.GONE : View.VISIBLE}" />
+                <!--  android:text="@{publishTxt? @string/unpublish : @string/publish}" -->
+                <TextView
+                    android:id="@+id/tv_publish_now2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_edit"
+                    android:layout_marginStart="5dp"
+                    android:checkPublishStatestext="@{submissionStatus}"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:text="dss"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_toStartOf="@id/tv_preview_listing1"
+                    android:onClick="@{previewClick}"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_cancel_listing" />
+
+                <TextView
+                    android:id="@+id/tv_preview_listing1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxEms="7"
+                    android:onClick="@{previewClick}"
+                    android:singleLine="true"
+                    android:text="@string/delete"
+                    android:textColor="@color/colorPrimary"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_h1_5" />
+
+                <ImageView
+                    android:id="@+id/imagenew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="18dp"
+                    android:layout_toStartOf="@id/tv_publish_now"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_trip_more"
+                    android:visibility="@{preview? View.GONE : View.VISIBLE }" />
+
+                <TextView
+                    android:id="@+id/tv_preview_listing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@id/imagenew"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxEms="7"
+                    android:onClick="@{previewClick}"
+                    android:singleLine="true"
+                    android:text="@string/more"
+                    android:textColor="@color/colorPrimary"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:visibility="@{preview? View.GONE : View.VISIBLE }" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+    </RelativeLayout>
+</layout>

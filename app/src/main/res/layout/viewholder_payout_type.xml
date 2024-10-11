@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="paymentType"
+            type="String"/>
+        <variable
+            name="details"
+            type="String"/>
+        <variable
+            name="status"
+            type="String"/>
+        <variable
+            name="isDefault"
+            type="Boolean"/>
+        <variable
+            name="isVerified"
+            type="Boolean"/>
+        <variable
+            name="toolTipIcon"
+            type="Boolean" />
+        <variable
+            name="buttonText"
+            type="String" />
+        <variable
+            name="showtooltip"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="isDefaultInverse"
+            type="Boolean"/>
+        <variable
+            name="currency"
+            type="String"/>
+
+        <variable
+            name="removeVisible"
+            type="Boolean" />
+
+        <variable
+            name="setDefault"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="removeClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/cv_carddetails_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border_gray_light"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="3dp"
+            app:contentPaddingBottom="0dp">
+
+            <RelativeLayout
+                android:id="@+id/linearPayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_payment_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    paymentImage="@{paymentType}"/>
+
+                   <TextView
+                       android:id="@+id/linearText"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_toEndOf="@id/iv_payment_image"
+                       android:padding="10dp"
+                       android:text="@{paymentType}"
+                       android:textSize="@dimen/text_size_18"
+                       android:textColor="@color/black"
+                       android:textStyle="bold"
+                       android:textDirection="locale"/>
+
+                <View
+                    android:id="@+id/view_eight_divider5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/iv_payment_image"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/container_trips_menu"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_payout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_eight_divider5">
+
+                    <TextView
+                        android:id="@+id/tv_Details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_h1_5"
+                        android:paddingTop="10dp"
+                        android:paddingStart="10dp"
+                        android:text="@{details}"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"/>
+
+                    <ImageView
+                        android:id="@+id/tooltipImage"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/tv_Details"
+                        android:onClick="@{showtooltip}"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/ic_info_black"
+                        android:visibility="@{toolTipIcon?View.GONE : View.VISIBLE}" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_payout"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@{status}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_h1_5" />
+
+                <TextView
+                    android:id="@+id/tv_currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:paddingTop="10dp"
+                    android:layout_below="@+id/tv_status"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@{currency}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"/>
+
+                <RelativeLayout
+                    android:id="@+id/container_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/tv_currency"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:onClick="@{setDefault}"
+                    android:background="@{removeVisible ? @drawable/curve_border_green : @drawable/curve_button_green}">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@id/but_default"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/curve_button_green"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_tick_white"
+                        android:visibility="@{removeVisible ? View.VISIBLE : View.GONE}" />
+                    <TextView
+                        android:id="@+id/but_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@{removeVisible ? @color/colorPrimary : @color/white}"
+                        android:enabled="@{isDefaultInverse}"
+                        android:textSize="@dimen/text_size_h2"
+                        android:text="@{buttonText}"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"/>
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/container_default"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/curve_button_green"
+                    android:onClick="@{removeClick}"
+                    android:text="@string/remove"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h2"
+                    android:textStyle="bold"
+                    android:visibility="@{removeVisible ? View.GONE : View.VISIBLE}" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="accountType"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="accountHolder"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="mobileNumber"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="accountNumber"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="confirmAccountNumber"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="ifscCode"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="gstNumber"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="panNumber"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:focusableInTouchMode="true"
+       >
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/account_type"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{accountType}"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/account_holder_name"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/account_holder_name"
+                    android:text="@={accountHolder}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/mobile_number"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mobile_number"
+                    android:text="@={mobileNumber}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/account_number"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/account_number"
+                    android:text="@={accountNumber}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/confirm_acc_number"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirm_acc_number"
+                    android:text="@={confirmAccountNumber}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="IFSC Code"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="IFSC Code"
+                    android:text="@={ifscCode}"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:inputType="textCapCharacters"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="GST number"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="GST number"
+                    android:text="@={gstNumber}"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:inputType="textCapCharacters"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="PAN Number"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PAN number"
+                    android:text="@={panNumber}"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:inputType="textCapCharacters"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+            </LinearLayout>
+
+
+</ScrollView>
+
+</layout>

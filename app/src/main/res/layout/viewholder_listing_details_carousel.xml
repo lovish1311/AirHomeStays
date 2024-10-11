@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="url"
+            type="String" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/tv_item_listing_header"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:transitionName="fade"
+            imgListing="@{url}"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            tools:ignore="ContentDescription"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="url"
+            type="String"/>
+        <variable
+            name="roomType"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="price"
+            type="String"/>
+        <variable
+            name="reviewsStarRating"
+            type="Integer"/>
+        <variable
+            name= "ratingsCount"
+            type="String"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="ratingStarCount"
+            type="Integer"/>
+        <variable
+            name="bookType"
+            type="String"/>
+        <variable
+            name="bedsCount"
+            type="String"/>
+        <variable
+            name="bedsCountInt"
+            type="Integer"/>
+        <variable
+            name="wishListStatus"
+            type="Boolean"/>
+        <variable
+            name="isOwnerList"
+            type="Boolean"/>
+        <variable
+            name="heartClickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cl_explore_listing_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/iv_item_listing_saved_image"
+            imgListing="@{url}"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:transitionName="fade"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_item_listing_heart"
+            isOwnerList="@{isOwnerList}"
+            isWishList="@{wishListStatus}"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="@{heartClickListener}"
+            android:padding="10dp"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_item_listing_saved_image"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="0dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:text="@{price}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h4" />
+
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_price_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_item_explore_search_listing_price"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/tv_item_explore_search_listing_price"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@{` / ` + @string/night}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h1" />
+
+            <ImageView
+                android:id="@+id/iv_item_listing_instant_image"
+                instantBook="@{bookType}"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignBottom="@id/tv_item_explore_search_listing_price_night"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@id/tv_item_explore_search_listing_price_night"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/tv_item_listing_similar_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                ratingCount="1"
+                reviewsCount="1.0f"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_marginTop="4dp"
+                android:layout_toStartOf="@+id/tv_item_listing_similar_ratingNumber"
+                android:numStars="1"
+                android:progressTint="@color/colorAccent"
+                android:secondaryProgressTint="@color/colorAccent"
+                android:src="@drawable/ic_star_red"
+                android:stepSize="1"
+                android:visibility="@{reviewsCount==0 ? View.INVISIBLE : View.VISIBLE}" />
+
+            <TextView
+                android:id="@+id/tv_item_listing_similar_ratingNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{ratingsCount}"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="@{reviewsCount==0 ? View.INVISIBLE : View.VISIBLE}" />
+
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_explore_search_listing_price"
+                android:layout_marginEnd="50dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:maxLines="1"
+                android:text="@{title}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_17" />
+
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_explore_search_listing_title"
+                android:layout_marginTop="3dp"
+                android:text="@{roomType + (bedsCount!=``? ` /` : ``)}"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_beds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_explore_search_listing_title"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/tv_item_explore_search_listing_type"
+                android:text="@{bedsCount}"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+        </RelativeLayout>
+
+
+<!--        <RatingBar-->
+<!--            android:id="@+id/tv_item_explore_search_listing_rating"-->
+<!--            style="?android:attr/ratingBarStyleSmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="0dp"-->
+<!--            android:numStars="5"-->
+<!--            android:progressTint="@color/status_bar_color"-->
+<!--            reviewsCount="@{reviewsCount}"-->
+<!--            ratingCount="@{ratingStarCount}"-->
+<!--            android:secondaryProgressTint="@color/status_bar_color"-->
+<!--            android:stepSize="1"-->
+<!--            android:textSize="12sp"-->
+<!--            android:layout_below="@id/tv_item_explore_search_listing_price"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_item_explore_search_listing_ratingNumber"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="0dp"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:visibility="@{(reviewsCount == 0 )? View.GONE : View.VISIBLE}"-->
+<!--            android:text="@{String.valueOf(reviewsCount)}"-->
+<!--            android:layout_below="@id/tv_item_explore_search_listing_price"-->
+<!--            android:layout_toEndOf="@id/tv_item_explore_search_listing_rating"-->
+<!--            android:textDirection="locale"/>-->
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_one.StepOneViewModel.NextScreen"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_one.StepOneViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:background="@drawable/host_steps_bg"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/action_bar"
+            style="@style/Toolbar"
+            layout="@layout/toolbar" />
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_step_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/action_bar"
+            android:layout_marginTop="15dp">
+
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/pg_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="10"
+            android:progressTint="@color/colorPrimary"
+            android:scaleY="3" />
+
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curve_button_red"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="10dp"
+            android:splitMotionEvents="false"
+            android:text="@string/Continue"
+            android:textColor="@android:color/white"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_17"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

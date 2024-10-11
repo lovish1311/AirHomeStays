@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="marginBottom"
+            type="Boolean"/>
+        <variable
+            name="marginTop"
+            type="Boolean"/>
+        <variable
+            name="image"
+            type="String"/>
+
+        <variable
+            name="onSelected"
+            type="Boolean"/>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="@{marginTop ? @dimen/paddingListing : @dimen/no_padding}"
+        android:paddingBottom="@{marginBottom ? @dimen/paddingListing : @dimen/no_padding}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/tv_cover_photo"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            imgListing="@{image}"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/cover"
+            android:textColor="@color/white"
+            android:background="@{onSelected? @drawable/curve_button_green : @drawable/curve_semi_trans}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:button="@android:color/transparent"
+            android:onClick="@{onClick}"
+            android:duplicateParentState="true"
+            android:clickable="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textDirection="locale"/>
+
+
+    </RelativeLayout>
+
+</layout>

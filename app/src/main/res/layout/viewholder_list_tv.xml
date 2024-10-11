@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <import type="android.text.InputType"/>
+        <variable
+            name="hint"
+            type="String"/>
+        <variable
+            name="etHeight"
+            type="Boolean"/>
+        <variable
+            name="inputType"
+            type="Boolean"/>
+        <variable
+            name="maxLength"
+            type="Integer"/>
+        <variable
+            name="isBgNeeded"
+            type="Boolean" />
+        <variable
+            name="onNoticeClick"
+            type="android.view.View.OnClickListener"/>
+
+    </data>
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:onClick="@{onNoticeClick}"
+        android:layoutDirection="locale"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/et_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text_login"
+            android:focusable="false"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:maxLength='@{maxLength}'
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            android:singleLine="false"
+            android:text="@{hint}"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2"
+            app:drawableEndCompat="@drawable/ic_down_arrow_small" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,41 @@
+mutation createSecPayment(
+$userId: String!,
+ $country: String!,
+  $address1: String,
+  $address2: String,
+   $city: String!,
+   $state: String!,
+   $zipcode: String!,
+    $accountType: String!,
+     $mobileNumber: String!,
+    $accountHolderName: String!,
+     $accountNumber: String!,
+    $confirmAccountNumber: String!,
+    $ifscCode: String!,
+     $gstNumber: String!,
+     $panNumber: String!
+     )
+     {
+   createSecPayment(
+     userId: $userId,
+      country: $country,
+      address1: $address1,
+       address2: $address2,
+        city: $city,
+       state: $state,
+       zipcode: $zipcode,
+        accountType: $accountType,
+        mobileNumber: $mobileNumber,
+        accountHolderName: $accountHolderName,
+        accountNumber: $accountNumber,
+        confirmAccountNumber: $confirmAccountNumber,
+         ifscCode: $ifscCode,
+         gstNumber: $gstNumber,
+         panNumber: $panNumber
+         ) {
+            status
+            errorMessage
+
+            }
+
+}

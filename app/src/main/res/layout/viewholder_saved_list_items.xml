@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="url"
+            type="String" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="wishListCount"
+            type="Integer"/>
+        <variable
+            name="heartIconVisibility"
+            type="Boolean"/>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@null"
+        android:onClick="@{clickListener}"
+        android:padding="10dp"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/rl_saved_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_item_listing_saved_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="10dp"
+                imgListing="@{url}"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_wishlists_empty"
+                android:visibility="@{wishListCount != 0 ? View.GONE : View.VISIBLE}"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_saved_image"
+            android:layout_alignStart="@id/rl_saved_image"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxEms="8"
+            android:paddingEnd="3dp"
+            android:singleLine="true"
+            android:text="@{name}"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2" />
+
+        <TextView
+            android:id="@+id/tv_saved_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ wishListCount != 0 ?  ` (` + wishListCount + `)` : ` (0)`}"
+            android:textSize="@dimen/text_size_h2"
+            android:layout_below="@id/rl_saved_image"
+            android:layout_alignEnd="@id/rl_saved_image"
+            android:textColor="@color/text_color"
+            android:maxLines="1"
+            android:textDirection="locale"
+            />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_trips_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingStart="0dp"
+            android:paddingBottom="40dp"
+            android:paddingEnd="0dp">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/place_holder_trips" />
+
+                    <include layout="@layout/place_holder_trips" />
+
+                    <include layout="@layout/place_holder_trips" />
+
+                    <include layout="@layout/place_holder_trips" />
+                </LinearLayout>
+            </ScrollView>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:lottie_autoPlay="true"
+                android:layout_centerInParent="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_reservation"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_no_reservation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:textStyle="bold"
+                android:text="@string/no_upcoming_trip"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/tv_start_planning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp"
+                android:textSize="@dimen/text_size_15"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:text="@string/start_planning_your_first_adventure_on_appname"
+                android:textDirection="locale"/>
+
+            <Button
+                android:id="@+id/btn_explore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_searching"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/curve_button_transparent"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

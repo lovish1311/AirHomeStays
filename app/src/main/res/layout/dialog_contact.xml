@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <!--<import type="com.airhomestays.app.util.binding.BindingConverters"/>-->
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="msg"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="isLoading"
+            type="androidx.databinding.ObservableBoolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:contentPaddingTop="15dp"
+            app:contentPaddingRight="15dp"
+            app:contentPaddingLeft="15dp"
+            app:contentPaddingBottom="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_languages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{title}"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:textSize="@dimen/text_size_15"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:id="@+id/et_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:gravity="top|start"
+                    android:padding="15dp"
+                    android:background="@drawable/editext_border"
+                    android:textColorHint="@color/edittext_color"
+                    android:hint="@string/write_your_message_here"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="10"
+                    android:text="@={msg}"
+                    android:overScrollMode="always"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:layout_below="@id/tv_languages"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="Autofill"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_msg"
+                    android:layout_toStartOf="@id/btn_apply"
+                    android:background="?android:selectableItemBackground"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:padding="10dp"
+                    android:text="@string/cancel"
+                    android:textAlignment="viewEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/btn_apply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    android:textAlignment="viewEnd"
+                    android:textSize="@dimen/text_size_15"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:padding="10dp"
+                    android:layout_marginStart="-20dp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:background="?android:selectableItemBackground"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/et_msg"
+                    android:enabled="@{isLoading}"
+                    />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lt_loading"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_centerInParent="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loading_qwe"
+                    android:background="@drawable/lottie_background"
+                    android:visibility="@{isLoading ? View.GONE : View.VISIBLE}"
+                    app:lottie_autoPlay="true"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

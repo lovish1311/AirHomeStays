@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="headerText"
+            type="String"/>
+        <variable
+            name="subText"
+            type="String"/>
+        <variable
+            name="subVisible"
+            type="Boolean"/>
+        <variable
+            name="textBefore"
+            type="String"/>
+        <variable
+            name="textAfter"
+            type="String"/>
+        <variable
+            name="timer"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+    </data>
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layoutDirection="locale">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/header_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{headerText}"
+            android:textSize="20dp"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            />
+
+        <TextView
+            android:id="@+id/subText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{subText}"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/text_color"
+            android:layout_below="@id/header_text1"
+            android:layout_marginTop="5dp"
+            android:textDirection="locale"
+            />
+
+            <TextView
+                android:id="@+id/timer_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subText1"
+                android:textSize="@dimen/text_size_h1_5"
+                android:text="@{}"
+                android:layout_marginTop="5dp"
+                android:textDirection="locale"
+                />
+            <TextView
+                android:id="@+id/timer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timer_before"
+                android:textSize="@dimen/text_size_h2"
+                android:text="@string/timer_text_before"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:background="@drawable/logout_button_pressed"
+                android:layout_marginTop="10dp"
+                android:textDirection="locale"
+                />
+            <!--<TextView-->
+                <!--android:id="@+id/timer_after"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/subText"-->
+                <!--android:layout_toRightOf="@id/timer"-->
+                <!--android:textSize="@dimen/text_size_h1_5"-->
+                <!--android:text="@string/timer_text_after"-->
+                <!--android:textDirection="locale"/>-->
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+</layout>

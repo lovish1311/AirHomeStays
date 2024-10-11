@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="rightSide"
+            type="String" />
+        <variable
+            name="leftSide"
+            type="String" />
+        <variable
+            name="leftSideTime"
+            type="String" />
+        <variable
+            name="isTime"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@null"
+        android:onClick="@{clickListener}"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_listing_checkin_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/tv_listing_checkin_time"
+            android:text="@{rightSide}"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_listing_checkin_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{leftSide}"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@{isTime?@color/text_color:@color/colorPrimary}"
+            android:layout_alignParentEnd="true"
+            android:textDirection="locale"/>
+
+    </RelativeLayout>
+
+</layout>

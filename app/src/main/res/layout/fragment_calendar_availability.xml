@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.host.calendar.CalendarListingViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/inc_close"
+            layout="@layout/include_toolbar_listing_sub_screen"/>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rl_calendar_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/inc_close"
+            android:layout_above="@id/tv_next">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="13dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="@dimen/text_size_17"
+            android:text="@string/save"
+            android:background="@drawable/curve_button_red"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:textColor="@android:color/white"
+            style="@style/AuthScreenLottieLayout"
+            android:textDirection="locale" />
+
+        <FrameLayout
+            android:id="@+id/fl_auth_loading_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#40000000"
+            goneUnless="@{viewModel.isLoading}">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:lottie_rawRes="@raw/loading_qwe"
+                android:background="@drawable/lottie_background" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+</layout>

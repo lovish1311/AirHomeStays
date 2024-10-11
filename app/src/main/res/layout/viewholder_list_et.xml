@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="hint"
+            type="String" />
+
+        <variable
+            name="maxLength"
+            type="Integer" />
+
+        <variable
+            name="title"
+            type="String"/>
+
+        <variable
+            name="inputType"
+            type="String"/>
+
+        <variable
+            name="paddingBottom"
+            type="Boolean"/>
+
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingBottom="@{paddingBottom? @dimen/paddingListing : @dimen/no_padding}"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_host_hint"
+            style="@style/BecomeHostText"
+            android:text="@{title}"
+            android:textDirection="locale"
+            />
+
+        <EditText
+            android:id="@+id/et_host_edit"
+            style="@style/BecomeHostEdit"
+            android:layout_below="@id/tv_host_hint"
+            android:nestedScrollingEnabled="true"
+            android:isScrollContainer="true"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            android:imeOptions="actionGo"
+            android:maxLines="1"
+            android:hint="@{hint}"
+            android:paddingBottom="10dp"
+            android:maxLength='@{maxLength}'
+            android:text="@={text}"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+
+    </RelativeLayout>
+
+</layout>

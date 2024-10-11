@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="location"
+            type="String"/>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_item_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="@{clickListener}"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{location}"
+            android:textSize="@dimen/text_size_17"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:padding="25dp"
+            android:gravity="center_vertical"
+            android:drawablePadding="20dp"
+            android:textDirection="locale"
+            app:drawableStartCompat="@drawable/ic_explore_map_marker" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/search_divider_line"
+            android:layout_below="@id/tv_address"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp" />
+    </RelativeLayout>
+</layout>

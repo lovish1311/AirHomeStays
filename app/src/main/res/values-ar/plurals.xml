@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <plurals name="caps_bed_count">
+        <item quantity="other"> Beds</item>
+        <item quantity="one"> Bed</item>
+    </plurals>
+    <plurals name="guest_count">
+        <item quantity="other"> ضيوف</item>
+        <item quantity="one"> زائر</item>
+    </plurals>
+    <plurals name="guest_singlular">
+        <item quantity="other"> زائر</item>
+        <item quantity="one"> زائر</item>
+    </plurals>
+    <plurals name="private_bath_count">
+        <item quantity="other"> حمامات خاصة</item>
+        <item quantity="one"> حمام خاص</item>
+    </plurals>
+    <plurals name="shared_bath_count">
+        <item quantity="other"> الحمامات المشتركة</item>
+        <item quantity="one"> حمام مشترك</item>
+    </plurals>
+    <plurals name="bathroom_count">
+        <item quantity="other"> الحمامات</item>
+        <item quantity="one"> دوره المياه</item>
+    </plurals>
+    <plurals name="review_count">
+        <item quantity="other"> التعليقات</item>
+        <item quantity="one"> مراجعة</item>
+    </plurals>
+    <plurals name="night_count">
+        <item quantity="other"> ليالي</item>
+        <item quantity="one"> ليل</item>
+    </plurals>
+    <plurals name="review_count_profile">
+        <item quantity="other">%1$d التعليقات</item>
+        <item quantity="one">%1$d مراجعة</item>
+    </plurals>
+    <plurals name="day_count">
+        <item quantity="other"> أيام</item>
+        <item quantity="one"> يوم</item>
+    </plurals>
+</resources>

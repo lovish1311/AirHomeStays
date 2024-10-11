@@ -1,0 +1,155 @@
+#Billing Summary
+query getBillingCalculation($listId: Int!, $startDate: String!, $endDate: String!, $guests: Int!,$visitors: Int!,$pets: Int!,$infants: Int!, $convertCurrency: String!) {
+  getBillingCalculation(listId: $listId, startDate: $startDate, endDate: $endDate, guests: $guests,visitors:$visitors,pets:$pets,infants:$infants, convertCurrency: $convertCurrency) {
+    result {
+      checkIn
+      checkOut
+      nights
+      basePrice
+      cleaningPrice
+      taxPrice
+      gst
+      gstPrice
+      guests
+      guestBasePrice
+      additionalPrice
+      visitorsLimit
+      visitorsPrice
+      petLimit
+      petPrice
+      infantLimit
+      infantPrice
+      currency
+      guestServiceFeePercentage
+      hostServiceFeePercentage
+      weeklyDiscountPercentage
+      monthlyDiscountPercentage
+      guestServiceFee
+      hostServiceFee
+      discountLabel
+      discount
+      subtotal
+      total
+      averagePrice
+      priceForDays
+      specialPricing{
+      blockedDates
+      isSpecialPrice
+      }
+      isSpecialPriceAssigned
+    }
+    status
+    errorMessage
+  }
+}
+
+# Reservation Details
+query getReservation($reservationId: Int!,$convertCurrency: String) {
+getReservation(reservationId: $reservationId,convertCurrency: $convertCurrency) {
+ status
+ errorMessage
+ results {
+   id
+   nights
+   listId
+   hostId
+   guestId
+   checkIn
+   checkOut
+   guests
+   pets
+   infants
+   visitors
+   additionalGuest
+   visitorsPrice
+   infantPrice
+   petPrice
+   additionalPrice
+   message
+   basePrice
+   cleaningPrice
+   taxPrice
+   currency
+   discount
+   checkInStart
+   checkInEnd
+   discountType
+   isSpecialPriceAverage
+   guestServiceFee
+   hostServiceFee
+   total
+   totalWithGuestServiceFee
+   confirmationCode
+   paymentState
+   payoutId
+   paymentMethodId
+   reservationState
+   createdAt
+   updatedAt
+   listData {
+   id
+   title
+   street
+   city
+   state
+   country
+   zipcode
+   lat
+   lng
+   beds
+   reviewsCount
+   reviewsStarRating
+   roomType
+   bookingType
+   wishListStatus
+   isListOwner
+   wishListGroupCount
+   listPhotoName
+   listPhotos {
+      id
+      name
+   }
+   listingData {
+     checkInStart
+     checkInEnd
+   }
+   settingsData {
+     id
+     listsettings {
+       id
+       itemName
+     }
+   }
+ }
+   messageData {
+     id
+   }
+   hostData {
+     userId
+     profileId
+     firstName
+     displayName
+     picture
+     phoneNumber
+   }
+   guestData {
+    userId
+    profileId
+    displayName
+    firstName
+    picture
+    phoneNumber
+  }
+ }
+ convertedBasePrice
+convertedHostServiceFee
+convertedGuestServicefee
+convertedIsSpecialAverage
+convertedTotalNightsAmount
+convertTotalWithGuestServiceFee
+convertedTotalWithHostServiceFee
+convertedCleaningPrice
+convertedTaxPrice
+convertedDiscount
+}
+}

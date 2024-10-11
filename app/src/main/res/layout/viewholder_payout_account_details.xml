@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.text.InputType"
+            />
+        <variable
+            name="accountType"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="firstName"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="lastNameVisible"
+            type="Boolean" />
+        <variable
+            name="isRoutingVisible"
+            type="Boolean" />
+        <variable
+            name="routingHint"
+            type="String" />
+        <variable
+            name="accountHint"
+            type="String" />
+        <variable
+            name="confimrAccountHint"
+            type="String" />
+        <variable
+            name="lastName"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="routingNo"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="accountNo"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="cnfAccountNo"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="ssnNo"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.host.payout.addPayout.AddPayoutViewModel" />
+        <variable
+            name="maxLength"
+            type="Boolean" />
+
+        <variable
+            name="countryCheck"
+            type="Boolean" />
+        <variable
+            name="offsetPos"
+            type="Integer" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/cv_carddetails_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="3dp"
+            card_view:contentPadding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_account_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/account_type"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:padding="15dp"
+                    android:cursorVisible="false"
+                    android:drawableEnd="@drawable/ic_down_arrow_small"
+                    android:onClick="@{onClick}"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/account_type"
+                    android:text="@={accountType}"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"
+                    android:background="@drawable/bg_edit_text_login"/>
+                <TextView
+                    android:id="@+id/tv_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/first_name_edit"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@{lastNameVisible ? @string/company_name : @string/first_name_edit}"
+                    android:text="@={firstName}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"
+                    android:background="@drawable/bg_edit_text_login"/>
+
+                <TextView
+                    android:id="@+id/tv_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/last_name_edit"
+                    android:visibility="@{lastNameVisible? View.GONE : View.VISIBLE }"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@string/last_name_edit"
+                    android:visibility="@{lastNameVisible? View.GONE : View.VISIBLE }"
+                    android:text="@={lastName}"
+                    android:inputType="textCapWords"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:id="@+id/tv_routing_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@{routingHint}"
+                    android:visibility="@{isRoutingVisible ? View.VISIBLE : View.GONE, default=visible}"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:id="@+id/et_routing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@{routingHint}"
+                    android:visibility="@{isRoutingVisible ? View.VISIBLE : View.GONE, default=visible}"
+                    android:text="@={routingNo}"
+                    android:inputType="number"
+                    android:maxLength="90"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    countryCheck="@{countryCheck}"
+                    textChangeLis="@{routingNo}"
+                    offsetPos="@{offsetPos}"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:id="@+id/tv_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@{accountHint}"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@{accountHint}"
+                    android:inputType='@{isRoutingVisible ?   InputType.TYPE_CLASS_NUMBER : (InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS) }'
+                    android:text="@={accountNo}"
+                    android:textAllCaps="true"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:id="@+id/tv_confirm_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@{confimrAccountHint}"
+                    android:textColor="@color/grey_font"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@{confimrAccountHint}"
+                    android:inputType='@{isRoutingVisible ?   InputType.TYPE_CLASS_NUMBER : (InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS) }'
+                    android:text="@={cnfAccountNo}"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

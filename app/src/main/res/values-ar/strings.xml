@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE resources [
+    <!ENTITY appname "AirHomeStays">
+    ]>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="app_name">&appname;</string>
+
+    <!--Signup Screen-->
+    <string name="logintext">تسجيل الدخول</string>
+    <string name="login_txt">تسجيل الدخول</string>
+    <string name="signup">سجل</string>
+    <string name="welcome_to_appname">مرحبا بكم في  &appname; </string>
+    <string name="fb_button">تواصل مع الفيسبوك</string>
+    <string name="google_button">تواصل مع جوجل</string>
+    <string name="please_login_to_verify_your_email">يرجى الدخول إلى التحقق من البريد الإلكتروني الخاص بك.</string>
+
+    <!--Name Creation Screen-->
+
+    <!--Email Creation Screen-->
+    <string name="your_email">و، والبريد الإلكتروني الخاص بك؟</string>
+    <string name="email_address">عنوان بريد الكتروني</string>
+    <string name="email_promotional">وأود أن تلقي الرسائل الترويجية، بما في ذلك الخصومات، والدراسات الاستقصائية، والإلهام، والحب من &appname; عبر البريد الإلكتروني، والرسائل القصيرة، والهاتف</string>
+
+    <!--Create Passsword Screen-->
+    <string name="create_password">انشأ كلمة المرور أنشأ الرقم السري</string>
+    <string name="password_condition_text">يجب أن تكون كلمة المرور 8 أحرف أو أكثر لفترة طويلة. لا تستخدم أي كلمات السر شيوعا، والتكرار أو متواليات. محاولة جعله أطول أو إضافة رموز مثل /!، / #، أو /٪</string>
+    <string name="password">كلمه السر</string>
+    <string name="show">تبين</string>
+    <string name="hide">إخفاء</string>
+
+    <!--DOB Screen-->
+    <string name="when_birthday">متى يحين عيد ميلادك؟</string>
+    <string name="age_limit">يجب أن تكون على الأقل 18 سنة لاستخدام &appname;. والبعض الآخر لا يرى عيد ميلادك.</string>
+    <string name="birthday">عيد الميلاد</string>
+
+    <!--Login Screen-->
+    <string name="forgotpassword">هل نسيت كلمة المرور؟</string>
+
+    <!--Forgot Password Screen-->
+    <string name="forgot_your_password">نسيت رقمك السري؟</string>
+    <string name="enter_email">أدخل عنوان بريدك الإلكتروني للعثور على حسابك.</string>
+    <string name="link_msg">تم إرسال ارتباط لإعادة تعيين كلمة المرور الخاصة بك إلى %s</string>
+
+    <!--Change Password Screen-->
+    <string name="change_your_password">اعد ضبط كلمه السر</string>
+    <string name="success_reset_msg">إستعادة كلمة بنجاح. الرجاء تسجيل الدخول للمتابعة</string>
+
+    <!--BottomNavigation menu label-->
+    <string name="menu_1">يكتشف</string>
+    <string name="saved">تم الحفظ</string>
+    <string name="menu_2">رحلات</string>
+    <string name="menu_3">صندوق الوارد</string>
+    <string name="menu_4">الملف الشخصي</string>
+    <string name="menu_5">القوائم</string>
+    <string name="menu_6">التقويم</string>
+    <string name="menu_7">التقدم</string>
+
+
+    <!--Explore Screen-->
+    <string name="search_box">محاولة "لوس أنجلوس"</string>
+    <string name="dates">تواريخ</string>
+    <string name="filter">منقي</string>
+    <string name="filter_small">منقي</string>
+    <string name="filters_small"> مرشحات</string>
+    <string name="listings_you_can_book_without_waiting_for_host_approval" tools:ignore="ExtraTranslation">قوائم يمكنك حجز دون انتظار موافقة المضيف.</string>
+    <string name="instant_book">لحظة كتاب</string>
+    <string name="no_result">لا نتائج</string>
+    <string name="no_results_found">لم يتم العثور على نتائج</string>
+    <string name="no_list_found">لا توجد قائمة</string>
+    <string name="try_adjusting_your_search_here_are_some_ideas"> حاول ضبط بحثك. وإليك بعض الأفكار:</string>
+    <string name="change_your_filters_or_dates">\u2022 تغيير الفلاتر أو التواريخ</string>
+    <string name="entire_house">المنزل بأكمله</string>
+    <string name="price_per_night">245 $ في الليلة</string>
+    <string name="list_name">شاليه المعاصرة - بحيرة آنسي</string>
+    <string name="search_for_a_specific_city_address">\u2022 ابحث عن مدينة محددة، عنوان</string>
+    <string name="most_viewed">الأكثر مشاهدة قائمة</string>
+    <string name="recommed_viewed">يوصي قائمة</string>
+
+    <!--Guest Screen-->
+    <string name="guest">زائر</string>
+    <string name="guests">ضيوف</string>
+    <string name="guest_small">زائر </string>
+    <string name="guests_small">ضيوف </string>
+    <string name="see_results">رؤية النتائج</string>
+
+    <!--Search Screen-->
+    <string name="reset">إعادة تعيين</string>
+
+    <!--Filter Screen-->
+    <string name="clear">واضح</string>
+    <string name="price_range">نطاق السعر</string>
+    <string name="facilities">مرافق</string>
+    <string name="amenities">وسائل الراحة</string>
+    <string name="show_all_amenities">عرض جميع وسائل الراحة</string>
+    <string name="home_type">نوع البيت</string>
+    <string name="Rooms_and_beds">الغرف والأسرة</string>
+    <string name="house_rules">قواعد المنزل</string>
+
+    <!--Profile Screen-->
+    <string name="divider">/</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="location_edit">موقعك</string>
+    <string name="edit_about_me">تحرير عني</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="languages">اللغات</string>
+    <string name="preferred_language">اللغة المفضلة</string>
+    <string name="email_info_edit">وتستخدم هذه لتسجيل الدخول ورسائل البريد الإلكتروني من &appname; وأنه لا مشاركتها مع مستخدمين آخرين.</string>
+    <string name="gender">جنس</string>
+    <string name="birth_date">تاريخ الولادة</string>
+    <string name="Error_msg">عذرا ، واجهتنا مشكلة في تحديث حسابك في هذا الوقت %s</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="grant_camera_permission">منح إذن للوصول إلى معرض والصور الخاصة بك</string>
+    <string name="why_host">لماذا المضيف؟</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="list_your_space">قائمة الفضاء لديك</string>
+    <string name="text_one">تصبح المضيفة قائمة الفضاء الخاصة بك وكسب المزيد من المال</string>
+    <string name="text_two">اختيار السعر الخاص، وتوافر والقواعد وأكثر من ذلك بكثير</string>
+    <string name="text_three">إدارة الحجوزات القادمة بسهولة</string>
+    <string name="text_four">مراقبة العوائد لكل تحفظات في شاشة واحدة</string>
+
+    <string name="email_confirmed">البريد الإلكتروني
+        \n المؤكدة</string>
+    <string name="document_verification">التأكيد ثيقة</string>
+    <string name="google_connected">جوجل متصل</string>
+    <string name="facebook_connected">الفيسبوك متصل</string>
+    <string name="phone_verified">هاتف التحقق</string>
+    <string name="verified">تم التحقق</string>
+    <string name="verify_phone">التحقق من رقم الهاتف</string>
+
+
+    <string name="about">حول</string>
+
+    <string name="confirm_email">تأكيد عنوان البريد الإلكتروني</string>
+    <string name="connect_google">ربط جوجل</string>
+    <string name="connect_fb">ربط الفيسبوك</string>
+
+    <!--Edit Profile Screen-->
+    <string name="first_name_edit">الاسم الاول</string>
+    <string name="last_name_edit">الكنية</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="done">منجز</string>
+    <string name="account_type">نوع الحساب</string>
+    <string name="company">شركة</string>
+    <string name="individual">فرد</string>
+    <string name="company_name">اسم الشركة</string>
+    <string name="account_type_error">الرجاء اختيار نوع الحساب</string>
+
+
+    <!--Auth token Expire Screen-->
+    <string name="authtoken_desc">انتهت جلسة العمل الخاصة بك، وكنت قد تم تسجيل الخروج. الرجاد الدخول على الحساب من جديد.</string>
+    <string name="login">تسجيل الدخول</string>
+
+    <!--Error Message-->
+    <string name="invalid_email">بريد إلكتروني خاطئ.</string>
+    <string name="invalid_email_desc">يرجى التحقق مما إذا تم إدخال البريد الإلكتروني بشكل صحيح.</string>
+    <string name="invalid_login_credentials">اعتماد تسجيل الدخول غير صالح</string>
+    <string name="show_password">عرض كلمة المرور</string>
+    <string name="error">خطأ</string>
+    <string name="currently_offline">أنت غير متصل حاليا</string>
+    <string name="birthday_error">خطأ عيد ميلاد.</string>
+    <string name="server_error">الخادم لا تستجيب يرجى المحاولة مرة أخرى في وقت لاحق !!</string>
+    <string name="to_sign_up">للاشتراك، يجب أن تكون 18 سنة أو أكثر.</string>
+    <string name="age_18_limit">يجب أن تكون 18 عاما أو أكثر.</string>
+    <string name="email_already_exists">البريد الالكتروني موجود بالفعل</string>
+    <string name="password_error">كلمة السر خطأ</string>
+    <string name="password_limit">يجب أن يكون الحد مرور أكثر من 7 أحرف</string>
+    <string name="something_went_wrong">هناك خطأ ما. حاول مرة أخرى في وقت لاحق</string>
+    <string name="reset_password_error">خطأ إعادة تعيين كلمة المرور</string>
+    <string name="reset_password_error_desc">طلبك لإعادة تعيين كلمة المرور انتهت بالفعل.</string>
+    <string name="something_went_wrong_action">حدث خطأ مع طلبك.</string>
+    <string name="invalid_name">اسم غير صالح</string>
+    <string name="invalid_name_desc">كل من الاسم الأول واسم العائلة لا ينبغي أن يكون فارغا</string>
+    <string name="invalid_firstname_desc">الاسم الأول لا ينبغي إفراغ</string>
+    <string name="invalid_lastname_desc">اسم آخر لا ينبغي إفراغ</string>
+    <string name="invalid_phone">رقم الهاتف غير صحيح.</string>
+    <string name="invalid_phone_desc">الهاتف يجب أن يكون لديك عدد أكبر من 6 أحرف</string>
+    <string name="email_not_exist">البريد الإلكتروني غير موجودة في حساب FB، يرجى استخدام بعضها البعض لتسجيل الدخول.</string>
+
+
+    <!--Gender Dialog-->
+    <string name="radio_male">الذكر</string>
+    <string name="radio_female">أنثى</string>
+    <string name="radio_other">آخر</string>
+
+    <!--Currency Dialog-->
+    <string name="cancel" tools:ignore="ButtonCase">إلغاء</string>
+    <string name="apply">تطبيق</string>
+
+    <!--Cancellation-->
+    <string name="check_in">تحقق في</string>
+    <string name="check_out">الدفع</string>
+    <string name="anytime">في أي وقت</string>
+    <string name="cancellation_policy_points">\u25AA يتم دائمًا رد رسوم التنظيف إذا لم يقم الضيف بتسجيل الوصول.
+\n\n\u25AA اسم التطبيق رسوم الخدمة قابلة للاسترداد إذا ألغى الضيف قبل بدء الرحلة. إذا قام الضيف بحجز حجز يتداخل مع أي جزء من حجز موجود ، فلن نقوم برد &appname; رسوم الخدمة إذا قرروا الإلغاء.
+\n\n\u25AA رسوم الإقامة (إجمالي سعر الليلة التي تدفعها) قابلة للاسترداد في ظروف معينة كما هو موضح أدناه.
+\n\n\u25AA إذا كانت هناك شكوى من أي من الطرفين ، فيجب إرسال إشعار إلى &appname; خلال 24 ساعة من تسجيل الوصول.
+\n\n\u25AA &appname; ؛ سوف يتوسط عند الضرورة ، وله القول الفصل في جميع النزاعات.
+\n\n\u25AA يتم إلغاء الحجز رسميًا عندما ينقر الضيف على زر الإلغاء في صفحة تأكيد الإلغاء ، والذي يمكنه العثور عليه في لوحة المعلومات> رحلاتك> إلغاء.
+\n\n\u25AA قد يتم استبدال سياسات الإلغاء بسياسة رد أموال الضيف أو الظروف المخففة أو الإلغاء بواسطة &appname; لأي سبب آخر مسموح به بموجب شروط الخدمة. يرجى مراجعة هذه الاستثناءات.
+\n\n\u25AA سيتم الاحتفاظ بالضرائب المطبقة وتحويلها.</string>
+    <string name="exact_location_provided_after_booking">توفير المكان المحدد بعد الحجز</string>
+    <string name="currency">عملة</string>
+    <string name="theme">سمة</string>
+    <string name="preferred_currency">العملة المفضلة</string>
+    <string name="book_txt">كتاب</string>
+    <string name="message">رسالة</string>
+    <string name="itinerary">مسار الرحلة</string>
+    <string name="approve">يوافق</string>
+    <string name="decline">انخفاض</string>
+    <string name="receipt">إيصال</string>
+    <string name="cancel_">إلغاء</string>
+    <string name="contact_support">اتصل بالدعم</string>
+    <string name="pay_with_your_credit_card">دفادفع مع بطاقة الخصم/الائتمان الخاصة بك</string>
+    <string name="pay">دفع</string>
+    <string name="send_message">إرسال رسالة</string>
+    <string name="start_planning_your_first_adventure_on_appname">بدء التخطيط لأول n\ن مغامرة على &appname;</string>
+
+    <!--Birthday-->
+    <string name="set_your_birthday">تعيين تاريخ ميلادك</string>
+
+    <!--Common-->
+    <string name="retry">إعادة المحاولة</string>
+    <string name="show_all">عرض الكل</string>
+    <string name="show_less">عرض أقل</string>
+    <string name="okay">حسنا</string>
+
+    <!--User Profile-->
+    <string name="verified_info">معلومات تم التحقق منه "</string>
+    <string name="review">مراجعة</string>
+    <string name="delete">حذف</string>
+    <string name="view_and_edit">عرض وتحرير الملف الشخصي</string>
+
+    <!--Email Verification -->
+    <string name="email_address_small">عنوان بريد الكتروني</string>
+    <string name="email_verifiy_header">يرجى التحقق من عنوان البريد الإلكتروني الخاص بك</string>
+    <string name="verify_email_text">التحقق من البريد الإلكتروني</string>
+    <string name="already_verified_text">لقد التحقق من عنوان البريد الإلكتروني الخاص بك</string>
+    <string name="error_message_for_verify">يبدو أن البريد الإلكتروني أو رمز مميز invaild</string>
+    <string name="facebook_header">Facebook</string>
+    <string name="fb_sub_text">مع توقع في الفيسبوك واكتشاف اتصالات موثوق به المضيفين والضيوف في جميع أنحاء العالم.</string>
+    <string name="google_header">Google</string>
+    <string name="google_sub_text">ربط حسابك إلى حساب Google لبساطة وسهولة.</string>
+    <string name="connect">الاتصال</string>
+    <string name="disconnect">قطع الاتصال</string>
+    <string name="trust_verify">الثقة والتأكيد</string>
+
+    <!--Cancellation-->
+    <string name="start_in">تبدأ في</string>
+    <string name="staying_for">البقاء ل</string>
+    <string name="traveling_with">السفر مع</string>
+    <string name="tell_why_you_need_to_cancel">أقول لماذا تحتاج إلى إلغاء</string>
+    <string name="the_reservation_will_be_canceled_immediately">سيتم إلغاء التحفظ على الفور</string>
+    <string name="non_refundable">غير قابل للاسترجاع</string>
+    <string name="refundable">مستردة</string>
+    <string name="keep_reservation">حجز الاحتفاظ</string>
+    <string name="tell_you">أخبر %1$s لماذا تحتاج إلى إلغاء</string>
+    <string name="enter_msg">الرجاء أدخل الرسالة</string>
+    <string name="write_your_message_here">اكتب رسالتك هنا</string>
+    <string name="send">إرسال</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="uh_oh">أه أوه!</string>
+    <string name="we_can_t_seem_to_find_the_anything_that_you_re_looking_for">يمكننا \'ر يبدو للعثور على أي شيء كنت اعادة تبحث عنه!</string>
+    <string name="error_code_404">رمز الخطأ: 404</string>
+    <string name="explore_appname">استكشاف &appname;</string>
+    <string name="cancel_your_reservation">إلغاء الحجز</string>
+    <string name="day">يوم</string>
+    <string name="missed_earnings">الأرباح الفائتة</string>
+    <string name="cancel_your_trip">إلغاء رحلتك</string>
+    <string name="you_will_be_refunded_with_the_above_cost">هل سيكون ردها مع التكلفة المذكورة أعلاه</string>
+    <string name="reservation_cancelled">تحفظ ملغاة</string>
+
+    <!--Confirm Phone number Screen -->
+    <string name="confirm_phnumber">تأكيد رقم هاتفك</string>
+    <string name="ph_phone">هاتف</string>
+    <string name="guests_contact">وهذا هو الحال المضيفين أو الضيوف يمكن الاتصال بكم خلال الرحلة، و&appname; يعرف كيفية الوصول إليك.</string>
+
+    <!-- FourDigit code Screen -->
+    <string name="enter_four_digit">أدخل الرمز المكون من 4 أرقام</string>
+    <string name="code_sent">نحن \'لقد أرسلت مجرد رمز إلى عدد المسجلين. أدخل رمز في هذه الرسالة.</string>
+    <string name="digit_code">4-DIGIT CODE</string>
+    <string name="send_again">إرسال الرمز مرة أخرى</string>
+    <string name="change_number">تغيير رقم هاتفي</string>
+
+    <!--Saved WishList-->
+    <string name="nothing_saved_yet">حفظ شيء حتى الآن</string>
+    <string name="limit_exceeded">يجب أن يكون طول العنوان أقل من 250 حرفا.</string>
+    <!--Listing-->
+    <string name="max">ماكس</string>
+    <string name="min">دقيقة</string>
+    <string name="per_night">لليلة الواحدة</string>
+
+
+    <!--Booking Screen-->
+    <string name="please_add_a_msg_to_ur_host">الرجاء إضافة رسالة إلى المضيف الخاص بك.</string>
+    <string name="add_msg">اضافة رسالة</string>
+    <string name="tell_your_host_about_your_trip">أخبر المضيف الخاص بك عن رحلتك</string>
+    <string name="help_your_host_prepare_for_your_stay_by_answering_their_questions">مساعدة المضيف يستعدون لاقامة عن طريق الإجابة على أسئلتهم</string>
+    <string name="review_and_pay">استعراض والأجور</string>
+    <string name="review_cancel_desc">أوافق على قواعد البيت، سياسة الإلغاء، وسياسة استرداد الأموال زائر. أوافق أيضا على دفع المبلغ الإجمالي هو مبين، والتي تشمل رسوم الخدمة.</string>
+    <string name="book_your_stay">احجز إقامتك</string>
+    <string name="please_keep_in_mind">يرجى الاخذ بعين الاعتبار</string>
+    <string name="add_your_profile_photo">إضافة صورة ملفك الشخصي</string>
+    <string name="dollar_currency">(BGN)</string>
+    <string name="dollar_amount">$ 1،234.23</string>
+    <string name="profile_photo_desc">وهذا يساعد على المضيف في التعرف عليك عندما تلتقي، لذلك تأكد من أنه يظهر وجهك.</string>
+    <string name="avg_rate_per_night">متوسط ​​سعر الليلة لرحلتك.</string>
+    <string name="stripe_tooltip_text">نحن نستخدم الشريط للتأكد من أنك تحصل على رواتبها في الوقت المحدد آمنة ومأمونة. ويتطلب ذلك إجراء تحقق إضافي لربط حسابك المصرفي مع النظام الأساسي.</string>
+    <!-- <string name="max">max</string>
+     <string name="max">max</string>-->
+
+
+    <!-- Host Initial Activity -->
+    <string name="become_host">تصبح المضيف</string>
+    <string name="publish_now">نشر الآن</string>
+    <string name="preview_listing">قائمة المعاينة</string>
+    <string name="Continue">استمر</string>
+    <string name="preview">معاينة</string>
+    <string name="next">التالى</string>
+
+    <!-- Host Initial Activity -->
+    <string name="save_and_exit"> يحفظ &amp; مخرج </string>
+    <string name="lets_get_ready">مرحبا ! يتيح تحصل على استعداد لتصبح المضيفة.</string>
+    <string name="what_kindof_place">أي نوع من مكان لديك؟</string>
+    <string name="entire_place">مكان كامل</string>
+    <string name="say_your_space">يقول الفضاء الخاص بك</string>
+    <string name="step_one_content">الأسرة والحمامات والمرافق، وأكثر من ذلك</string>
+    <string name="set_the_screen">جهز المشهد</string>
+    <string name="step_two_content">صور، وصف قصير، لقب</string>
+    <string name="get_ready_for_guest">الاستعداد للضيوف</string>
+    <string name="step_three_content">إعدادات الحجز، وطول الرحلة، والسعر</string>
+    <string name="STEP1">الخطوة 1</string>
+    <string name="STEP2">الخطوة 2</string>
+    <string name="STEP3">الخطوه 3</string>
+
+    <!--Become Host - Step 2-->
+    <string name="skip_for_now">تخطي في الوقت الراهن</string>
+    <string name="add_photo_to_your_listing">إضافة الصور إلى قائمتك</string>
+    <string name="add_photo_sub_text">صور الضيوف مساعدة يتصور البقاء في مكانك. يمكنك أن تبدأ مع واحد وإضافة المزيد بعد نشر.</string>
+    <string name="add_cover_header">اختر صورة لصورة الغلاف</string>
+    <string name="cover">صورة الغلاف</string>
+    <string name="name_your_listing">اسم قائمتك</string>
+    <string name="title_sub_text">جذب الضيوف مع عنوان سرد أن أبرز ما يجعل مكانك الخاصة.</string>
+    <string name="add_title">أضف عنوانا</string>
+    <string name="title">عنوان</string>
+    <string name="edit_desc">تعديل وصفك</string>
+    <string name="desc">وصف</string>
+    <string name="summary">ملخص</string>
+    <string name="desc_hint">وصف الديكور، ضوء، ما الذي يوجد بالقرب منها الخ …</string>
+    <string name="add_title_alert">يرجى إضافة عنوان إلى قائمتك.</string>
+    <string name="add_desc_alert">الرجاء إضافة وصف لقائمتك.</string>
+
+    <!--Become Host - Step 3-->
+    <string name="guest_req">متطلبات النزلاء</string>
+    <string name="guest_req_sub">يتطلب من جميع الضيوف لتقديم ما يلي قبل أن يتمكنوا من الكتاب:</string>
+    <string name="set_house_rule">قواعد المنزل تعيين لضيوفك</string>
+    <string name="house_rule_sub">يجب على النزلاء توافق على قواعد منزلك قبل أن تحجز.</string>
+    <string name="how_book">كيف حجز الضيوف: على الفور</string>
+    <string name="how_book_sub">يمكن للنزلاء حجز الأيام المتاحة على الفور طالما أنها:</string>
+    <string name="meet_req">يجب على الضيوف الذين لا يستوفون \n متطلباتك إرسال \n طلب حجز.</string>
+
+    <string name="notice_header">كم إشعار تحتاج قبل وصول الضيف؟</string>
+    <string name="booking_window">نافذة الحجز</string>
+    <string name="advance_notice">إشعار مسبق</string>
+    <string name="when_guest_checkin">عندما يمكن للضيوف الاختيار في؟</string>
+    <string name="from">من عند</string>
+    <string name="to">إلى</string>
+    <string name="cancel_policy">سياسة الإلغاء</string>
+    <string name="trip_length">طول الرحلة</string>
+
+    <string name="base_price">السعر الأساسي</string>
+    <string name="price_text">السعر الأساسي الخاص بك هو معدل ليلا الافتراضي.</string>
+    <string name="cleaning_price">تنظيف الأسعار</string>
+    <string name="base_price_hint">سعر الليلة الواحدة</string>
+    <string name="price_breakdown">تحطيم الأسعار</string>
+    <string name="cleaning_price_hint">تنظيف الأسعار</string>
+    <string name="discounts">خصومات</string>
+    <string name="discount_long">خصم لمدة أطول</string>
+    <string name="weekly_discount">خصم الأسبوعية</string>
+    <string name="monthly_discount">الخصم الشهري</string>
+    <string name="discount_hint">% إيقاف</string>
+
+    <string name="min_stay">الحد الأدنى للبقاء \n (ليالي)</string>
+    <string name="max_stay">أقصى البقاء \n (ليالي)</string>
+
+    <string name="price_error_text">ويسمح لل: غير صالح الأسعار قاعدة، وأرقام فقط (25 على سبيل المثال)</string>
+    <string name="cleaning_price_error">ويسمح لل: غير صالح التنظيف الأسعار والأرقام فقط (25 على سبيل المثال)</string>
+    <string name="base_price_error">مطلوب قاعدة الأسعار</string>
+    <string name="invalid_user_info">معلومات غير صحيحة</string>
+    <string name="invalid_info">معلومات المستخدم يجب أن لا تكون فارغة</string>
+    <string name="invalid_location">موقع غير صالح</string>
+    <string name="location_should_not_be_empty">الموقع لا ينبغي أن يكون فارغا</string>
+    <string name="flexible_check_in_time">الاختيار مرونة في الوقت المناسب</string>
+    <string name="upto">يصل إلى</string>
+    <string name="stay_error_text">الحد الأدنى ليال \'ر يكون أعلى من الحد الأقصى ليال</string>
+    <string name="discount_error_text" formatted="false">خصم صالح. يجب أن يكون الخصم بين 0٪ و 99٪.</string>
+    <string name="checkin_error_text">من وقت يجب أن يكون وقت سابق من الوقت ل</string>
+    <string name="time">زمن</string>
+
+    <string name="instant_book_title">زيادة أرباحك مع فوري كتاب</string>
+    <string name="instant_book_text">لحظة الكتاب يمكن أن تعطي القائمة الخاصة بك على الحافة. ولا يقتصر الأمر على الضيوف يفضلون الكتاب على الفور، ونحن تعزيز قوائم كتاب لحظة في نتائج البحث.</string>
+    <string name="who_booked">الذي يمكن أن تحجز على الفور</string>
+    <string name="choose_book">اختيار من يمكنه أيام الكتاب خالي ودون طلب موافقة.</string>
+    <string name="auto_approval_text">الضيوف الذين تلبية الاحتياجات الخاصة بك، والموافقة على القواعد الخاصة بك.</string>
+    <string name="auto_sub">أي شخص آخر يجب أن تقوم بإرسال طلب الحجز.</string>
+    <string name="not_auto_approve">لا أحد. يجب على جميع النزلاء إرسال طلبات الحجز.</string>
+    <string name="local_laws">القوانين والضرائب المحلية</string>
+    <string name="local_laws_text">نتوقف لحظة لمراجعة القوانين المحلية الخاصة بك. نحن نريد أن نتأكد من كنت قد حصلت على كل ما تحتاجه لالنزول إلى بداية رائعة.</string>
+    <string name="local_laws_content"> تثقيف نفسك حول القوانين في نطاق السلطة القضائية الخاصة بك قبل إدراج مساحتك.  \n\n لدى معظم المدن قواعد تغطي المشاركة المنزلية ، ويمكن أن تظهر القوانين والمراسيم المحددة في العديد من الأماكن (مثل تقسيم المناطق أو البناء أو الترخيص أو الرموز الضريبية). في معظم الأماكن ، يجب عليك التسجيل أو الحصول على تصريح أو الحصول على ترخيص قبل إدراج الممتلكات الخاصة بك أو قبول الضيوف. قد تكون مسؤولاً أيضًا عن تحصيل وتحويل ضرائب معينة. في بعض الأماكن ، يمكن حظر الإيجارات قصيرة الأجل تمامًا.  \n\n نظرًا لأنك مسؤول عن قرارك الخاص بالإدراج أو الحجز ، يجب أن تشعر بالراحة تجاه القواعد المعمول بها قبل الإدراج فييرجى تثقيف نفسك حول القوانين في نطاق السلطة القضائية الخاصة بك قبل إدراج مساحتك. \n\n  لدى معظم المدن قواعد تغطي المشاركة المنزلية ، ويمكن أن تظهر القوانين والمراسيم المحددة في العديد من الأماكن (مثل تقسيم المناطق أو البناء أو الترخيص أو الرموز الضريبية). في معظم الأماكن ، يجب عليك التسجيل أو الحصول على تصريح أو الحصول على ترخيص قبل إدراج الممتلكات الخاصة بك أو قبول الضيوف. قد تكون مسؤولاً أيضًا عن تحصيل وتحويل ضرائب معينة. في بعض الأماكن ، قد يتم حظر الإيجارات قصيرة الأجل تمامًا. \n\n نظرًا لأنك مسؤول عن قرارك الخاص بالقائمة أو الحجز ، يجب أن تشعر بالراحة تجاه القواعد المعمول بها قبل الإدراج في &appname;. لتبدأ ، نقدم بعض الموارد المفيدة ضمن "\قوانين مدينتك."\  \n\n من خلال قبول شروط الخدمة الخاصة بنا وإدراج المساحة الخاصة بك ، فإنك تقر بأنك ستتبع القوانين واللوائح المعمول بها.</string>
+    <string name="decimal_string">0123456789.</string>
+    <string name="number_string">0123456789</string>
+
+    <string name="before_publish">قائمة الخاص بك على استعداد لنشر!</string>
+    <string name="after_publish">قائمة الخاص بك هو نشر!</string>
+    <string name="publish">نشر الآن</string>
+    <string name="unpublish">إلغاء النشر الآن</string>
+
+    <string name="in_progress">في تقدم</string>
+    <string name="completed">منجز</string>
+
+    <string name="confrim_delete">هل أنت متأكد أنك تريد حذف قائمة؟</string>
+    <string name="taxes">الضرائب</string>
+    <string name="taxprice_error_text">ضريبة غير صالحة. يجب أن تتراوح الضريبة بين 0% و99%.</string>
+
+    <!--Book step 1-->
+    <string name="agree">يوافق على</string>
+    <string name="for_">"إلى عن على"</string>
+    <string name="step_1_of_3">الخطوة 1 من 3</string>
+    <string name="step_1_of_4">الخطوة 1 من 4</string>
+    <string name="service_fee">رسوم الخدمة</string>
+    <string name="total">مجموع</string>
+
+    <!--Review and payment-->
+    <string name="step_3_of_3">الخطوة 3 من 3</string>
+    <string name="step_4_of_4">الخطوة 4 من 4</string>
+    <string name="add_payment">إضافة الدفع</string>
+    <string name="payment_failed">عملية الدفع فشلت</string>
+    <string name="cancellation_policy">سياسة الإلغاء</string>
+    <string name="cancellation_policy_with_dot">سياسة الإلغاء:</string>
+
+    <!--Step 2-->
+    <string name="step_2_of_3">الخطوة 2 من 3</string>
+    <string name="step_2_of_4">الخطوة 2 من 4</string>
+
+    <!--Step 3-->
+    <string name="step_3_of_5">الخطوة 3 من 5</string>
+    <string name="check_your_email">تحقق من بريدك الالكتروني</string>
+
+    <!--Step 4-->
+    <string name="step_3_of_4">الخطوة 3 من 4</string>
+    <string name="image_size_is_too_large">حجم الصورة كبير جدا.</string>
+    <string name="tap_the_link_in_the_email_we_sent_you_Confirming_your_email_address_helps_us_send_you_trip_information">اضغط على الرابط في البريد الإلكتروني الذي تم إرساله إليك. تأكيد عنوان البريد الإلكتروني الخاص بك يساعدنا نرسل لك معلومات الرحلة.</string>
+
+    <!--Inbox-->
+    <string name="start_exploring">استكشاف بداية</string>
+    <string name="new_message">رسالة جديدة</string>
+    <string name="write_a_message">اكتب رسالة</string>
+    <string name="inbox">صندوق الوارد</string>
+
+
+    <string name="pre_approved_header">دعوة للحجز عن طريق الموافقة المسبقة على هذه الرحلة %s</string>
+    <string name="pre_approved_sub_text">دعنا نعلم أن هذه التواريخ متاحة من خلال الموافقة المسبقة عليها %s</string>
+    <string name="timer_text_before">الرد خلال %s للحفاظ على معدل الاستجابة</string>
+    <string name="pre_approval_text">قبل الموافقة</string>
+    <string name="request_book_text">%s الصورة إرسال طلب إلى الحجز لقائمتك</string>
+
+
+    <string name="book_header">طلب الحجز الخاص بك وافق من قبل %s</string>
+    <string name="book_with_in">عليك أن تحجز في الداخل %s</string>
+    <string name="book_button">كتاب</string>
+    <string name="request_approved">طلب الموافقة</string>
+    <string name="approval_text">يتمكن الضيف من 24 ساعة للرد على هذا أو أنها سوف تحصل انتهت</string>
+
+    <string name="booking_request_cancelled">تم إلغاء طلب الحجز</string>
+    <string name="cancelled_content">تم إلغاء طلب الحجز. %s</string>
+    <string name="booking_cancelled_by_guest">تم إلغاء طلب الحجز.</string>
+
+    <string name="declined_booking">رفض طلب</string>
+    <string name="declined_content">تأكد من التقويم الخاص بك هو ما يصل إلى تاريخ وأن صفحتك الإدراج يعكس بدقة قواعد المنزل والمتطلبات الخاصة بك.</string>
+    <string name="declined_guest_content">تم رفض طلبك من قبل المضيف. يمكنك اختيار تواريخ مختلفة أو البحث عن البيانات الأخرى.</string>
+
+    <string name="booking_confirmed_txt">تأكيد الحجز</string>
+    <string name="host_cancel_text">يمكنك الاتصال الضيف والقيام بالترتيبات اللازمة أو يمكنك إلغاء.</string>
+    <string name="guest_cancel_text">يمكنك الاتصال المضيف الخاص بك والقيام بالترتيبات اللازمة أو يمكنك إلغاء الحجز.</string>
+    <string name="cancel_reserve">إلغاء الحجز</string>
+
+    <string name="request_to_book_header">لقد راسلت حول قائمتهم %s</string>
+    <string name="respond_text">إذا كان هذا الصنف هو خيار أفضل، إدخال معلومات الدفع الخاصة بك أن تطلب رسميا تحفظا.</string>
+
+    <string name="trip_is_completed">اكتمال رحلة</string>
+    <string name="your_trip_is_completed">اكتمال رحلتك.</string>
+    <string name="reserv_compelted">اكتمال الحجز</string>
+    <string name="completed_content">اكتمال الحجز من القائمة الخاصة بك.</string>
+
+    <string name="request_to_book_txt">تم إرسال طلب الحجز الخاص بك لإدراجها %s</string>
+    <string name="most_host_respond">معظم المضيفين بالرد خلال 24 ساعة.</string>
+
+    <!--Listing sub screens-->
+    <string name="please_select_date">يُرجى تحديد التاريخ للمتابعة</string>
+    <string name="please_select_guest">الرجاء اختيار ضيف</string>
+    <string name="please_enter_the_message">الرجاء إدخال الرسالة</string>
+    <string name="add_date">إضافة تاريخ</string>
+    <string name="details">تفاصيل</string>
+    <string name="inn">في</string>
+    <string name="location">موقعك</string>
+    <string name="you_cannot_book_your_own_list">لا يمكنك الكتاب قائمة خاصة بك</string>
+    <string name="please_select_another_date_to_book">يرجى تحديد موعد آخر للكتاب</string>
+    <string name="info">خطأ</string>
+    <string name="no_dates_available_to_book_please_select_another_date">هناك أية تواريخ متوفرة للحجز. يرجى تحديد موعد آخر</string>
+    <string name="verified_by">أكد عن طريق</string>
+    <string name="copied_to_clipboard">نسخ إلى الحافظة</string>
+    <string name="check_out_this_listing_on_appname">تحقق من هذه القائمة على &appname;</string>
+
+    <!--Listing screen-->
+    <string name="check_availability">التحقق من الصلاحية</string>
+    <string name="this_listing_is_not_available_to_book">هذه قائمة ليست متاحة للكتاب</string>
+    <string name="similar_listing">عقارات مشابهة</string>
+    <string name="read_more">اقرأ أكثر…</string>
+    <string name="min_max_nights">مين / ماكس ليلة وليلة</string>
+    <string name="contact_host">الاتصال المضيف</string>
+    <string name="check">التحقق من</string>
+    <string name="availability">توفر</string>
+    <string name="read">اقرأ</string>
+    <string name="user_safety">ميزات السلامة</string>
+    <string name="user_space">المساحات المشتركة</string>
+    <string name="hosted_by">برعاية</string>
+    <string name="reviews">التعليقات</string>
+    <string name="verification">التحقق</string>
+    <string name="not_ready">غير جاهزة</string>
+
+    <string name="email_not_verified">لا يتم التحقق من البريد الإلكتروني. يرجى التحقق من ذلك.</string>
+    <string name="dismiss">رفض</string>
+    <string name="your_message_sent_to_host">أرسلت الرسالة إلى المضيف.</string>
+
+    <!--Payout Screen-->
+    <string name="enter_correct_card_details">أدخل تفاصيل البطاقة الصحيحة</string>
+    <string name="set_up_your_appname_payout_method">إعداد طريقة دفع تعويضات &appname;</string>
+    <string name="your_payout_is_what_you_earn_from_hosting_a_guest_payouts_are_sent_24_hours_after_each_check_in">سيصرف الخاص بك هو ما تجنيه من استضافة ضيف. يتم إرسال الدفعات 24 ساعة بعد كل في الاختيار.</string>
+    <string name="learn_more_about_payouts">معرفة المزيد عن دفعات</string>
+    <string name="start">بداية</string>
+    <string name="default_txt">إفتراضي</string>
+    <string name="set_default">الوضع الإفتراضي</string>
+    <string name="address_line_one">العنوان السطر 1</string>
+    <string name="address_line_two">سطر العنوان 2</string>
+    <string name="routing_number">رقم التوصيل</string>
+    <string name="account_number">رقم حساب</string>
+    <string name="confirm_acc_number">رقم الحساب تأكيد</string>
+
+    <string name="dob_msg">وجه الفتاة! الرجاء إضافة تاريخ ميلادك في ملفه تحرير الخاص بك.</string>
+    <string name="dob">تاريخ الميلاد</string>
+
+    <!--Profile Screen-->
+    <string name="member_since">عضو منذ</string>
+    <string name="switch_to_travelling">التبديل إلى السفر</string>
+    <string name="log_out">تسجيل خروج</string>
+    <string name="are_you_sure_you_want_to_logout">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+    <string name="payout_preference">دفع تعويضات الأفضلية</string>
+    <string name="switch_to_hosting">التبديل إلى استضافة</string>
+    <string name="become_a_host">تصبح المضيف</string>
+    <string name="ok">حسنا</string>
+    <string name="setting">إعدادات</string>
+    <string name="get_help">احصل على مساعدة</string>
+    <string name="give_feedback">أخبرنا عن انطباعك</string>
+    <string name="feedback">ردود الفعل</string>
+    <string name="bug">خلل برمجي</string>
+    <string name="update_error">تحديث خطأ إدراج:</string>
+    <string name="how_we_doing">كيف نفعل؟</string>
+    <string name="feedback_content">ونحن نعمل دائما على تحسين تجربة &appname;، ولذا فإننا نحب أن نسمع ما العمل وكيف يمكننا أن نفعل ما هو أفضل.</string>
+    <string name="like_to_do">ماذا تريد ان تفعل؟</string>
+    <string name="give_product_feedback">ردود الفعل المنتج العطاء</string>
+    <string name="report_bug">الإبلاغ عن خطأ</string>
+    <string name="sign_up_error">خطأ سنوب:</string>
+    <string name="terms_privacy">سياسة الخصوصية</string>
+    <string name="trust_and_safty">الثقة والسلامة</string>
+    <string name="enter_feedback">أدخل ملاحظاتك هنا</string>
+    <string name="enter_bug_here">أدخل الخلل هنا</string>
+    <string name="please_enter_feedback">الرجاء إدخال أي ردود فعل!</string>
+    <string name="pls_enter_bug">الرجاء إدخال أي علة!</string>
+    <string name="your_feedback">ك</string>
+    <string name="has_been_sent">تم إرسالها بنجاح!</string>
+    <string name="feedback_sent">تم ارسال ملاحظاتك بنجاح!</string>
+
+    <!--Trust and verification Screen-->
+    <string name="confirmation_link_is_sent_to_your_email">يتم إرسال رابط التأكيد إلى البريد الإلكتروني الخاص بك.</string>
+    <string name="invalid_link">رابط غير صالح</string>
+    <string name="your_email_is_confirmed">تأكيد البريد الإلكتروني الخاص بك</string>
+    <string name="facebook_disconnected">الفيسبوك قطع اتصال</string>
+    <string name="google_disconnected">جوجل قطع اتصال</string>
+
+    <!--Confirm Phone Screen-->
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="invalid_phone_number">رقم الهاتف غير صحيح</string>
+    <string name="we_sent_the_code_to_your_phone_number">نحن \'لقد أرسلت رمز لرقم هاتفك</string>
+    <string name="the_entered_4_digit_code_is_incorrect">ودخلت 4 أرقام رمز غير صحيح</string>
+    <string name="select_the_country">اختيار البلد / المنطقة لرقمك</string>
+
+    <!--Saved screen-->
+    <string name="create"> خلق</string>
+    <string name="please_enter_the_title_of_wishlist_group">يرجى إدخال عنوان مجموعة مفضلة</string>
+    <string name="create_a_list">انشئ قائمة</string>
+
+    <!--Contact us screen-->
+    <string name="your_message_sent_successfully_we_will_contact_you_soon">إرسال رسالتك بنجاح. سوف نتصل بك قريبا.</string>
+
+    <!--Trips screen-->
+    <string name="upcoming_trips">رحلات القادمة</string>
+    <string name="previous_trips">رحلات السابقة</string>
+
+    <!--User profile screen-->
+    <string name="inappropriate_content_of_spam">محتوى غير لائق من البريد المزعج</string>
+    <string name="do_you_want_to_report_this_user">هل تريد الإبلاغ عن هذا العضو؟</string>
+    <string name="if_so_please_choose_one_of_the_following_reasons">إذا كان الأمر كذلك، يرجى اختيار واحد من الأسباب التالية.</string>
+    <string name="this_profile_should_not_be_on_appname">لا ينبغي أن يكون هذا الملف على &appname;</string>
+    <string name="attempt_to_share_contact_information">محاولة لتبادل المعلومات الاتصال</string>
+    <string name="reported_successfully">ذكرت بنجاح</string>
+    <string name="read_all">اقرأ كل شيء</string>
+    <string name="report_this_user">الإبلاغ عن هذا المستخدم</string>
+    <string name="please_select_the_option">يرجى تحديد الخيارات</string>
+
+    <!--Reservation screen-->
+    <string name="message_host">المضيف رسالة</string>
+    <string name="host">مضيف</string>
+    <string name="view_Listing">عرض الموقع</string>
+    <string name="address">عنوان</string>
+    <string name="shared_room">غرفة مشتركة</string>
+    <string name="view_receipt">استلام عرض</string>
+    <string name="reservation_code">كود الحجز:</string>
+    <string name="you_are_going_to">أنت \'إعادة الذهاب الى</string>
+    <string name="billing">الفواتير</string>
+    <string name="receipt_desc">مصرح لها بقبول رسوم الإقامة نيابة عن المضيف بصفته وكيله المحدود. هذا يعني أن التزامك بالدفع للمضيف يتم استيفائه عن طريق الدفع الخاص بك لـ &appname;. يجب تسوية أي خلافات بين المضيف و &appname; فيما يتعلق بتلك الدفعة.</string>
+    <string name="payment_received">تلقى الدفع:</string>
+    <string name="accommodation_host">الإقامة المضيف</string>
+    <string name="accommodation_address">الإقامة العناوين</string>
+    <string name="accommodation_type">نوع الإقامة</string>
+    <string name="duration">المدة الزمنية</string>
+    <string name="travel_destination">وجهة سفر</string>
+    <string name="name">اسم</string>
+    <string name="customer_receipt">استلام العميل</string>
+    <string name="savedd">تم الحفظ</string>
+    <string name="no_wishlist_groups_added_please_create_group_by_click_add_icon">وأضافت توجد مجموعات مفضلة. يرجى إنشاء مجموعة من رمز انقر فوق إضافة.</string>
+    <string name="delete_list">قائمة الحذف</string>
+    <string name="DELETE">حذف</string>
+    <string name="CANCEL" tools:ignore="ButtonCase">إلغاء</string>
+    <string name="are_you_sure_you_want_to_delete">هل أنت متأكد أنك تريد حذف</string>
+    <string name="when_you_see_something_you_like_tap_on_the_heart_to_save_it_if_you_re_planning_a_trip_with_others_invite_them_so_they_can_save_and_vote_on_their_favorites">عندما ترى ما تريد، اضغط على القلب لانقاذها. إذا كنت \'إعادة تخطيط رحلة مع الآخرين، ودعوة لهم حتى يتمكنوا من حفظ والتصويت على الأشياء المفضلة لديهم.</string>
+
+    <!--Calendar screen-->
+    <string name="your_dates_updated">تجديد التواريخ</string>
+    <string name="booked">حجز</string>
+    <string name="not_available">غير متوفر</string>
+    <string name="available">متاح</string>
+    <string name="save">حفظ</string>
+    <string name="calendar">التقويم</string>
+    <string name="when_you_publish_a_listing_you_ll_be_able_to_see_and_edit_your_calendar_here">عند نشر إدراج كنت  \'ليرة لبنانية تكون قادرة على رؤية وتحرير التقويم الخاص بك هنا.</string>
+
+    <!--Payout screen-->
+    <string name="please_select_currency">الرجاء تحديد العملة</string>
+    <string name="please_enter_valid_email_address">الرجاء إدخال عنوان بريد إلكتروني صالح</string>
+    <string name="please_enter_email_address">الرجاء إدخال عنوان البريد الإلكتروني</string>
+    <string name="please_enter_zip_code">الرجاء إدخال الرمز البريدي</string>
+    <string name="please_enter_the_state">الرجاء إدخال الدولة</string>
+    <string name="please_enter_street">الرجاء إدخال الشارع</string>
+    <string name="please_enter_city">الرجاء إدخال المدينة</string>
+    <string name="please_enter_address_1">الرجاء إدخال العنوان 1</string>
+    <string name="please_enter_correct_confirm_account_number">الرجاء إدخال رقم الحساب الصحيح تأكيد</string>
+    <string name="please_enter_confirm_account_number">الرجاء إدخال رقم الحساب تأكيد</string>
+    <string name="please_enter_account_number">الرجاء إدخال رقم الحساب</string>
+    <string name="please_enter_routing_number">الرجاء إدخال توجيه عدد</string>
+    <string name="please_enter_last_name">الرجاء إدخال اسم آخر</string>
+    <string name="please_enter_first_name">الرجاء إدخال الاسم الأول</string>
+    <string name="finish">إنهاء</string>
+    <string name="account_details_of_payout">تفاصيل الحساب من دفع تعويضات</string>
+    <string name="paypal">PayPal</string>
+    <string name="paypal_desc">باي بال هي خدمة عمليات الدفع عبر الإنترنت التي تسمح لك لتلقي مدفوعات من &appname;. أن يستعمل PayPal مع &appname;، يجب أن يكون لديك حساب موجود مع باي بال.</string>
+    <string name="choose_how_we_pay_you">اختر كيف ندفع لك</string>
+    <string name="fees">رسوم</string>
+    <string name="processed_in">أنجزت فى</string>
+    <string name="countries">بلدان</string>
+    <string name="result_not_found">يؤدي لم يتم العثور على</string>
+    <string name="search_for_country_region">بحث عن البلد / المنطقة</string>
+    <string name="add_payout_method">إضافة طريقة دفع تعويضات</string>
+    <string name="status">الحالة</string>
+    <string name="ready">جاهز</string>
+
+    <!--Upload photo screen-->
+    <string name="add_description">اضف وصفا</string>
+    <string name="update">تحديث</string>
+    <string name="upload_photo">حمل الصورة</string>
+    <string name="please_add_a_title_to_your_list">يرجى إضافة عنوان إلى قائمتك.</string>
+    <string name="please_add_a_description_to_your_list">الرجاء إضافة وصف لقائمتك.</string>
+    <string name="upload_failed">التحميل فشل</string>
+    <string name="photo">صورة فوتوغرافية</string>
+    <string name="select_list_photos">حدد قائمة صور</string>
+    <string name="add_photo">إضافة الصور</string>
+
+    <!--Steps One-->
+    <string name="last_updated_on">آخر تحديث:</string>
+    <string name="You_re">أنت على</string>
+    <string name="done_with_your_listing">فعلت مع قائمتك</string>
+    <string name="delete_listing">حذف قائمة</string>
+    <string name="you_re_100_done_with_your_listing">كنت 100٪ فعلت مع قائمتك</string>
+    <string name="you_don_t_have_any_listings">لا تقبلون لديها أي قوائم!</string>
+    <string name="make_money_by_renting_out_your_extra_space_you_ll_also_get_to_meet_interesting_travelers_from_around_the_world">كسب المال عن طريق تأجير مساحة إضافية بك. عليك `أيضا الحصول على تلبية المسافرين مثيرة للاهتمام من جميع أنحاء العالم!</string>
+    <string name="post_a_new_listing">نشر قائمة جديدة</string>
+    <string name="upcoming">القادمة</string>
+    <string name="previous">السابق</string>
+    <string name="you_don_t_have_any_upcoming_reservations">كنت دون \'ر لها أي تحفظات القادمة!</string>
+    <string name="you_don_t_have_any_previous_reservations">كنت دون \'ر لها أي تحفظات سابقة!</string>
+    <string name="reservation_approved">حجز المعتمدة</string>
+    <string name="reservation_declined">حجز المرفوضة</string>
+    <string name="error_1">خطأ!</string>
+    <string name="please_enter_country">الرجاء إدخال البلد</string>
+    <string name="please_enter_state">الرجاء إدخال الدولة</string>
+    <string name="incorrect_location">الموقع غير صحيح</string>
+    <string name="where_your_place_located">حيث \'ق مكانك تقع؟</string>
+    <string name="afghanistan">أفغانستان</string>
+    <string name="street">شارع</string>
+    <string name="main_st">على سبيل المثال. 123 شارع جامعة الدول</string>
+    <string name="apt_suite_etc">شقة، جناح، الخ، (اختياري)</string>
+    <string name="apt">على سبيل المثال. شقة رقم 7</string>
+    <string name="city">مدينة</string>
+    <string name="san_francisco">على سبيل المثال. سان فرانسيسكو</string>
+    <string name="state">الولاية / المقاطعة</string>
+    <string name="ca">CA</string>
+    <string name="code">94101</string>
+    <string name="hwat_amenities_will_you_offer">ما وسائل الراحة سوف تقدمون؟</string>
+    <string name="please_fill_them">يرجى ملء هذه الشواغر!</string>
+    <string name="it_seems_you_have_missed_some_required_fields_in_address_page">يبدو أنك قد غاب بعض الحقول المطلوبة في صفحة العنوان. !</string>
+    <string name="you_have_entered_an_incorrect_location">لقد قمت بإدخال الموقع غير الصحيحة</string>
+    <string name="what_spaces_can_guests_use">ما الأماكن يمكن للضيوف استخدام؟</string>
+    <string name="ss_this_your_personal_home">هل هذا المنزل الشخصية؟</string>
+    <string name="how_many_total_rooms_does_your_property_have">كم عدد الغرف الإجمالي لم الممتلكات الخاصة بك على ذلك؟</string>
+    <string name="what_will_guest_have">ما سوف يكون الضيف؟</string>
+    <string name="what_type_of_property_is_this">ما نوع من الممتلكات غير هذا؟</string>
+    <string name="is_the_pin_in_the_right_place">هو دبوس في المكان المناسب؟</string>
+    <string name="tn">TN</string>
+    <string name="madurai">مادوراي</string>
+    <string name="how_many_guests_can_stay">كم عدد النزلاء يمكنهم البقاء؟</string>
+    <string name="total_guest">إجمالي ضيف</string>
+    <string name="total_guests">إجمالي الضيوف</string>
+    <string name="bedroom_for_guest">غرفة نوم للضيوف</string>
+    <string name="Bedroom_for_guests">غرفة نوم للضيوف</string>
+    <string name="bed_for_guest">سرير للضيف</string>
+    <string name="bed_for_guests">سرير للضيوف</string>
+    <string name="select_country">حدد الدولة</string>
+    <string name="For">إلى عن على</string>
+
+    <string name="bed_count">عدد السرير</string>
+    <string name="choosen_bed_count_is_exceeded_than_bed_for_guest_count">تم تجاوز المختار العد السرير من السرير لعدد الضيوف</string>
+    <string name="maximum_bed_count_is_selected">يتم تحديد عدد السرير الأقصى</string>
+    <string name="how_many_beds_can_guest_use">كم عدد الأسرة استخدام الضيف يمكن؟</string>
+    <string name="flexible">مرن</string>
+    <string name="moderate">معتدل</string>
+    <string name="strict">صارم</string>
+    <string name="unavailable">تواريخ متوفرة افتراضيا</string>
+    <string name="three_month">3 أشهر في المستقبل</string>
+    <string name="six_month">6 أشهر إلى المستقبل</string>
+    <string name="nine_month">9 أشهر في المستقبل9 أشهر في المستقبل</string>
+    <string name="available_by_default">جميع التواريخ المستقبل</string>
+    <string name="twelve_month">12 شهرا في المستقبل</string>
+    <string name="add_price">إضافة الأسعار</string>
+    <string name="bank_account">حساب البنك</string>
+    <string name="guests_txt">ضيوف</string>
+    <string name="search_here">ابحث هنا</string>
+    <string name="Inquiry">تحقيق</string>
+    <string name="request_to_book">طلب كتاب</string>
+    <string name="pre_approved">موافقة مسبقة</string>
+    <string name="declined">رفض</string>
+    <string name="cancelled_by_host">إلغاء من قبل المضيف</string>
+    <string name="cancelled_by_guest">إلغاء ضيف</string>
+    <string name="cancelled">ألغيت</string>
+    <string name="expired">منتهية الصلاحية</string>
+    <string name="approved">وافق</string>
+    <string name="reflection"></string>
+    <string name="message_small">رسالة</string>
+    <string name="booking_confirmed">تاكيد الحجز</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="how_many_bathrooms">كم عدد الحمامات ؟</string>
+    <string name="remove">إزالة</string>
+
+    <string name="list_not_available">قائمة غير متوفر</string>
+
+    <!--Firebase-->
+    <string name="notif_action_reply">الرد</string>
+
+    <!--Host calendar-->
+    <string name="specialPrice">سعر خاص</string>
+    <string name="edit">تعديل</string>
+    <string name="specialPriceToLongPress">سعر خاص - الضغط لفترة طويلة لمعرفة السعر</string>
+    <string name="spl_price_valid">الرجاء إدخال سعر خاص صالحا</string>
+    <string name="safety_amenities">مرافق السلامة</string>
+    <string name="verify">تحقق</string>
+    <string name="set_default_caps">الوضع الإفتراضي</string>
+    <string name="ok_text">حسنا</string>
+    <string name="about_you">حولك</string>
+    <string name="by_you">بواسطتك</string>
+    <string name="past">ماضي</string>
+    <string name="no_reviews_yet">لا توجد تعليقات حتى الآن</string>
+    <string name="you_reviewed">راجعت</string>
+    <string name="write_a_review">أكتب مراجعة</string>
+    <string name="view_itinerary">عرض خط سير الرحلة</string>
+    <string name="submit_a_public_review_for">إرسال مراجعة عامة عن</string>
+    <string name="submit">يقدم</string>
+    <string name="describe_your_experience">تصف تجربتك (مطلوب)</string>
+    <string name="your_review_will_be_public">سيكون تعليقك عام في الملف الشخصي الخاص بك ضيفا</string>
+    <string name="what_was_it_like_to_host_this_guest">ما كان شعورك لاستضافة هذا الضيف \</string>
+    <string name="overall_rating">تقييم عام</string>
+    <string name="description">وصف</string>
+    <string name="rating">تقييم</string>
+    <string name="required">مطلوب</string>
+    <string name="read_more_with_out_dot">اقرأ أكثر</string>
+    <string name="your_review_will_be_public_on_your_host_profile">ستكون مراجعتك عامة في ملف تعريف المضيف الخاص بك</string>
+    <string name="reviews_small">المراجعات</string>
+    <string name="select_payment_type">اختر طريقة الدفع</string>
+    <string name="please_select_payment_type_to_continue">الرجاء تحديد أي نوع دفع للمتابعة</string>
+    <string name="return_url_not_fount">لم يتم العثور على عنوان url للعودة</string>
+    <string name="reservation_id_not_found">معرّف الحجز غير موجود</string>
+    <string name="payment_type">نوع الدفع</string>
+    <string name="proceed_to_pay">المضي قدما في الدفع</string>
+    <string name="payment_cancelled">تم إلغاء الدفع</string>
+    <string-array name="label_calender_month">
+        <item name="0" />
+        <item name="1">كانون الثاني</item>
+        <item name="2">شهر فبراير</item>
+        <item name="3">مارس</item>
+        <item name="4">أبريل</item>
+        <item name="5">مايو</item>
+        <item name="6">يونيو</item>
+        <item name="7">يوليو</item>
+        <item name="8">أغسطس</item>
+        <item name="9">سبتمبر</item>
+        <item name="10">اكتوبر</item>
+        <item name="11">شهر نوفمبر</item>
+        <item name="12">ديسمبر</item>
+    </string-array>
+
+    <string name="unsupported_format">تنسيق ملف غير معتمد</string>
+    <string name="iban_number">عدد IBAN</string>
+    <string name="please_enter_sort_number">الرجاء إدخال رقم SORT</string>
+    <string name="country_region">البلد / المنطقة</string>
+    <string name="sort">عدد SORT</string>
+    <string name="popular_location">الوجهات الشعبية</string>
+    <string name="ready_ver">قائمتك جاهزة للتحقق</string>
+    <string name="submitted_ver">يتم تقديم قائمتك للتحقق</string>
+    <string name="sub_verify">إرسال للتحقق</string>
+    <string name="waiting">بانتظار الموافقة</string>
+    <string name="appeal">تقدم للاستئناف</string>
+    <string name="about_list">حول هذه القائمة</string>
+    <string name="account">الحساب</string>
+    <string name="show_all_shared">إظهار جميع المساحات المشتركة</string>
+    <string name="show_all_safety">إظهار جميع ميزات السلامة</string>
+    <string name="check_in_checkout"><![CDATA[تسجيل دخول تسجيل خروج]]></string>
+    <string name="you_will_be_here">ستكون هنا</string>
+    <string name="personal_info">معلومات شخصية</string>
+    <string name="more">أكثر</string>
+    <string name="report_this_host">الإبلاغ عن هذا المضيف</string>
+    <string name="report">تقرير</string>
+    <string name="forgot_password">هل نسيت كلمة السر؟</string>
+    <string name="or_continue_with">أو متابعة</string>
+    <string name="don_t_have_account">ليس لديك حساب؟</string>
+    <string name="signup_here">سجل هنا</string>
+    <string name="dot_seperator">"  .  "</string>
+    <string name="hosting">الاستضافة</string>
+    <string name="check_out_">الدفع</string>
+    <string name="check_in_">تحقق في</string>
+    <string name="user">المستعمل</string>
+    <string name="hi_lets_get_you_ready">أهلاً! لنجعلك مستعدًا لتصبح مضيفًا.</string>
+    <string name="listings">القوائم</string>
+    <string name="make_available">اجعله متاح</string>
+    <string name="block_selected_date">منع التاريخ المحدد</string>
+    <string name="add_special_price">أضف سعر خاص</string>
+    <string name="skip">يتخطى</string>
+    <string name="available_for_booking">متاح للحجز</string>
+    <string name="clear_all">امسح الكل</string>
+    <string name="show_more">أظهر المزيد</string>
+    <string name="close_all">أغلق كل شيء</string>
+    <string name="add_guest">أضف ضيفًا</string>
+    <string name="select_date">حدد التواريخ</string>
+    <string name="enter_your_phone_number">أدخل رقم هاتفك</string>
+    <string name="reviewed">استعرض</string>
+    <string name="country">دولة</string>
+    <string name="enter_your_email">أدخل بريدك الإلكتروني</string>
+    <string name="no_upcoming_trip">لا رحلات قادمة</string>
+    <string name="select">يختار</string>
+    <string name="my_reservation">تحفظاتي</string>
+    <string name="explore_the_world_by_travelling">اكتشف العالم! عن طريق السفر</string>
+    <string name="desc_about_me">اكتب شيئًا عن نفسك ضمن 250 حرفًا.</string>
+    <string name="add_about">أضف عن</string>
+    <string name="add">يضيف</string>
+    <string name="your_email_address">عنوان بريدك  الإلكتروني</string>
+    <string name="place_type">نوع المكان</string>
+    <string name="guest_requirements">متطلبات الضيف</string>
+    <string name="review_guestbook">مراجعة دفتر الزوار</string>
+    <string name="min_max_nights_string">دقيقة/أقصى ليالي</string>
+    <string name="pricing">التسعير</string>
+    <string name="discount">تخفيض</string>
+    <string name="booking">الحجز</string>
+    <string name="local_laws_string">القوانين المحلية</string>
+    <string name="manage_account">تديرك حساب</string>
+    <string name="delete_account_desc"> ستضيع جميع بياناتك والحجوزات الحالية والحجوزات إذا قمت بحذف حساب &appname; الخاص بك.<b>تحذير:</b></string>
+    <string name="delete_account">حذف الحساب</string>
+    <string name="delete_account_permenent">احذف حسابك بشكل دائم</string>
+    <string name="delete_your_account_permanently">هل أنت متأكد أنك تريد حذف حسابك بشكل دائم؟</string>
+    <string name="yes_delete">نعم</string>
+    <string name="no">رقم</string>
+    <string name="photos">الصور</string>
+    <string name="capacity">الاهلية</string>
+    <string name="bed_types">أنواع السرير</string>
+    <string name="baths">حمامات</string>
+    <string name="what_was_it_like_to_host_this_host">كيف كان الأمر وكأنه البقاء في ممتلكات هذا المضيف. \</string>
+    <string name="are_you_sure_you_want_to_report_listing">هل أنت متأكد من أنك تريد الإبلاغ عن هذه القائمة؟</string>
+    <string name="night">ليل</string>
+    <string name="my_trips">رحلاتي</string>
+    <string name="map">خريطة</string>
+    <string name="map_view">عرض الخريطة</string>
+    <string name="support">الدعم</string>
+    <string name="version_">\"إصدار - \"</string>
+    <string name="view_profile">عرض الصفحة الشخصية</string>
+    <string name="no_result_saved">لا توجد قوائم محفوظة متوفرة. استكشف القوائم وانقر على أيقونة \\ \'قلب \\\' لإضافتها هنا.</string>
+    <string name="no_inbox_messages">ستظهر رسائل من ضيفك هنا</string>
+    <string name="list_your_unused_space">اذكر مساحتك غير المستخدمة لكسب المال.</string>
+    <string name="your_message">رسالتك</string>
+    <string name="edit_guests">تحرير الضيوف</string>
+    <string name="do_you_want_to_report_this_host">هل تريد الإبلاغ عن هذا المضيف؟</string>
+    <string name="moderate_desc">استرداد 100 ٪ فقط إذا تم إلغاؤه 5 أيام قبل وقت تسجيل الوصول.</string>
+    <string name="moderate_descday">على سبيل المثال ، قل أن الضيف حجز إقامة ووقت تسجيل الوصول الخاص به هو الساعة 3:00 مساءً في 09 يونيو.</string>
+    <string name="moderate_date">قبل 5 أيام</string>
+    <string name="moderate_dayy">على سبيل المثال ، إذا ألغى الضيف الحجز قبل الساعة 3:00 مساءً في 04 يونيو ، فسيتم معالجة استرداد 100 ٪.</string>
+    <string name="moderate_content">فقط إذا قام الضيف بإلغاء حجزه قبل 5 أيام من وقت تسجيل الوصول ، فسيحصلون على استرداد كامل.</string>
+    <string name="moderate_checkin_day">على سبيل المثال ، إذا ألغى الضيف حجزه بعد الساعة 3:00 مساءً في 5 يونيو ، فإن الليلة الأولى من إقامتهم غير قابلة للاسترداد ، وسيتم رد 50 ٪ من الليالي المتبقية إلى حسابهم المصرفي.</string>
+    <string name="moderate_checkin_content">إذا ألغى الضيف حجزه قبل أقل من 5 أيام من وقت تسجيل الوصول ، فإن الليلة الأولى من الإقامة غير قابلة للاسترداد. ولكن سيتم رد 50 ٪ لبقية الليالي. \\ \"</string>
+    <string name="moderate_checkout_content">سيتم رد 50 ٪ من رسوم الإقامة للليالي التي لم تقضيها (24 ساعة بعد الإلغاء) إذا قام الضيف بالتحقق من المغادرة مبكرًا.</string>
+    <string name="strict_desc">50 ٪ استرداد فقط إذا تم إلغاؤه 7 أيام قبل وقت تسجيل الوصول.</string>
+    <string name="strict_descday">على سبيل المثال ، قل أن الضيف حجز إقامة ووقت تسجيل الوصول الخاص به هو الساعة 3:00 مساءً في 09 يونيو.</string>
+    <string name="strict_date">قبل 7 أيام</string>
+    <string name="strict_dayy">على سبيل المثال ، إذا ألغى الضيف الحجز قبل الساعة 3:00 مساءً في الثاني من يونيو ، فسيتم معالجة استرداد بنسبة 50 ٪.</string>
+    <string name="strict_content">فقط إذا قام الضيف بإلغاء حجزه قبل 7 أيام من وقت تسجيل الوصول ، فسيحصلون على استرداد بنسبة 50 ٪.</string>
+    <string name="strict_checkin_day">على سبيل المثال ، لن يتم استرداد أي استرداد إذا ألغى الضيف حجزه بعد الساعة 3:00 مساءً في الأول من يونيو.</string>
+    <string name="strict_checkin_content">لن يكون هناك استرداد إذا ألغى الضيف حجزه قبل أقل من 7 أيام من وقت تسجيل الوصول.</string>
+    <string name="strict_checkout_content">إذا قام أحد الضيف بالتحقق من الدخول وقرر المغادرة مبكرًا ، فلن يكون هناك رد على الليالي التي لم تنفقها.</string>
+    <string name="flexible_desc">استرداد 100 ٪ حتى لو تم إلغاؤه قبل يوم واحد من الوصول.</string>
+    <string name="flexible_descday">على سبيل المثال ، قل أن الضيف حجز إقامة ووقت تسجيل الوصول الخاص به هو الساعة 3:00 مساءً في 09 يونيو.</string>
+    <string name="flexible_date">قبل يوم واحد</string>
+    <string name="flexible_dayy">على سبيل المثال ، إذا ألغى الضيف الحجز قبل الساعة 3:00 مساءً في 08 يونيو ، فسيتم معالجة استرداد 100 ٪.</string>
+    <string name="flexible_content">ستتم معالجة استرداد كامل إذا قام الضيف بإلغاء الحجز على مدار 24 ساعة قبل وقت تسجيل الوصول.</string>
+    <string name="flexible_checkin_day">على سبيل المثال ، إذا ألغى الضيف الحجز بعد الساعة 3:00 مساءً في 08 يونيو ، فإن الليلة الأولى من الإقامة غير قابلة للاسترداد ، وسيتم رد الباقي على حسابه المصرفي.</string>
+    <string name="flexible_checkin_content">إذا ألغى الضيف حجزه أقل من 24 ساعة قبل وقت تسجيل الوصول ، فإن الليلة الأولى من الإقامة غير قابلة للاسترداد.</string>
+    <string name="flexible_checkout_content">سيتم إرجاع رسوم الإقامة في الليالي التي لم تقضيها إذا قام ضيف بالتحقق من الدخول وقرر المغادرة مبكرًا.</string>
+
+    <string name="delete_account_caution"><b>Caution: </b></string>
+    <string name="delete_account_first"> All of your data and reservations\/bookings</string>
+    <string name="delete_account_dsec"> will be lost if you delete your &appname; account.</string>
+
+    <string name="account_delete_message">Your account has been deleted successfully!</string>
+    <string name = "are_you_sure_delete_account_permenently"> هل أنت متأكد أنك تريد حذف حسابك نهائيًا؟ </string>    <string name="yes">Yes</string>
+
+    <string name = "cancellation_description"> وصف الإلغاء </string>
+    <string name = "tips_one"> يحب الضيوف معرفة ما إذا كان هذا مكانًا تعيش فيه والاحتفاظ بممتلكاتك الشخصية. </string>
+    <string name = "edit_bed"> تحرير أنواع الأسرة </string>
+    <string name = "upload_your_place_photos"> تحميل صور مكانك </string>
+    <string name = "tips_two"> تساعد الصور الضيوف على تخيل البقاء في مكانك. يمكنك البدء بواحد وإضافة المزيد بعد النشر. </string>
+    <string name = "tips_three"> اجذب الضيوف بعنوان قائمة يبرز ما يجعل مكانك مميزًا. </string>
+    <string name = "name_and_description"> اسم ووصف مكانك </string>
+    <string name = "what_house"> ما هي قواعد منزلك؟ </string>
+    <string name = "advance_notice_new"> إشعار مسبق وسياسة الإلغاء </string>
+    <string name = "tips_four"> ما مقدار الإشعار الذي تحتاجه قبل وصول الضيف؟ </string>
+    <string name = "tips_five"> قم بالإلغاء حتى يوم واحد قبل الوصول واسترداد أموالك بنسبة 100٪ </string>
+    <string name = "tips_six"> سعرك الأساسي هو سعرك الافتراضي في الليلة </string>
+    <string name = "tips_seven"> خصومات لمدة أطول </string>
+    <string name = "avail_window">  [نافذة التوفر وطول الرحلة]> </string>
+    <string name = "instant_booking"> ما هو نوع الحجز المفضل لديك؟ </string>
+    <string name = "tips_eight"> اختر من يمكنه حجز الأيام المتاحة دون طلب الموافقة. </string>
+
+    <string name = "become_a_host_welcome"> دعنا نجهزك لتصبح مضيفًا. </string>
+    <string name = "complete_all_steps"> * تحتاج إلى إكمال جميع الخطوات الثلاث. </string>
+    <string name = "let_s_start"> فلنبدأ </string>
+    <string name = "what_kindof_place2"> ما نوع المكان الذي تدرجه؟ </string>
+    <string name = "hi"> مرحبًا ، </string>
+
+    <string name = "availablity_window"> نافذة التوفر </string>
+    <string name = "title_and_description"> العنوان والوصف </string>
+    <string name = "name_space"> قم بتسمية مكانك </string>
+    <string name = "name_hint"> اسم مكانك </string>
+    <string name = "cover_photo"> صورة الغلاف </string>
+    <string name = "state_or_province"> الولاية / المقاطعة </string>
+    <string name = "zip_postal_code"> الرمز البريدي </string>
+    <string name = "enter_location"> أدخل الموقع </string>
+    <string name = "bathroom"> الحمام </string>
+    <string name = "bathrooms"> الحمامات </string>
+
+    <string name = "invalid_password"> كلمة مرور غير صالحة </string>
+    <string name = "invalid_password_desc"> يجب أن يكون عدد كلمات المرور أكبر من 6 أحرف </string>
+    <string name = "invalid_birth"> عيد ميلاد غير صالح </string>
+    <string name = "invalid_birth_desc"> أدخل تاريخ ميلادك </string>
+    <string name = "preferred_check_in_"> تسجيل الوصول المفضل </string>
+    <string name = "drag_the_pin_to_set_your_location"> اسحب الدبوس لتعيين موقعك </string>
+    <string name = "map_toaster_change"> عظيم! شكرا لك! </string>
+    <string name = "by_signing_up_i_agree_to_terms_of_service_and_privacy_policy"> بالتسجيل ، أوافق على شروط الخدمة وسياسة الخصوصية. </string>
+    <string name = "send_reset_link"> إرسال ارتباط إعادة التعيين </string>
+    <string name = "wishlists"> قوائم الرغبات </string>
+    <string name = "create_your_first_wishlist"> أنشئ قائمة أمنياتك الأولى </string>
+    <string name = "start_searching"> بدء البحث </string>
+    <string name = "edit_listing"> تحرير القائمة </string>
+    <string name = "we_ve_improved"> لقد تحسننا! </string>
+    <string name = "update_now"> التحديث الآن </string>
+    <string name = "uh_the_version"> اه! الإصدار الذي تستخدمه قديم. لدينا بعض التحديثات الرائعة في المتجر. يرجى تحديث التطبيق لاستخدامه بشكل أكبر. </string>
+    <string name = "copy_to_clipboard"> نسخ إلى الحافظة </string>
+    <string name = "no_previous_trip"> لم يتم العثور على رحلات سابقة </string>
+    <string name = "travelling"> السفر </string>
+    <string name = "how_many_guest_accom"> كم ضيف يمكن استضافته؟ </string>
+    <string name = "date_format">DD</string>
+    <string name = "month_format">MM</string>
+    <string name = "year_format">YYYY</string>
+    <string name = "zip_or_postal"> الرمز البريدي / الرمز البريدي </string>
+    <string name = "keep_trip"> حافظ على رحلتك </string>
+    <string name = "block_selected_dates"> منع التواريخ المحددة </string>
+    <string name = "no_inbox_host"> لا توجد رسائل جديدة من الضيف. </string>
+
+    <string name = "auto"> تلقائي </string>
+    <string name = "light"> نور </string>
+    <string name = "dark"> ظلام </string>
+
+    <string name="change_your_password_header">قم بتغيير كلمة المرور</string>
+    <string name="enter_new_password">أدخل كلمة المرور الجديدة</string>
+    <string name="enter_confirm_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="new_password_err">يجب أن تتكون كلمة المرور الجديدة من 8 أحرف على الأقل</string>
+    <string name="confirm_password_err">يجب أن تتكون كلمة المرور المؤكدة من 8 أحرف على الأقل</string>
+    <string name="old_password_err">الرجاء إدخال كلمة المرور القديمة لتغيير كلمة المرور الجديدة</string>
+    <string name="new_password_mismatch_err">يجب أن تكون كلمة المرور الجديدة وتأكيد كلمة المرور متماثلتين</string>
+    <string name="update_password">تحديث كلمة المرور</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="password_updated">تم تحديث كلمة المرور بنجاح!</string>
+    <string name="old_password">كلمة المرور الحالية</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="enter_old_password">أدخل كلمة المرور الحالية</string>
+    <string name="listing_not_available">القائمة غير متاحة</string>
+    <string name="display_total_price">عرض السعر الإجمالي</string>
+    <string name="include_fee_beforetaxes">يشمل جميع الرسوم قبل الضرائب</string>
+
+    <string name="onetotal_pricebreakdown">تفصيل الأسعار</string>
+    <string name="total_before_taxes">الإجمالي قبل الضرائب</string>
+    <string name="before_taxes">الإجمالي قبل الضرائب</string>
+</resources>

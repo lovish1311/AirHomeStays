@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="toolbar_padding">15dp</dimen>
+    <dimen name="layout_padding">15dp</dimen>
+    <dimen name="text_very_small">10sp</dimen>
+    <dimen name="text_very_small_8sp">8sp</dimen>
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text_size_h1">11sp</dimen>
+    <dimen name="text_size_13">12sp</dimen>
+    <dimen name="text_size_h1_5">13sp</dimen>
+    <dimen name="text_size_15">16sp</dimen>
+    <dimen name="text_size_h2">15sp</dimen>
+    <dimen name="text_size_17">16sp</dimen>
+    <dimen name="text_size_18">17sp</dimen>
+    <dimen name="text_size_19">18sp</dimen>
+    <dimen name="text_size_h3">19sp</dimen>
+    <dimen name="text_size_h4">23sp</dimen>
+    <dimen name="text_size_h5">26sp</dimen>
+    <dimen name="text_size_h6">24sp</dimen>
+    <dimen name="text_size_large">30sp</dimen>
+    <dimen name="text_size_medium">24sp</dimen>
+    <dimen name="text_size_20sp">17sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+
+    <dimen name="buttonCorner">2.0dip</dimen>
+    <dimen name="c_grouped_layout_padding">1.25dip</dimen>
+    <dimen name="gutter_padding">16.0dip</dimen>
+
+    <dimen name="padding_listing_small">3dp</dimen>
+    <dimen name="paddingListing">5dp</dimen>
+    <dimen name="paddingListing_20">20dp</dimen>
+    <dimen name="no_padding">0dp</dimen>
+    <dimen name="paddingReviewHeader">25dp</dimen>
+    <dimen name="photo_size">180dp</dimen>
+
+    <dimen name="gray_text_padding">10dp</dimen>
+    <dimen name="profile_text_padding">5dp</dimen>
+
+    <dimen name="exploreListingLTR">10dp</dimen>
+    <dimen name="exploreListingRTL">5dp</dimen>
+    <dimen name="exploreListingHeaderRTL">15dp</dimen>
+    <dimen name="paddingDown">22dp</dimen>
+    <dimen name="exploreListingHeaderLTR">10dp</dimen>
+    <dimen name="listingLtrSpacing">2.5dp</dimen>
+    <dimen name="pop_loc">135dp</dimen>
+    <dimen name="bottomNavigationHeight">60dp</dimen>
+    <dimen name="n2_tri_state_switch_half_img_padding">6.3dp</dimen>
+    <dimen name="paddingDefaultDimen">20dp</dimen>
+
+    <dimen name="listing_container_height">130dp</dimen>
+    <dimen name="listing_photo_height">110dp</dimen>
+    <dimen name="thirty">30dp</dimen>
+    <dimen name="twenty">50dp</dimen>
+</resources>

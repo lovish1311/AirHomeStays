@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="scrollPosition"
+            type="Integer" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="placeType"
+            type="Boolean" />
+        <variable
+            name="noOfGuests"
+            type="Boolean" />
+        <variable
+            name="bedrooms"
+            type="Boolean" />
+        <variable
+            name="baths"
+            type="Boolean" />
+        <variable
+            name="address"
+            type="Boolean" />
+        <variable
+            name="location"
+            type="Boolean" />
+        <variable
+            name="amenities"
+            type="Boolean" />
+        <variable
+            name="safety"
+            type="Boolean" />
+        <variable
+            name="space"
+            type="Boolean" />
+        <variable
+            name="placeTypeClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="noOfGuestsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bedroomsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bathsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="addressClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="locationClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="amenitiesClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="safetyClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="spaceClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_one.StepOneViewModel" />
+    </data>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        chip1="@{placeType?idPlaceType:null}"
+        chip2="@{noOfGuests?idNoOfGuests:null}"
+        chip5="@{address?idAddress:null}"
+        chip6="@{location?idLocation:null}"
+        chip7="@{amenities?idAmenities:null}"
+        chip8="@{safety?idSafety:null}"
+        chip9="@{space?idSpace:null}"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="@{paddingTop ? @dimen/paddingListing : @dimen/no_padding}"
+            android:paddingBottom="@{paddingBottom ? @dimen/paddingListing : @dimen/no_padding}"
+            android:orientation="vertical"
+            android:background="@color/explore_header_bg"
+            android:layoutDirection="locale">
+             <com.google.android.material.chip.ChipGroup
+
+                android:id="@+id/chip"
+                 android:textAppearance="@style/chipText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                 <com.google.android.material.chip.Chip
+
+                     android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idPlaceType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/place_type"
+                    android:textColor="@color/black"
+                     android:textAppearance="@style/chipText"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="10dp"
+                     chip="@{1}"
+                    android:checked="@{placeType}"
+                    chipStatus="@{placeType}"
+                    android:onClick="@{placeTypeClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idNoOfGuests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/capacity"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     android:textAppearance="@style/chipText"
+                    app:chipStartPadding="10dp"
+                    android:checked="@{noOfGuests}"
+                    chipStatus="@{noOfGuests}"
+                     chip="@{2}"
+                    android:onClick="@{noOfGuestsClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     chip="@{3}"
+                     android:textAppearance="@style/chipText"
+                    app:chipStartPadding="10dp"
+                    android:checked="@{address}"
+                    chipStatus="@{address}"
+                    android:onClick="@{addressClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/map"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     chip="@{4}"
+                     android:textAppearance="@style/chipText"
+                    app:chipStartPadding="10dp"
+                    android:checked="@{location}"
+                    chipStatus="@{location}"
+                    android:onClick="@{locationClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idAmenities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/amenities"
+                    android:textColor="@color/black"
+                     android:textAppearance="@style/chipText"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     chip="@{5}"
+                    app:chipStartPadding="10dp"
+                    android:checked="@{amenities}"
+                    chipStatus="@{amenities}"
+                    android:onClick="@{amenitiesClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idSafety"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/safety_amenities"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="10dp"
+                    android:checked="@{safety}"
+                     chip="@{6}"
+                    chipStatus="@{safety}"
+                    android:onClick="@{safetyClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idSpace"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="Shared spaces"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="10dp"
+                     chip="@{7}"
+                    android:checked="@{space}"
+                    chipStatus="@{space}"
+                    android:onClick="@{spaceClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+</layout>

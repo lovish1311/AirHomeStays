@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.profile.review.ReviewActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:background="@drawable/curve_button_gray_map"
+            android:src="@drawable/ic_left_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_back"
+            android:layout_alignBottom="@id/iv_back"
+            android:layout_marginBottom="7dp"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:text="@string/reviews"
+            android:textSize="@dimen/text_size_h3"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_back"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                app:tabGravity="start"
+                app:tabMode="scrollable"
+                app:tabIndicatorHeight="4dp"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="@color/text_gray_color"
+                android:background="@color/white"
+                app:tabMaxWidth="0dp"
+                app:tabPaddingStart="10dp"
+                app:tabPaddingEnd="10dp"
+                android:layout_marginStart="-10dp"
+                app:tabIndicatorFullWidth="false"
+                app:tabTextAppearance="@style/MyCustomTabText"
+                android:capitalize="characters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="-2dp"
+                android:background="?android:attr/listDivider" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frag_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_404_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/uh_oh"
+                android:gravity="center"
+                android:textDirection="locale"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_color"
+                android:layout_marginBottom="0dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                android:layout_marginTop="10dp"
+                android:text="@string/we_can_t_seem_to_find_the_anything_that_you_re_looking_for"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/error_code_404"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:textDirection="locale"/>
+
+            <Button
+                android:id="@+id/btn_explore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explore_appname"
+                android:minWidth="40dp"
+                android:padding="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/curve_button_transparent"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

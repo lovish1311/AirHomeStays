@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/action_bar"
+            style="@style/Toolbar"
+            layout="@layout/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_userProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/action_bar"
+            android:layout_above="@id/ll_bottom_btn">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/report"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/curve_button_red"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_h2"
+                android:textStyle="bold"
+                android:minWidth="100dp"
+                enableSendBtn="@{text}"
+                android:textDirection="locale" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

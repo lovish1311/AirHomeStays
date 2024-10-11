@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="100dp"
+            android:textSize="30sp"
+            android:textDirection="locale"
+            android:padding="40dp"
+            android:text="@string/set_up_your_appname_payout_method"/>
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_18"
+            android:layout_below="@id/tv_1"
+            android:text="@string/your_payout_is_what_you_earn_from_hosting_a_guest_payouts_are_sent_24_hours_after_each_check_in"/>
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_18"
+            android:visibility="gone"
+            android:textDirection="locale"
+            android:textColor="@color/colorAccent"
+            android:layout_below="@id/tv_2"
+            android:text="@string/learn_more_about_payouts"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="@string/start"
+            android:layout_margin="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/curve_button_red" />
+
+    </RelativeLayout>
+
+</layout>

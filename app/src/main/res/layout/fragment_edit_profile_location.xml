@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.edit_profile.EditProfileViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        style="@style/AuthScreenTopLayout"
+        android:layoutDirection="locale">
+        <include layout="@layout/toolbar_profile"
+            android:id="@+id/action_bar"/>
+
+
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:hint="@string/location_edit"
+                tools:ignore="Autofill,LabelFor"
+                android:layout_below="@id/action_bar"
+                android:singleLine="true"
+                android:background="@drawable/editext_border"
+                android:minHeight="50dp"
+                android:scrollbars="none"
+                android:padding="15dp"
+                android:inputType="text"
+                android:gravity="top|start"
+                android:text="@{viewModel.location}"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.onTextChanged(text)}"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_size_h3"
+                android:textDirection="locale"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_location"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/curve_button_red"
+            android:backgroundTint="@null"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_h2"
+            android:textStyle="bold"
+            tools:targetApi="m" />
+
+
+
+    </RelativeLayout>
+</layout>

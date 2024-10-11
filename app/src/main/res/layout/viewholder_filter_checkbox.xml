@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data><import type="android.view.View"/>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="isChecked"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="isIconNeeded"
+            type="Boolean" />
+        <variable
+            name="amenitiesImage"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/cl_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:soundEffectsEnabled="false"
+        android:onClick="@{onClick}"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <ToggleButton
+            android:id="@+id/toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/check_toggle"
+            android:layout_marginEnd="10dp"
+            android:background="@null"
+            android:textOn="@null"
+            android:textOff="@null"
+            android:text="@null"
+            android:textSize="0sp"
+            android:checked="@{isChecked}"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_alignParentStart="true"
+            android:soundEffectsEnabled="false"
+            android:duplicateParentState="true"
+            android:clickable="false" />
+        <ImageView
+            android:id="@+id/icon_amenities"
+            android:layout_toEndOf="@id/toggle"
+            android:visibility="@{isIconNeeded?View.VISIBLE:View.GONE}"
+            drawableAmenities="@{amenitiesImage}"
+            android:layout_width="20dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_height="20dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:text="@{text}"
+                android:textSize="@dimen/text_size_h2"
+                android:textColor="@color/grey_font"
+                android:textDirection="locale" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

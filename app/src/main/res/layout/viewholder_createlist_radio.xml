@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="textDesc"
+            type="String"/>
+        <variable
+            name="radioVisibility"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@null"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/text_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/radio"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_19"
+            android:text="@{text}"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/radio"
+            android:textColor="@color/text_color"
+            android:layout_below="@id/text_tv"
+            android:textSize="@dimen/text_size_17"
+            android:text="@{textDesc}"
+            android:textDirection="locale"/>
+
+        <ImageView
+            android:id="@+id/radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:duplicateParentState="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:background="@{radioVisibility ? @drawable/check_radio_on : @drawable/check_radio_off }"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</layout>

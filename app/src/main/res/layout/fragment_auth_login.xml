@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <import type="com.airhomestays.app.ui.auth.AuthViewModel.Screen" />
+    <variable
+        name="viewModel"
+        type="com.airhomestays.app.ui.auth.login.LoginViewModel" />
+
+</data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/status_bar_color"
+    android:layoutDirection="locale">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/toolbar"
+        style="@style/Toolbar"/>
+
+    <ScrollView
+        android:layout_above="@id/rl_lottie"
+        android:layout_below="@id/action_bar"
+        style="@style/ScrollView">
+
+        <RelativeLayout
+            style="@style/AuthScreenTopLayout">
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:text="@string/logintext"
+                android:layout_marginBottom="20dp"
+                style="@style/AuthScreenTitle"/>
+
+            <TextView
+                android:id="@+id/tv_placeholder_email"
+                android:text="@string/email_address"
+                android:layout_below="@id/tv_login"
+                android:layout_alignStart="@id/tv_login"
+                style="@style/AuthScreenInputPlaceholder"
+                android:textDirection="locale"/>
+
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/AuthScreenEditText"
+                android:layout_below="@id/tv_placeholder_email"
+                android:layout_marginLeft="-4dp"
+                android:layout_marginRight="-4dp"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.email}"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                tools:ignore="Autofill,LabelFor" />
+
+            <!--<include
+                android:id="@+id/inl_toggle_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_email"
+                android:layout_alignStart="@id/tv_login"
+                android:layout_marginTop="20dp"
+                app:viewModel="@{viewModel}"
+                layout="@layout/password_toggle_bind" />-->
+
+            <RelativeLayout android:id="@+id/rl_toggle_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_email"
+                android:layout_alignStart="@id/tv_login"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/tv_placeholder_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/white"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="5dp"
+                    android:textDirection="locale"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_password_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.showPassword ? @string/hide : @string/show}"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="25"
+                    tools:ignore="RelativeOverlap"
+                    android:onClick="@{() -> viewModel.showPassword()}"
+                    android:textDirection="locale"/>
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/AuthScreenEditText"
+                android:layout_below="@id/rl_toggle_placeholder"
+                android:layout_marginLeft="-4dp"
+                android:layout_marginRight="-4dp"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                app:toggle="@{viewModel.showPassword}"
+                tools:ignore="Autofill,LabelFor" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/rl_lottie"
+        android:background="@color/edittext_line"/>
+
+    <!-- <include
+         android:id="@+id/rl_lottie_view"
+         layout="@layout/lottie_auth_button"
+         app:hideIt="@{viewModel.lottieProgress}"
+         style="@style/AuthScreenLottieLayout" />-->
+
+    <RelativeLayout
+        android:id="@+id/rl_lottie"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/AuthScreenLottieLayout"
+        android:onClick="@{() -> viewModel.checkLogin()}"
+        app:first="@{viewModel.email}"
+        app:last="@{viewModel.password}"
+        app:screen="@{Screen.LOGIN}"
+        android:background="@drawable/circle_imageview">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lt_loading_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:lottieIcon="@{viewModel.lottieProgress}"
+            app:first="@{viewModel.email}"
+            app:last="@{viewModel.password}"
+            app:screen="@{Screen.LOGIN}"
+            app:lottie_loop="true" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_auth_loading_bg"
+        goneUnless="@{viewModel.isLoading}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40000000">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lt_loading"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@drawable/lottie_background"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_qwe" />
+    </FrameLayout>
+
+</RelativeLayout>
+
+</layout>

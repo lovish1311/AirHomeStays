@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="night_selected">
+        <item quantity="other">%1$s notti selezionate</item>
+        <item quantity="one">%1$s notte selezionata</item>
+    </plurals>
+    <plurals name="night_maximum">
+        <item quantity="other">Il soggiorno massimo è di %1$d notti</item>
+        <item quantity="one">Il soggiorno massimo è %1$d notte</item>
+    </plurals>
+    <plurals name="night_minimum">
+        <item quantity="other">Il soggiorno minimo è di %1$d notti</item>
+        <item quantity="one">Il soggiorno minimo è %1$d notte</item>
+    </plurals>
+</resources>

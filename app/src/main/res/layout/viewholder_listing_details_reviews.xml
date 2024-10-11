@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="imgUrl"
+            type="String" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="date"
+            type="String" />
+        <variable
+            name="comment"
+            type="String" />
+        <variable
+            name="ratingTotal"
+            type="Integer"/>
+        <variable
+            name="reviewsTotal"
+            type="Integer"/>
+        <variable
+            name="padding"
+            type="Boolean" />
+        <variable
+            name="isAdmin"
+            type="Boolean"/>
+         <variable
+            name="onAvatarClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@drawable/curve_button_gray_outline_large">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_listing_comment_review_1_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                img="@{imgUrl}"
+                isAdmin="@{isAdmin}"
+                android:layout_alignParentStart="true"
+                android:onClick="@{onAvatarClick}" />
+
+            <TextView
+                android:id="@+id/tv_listing_comment_review_1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                textSpan="@{name+`'s Review`}"
+                start="@{0}"
+                end="@{name.length()+2}"
+                android:text="@{name}"
+                android:textStyle="bold"
+                android:onClick="@{onAvatarClick}"
+                android:textColor="@color/text_color"
+                android:layout_marginStart="15dp"
+                android:textSize="@dimen/text_size_15"
+                android:layout_toEndOf="@id/iv_listing_comment_review_1_img"
+                android:textDirection="locale"/>
+
+            <ImageView
+                android:id="@+id/tv_item_listing_similar_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@+id/tv_listing_comment_review_1_name"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/iv_listing_comment_review_1_img"
+                android:src="@drawable/ic_star_red"
+                android:progressTint="@color/colorAccent"
+                android:secondaryProgressTint="@color/colorAccent"
+                android:stepSize="1" />
+            <TextView
+                android:id="@+id/tv_item_listing_similar_ratingNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="4dp"
+                android:text="@{ratingTotal.toString()}"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:layout_below="@id/tv_listing_comment_review_1_name"
+                android:layout_toEndOf="@id/tv_item_listing_similar_rating"
+                android:textDirection="locale"
+                />
+            <TextView
+                android:id="@+id/tv_listing_comment_review_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_listing_comment_review_1_img"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="0dp"
+                android:text="@{comment}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/tv_listing_comment_review_1_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                memberSince="@{date}"
+                android:textColor="@color/grey_font"
+                android:textSize="@dimen/text_size_13"
+                android:layout_below="@id/tv_listing_comment_review_1"
+                android:textDirection="locale"/>
+        </RelativeLayout>
+
+
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#d9d9d9"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_below="@id/tv_listing_comment_review_1"
+            android:visibility="@{isDividerVisible ? View.VISIBLE : View.GONE}"
+            />-->
+
+    </RelativeLayout>
+
+</layout>

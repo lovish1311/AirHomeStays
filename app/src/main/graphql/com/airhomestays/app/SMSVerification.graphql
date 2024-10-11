@@ -1,0 +1,45 @@
+# Sending Phone Number
+query getEnteredPhoneNo {
+  getPhoneData {
+    userId
+    profileId
+    phoneNumber
+    country
+    countryCode
+    verification {
+      id
+      isPhoneVerified
+    }
+    verificationCode
+    status
+    errorMessage
+  }
+}
+
+# Generate 4-digit code
+mutation AddPhoneNumber($countryCode: String!, $phoneNumber: String!) {
+    addPhoneNumber: AddPhoneNumber( countryCode: $countryCode, phoneNumber: $phoneNumber) {
+        status
+        errorMessage
+        phoneNumberStatus
+    }
+}
+
+# remove phone_number
+mutation removePhnumber{
+    removePhoneNumber: RemovePhoneNumber {
+        status
+        errorMessage
+    }
+}
+
+#verify $-digit code
+mutation VerifyPhoneNumber($verificationCode: Int!) {
+    verifyPhoneNumber: VerifyPhoneNumber(verificationCode: $verificationCode) {
+       status
+       errorMessage
+   }
+}
+
+
+

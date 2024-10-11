@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.edit_profile.EditProfileViewModel" />
+    </data>
+
+    <RelativeLayout
+        style="@style/AuthScreenTopLayout"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_edit_phone"
+            android:text="@string/phone"
+            android:layout_marginTop="5dp"
+            style="@style/EditProfileScreenPlaceHolderTextView"
+            android:textDirection="locale"/>
+
+        <EditText
+            android:id="@+id/et_edit_phone"
+            android:layout_below="@id/tv_edit_phone"
+            android:inputType="phone"
+            style="@style/EditProfileScreenEditText"
+            tools:ignore="Autofill,LabelFor"
+            android:gravity="start|center"
+            android:singleLine="true"
+            android:text="@{viewModel.phone}"
+            android:onTextChanged="@{(text, start, before, count) -> viewModel.onTextChanged(text)}"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EMAIL"
+            android:textSize="@dimen/text_size_h1_5"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="admin@radicalstart.com"
+            android:textSize="24sp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:enabled="false"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/search_text_color"
+            tools:ignore="Autofill,LabelFor"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend email"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/curve_button_red"
+            />
+    </LinearLayout>
+
+</layout>

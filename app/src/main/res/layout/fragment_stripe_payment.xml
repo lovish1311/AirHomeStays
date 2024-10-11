@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
+        <ImageView
+            android:id="@+id/iv_navigateup"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_round_button_gray"
+            android:paddingStart="@dimen/toolbar_padding"
+            android:paddingEnd="@dimen/toolbar_padding"
+            app:srcCompat="@drawable/ic_left_arrow"
+            />
+
+        <TextView
+            android:id="@+id/tv_pay"
+            android:layout_below="@id/iv_navigateup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:text="@string/pay_with_your_credit_card"
+            android:textDirection="locale"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <com.stripe.android.view.CardInputWidget
+            android:id="@+id/card_input_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pay"
+            android:layout_marginTop="10dp"
+            style="@style/Stripe.CardInputWidget.EditText"
+            android:layoutDirection="ltr"
+            android:padding="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_payPayment"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:elevation="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/btn_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/curve_button_red"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:padding="13dp"
+                android:text="@string/pay"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>

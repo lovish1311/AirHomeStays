@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="scrollPosition"
+            type="Integer" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="photos"
+            type="Boolean" />
+        <variable
+            name="title"
+            type="Boolean" />
+        <variable
+            name="description"
+            type="Boolean" />
+        <variable
+            name="photosClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="titleClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="descriptionClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <HorizontalScrollView
+        android:id="@+id/chips2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/explore_header_bg"
+        chip1="@{photos?idPhotos:null}"
+        chip2="@{title?idTitle:null}"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@{paddingTop ? @dimen/paddingListing : @dimen/no_padding}"
+            android:paddingBottom="@{paddingBottom ? @dimen/paddingListing : @dimen/no_padding}"
+            android:orientation="vertical"
+            android:background="@color/explore_header_bg"
+            android:layoutDirection="locale">
+             <com.google.android.material.chip.ChipGroup
+                 android:textAppearance="@style/chipText"
+                android:id="@+id/chip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp">
+
+                 <com.google.android.material.chip.Chip
+                    android:id="@+id/idPhotos"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/photos"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     app:chipIconSize="30dp"
+                     android:fontFamily="@font/be_vietnampro_medium"
+                    app:chipStartPadding="5dp"
+                     android:textAppearance="@style/chipText"
+                    android:checked="@{photos}"
+                    chipStatus="@{photos}"
+                     chip="@{8}"
+                    android:onClick="@{photosClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip
+                    android:id="@+id/idTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/title_and_description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                     app:chipIconSize="30dp"
+                    app:chipEndPadding="10dp"
+                     chip="@{9}"
+                     android:textAppearance="@style/chipText"
+                    app:chipStartPadding="5dp"
+                     android:fontFamily="@font/be_vietnampro_medium"
+                    android:checked="@{title}"
+                    chipStatus="@{title}"
+                    android:onClick="@{titleClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+</layout>

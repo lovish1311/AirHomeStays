@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="msg"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="0dp"
+        android:layoutDirection="locale">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:backgroundTint="@color/black"
+            android:colorControlActivated="@color/black"
+            android:colorControlHighlight="@color/black"
+            android:textCursorDrawable="@drawable/cursor_black"
+            android:text="@={msg}"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="headerText"
+            type="String"/>
+        <variable
+            name="subText"
+            type="String"/>
+        <variable
+            name="image"
+            type="String"/>
+        <variable
+            name="drawable"
+            type="android.graphics.drawable.Drawable"/>
+        <variable
+            name="onclick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/layout_border"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{headerText}"
+            android:textSize="@dimen/text_size_h2"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            android:textDirection="locale"/>
+
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@{drawable}"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/header"/>
+
+        <TextView
+            android:id="@+id/subHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/headerImage"
+            connectView="@{buttonVerify}"
+            txt="@{subText}"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_h2"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/buttonVerify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subHeader"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/curve_button_red"
+            android:onClick="@{onclick}"
+            android:paddingTop="8dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</layout>

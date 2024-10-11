@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:indefinite_pager_indicator="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="roomType"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="price"
+            type="Integer"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="ratingStarCount"
+            type="Integer"/>
+        <variable
+            name="bookType"
+            type="String"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_explore_listing_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layoutDirection="locale">
+
+        <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+            android:id="@+id/vpi_item_explore_search_listing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/vp_item_explore_search_listing_carousel1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vp_item_explore_search_listing_carousel1"
+            app:layout_constraintVertical_bias="0.96"
+            app:dotSeparation="8dp"
+            app:dotCount="5"
+            app:dotRadius="3dp"
+            app:selectedDotRadius="4dp"
+            indefinite_pager_indicator:dotColor="#d2d0d1"
+            indefinite_pager_indicator:selectedDotColor="@color/white" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vp_item_explore_search_listing_carousel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.airhomestays.app.util.epoxy.ListingPhotosCarousel
+                android:id="@+id/vp_item_explore_search_listing_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/entire_house"
+            android:textColor="#572533"
+            android:textSize="@dimen/text_size_h1"
+            android:paddingTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vp_item_explore_search_listing_carousel1"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list_name"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_explore_search_listing_type"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/price_per_night"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_h2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_explore_search_listing_title"
+            android:textDirection="locale"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.util.LayoutDirection"/>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="isVerified"
+            type="Boolean"/>
+        <variable
+            name="direction"
+            type="Boolean"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:layout_marginTop="20dp"
+        android:paddingEnd="20dp"
+        android:background="@color/white"
+        android:layoutDirection='@{direction? LayoutDirection.RTL : LayoutDirection.LTR}'>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black"
+            android:text="@{text}"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:layout_toStartOf="@id/iv_id_verified"
+            android:layout_centerVertical="true"
+            android:textDirection="locale" />
+
+        <ImageView
+            android:id="@+id/iv_id_verified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="15dp"
+            android:src="@{isVerified ? @drawable/ic_tik_green : @drawable/ic_tik_close}"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+</layout>

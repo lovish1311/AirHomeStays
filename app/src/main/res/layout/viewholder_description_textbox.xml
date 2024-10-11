@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="hintText"
+            type="String" />
+
+        <variable
+            name="maxLength"
+            type="int" />
+
+        <variable
+            name="textValue"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+                <EditText
+                    android:id="@+id/et_descriptionBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/editext_border"
+                    android:textColor="@color/text_color"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:fontFamily="@font/linetocircular"
+                    android:scrollbars="vertical"
+                    android:gravity="top"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:text="@={textValue}"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"
+                    />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
+

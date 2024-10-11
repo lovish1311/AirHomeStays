@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_review_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lt_loading_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            android:layout_centerInParent="true"
+            app:lottie_loop="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_about_you"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/place_holder_review_about_you" />
+
+                    <include layout="@layout/place_holder_review_about_you" />
+
+                    <include layout="@layout/place_holder_review_about_you" />
+
+                    <include layout="@layout/place_holder_review_about_you" />
+
+                    <include layout="@layout/place_holder_review_about_you" />
+                </LinearLayout>
+            </ScrollView>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_upcoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+
+                    <include layout="@layout/place_holder_pending_review_info" />
+                </LinearLayout>
+            </ScrollView>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_no_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_no_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                modeImage="@{true}"
+                />
+
+            <TextView
+                android:id="@+id/tv_no_reviews_yet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_reviews_yet"
+                android:textSize="20dp"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:textColor="@color/black"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:textDirection="locale"
+                android:gravity="center" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

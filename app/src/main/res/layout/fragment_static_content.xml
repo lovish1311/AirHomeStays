@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.R"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_left_arrow"
+            android:background="@drawable/bg_round_button_gray"/>
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_back"
+            android:layout_alignTop="@id/iv_back"
+            android:layout_alignBottom="@id/iv_back"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_h3"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:layout_below="@id/iv_back">
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_static_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/searchLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation"
+          />
+    </RelativeLayout>
+
+</layout>

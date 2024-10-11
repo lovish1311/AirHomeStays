@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="label_calender_week">
+        <item name="0"></item>
+        <item name="1">ס</item>
+        <item name="2">ס</item>
+        <item name="3">ס</item>
+        <item name="4">פ</item>
+        <item name="5">ט</item>
+        <item name="6">אָ</item>
+        <item name="7">ט</item>
+    </string-array>
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string name="clear">ברור</string>
+    <string name="dates_not_available">תאריכים אלה אינם זמינים</string>
+    <string name="save">להציל</string>
+    <string name="check_in">קבלה</string>
+    <string name="check_out">לבדוק</string>
+    <string name="start_date">לבדוק</string>
+    <string name="end_date">לבדוק</string>
+    <string name="night_select">נבחר</string>
+    <string name="check_out_only">התאריך שנבחר זמין לקופה בלבד</string>
+</resources>

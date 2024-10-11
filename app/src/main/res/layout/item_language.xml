@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!--<import type="com.airhomestays.app.R"/>-->
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.languages.LanguagesViewModel" />
+        <variable
+            name="text"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:orientation="vertical"
+        android:id="@+id/rl_root">
+
+
+        <!--<TextView
+            android:id="@+id/tv_item_listing_amenities_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.label()}"
+            android:textSize="17sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/rb_languages"
+            android:duplicateParentState="true"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"/>
+
+        <RadioButton
+            android:id="@+id/rb_languages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+             />-->
+
+        <RadioButton
+            android:id="@+id/radiobtn_languages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{text}"
+            android:textSize="@dimen/text_size_18"
+            android:padding="15dp"
+            android:textColor="#707170"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:background="@null"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="1dp"
+            android:background="#DFE0DF"/>
+
+    </LinearLayout>
+
+</layout>

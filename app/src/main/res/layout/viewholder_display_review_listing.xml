@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data><import type="android.view.View"/>
+        <variable
+            name="ratingTotal"
+            type="Double"/>
+        <variable
+            name="reviewsTotal"
+            type="Integer"/>
+        <variable
+            name="imgUrl"
+            type="String" />
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="reviewsStarRating"
+            type="Integer" />
+        <variable
+            name="type"
+            type="String" />
+        <variable
+            name="address"
+            type="String" />
+        <variable
+            name="startCount"
+            type="Integer" />
+        <variable
+            name="reviewsCountText"
+            type="String" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:background="@color/white"
+        android:paddingEnd="20dp"
+    >
+
+        <ImageView
+            android:id="@+id/img_listing"
+            imgListing="@{imgUrl}"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_listing_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/img_listing"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@{type}"
+            android:layout_below="@id/tv_listing_title"
+            android:textSize="12dp"
+            android:textColor="@color/room_type"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_listing_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/img_listing"
+            android:layout_marginStart="10dp"
+            android:text="@{title}"
+            android:textSize="14dp"
+            android:layout_below="@id/tv_listing_rating"
+            android:paddingTop="5dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:textDirection="locale"
+            />
+
+
+
+
+        <ImageView
+            android:id="@+id/tv_listing_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_toEndOf="@id/img_listing"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_star_red"
+            android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/tv_listing_rating"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="@{reviewsCount+` \u2022 `+reviewsStarRating+` `+@string/reviews }"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1"
+            android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}" />
+
+
+    </RelativeLayout>
+</layout>

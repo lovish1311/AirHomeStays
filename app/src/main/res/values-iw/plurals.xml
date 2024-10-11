@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <plurals name="caps_bed_count">
+        <item quantity="other"> Beds</item>
+        <item quantity="one"> Bed</item>
+    </plurals>
+    <plurals name="guest_count">
+        <item quantity="other"> אורחים</item>
+        <item quantity="one"> אוֹרֵחַ</item>
+    </plurals>
+    <plurals name="guest_singlular">
+        <item quantity="other"> אורחים</item>
+        <item quantity="one"> אוֹרֵחַ</item>
+    </plurals>
+    <plurals name="private_bath_count">
+        <item quantity="other"> אמבטיות פרטיות</item>
+        <item quantity="one"> אמבטיה פרטית</item>
+    </plurals>
+    <plurals name="shared_bath_count">
+        <item quantity="other"> אמבטיות משותפות</item>
+        <item quantity="one"> אמבטיה משותפת</item>
+    </plurals>
+    <plurals name="bathroom_count">
+        <item quantity="other"> חדרי אמבטיה</item>
+        <item quantity="one"> חדר אמבטיה</item>
+    </plurals>
+    <plurals name="review_count">
+        <item quantity="other"> ביקורות</item>
+        <item quantity="one"> סקירה</item>
+    </plurals>
+    <plurals name="night_count">
+        <item quantity="other"> לילות</item>
+        <item quantity="one"> לַיְלָה</item>
+    </plurals>
+    <plurals name="review_count_profile">
+        <item quantity="other">%1$d ביקורות</item>
+        <item quantity="one">%1$d  סקירה</item>
+    </plurals>
+    <plurals name="day_count">
+        <item quantity="other"> ימים</item>
+        <item quantity="one"> יְוֹם</item>
+    </plurals>
+</resources>

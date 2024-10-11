@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.airhomestays.app.host.photoUpload.Step2ViewModel.NextScreen"/>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.host.photoUpload.Step2ViewModel"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="visiblity"
+            type="Boolean"/>
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+    </data>
+
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/host_steps_bg">
+
+    <include
+        android:id="@+id/upload_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        layout="@layout/toolbar"/>
+
+    <include
+        android:id="@+id/chips"
+        layout="@layout/viewholder_step_two_chips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upload_toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/rl_top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chips"
+        android:layout_marginBottom="30dp"
+        android:paddingTop="10dp"
+        android:background="@color/explore_header_bg">
+
+<!--        <com.airbnb.epoxy.EpoxyRecyclerView-->
+<!--            android:id="@+id/rv_chip"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="20dp"
+            android:text="@string/upload_your_place_photos"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h4"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/bg_curve"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/rl_top_lay"
+        android:src="@drawable/host_step_header_bg"
+        android:background="@color/explore_header_bg"/>
+
+    <LinearLayout
+        android:id="@+id/tipsl"
+        android:orientation="horizontal"
+        android:layout_below="@id/bg_curve"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="20dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/ic_tips"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="@string/tips_two"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textSize="@dimen/text_size_13"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/rv_list_photos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:visibility="@{visiblity ? View.VISIBLE : View.GONE}"
+        android:layout_above="@id/container_bottom"
+        android:layout_below="@id/tipsl"
+        android:background="@color/white"/>
+
+
+    <RelativeLayout
+        android:id="@+id/container_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/pg_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="20"
+            android:progressTint="@color/colorPrimary"
+            android:scaleY="3" />
+
+
+        <TextView
+            android:id="@+id/tv_rightside_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="20dp"
+            android:text="@string/save_and_exit"
+            android:textColor="@color/colorPrimary"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curve_button_red"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="10dp"
+            android:splitMotionEvents="false"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_17"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/fl_stepTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_auth_loading_bg"
+        goneUnless="@{viewModel.isLoading}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40000000">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lt_loading"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@drawable/lottie_background"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_qwe"
+            />
+
+    </FrameLayout>
+</RelativeLayout>
+
+</layout>

@@ -1,0 +1,51 @@
+#Default price in filter
+query priceSettings {
+  getSearchSettings {
+    results {
+      id
+      minPrice
+      maxPrice
+      priceRangeCurrency
+    }
+    status
+    errorMessage
+  }
+}
+
+# Currency List
+query getCurrenciesList {
+  getCurrencies {
+    results {
+      id
+      symbol
+      isEnable
+      isPayment
+      isBaseCurrency
+    }
+    status
+    errorMessage
+  }
+}
+
+# Currency Rate
+query getCurrency {
+    currency :Currency {
+   base
+   rates
+   status
+   errorMessage
+  }
+}
+
+query getVersion($appType: String!, $version: String!) {
+	getApplicationVersionInfo(appType: $appType, version: $version) {
+		status
+		errorMessage
+		result {
+			appStoreUrl
+			playStoreUrl
+		}
+	}
+}
+
+

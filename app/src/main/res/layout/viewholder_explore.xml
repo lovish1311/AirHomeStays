@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.explore.ExploreViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_listing_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:ellipsize="marquee"
+            android:text="Recommended listing"
+            android:textDirection="locale"/>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_listing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+            app:spanCount="2">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show all(2000+)"
+            android:fontFamily="@font/linetocircular"
+            android:textColor="@color/status_bar_color"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:background="@drawable/curve_stroke_blue"
+            android:textDirection="locale"/>
+
+    </LinearLayout>
+
+</layout>

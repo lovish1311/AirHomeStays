@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:indefinite_pager_indicator="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="roomType"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="price"
+            type="String"/>
+        <variable
+            name="current"
+            type="Integer"/>
+        <variable
+            name="total"
+            type="Integer"/>
+        <variable
+            name="bookType"
+            type="String"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cl_explore_listing_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale"
+        android:background="@color/gray_divider_light">
+
+        <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+            android:id="@+id/vpi_item_explore_search_listing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="5dp"
+            android:background="@color/white"
+            app:dotCount="5"
+            app:dotRadius="3dp"
+            app:dotSeparation="8dp"
+            indefinite_pager_indicator:dotColor="@color/colorPrimary"
+            indefinite_pager_indicator:selectedDotColor="@color/colorAccent" />
+
+    </RelativeLayout>
+
+</layout>

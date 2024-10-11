@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="msg"
+            type="String" />
+        <variable
+            name="observableText"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="0dp"
+        android:layoutDirection="locale"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text_login"
+            android:paddingStart="20dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="17dp"
+            android:text="@={observableText}"
+            android:onClick="@{onClick}"
+            android:hint="@{msg}"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/cursor_black"
+            android:textSize="@dimen/text_size_h2"
+            android:textColor="@color/black"
+            android:textColorHint="@color/search_text_color"
+            android:colorControlActivated="@color/black"
+            android:colorControlHighlight="@color/black"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+    </LinearLayout>
+
+</layout>

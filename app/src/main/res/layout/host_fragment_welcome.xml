@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_one.StepOneViewModel.NextScreen"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_one.StepOneViewModel" />
+        <variable
+            name="text"
+            type="String" />
+
+        <variable
+            name="pic"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/action_bar"
+            layout="@layout/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            img="@{pic}"
+            android:background="@drawable/bg_round_button_gray"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:padding="5dp"
+            android:layout_below="@id/action_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@id/iv_avatar"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+           android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:text="@{@string/hi+` `+ text +`! `}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_h4" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/allthree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:text="@string/become_a_host_welcome"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_h4" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/allthree"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/curve_button_red"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="15dp"
+            android:splitMotionEvents="false"
+            android:text="@string/let_s_start"
+            android:textColor="@android:color/white"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_17" />
+
+
+        <ImageView
+            android:id="@+id/bg_host"
+            modeImage="@{false}"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+</layout>

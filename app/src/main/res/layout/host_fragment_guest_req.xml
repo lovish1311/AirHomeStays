@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_three.StepThreeViewModel.NextStep"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_three.StepThreeViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:paddingTop="10dp"
+        android:background="@drawable/host_steps_bg">
+
+        <include
+            android:id="@+id/guest_req_toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize" />
+
+        <include
+            android:id="@+id/chips"
+            layout="@layout/viewholder_step_three_chips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/guest_req_toolbar"/>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_guest_req"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/chips"
+            android:layout_marginBottom="100dp"
+            android:background="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/pg_bar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:indeterminate="false"
+                android:max="100"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:scaleY="3"
+                android:progress="20"
+                android:progressTint="@color/colorPrimary"
+                android:layout_marginBottom="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv_rightside_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:text="@string/logintext"
+                android:textColor="@color/colorPrimary"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="@dimen/text_size_17"
+                android:text="@string/next"
+                android:paddingStart="25dp"
+                android:layout_centerVertical="true"
+                android:paddingEnd="25dp"
+                android:background="@drawable/curve_button_red"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@android:color/white"
+                android:onClick="@{() -> viewModel.onClick(NextStep.LAWS)}"
+                android:splitMotionEvents="false"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:textDirection="locale" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

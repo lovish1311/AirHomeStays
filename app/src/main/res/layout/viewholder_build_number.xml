@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Build number: 4"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/linetocircular"
+            android:paddingTop="50dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textDirection="locale"/>
+
+    </RelativeLayout>
+</layout>

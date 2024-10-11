@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.airhomestays.app.util.binding.BindingConverters"/>
+        <import type="android.view.View"/>
+        <variable
+            name="image"
+            type="String"/>
+        <variable
+            name="roomType"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="bedsCount"
+            type="String" />
+        <variable
+            name="bookingType"
+            type="String"/>
+        <variable
+            name="reviewsStarRating"
+            type="Integer"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="ratingStarCount"
+            type="Integer"/>
+        <variable
+            name="currency"
+            type="String"/>
+        <variable
+            name="wishListStatus"
+            type="Boolean"/>
+        <variable
+            name="isOwnerList"
+            type="Boolean"/>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="heartClickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="locale"
+            type="java.util.Locale"/>
+        <variable
+            name= "ratingsCount"
+            type="String"/>
+        <variable
+            name= "status"
+            type="String"/>
+        <variable
+            name="isLoading"
+            type="Boolean"/>
+    </data>
+
+<!--            android:background="@drawable/curve_bg"
+-->
+    <RelativeLayout
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <!-- Adding 15 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+
+                <include layout="@layout/place_holder_listing" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </RelativeLayout>
+</layout>

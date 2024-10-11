@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/rl_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="@string/add_photo_to_your_listing"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h4"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/subText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:layout_below="@id/tv_name"
+                android:gravity="start"
+                android:paddingBottom="20dp"
+                android:breakStrategy="simple"
+                android:justificationMode="inter_word"
+                android:text="@string/add_photo_sub_text"
+                android:textSize="@dimen/text_size_h2"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/curve_button_green"
+                android:textSize="@dimen/text_size_h2"
+                android:textColor="@color/white"
+                android:padding="15dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/subText"
+                android:onClick="@{onClick}"
+                android:fontFamily="@font/linetocircular"
+                android:text="@string/add_photo"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

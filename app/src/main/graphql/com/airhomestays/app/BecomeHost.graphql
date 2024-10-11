@@ -1,0 +1,407 @@
+mutation createListing($listId: Int, $roomType: String, $houseType: String, $residenceType: String, $bedrooms: String, $buildingSize: String, $bedType: String, $beds: Int, $personCapacity: Int, $bathrooms: Float, $bathroomType: String, $country: String, $street: String, $buildingName: String, $city: String, $state: String, $zipcode: String, $mobileNumber:String,$lat: Float, $lng: Float, $bedTypes: String,	$isMapTouched: Boolean, $amenities: [Int], $safetyAmenities: [Int], $spaces: [Int]) {
+  createListing(listId: $listId,roomType: $roomType, houseType: $houseType, residenceType: $residenceType, bedrooms: $bedrooms, buildingSize: $buildingSize, bedType: $bedType, beds: $beds, personCapacity: $personCapacity, bathrooms: $bathrooms, bathroomType: $bathroomType, country: $country, street: $street, buildingName: $buildingName, city: $city, state: $state, zipcode: $zipcode,mobileNumber: $mobileNumber, lat: $lat, lng: $lng, bedTypes: $bedTypes, isMapTouched: $isMapTouched, amenities: $amenities,safetyAmenities: $safetyAmenities, spaces: $spaces) {
+     id
+    results{
+    roomType
+    houseType
+    residenceType
+    bedrooms
+    buildingSize
+    bedType
+    beds
+    personCapacity
+    bathrooms
+    bathroomType
+    country
+    street
+    buildingName
+    city
+    state
+    zipcode
+    lat
+    lng
+    bedTypes
+    isMapTouched
+    amenities
+    safetyAmenities
+    spaces
+    }
+    status
+    errorMessage
+    actionType
+  }
+}
+
+#UpdateStep2
+mutation UpdateListingStep2 (
+  	$id: Int,
+    $description:String,
+    $title:String,
+    $coverPhoto: Int
+  ) {
+      updateListingStep2 (
+        id: $id,
+        description:$description,
+        title:$title,
+        coverPhoto: $coverPhoto
+      ) {
+        status
+        results {
+          id
+          title
+          description
+          coverPhoto
+        }
+      errorMessage
+      }
+    }
+
+#publish listing
+mutation managePublishStatus($listId: Int!, $action: String!) {
+    managePublishStatus(listId: $listId, action: $action) {
+        status
+    errorMessage
+    }
+}
+
+#manage steps of list
+mutation manageListingSteps($listId:String!, $currentStep: Int!) {
+    manageListingSteps :  ManageListingSteps (listId:$listId, currentStep: $currentStep) {
+      results{
+      id
+      listId
+      step1
+      step2
+      step3
+      listing {
+        id
+        isReady
+        isPublished
+          listApprovalStatus
+        user {
+          userBanStatus
+        }
+      }
+      }
+      status
+      errorMessage
+    }
+  }
+
+#Step 1 Listing Details
+query getStep1ListingDetails($listId:String!, $preview: Boolean) {
+      getListingDetails (listId:$listId, preview: $preview) {
+      status
+      errorMessage
+      results{
+         id
+        userId
+        mobileNumber
+        country
+        street
+        buildingName
+        city
+        state
+        zipcode
+        lat
+        lng
+        isMapTouched
+        bedrooms
+        residenceType
+        beds
+        personCapacity
+        bathrooms
+        user {
+          email
+          userBanStatus
+          profile{
+            firstName
+            lastName
+            dateOfBirth
+          }
+        }
+        userAmenities {
+         id
+          itemName
+        }
+        userSafetyAmenities {
+         id
+          itemName
+        }
+        userSpaces {
+        id
+          itemName
+        }
+        settingsData {
+          id
+          settingsId
+          listsettings {
+            id
+            itemName
+            settingsType {
+              typeName
+            }
+          }
+        }
+        userBedsTypes{
+          id
+          listId
+          bedCount
+          bedType
+        }
+      }
+
+      }
+    }
+
+
+
+
+#UpdateStep3
+mutation UpdateListingStep3(
+    $id: Int,
+    $houseRules: [Int],
+    $bookingNoticeTime:String,
+    $checkInStart:String,
+    $checkInEnd:String,
+    $maxDaysNotice:String,
+    $minNight:Int,
+    $maxNight:Int,
+    $visitorsLimit:Int,
+    $petLimit:Int,
+    $infantLimit:Int,
+    $basePrice:Float,
+    $guestBasePrice:Int,
+    $additionalPrice:Float,
+    $cleaningPrice:Float,
+    $visitorsPrice:Float,
+    $infantPrice:Float,
+    $petPrice:Float,
+    $currency:String,
+    $tax: Float,
+    $weeklyDiscount:Int,
+    $monthlyDiscount:Int,
+    $blockedDates: [String],
+    $bookingType: String!,
+    $cancellationPolicy: Int,
+)
+ {
+  updateListingStep3(
+        id: $id,
+        houseRules: $houseRules,
+        bookingNoticeTime:$bookingNoticeTime,
+        checkInStart:$checkInStart,
+        checkInEnd:$checkInEnd,
+        maxDaysNotice:$maxDaysNotice,
+        minNight:$minNight,
+        maxNight:$maxNight,
+        visitorsLimit:$visitorsLimit,
+        petLimit:$petLimit,
+        infantLimit:$infantLimit,
+        basePrice:$basePrice,
+        guestBasePrice:$guestBasePrice,
+        additionalPrice:$additionalPrice,
+        cleaningPrice:$cleaningPrice,
+        visitorsPrice:$visitorsPrice,
+        infantPrice:$infantPrice,
+        petPrice:$petPrice,
+        tax: $tax,
+        currency:$currency,
+        weeklyDiscount:$weeklyDiscount,
+        monthlyDiscount:$monthlyDiscount,
+        blockedDates: $blockedDates,
+        bookingType: $bookingType,
+        cancellationPolicy: $cancellationPolicy
+) {
+    results{
+    id,
+    houseRules,
+    bookingNoticeTime,
+    checkInStart,
+    checkInEnd,
+    maxDaysNotice,
+    minNight,
+    maxNight,
+    basePrice,
+    cleaningPrice,
+    currency,
+    weeklyDiscount,
+    monthlyDiscount,
+    blockedDates,
+
+    }
+    status
+    errorMessage
+    actionType
+  }
+}
+
+#Show List Photos
+query ShowListPhotos($listId: Int!) {
+    showListPhotos(listId: $listId) {
+    results{
+        id,
+      listId,
+      name,
+      type,
+      isCover,
+      photosCount,
+    }
+        status
+    errorMessage
+    }
+}
+
+#GetListDetail - Step 2
+query getListingDetailsStep2($listId:String!, $preview: Boolean) {
+    getListingDetails (listId:$listId, preview: $preview) {
+    results{
+      id
+      userId
+      title
+      description
+      coverPhoto
+    }
+    status
+    errorMessage
+   }
+  }
+
+#Show List Details
+query ShowListingSteps($listId:String!) {
+    showListingSteps (listId:$listId) {
+      results{
+           id
+           listId
+           step1
+           step2
+           step3
+           listing {
+             id
+             isReady
+             isPublished
+               listApprovalStatus
+             user {
+               userBanStatus
+             }
+           }
+             isPhotosAdded
+           }
+           status
+           errorMessage
+         }
+       }
+
+mutation submitForVerification($id: Int!,$listApprovalStatus: String){
+    submitForVerification(id:$id, listApprovalStatus: $listApprovalStatus){
+        errorMessage
+        status
+    }
+}
+
+#Step2
+query Step2ListDetails($listId:String!, $listIdInt:Int! $preview: Boolean) {
+    getListingDetails (listId:$listId, preview: $preview) {
+    results{
+      id
+      userId
+      title
+      description
+      coverPhoto
+    }
+    status
+    errorMessage
+   }
+   showListPhotos(listId: $listIdInt) {
+       results{
+           id,
+         listId,
+         name,
+         type,
+         isCover,
+         photosCount,
+       }
+           status
+       errorMessage
+       }
+  }
+
+
+#GetStep3Deatils
+query GetListingDetailsStep3($listId:String!, $preview: Boolean) {
+    getListingDetails (listId:$listId, preview: $preview) {
+    results{
+     id
+      userId
+      bookingType
+      isPublished
+       personCapacity
+      houseRules {
+        id
+      }
+      listingData {
+        bookingNoticeTime,
+        checkInStart,
+        checkInEnd,
+        maxDaysNotice,
+        minNight,
+        maxNight,
+        basePrice,
+        additionalPrice,
+        visitorsLimit,
+        visitorsPrice,
+        petLimit,
+         petPrice,
+          infantLimit,
+           infantPrice,
+           guestBasePrice,
+        cleaningPrice,
+        currency,
+        tax,
+        weeklyDiscount,
+        monthlyDiscount,
+        cancellationPolicy
+      }
+      blockedDates {
+        blockedDates
+        reservationId
+      }
+      calendars {
+        id
+        name
+        url
+        listId
+        status
+      }
+    }
+    status
+    errorMessage
+   }
+  }
+
+#DeletePhoto
+mutation RemoveListPhotos(
+    $listId: Int!,
+    $name: String,
+) {
+    removeListPhotos :  RemoveListPhotos (
+        listId: $listId,
+        name: $name) {
+           status
+          errorMessage
+    }
+}
+
+#Publish List
+mutation ManagePublishStatus($listId: Int!, $action: String!) {
+    managePublishStatus(listId: $listId, action: $action) {
+        status
+    errorMessage
+    }
+}
+
+
+
+
+
+

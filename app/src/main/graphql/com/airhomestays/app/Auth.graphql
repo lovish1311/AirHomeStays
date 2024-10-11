@@ -1,0 +1,228 @@
+# Check Email Exits
+query CheckEmailExists($email: String!) {
+   validateEmailExist (email: $email) {
+       status
+       errorMessage
+   }
+}
+
+# Login
+query Login(
+    $email: String!,
+    $password: String!,
+    $deviceType: String!,
+    $deviceDetail: String,
+    $deviceId: String!
+) {
+    userLogin (
+        email: $email,
+        password: $password,
+        deviceType: $deviceType,
+        deviceDetail: $deviceDetail,
+        deviceId: $deviceId
+    ) {
+        result {
+            userId
+            userToken
+            user {
+                firstName
+                lastName
+                gender
+                dateOfBirth
+                phoneNumber
+                preferredLanguage
+                preferredCurrency
+                createdAt
+                picture
+                verification{
+                	id
+                	isPhoneVerified
+                	isEmailConfirmed
+                	isIdVerification
+                	isGoogleConnected
+                	isFacebookConnected
+                }
+                userData{
+                	type
+                }
+            }
+        }
+        status
+        errorMessage
+    }
+}
+
+# Signup
+mutation Signup(
+    $firstName: String,
+    $lastName: String,
+    $email: String!,
+    $password: String!,
+    $dateOfBirth: String,
+    $deviceType: String!,
+    $deviceDetail: String,
+    $deviceId: String!,
+    $registerType: String
+) {
+    createUser (
+        firstName: $firstName,
+        lastName: $lastName,
+        email: $email,
+        password: $password,
+        dateOfBirth: $dateOfBirth,
+        deviceType: $deviceType,
+        deviceDetail: $deviceDetail,
+        deviceId: $deviceId,
+        registerType: $registerType) {
+            result {
+                    userId
+                    userToken
+                        user {
+                            firstName
+                            lastName
+                            gender
+                            dateOfBirth
+                            phoneNumber
+                            preferredLanguage
+                            preferredCurrency
+                            createdAt
+                            picture
+                            verification{
+                            	id
+                            	isPhoneVerified
+                            	isEmailConfirmed
+                            	isIdVerification
+                            	isGoogleConnected
+                            	isFacebookConnected
+                            }
+                                userData {
+                                   type
+                                }
+                        }
+            }
+            status
+            errorMessage
+        }
+}
+
+# Social
+query SocialLogin(
+   $firstName: String,
+   $lastName: String,
+   $email: String!,
+   $dateOfBirth: String,
+   $deviceType: String!,
+   $deviceDetail: String,
+   $deviceId: String!,
+   $registerType: String,
+   $gender: String,
+   $profilePicture: String
+) {
+   userSocialLogin (
+       firstName: $firstName,
+       lastName: $lastName,
+       email: $email,
+       dateOfBirth: $dateOfBirth,
+       deviceType: $deviceType,
+       deviceDetail: $deviceDetail,
+       deviceId: $deviceId,
+       registerType: $registerType,
+       gender: $gender,
+       profilePicture: $profilePicture
+   ) {
+       result {
+        userId
+        userToken
+            user {
+                firstName
+                lastName
+                gender
+                dateOfBirth
+                phoneNumber
+                preferredLanguage
+                preferredCurrency
+                createdAt
+                picture
+                verification{
+                	id
+                	isPhoneVerified
+                	isEmailConfirmed
+                	isIdVerification
+                	isGoogleConnected
+                	isFacebookConnected
+                }
+                    userData {
+                       type
+                    }
+            }
+       }
+       status
+       errorMessage
+   }
+}
+
+
+# Logout
+mutation Logout(
+   $deviceType: String!,
+   $deviceId: String!) {
+   userLogout (
+       deviceType: $deviceType,
+       deviceId: $deviceId,
+   ) {
+       status
+       errorMessage
+   }
+}
+
+# Forgot Password Request
+mutation ForgotPassword ($email: String!) {
+    userForgotPassword (email: $email) {
+        status
+        forgotLink
+        errorMessage
+    }
+}
+#forgotLink : /password/verification?token=1540626655147&email=laxman@radicalstart.com
+
+# Forgot Password Verification
+query ForgotPasswordVerification($email: String!, $token: String!) {
+    verifyForgotPassword (email: $email, token: $token) {
+        status
+        errorMessage
+    }
+}
+
+# Reset Password
+mutation ResetPassword($email: String!, $password: String!, $token: String!) {
+    updateForgotPassword (email: $email, password: $password, token: $token) {
+        status
+        errorMessage
+    }
+}
+
+
+#delete account
+mutation deleteUser{
+    deleteUser {
+        status
+        errorMessage
+    }
+}
+
+mutation changePassword(
+	$oldPassword: String
+	$newPassword: String
+	$confirmPassword: String
+) {
+	changePassword(
+		oldPassword: $oldPassword
+		newPassword: $newPassword
+		confirmPassword: $confirmPassword
+	) {
+		status
+		errorMessage
+	}
+}
+
+

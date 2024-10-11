@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <!--<import type="com.airhomestays.app.util.binding.BindingConverters"/>-->
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="msg"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="isLoading"
+            type="androidx.databinding.ObservableBoolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_languages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_divider_light"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/report_this_host"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+
+                <TextView
+                    android:id="@+id/et_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_languages"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="@string/do_you_want_to_report_this_host"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey_font"
+                    android:textColorHint="@color/edittext_color"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15"
+                    tools:ignore="Autofill" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/et_msg"
+                    android:background="@color/gray_divider_light"/>
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_msg"
+                    android:layout_marginEnd="30dp"
+                    android:layout_toStartOf="@id/btn_apply"
+                    android:background="?android:selectableItemBackground"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:padding="10dp"
+                    android:text="@string/no"
+                    android:textAlignment="viewEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/btn_apply"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_msg"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="-20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="?android:selectableItemBackground"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:padding="10dp"
+                    android:text="@string/yes_delete"
+                    android:textAlignment="viewEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_15" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lt_loading"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_centerInParent="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loading_qwe"
+                    android:background="@drawable/lottie_background"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="header"
+            type="String" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="isBlack"
+            type="Boolean" />
+        <variable
+            name="typeface"
+            type="android.graphics.Typeface" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{header}"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:textSize="@{large? @dimen/text_size_h3 : @dimen/text_size_h2}"
+            android:textColor="@{isBlack? @color/black : @color/status_bar_color}"
+            android:textDirection="locale" />
+
+    </LinearLayout>
+</layout>

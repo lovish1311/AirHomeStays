@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="header"
+            type="String" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="isBlack"
+            type="Boolean" />
+        <variable
+            name="isBgNeeded"
+            type="Boolean" />
+        <variable
+            name="typeface"
+            type="android.graphics.Typeface" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="8dp"
+        android:layoutDirection="locale"
+        android:background="@{isBgNeeded?@drawable/host_step_header_bg : @drawable/white_drawable}">
+
+
+    <TextView
+        style="@style/AuthScreenInputPlaceholder"
+        android:text="@{header}"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:textDirection="locale" />
+
+    </LinearLayout>
+</layout>

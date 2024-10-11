@@ -1,0 +1,130 @@
+#ManageListings
+query ManageListings{
+    manageListings :  ManageListings {
+      results {
+        id
+        title
+        city
+        updatedAt
+        coverPhoto
+          lastUpdatedAt
+        isPublished
+        isReady
+        listPhotoName
+          listApprovalStatus
+        listPhotos{
+            id
+            name
+        }
+        settingsData {
+            listsettings {
+                id
+                itemName
+            }
+        }
+        listingData{
+          currency
+        }
+        listingSteps {
+            id
+            step1
+            step2
+            step3
+        }
+        user{
+            userBanStatus
+        }
+      }
+      status
+      errorMessage
+    }
+  }
+
+query listBlockedDates($listId: Int!){
+    getListBlockedDates (listId: $listId){
+		results {
+      blockedDates {
+        blockedDates
+        reservationId
+        listId
+      }
+    }
+    status
+    errorMessage
+ }
+}
+
+mutation UpdateListBlockedDates(
+    $listId: Int!,
+    $blockedDates: [String]
+) {
+    updateListBlockedDates: UpdateListBlockedDates (
+        listId: $listId,
+        blockedDates: $blockedDates
+    )
+    {
+        status
+    }
+}
+
+ #DeleteList
+ mutation RemoveListing($listId:Int!) {
+     removeListing: RemoveListing (listId:$listId) {
+           results{
+             id
+             name
+           }
+           status
+           errorMessage
+          }
+         }
+
+#Delete List Photos
+mutation RemoveMultiPhotos(
+    $photos: String,
+) {
+    removeMultiPhotos: RemoveMultiPhotos (
+        photos: $photos) {
+           status
+          errorMessage
+    }
+}
+
+#Listing Special Price
+query getListingSpecialPrice($listId: Int!){
+    getListingSpecialPrice (listId: $listId){
+     results {
+      id
+      listId
+      reservationId
+      blockedDates
+      calendarStatus
+      isSpecialPrice
+      listCurrency
+    }
+    status
+    errorMessage
+ }
+}
+
+#UpdateSpecialPrice
+mutation UpdateSpecialPrice(
+    $listId: Int!,
+    $blockedDates: [String],
+    $calendarStatus: String,
+    $isSpecialPrice: Float
+) {
+    updateSpecialPrice: UpdateSpecialPrice (
+        listId: $listId,
+        blockedDates: $blockedDates,
+        calendarStatus: $calendarStatus,
+        isSpecialPrice: $isSpecialPrice
+    )
+    {
+      status
+      errorMessage
+    }
+}
+
+
+

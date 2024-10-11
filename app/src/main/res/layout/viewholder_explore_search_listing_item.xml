@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.util.binding.BindingConverters"/>
+        <import type="android.view.View"/>
+        <variable
+            name="roomType"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="price"
+            type="String"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name= "ratingsCount"
+            type="String"/>
+        <variable
+            name="ratingStarCount"
+            type="Integer"/>
+        <variable
+            name="bedsCount"
+            type="Integer"/>
+        <variable
+            name="bookType"
+            type="String"/>
+        <variable
+            name="locationName"
+            type="String"/>
+        <variable
+            name="reviewsStarRating"
+            type="Integer"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="setunderline"
+            type="Boolean" />
+        <variable
+            name="onPriceClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cl_explore_listing_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:onClick="@{onClick}"
+        android:adjustViewBounds="true"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{bedsCount==0 ? roomType : roomType +` /`}"
+            android:textSize="@dimen/text_size_13"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_beds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_item_explore_search_listing_type"
+            bedsPlural="@{bedsCount}"
+            android:textSize="@dimen/text_size_13"
+            android:textDirection="locale"
+            android:visibility="@{bedsCount==0 ? View.GONE : View.VISIBLE}"/>
+
+
+        <ImageView
+            android:id="@+id/tv_item_listing_similar_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            ratingCount="1"
+            reviewsCount="1.0f"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginTop="4dp"
+            android:layout_toStartOf="@+id/tv_item_listing_similar_ratingNumber"
+            android:numStars="1"
+            android:progressTint="@color/colorAccent"
+            android:secondaryProgressTint="@color/colorAccent"
+            android:src="@drawable/ic_star_red"
+            android:stepSize="1"
+            android:visibility="@{reviewsCount==0 ? View.INVISIBLE : View.INVISIBLE}" />
+
+        <TextView
+            android:id="@+id/tv_item_listing_similar_ratingNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:text="@{ratingsCount}"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_13"
+            android:visibility="@{reviewsCount==0 ? View.INVISIBLE : View.INVISIBLE}" />
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_explore_search_listing_type"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:text="@{title}"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_17"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            android:layout_below="@id/tv_item_explore_search_listing_title"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:text="@{locationName}"
+            android:textSize="@dimen/text_size_13"
+            tools:text="czxcadasd"
+            android:textDirection="locale"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalprice"
+            android:layout_below="@id/tv_item_explore_search_listing_place"
+            android:onClick="@{onPriceClick}"
+
+            >
+
+
+        <com.airhomestays.app.util.CustomUnderlineTextView
+            android:id="@+id/tv_item_explore_search_listing_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:textColor="@color/black"
+            android:textDirection="locale"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_price_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/tv_item_explore_search_listing_price"
+            android:layout_alignBottom="@id/tv_item_explore_search_listing_price"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:text=""
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/black"
+            android:textDirection="locale"/>
+
+        <ImageView
+            android:id="@+id/iv_item_listing_instant_image"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toEndOf="@id/tv_item_explore_search_listing_price_night"
+            android:layout_alignBottom="@id/tv_item_explore_search_listing_price_night"
+            tools:ignore="ContentDescription" />
+        </RelativeLayout>
+        <View
+            android:layout_below="@id/totalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_alignEnd="@id/totalprice"
+            android:layout_alignStart="@id/totalprice"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+</layout>

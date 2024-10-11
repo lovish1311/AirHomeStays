@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data> <import type="android.view.View"/>
+        <variable
+            name="type"
+            type="String"/>
+        <variable
+            name="price"
+            type="String"/>
+        <variable
+            name="rating"
+            type="String"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="reviewsStarRating"
+            type="Integer" />
+        <variable
+            name="img"
+            type="String"/>
+        <variable
+            name="imageClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="112dp"
+            android:layout_height="80dp"
+            tools:ignore="ContentDescription"
+            android:onClick="@{imageClick}"
+            imgListing="@{img}"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/image">
+
+            <TextView
+                android:id="@+id/type1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title1"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:text="@{type}"
+                android:textColor="@color/room_type"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_listing_rating"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@{title}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type1"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@{price + ` ` + @string/per_night}"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/tv_listing_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_star_red"
+                android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/tv_listing_rating"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:text="@{reviewsCount+` \u2022 `+reviewsStarRating+` `+@string/reviews }"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h1"
+                android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</layout>

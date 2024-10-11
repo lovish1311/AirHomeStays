@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/radioSex"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="?android:selectableItemBackground"
+    android:layoutDirection="locale">
+
+    <RadioButton
+        android:id="@+id/radioMale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_male"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layoutDirection="rtl"
+        android:textDirection="ltr"
+        android:textAlignment="textStart"
+        android:layout_gravity="start"
+        android:background="?android:selectableItemBackground"
+        />
+
+    <RadioButton
+        android:id="@+id/radioFemale"
+        android:text="@string/radio_female"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layoutDirection="rtl"
+        android:textDirection="ltr"
+        android:textAlignment="textStart"
+        android:background="?android:selectableItemBackground"
+        android:layout_gravity="start"/>
+
+    <RadioButton
+        android:id="@+id/radioOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_other"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layoutDirection="rtl"
+        android:textDirection="ltr"
+        android:textAlignment="textStart"
+        android:background="?android:selectableItemBackground"
+        android:layout_gravity="start"/>
+
+</RadioGroup>

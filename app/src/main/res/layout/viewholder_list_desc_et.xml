@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data><import type="android.view.View"/>
+
+        <variable
+            name="hint"
+            type="String" />
+
+        <variable
+            name="maxLength"
+            type="Integer" />
+        <variable
+            name="maxChar"
+            type="Integer" />
+
+        <variable
+            name="title"
+            type="String"/>
+
+        <variable
+            name="inputType"
+            type="String"/>
+
+        <variable
+            name="paddingBottom"
+            type="Boolean"/>
+        <variable
+            name="marginTop"
+            type="Boolean"/>
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="isBgneed"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/bg_curve"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="@{isBgneed?View.VISIBLE:View.GONE}"
+            android:src="@drawable/host_step_header_bg"
+            android:background="@color/explore_header_bg"/>
+
+        <TextView
+            android:id="@+id/tv_host_hint"
+            style="@style/BecomeHostText"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="@{title}"
+            android:textDirection="locale" />
+
+        <EditText
+            android:id="@+id/et_msg_booking"
+            style="@style/BecomeHostDescEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_host_hint"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/editext_border"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:gravity="top|start"
+            android:hint="@{hint}"
+            android:inputType="textCapSentences|textMultiLine|textNoSuggestions"
+            android:maxLines="10"
+            android:minHeight="@{maxLength}"
+            android:overScrollMode="always"
+            android:padding="15dp"
+            android:maxLength="@{maxChar}"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:text="@={text}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="14sp"
+            tools:ignore="Autofill" />
+
+        <!--<EditText-->
+            <!--android:id="@+id/et_host_edit"-->
+            <!--style="@style/BecomeHostEdit"-->
+            <!--android:layout_below="@id/tv_host_hint"-->
+            <!--android:layout_marginLeft="-4dp"-->
+            <!--android:layout_marginRight="-4dp"-->
+            <!--android:gravity="top"-->
+            <!--android:nestedScrollingEnabled="true"-->
+            <!--android:isScrollContainer="true"-->
+            <!--android:overScrollMode="always"-->
+            <!--android:scrollbarStyle="insideOverlay"-->
+            <!--android:scrollbars="vertical"-->
+            <!--android:hint="@{hint}"-->
+            <!--android:maxLength='@{maxLength}'-->
+            <!--android:padding="15dp"-->
+            <!--android:text="@={text}"-->
+            <!--android:textColor="@color/text_color"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>-->
+
+
+    </RelativeLayout>
+
+</layout>

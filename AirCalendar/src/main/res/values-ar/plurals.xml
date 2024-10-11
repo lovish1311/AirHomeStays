@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="night_selected">
+        <item quantity="other">%1$s الليالي المختارة</item>
+        <item quantity="one">%1$s ليلة مختارة</item>
+    </plurals>
+    <plurals name="night_maximum">
+        <item quantity="other">%1$d ليل الحد الأقصى للإقامة هو</item>
+        <item quantity="one">%1$d ليل الحد الأقصى للإقامة هو</item>
+    </plurals>
+    <plurals name="night_minimum">
+        <item quantity="other">%1$d الحد الأدنى للإقامة ليالي</item>
+        <item quantity="one">%1$d الحد الأدنى للإقامة هو الليل</item>
+    </plurals>
+</resources>

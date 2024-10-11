@@ -1,0 +1,240 @@
+# Similar Listing
+query getSimilarListing (
+    $lat: Float,
+    $lng: Float,
+    $listId: Int
+) {
+    getSimilarListing (
+        listId: $listId,
+        lat: $lat,
+        lng: $lng
+    ) {
+       results {
+        id
+        title
+        personCapacity
+        beds
+        bookingType
+        reviewsCount,
+        reviewsStarRating,
+        listingData {
+            basePrice
+            currency
+            cleaningPrice
+        }
+        wishListStatus
+        isListOwner
+        listPhotoName
+        roomType
+        }
+        status
+    }
+}
+
+# Listing Details
+query viewListingDetails(
+    $listId:Int!,
+    $preview: Boolean
+) {
+    viewListing (
+        listId:$listId,
+        preview: $preview
+    ) {
+        results {
+          id
+          userId
+          title
+          description
+          coverPhoto
+          city
+          state
+          country
+          isPublished
+          lat
+          lng
+          houseType
+          roomType
+          bookingType
+          bedrooms
+           checkInBlockedDates{
+                listId
+                blockedDates
+                calendarStatus
+                isSpecialPrice
+               dayStatus
+              }
+          fullBlockedDates{
+                listId
+                blockedDates
+                calendarStatus
+                isSpecialPrice
+               dayStatus
+              }
+          userBedsTypes{
+          bedCount
+         	bedName
+          					}
+          residenceType
+          beds
+          personCapacity
+          bathrooms
+          coverPhoto
+          listPhotoName
+          settingsData{
+                      listsettings{
+                      id
+                      itemName
+                        settingsType{
+                          typeName
+                        }
+                      }
+                    }
+          listPhotos{
+            id
+            name
+          }
+          user {
+            email
+            profile{
+              profileId
+              displayName
+              firstName
+              picture
+            }
+          }
+          userAmenities {
+           id
+           itemName
+           image
+          }
+          userSafetyAmenities {
+             id
+             itemName
+             image
+          }
+          userSpaces {
+            id
+            itemName
+            image
+           }
+          houseRules {
+              id
+              itemName
+          }
+          listingData {
+            bookingNoticeTime,
+            checkInStart,
+            checkInEnd,
+            maxDaysNotice,
+            minNight,
+            maxNight,
+            guestBasePrice,
+            basePrice,
+            petPrice,
+            infantPrice,
+            visitorsPrice,
+            cleaningPrice,
+            infantLimit,
+            petLimit,
+            visitorsLimit,
+            currency,
+            weeklyDiscount,
+            monthlyDiscount,
+            cancellation{
+              id
+              policyName
+              policyContent
+            }
+          }
+          blockedDates{
+                      blockedDates,
+                      reservationId,
+                      calendarStatus,
+                      isSpecialPrice,
+                      listId
+                      dayStatus
+                    }
+          reviewsCount,
+          reviewsStarRating
+          isListOwner
+          wishListStatus
+          wishListGroupCount
+        }
+        status
+        errorMessage
+    }
+}
+
+# Review
+query getReviewsList(
+    $listId: Int,
+    $currentPage: Int,
+    $hostId: String!
+) {
+    getReviews(
+        listId: $listId,
+        currentPage: $currentPage,
+        hostId: $hostId
+    ) {
+        results {
+          id
+          userId
+          reviewContent
+          rating
+          createdAt
+          isAdmin
+          userData{
+            userId
+            profileId
+            firstName
+            lastName
+            picture
+          }
+          authorData{
+            userId
+            profileId
+            firstName
+            lastName
+            picture
+          }
+        }
+        status
+        count
+    }
+}
+
+# Date Availability
+query dateAvailability($listId: Int!, $startDate: String!, $endDate: String!){
+  dateAvailability(listId: $listId, startDate: $startDate, endDate: $endDate){
+    results{
+      blockedDates
+    }
+    status
+  }
+}
+
+# Contact Host
+mutation ContactHost(
+  	$listId: Int!,
+  	$hostId: String!,
+  	$content: String!,
+  	$userId: String!,
+  	$type: String,
+  	$startDate: String!,
+  	$endDate: String!,
+  	$personCapacity: Int
+) {
+    createEnquiry : CreateEnquiry(
+    listId: $listId,
+    hostId: $hostId,
+    userId: $userId,
+    content: $content,
+    type: $type,
+    startDate: $startDate,
+    endDate: $endDate,
+    personCapacity: $personCapacity
+  ) {
+     status
+     errorMessage
+  }
+}

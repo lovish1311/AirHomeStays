@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="reviewsCount"
+            type="Integer" />
+        <variable
+            name="displayCount"
+            type="Integer" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="isBlack"
+            type="Boolean" />
+        <variable
+            name="paddingStart"
+            type="Boolean" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="@{paddingStart?@dimen/paddingReviewHeader:@dimen/paddingListing}"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/img_review_header_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_star_red" />
+
+        <TextView
+            disDisplayCount="@{displayCount}"
+            disReviewsCount="@{reviewsCount}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/img_review_header_image"
+            android:textColor="@{isBlack? @color/text_color : @color/status_bar_color}"
+            android:textDirection="locale"
+            android:textSize="@{large? @dimen/text_size_h3 : @dimen/text_size_h1_5}"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</layout>

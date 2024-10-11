@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.host.payout.editpayout.PayoutViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:padding="20dp"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/et_search_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_for_country_region"
+            android:textColorHint="#969696"
+            android:layout_marginTop="-20dp"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="15dp"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:textColor="@color/black"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:layout_margin="19dp"
+            android:onTextChanged="@{(text, start, before, count) -> viewModel.onSearchTextChanged(text)}"
+            android:inputType="textCapWords"
+            tools:ignore="Autofill,LabelFor"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rl_country"
+            android:layout_marginTop="-20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+    </LinearLayout>
+</layout>

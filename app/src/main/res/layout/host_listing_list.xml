@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_popup"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+
+    <TextView
+        android:id="@+id/preview"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/preview"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/text_size_13"
+        tools:ignore="HardcodedText"
+        app:drawableStartCompat="@drawable/ic_preview" />
+    <TextView
+        android:id="@+id/delete"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/delete"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/text_size_13"
+        tools:ignore="HardcodedText"
+        app:drawableStartCompat="@drawable/ic_cancel" />
+
+</LinearLayout>

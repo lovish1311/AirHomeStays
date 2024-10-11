@@ -1,0 +1,214 @@
+#Create WishList Group
+mutation CreateWishListGroup(
+    $name: String!,
+    $id: Int,
+    $isPublic: String,
+){
+    createWishListGroup: CreateWishListGroup(
+        name: $name,
+        id: $id,
+        isPublic: $isPublic
+    ) {
+        status
+        errorMessage
+        results {
+            name
+            isPublic
+            id
+        }
+    }
+}
+
+#Get All WishList Group with pagination
+query getAllWishListGroup($currentPage: Int){
+    getAllWishListGroup(currentPage: $currentPage){
+      status
+      count
+      errorMessage
+      results {
+        id
+        name
+        userId
+        isPublic
+        updatedAt
+        wishListIds
+        wishListCount
+        wishListCover {
+          id
+          listId
+          listData {
+            id
+            title
+            personCapacity
+            beds
+            bookingType
+            coverPhoto
+            reviewsCount
+            reviewsStarRating
+            wishListStatus
+            listPhotoName
+            listPhotos {
+              id
+              name
+              type
+              status
+            }
+            listingData {
+              basePrice
+              currency
+            }
+            settingsData {
+              listsettings {
+                id
+                itemName
+              }
+            }
+          }
+        }
+  	  }
+    }
+}
+
+#Get All WishList Group
+query getAllWishListGroupWithoutPage{
+    getAllWishListGroup{
+      status
+      count
+      errorMessage
+      results {
+        id
+        name
+        userId
+        isPublic
+        updatedAt
+        wishListIds
+        wishListCount
+        wishListCover {
+          id
+          listId
+          listData {
+            id
+            title
+            personCapacity
+            beds
+            bookingType
+            coverPhoto
+            reviewsCount
+            reviewsStarRating
+            wishListStatus
+            listPhotoName
+            listPhotos {
+              id
+              name
+              type
+              status
+            }
+            listingData {
+              basePrice
+              currency
+            }
+            settingsData {
+              listsettings {
+                id
+                itemName
+              }
+            }
+          }
+        }
+  	  }
+    }
+}
+
+#Create WishList
+mutation CreateWishList(
+    $listId: Int!,
+    $wishListGroupId:Int,
+    $eventKey:Boolean,
+){
+    createWishList: CreateWishList(
+        listId: $listId,
+        wishListGroupId: $wishListGroupId,
+        eventKey: $eventKey,
+    ) {
+        status
+       errorMessage
+    }
+}
+
+#Get WishList Group
+query getWishListGroup ($id: Int!, $currentPage: Int){
+    getWishListGroup(id: $id, currentPage: $currentPage){
+        status
+        errorMessage
+        results {
+            id
+            name
+            userId
+            isPublic
+            updatedAt
+            wishListIds
+            wishListCount
+        	wishLists {
+              id
+              listId
+              listData {
+                id
+                title
+                personCapacity
+                roomType
+                beds
+                bookingType
+                coverPhoto
+                reviewsCount
+                reviewsStarRating
+                wishListStatus
+                listPhotoName
+                listPhotos {
+                  id
+                  name
+                  type
+                  status
+                }
+                listingData {
+                  basePrice
+                  currency
+                }
+                settingsData {
+                  listsettings {
+                    id
+                    itemName
+                  }
+                }
+              }
+            }
+        }
+    }
+}
+
+#Delete WishList Group
+mutation DeleteWishListGroup(
+    $id: Int!,
+){
+    deleteWishListGroup: DeleteWishListGroup(
+        id: $id
+    ) {
+        status
+        errorMessage
+    }
+}
+
+#Update WishList Group
+mutation UpdateWishListGroup(
+    $isPublic: Int,
+    $id: Int!
+){
+    updateWishListGroup: UpdateWishListGroup(
+        isPublic: $isPublic,
+        id: $id
+    ) {
+        status
+        errorMessage
+    }
+}
+
+

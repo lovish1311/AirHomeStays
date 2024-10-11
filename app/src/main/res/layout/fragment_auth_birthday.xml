@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.util.binding.BindingConverters"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.auth.birthday.BirthdayViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/status_bar_color"
+        android:id="@+id/roota"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/action_bar"
+            layout="@layout/toolbar"
+            style="@style/Toolbar"/>
+
+        <ScrollView
+            style="@style/ScrollView"
+            android:layout_above="@id/rl_lottie"
+            android:layout_below="@+id/action_bar">
+
+            <RelativeLayout
+                style="@style/AuthScreenTopLayout">
+
+                <TextView
+                    android:id="@+id/tv_when_birthday"
+                    android:text="@string/when_birthday"
+                    android:layout_marginBottom="5dp"
+                    style="@style/AuthScreenTitle"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:id="@+id/tv_placeholder_birthday"
+                    android:text="@string/birthday"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tv_birthday_condition"
+                    android:layout_marginTop="5dp"
+                    android:textDirection="locale"
+                    style="@style/AuthScreenInputPlaceholder"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_placeholder_birthday"
+                    android:background="@null">
+
+                    <TextView
+                        android:id="@+id/tv_month"
+                        style="@style/BirthDayEditText"
+                        android:text="@{BindingConverters.splitMonth(viewModel.yearLimit)}"
+                        android:textDirection="locale" />
+
+                    <TextView
+                        android:id="@+id/first_divider"
+                        style="@style/BirthDayEditText"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toEndOf="@id/tv_month"
+                        android:text="@string/divider"
+                        android:textDirection="locale" />
+
+                    <TextView
+                        android:id="@+id/tv_day"
+                        style="@style/BirthDayEditText"
+                        android:layout_toEndOf="@id/first_divider"
+                        android:text="@{BindingConverters.splitDay(viewModel.yearLimit)}"
+                        android:textDirection="locale" />
+
+                    <TextView
+                        android:id="@+id/second_divider"
+                        style="@style/BirthDayEditText"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toEndOf="@id/tv_day"
+                        android:text="@string/divider"
+                        android:textDirection="locale" />
+
+                    <TextView
+                        android:id="@+id/tv_year"
+                        style="@style/BirthDayEditText"
+                        android:layout_toEndOf="@id/second_divider"
+                        android:text="@{BindingConverters.splitYear(viewModel.yearLimit)}"
+                        android:textDirection="locale" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_year"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/edittext_line" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_birthday_condition"
+                    android:text="@string/age_limit"
+                    android:layout_below="@+id/tv_when_birthday"
+                    android:layout_marginBottom="20dp"
+                    android:layout_alignStart="@+id/tv_when_birthday"
+                    style="@style/AuthScreenUserInfoTextView"
+                    android:textDirection="locale"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rl_lottie"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/AuthScreenLottieLayout"
+            app:dateOfBirth="@{viewModel.yearLimit}"
+            app:viewModel="@{viewModel}"
+            android:onClick="@{() -> viewModel.signUpUser()}"
+            android:background="@drawable/circle_imageview">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_auth_loading_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#40000000"
+            goneUnless="@{viewModel.isLoading}">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:lottie_rawRes="@raw/loading_qwe"
+                android:background="@drawable/lottie_background"
+                />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</layout>

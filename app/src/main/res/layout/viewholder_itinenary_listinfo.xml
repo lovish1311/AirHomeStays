@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="type"
+            type="String"/>
+        <variable
+            name="title"
+            type="String"/>
+        <variable
+            name="rating"
+            type="String"/>
+        <variable
+            name="reviewsCount"
+            type="Integer"/>
+        <variable
+            name="reviewsStarRating"
+            type="Integer" />
+        <variable
+            name="img"
+            type="String"/>
+        <variable
+            name="location"
+            type="String"/>
+        <variable
+            name="wishListStatus"
+            type="Boolean"/>
+        <variable
+            name="isOwnerList"
+            type="Boolean"/>
+        <variable
+            name="heartClickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="imageClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                imgListing="@{img}"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:onClick="@{imageClick}"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_item_listing_heart"
+                isOwnerList="@{isOwnerList}"
+                isWishList="@{wishListStatus}"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="gone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:onClick="@{heartClickListener}"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}">
+
+                <ImageView
+                    android:id="@+id/tv_item_listing_similar_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_star_red"
+                    android:visibility="@{reviewsCount==0 ? View.GONE : View.VISIBLE}" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-2dp"
+                    android:layout_toEndOf="@id/tv_item_listing_similar_rating"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:text="@{reviewsCount > 0 ?rating+` \u2022 `+ reviewsCount + @plurals/review_count(reviewsCount) : rating+` . `+ reviewsCount +` `+ @string/review}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_13" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{title}"
+                android:textSize="@dimen/text_size_15"
+                android:textStyle="bold"
+                android:onClick="@{imageClick}"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:textColor="@color/black"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/location1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{location}"
+                android:textSize="@dimen/text_size_13"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/grey_font"
+                android:textDirection="locale"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</layout>

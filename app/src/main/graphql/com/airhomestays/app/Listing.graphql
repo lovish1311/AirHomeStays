@@ -1,0 +1,66 @@
+query getDefaultSetting{
+  # Currency Rate
+    currency :  Currency {
+     result {
+        base
+        rates
+     }
+     status
+     errorMessage
+    }
+
+ #Default price in filter
+    getSearchSettings {
+     results {
+       id
+       minPrice
+       maxPrice
+       priceRangeCurrency
+     }
+     status
+     errorMessage
+   }
+
+ # Filters
+    getListingSettingsCommon {
+       status
+       errorMessage
+       results {
+         id
+         typeName
+         fieldType
+         typeLabel
+         step
+         isEnable
+         listSettings {
+           id
+           typeId
+           itemName
+           otherItemName
+           maximum
+           minimum
+           startValue
+           endValue
+           isEnable
+         }
+       }
+     }
+
+}
+
+  # Secure Site Settings
+  query getSecureSiteSettings($type: String, $securityKey: String!) {
+     	getSecureSiteSettings(settingsType: $type, securityKey: $securityKey) {
+     		status
+     		errorMessage
+     		results {
+     			id
+     			title
+     			name
+     			value
+     			type
+     			status
+     		}
+     	}
+
+}

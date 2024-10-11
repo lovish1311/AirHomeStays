@@ -1,0 +1,25 @@
+query getSecPayment ($userId: String!) {
+     getSecPayment (userId: $userId) {
+    status
+    errorMessage
+    result {
+      id
+      userId
+      address1
+      address2
+      city
+      zipcode
+      state
+      country
+      accountType
+      accountNumber
+      confirmAccountNumber
+      ifscCode
+      accountHolderName
+      gstNumber
+      panNumber
+      mobileNumber
+      createdAt
+    }
+  }
+}

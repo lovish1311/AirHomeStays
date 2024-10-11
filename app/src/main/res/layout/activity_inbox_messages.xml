@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.inbox.msg_detail.InboxMsgViewModel"/>
+        <variable
+            name="preHeaderText"
+            type="String"/>
+        <variable
+            name="presubText"
+            type="String"/>
+        <variable
+            name="presubVisible"
+            type="Boolean"/>
+        <variable
+            name="preApproval"
+            type="Boolean"/>
+        <variable
+            name="prebuttonText"
+            type="String"/>
+        <variable
+            name="status"
+            type="String"/>
+        <variable
+            name="bookClick"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="pretimer"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar_inbox"
+                android:layout_margin="20dp"
+                layout="@layout/toolbar_profile"
+                android:layout_height="50dp"
+                android:layout_width="wrap_content"/>
+
+            <RelativeLayout
+                android:id="@+id/preApprovalLay"
+                color="@{preHeaderText == @string/trip_is_completed? @color/container_chat_completed:@color/explore_header_bg}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar_inbox"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="15dp"
+                android:visibility="@{viewModel.preApprovalVisible ? View.VISIBLE : View.GONE}"
+                app:cardUseCompatPadding="true"
+                app:layout_scrollFlags="scroll|enterAlways"
+                tools:ignore="IncludeLayoutParam">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/header_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/be_vietnampro_medium"
+                        android:text="@{preHeaderText}"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:id="@+id/subText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_text"
+                        android:layout_marginTop="3dp"
+                        android:paddingBottom="10dp"
+                        android:text="@{presubText}"
+                        android:textColor="@color/grey_font"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h1_5"
+                        android:visibility="@{presubVisible ? View.VISIBLE : View.GONE}" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/subText"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/bookLay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/curve_button_red"
+                            android:visibility="@{preApproval? View.GONE : View.VISIBLE}">
+
+                            <TextView
+                                android:id="@+id/timer"
+                                goneUnlessInverse="@{viewModel.isBook}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/logout_button_pressed"
+                                android:gravity="center"
+                                android:onClick="@{bookClick}"
+                                android:paddingStart="15dp"
+                                android:paddingTop="0dp"
+                                android:paddingEnd="15dp"
+                                android:paddingBottom="3dp"
+                                android:text="@{prebuttonText}"
+                                android:textColor="@android:color/white"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/text_size_15" />
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/lt_loading_view"
+                                goneUnless="@{viewModel.isBook}"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/logout_button_pressed"
+                                android:scaleType="centerCrop"
+                                app:hideBookButton="@{viewModel.lottieProgress}"
+                                app:lottie_loop="true"
+                               />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/timer_before"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/bookLay"
+                            android:singleLine="false"
+                            android:text="@{viewModel.timerValue}"
+                            android:textColor="@color/grey_font"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/text_size_13" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/searchLoading"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                goneUnless="@{viewModel.isLoading}"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_above="@id/rl_inbox_detail_send_msg"
+                android:layout_below="@id/preApprovalLay"
+                android:background="@color/white">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="true"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/place_holder_conversation" />
+
+                        <include layout="@layout/place_holder_conversation" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_inbox_details"
+                goneUnlessInverse="@{viewModel.isLoading}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/rl_inbox_detail_send_msg"
+                android:layout_below="@id/preApprovalLay"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+        <TextView
+            android:id="@+id/tv_new_msg_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_message"
+            android:textAllCaps="true"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textDirection="locale"
+            android:textSize="11sp"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/new_message"
+            android:background="@drawable/msg_pill"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@id/rl_inbox_detail_send_msg" />
+
+        <RelativeLayout
+            android:id="@+id/rl_inbox_detail_send_msg"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_message_edit_text"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/tv_inbox_send"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:enabled="false"
+                android:hint="@string/write_a_message"
+                android:maxLines="3"
+                android:paddingStart="30dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:text="@={viewModel.msg}"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:id="@+id/tv_inbox_send"
+                enableSendImageBtn="@{viewModel.msg}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_send_button" />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+        <include
+            android:id="@+id/inl_error"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            layout="@layout/include_error_page"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+</layout>

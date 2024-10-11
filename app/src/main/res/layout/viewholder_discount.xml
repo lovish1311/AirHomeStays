@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.text.InputType"/>
+        <variable
+            name="hint"
+            type="String" />
+
+        <variable
+            name="title"
+            type="String"/>
+
+        <variable
+            name="paddingBottom"
+            type="Boolean"/>
+
+        <variable
+            name="text"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+
+        <variable
+            name="inputType"
+            type="Boolean"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingBottom="20dp"
+        android:paddingEnd="20dp"
+        android:layoutDirection="locale"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_host_hint"
+            style="@style/BecomeHostText"
+            android:layout_marginBottom="10dp"
+            android:text="@{title}"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/et_host_edit"
+            style="@style/BecomeHostEdit"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text_login"
+            android:digits="@{inputType? @string/decimal_string : @string/number_string}"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:hint="@{hint}"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            android:text="@={text}"
+            android:drawableEnd="@drawable/label_red"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_color"
+            android:textDirection="locale" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="50dp"
+            android:layout_height="51dp"
+            android:layout_alignTop="@id/et_host_edit"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/et_host_edit"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/bg_discount"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:gravity="center"
+            android:text="%"
+
+            android:textColor="@color/black_photo_story"
+            android:textSize="@dimen/text_size_15" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="list"
+            type="String" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{clickListener}"
+        android:background="@null"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{list}"
+            android:textSize="@dimen/text_size_h2"
+            android:padding="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{clickListener}"
+            android:background="@null"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"/>
+
+    </RelativeLayout>
+</layout>

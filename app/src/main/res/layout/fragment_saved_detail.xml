@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.R"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_saved_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/abl_saved"
+            style="@style/AppTheme"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@color/white">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/abl_saved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStart="0dp"
+                app:contentInsetEnd="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_round_button_gray"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_left_arrow"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/group_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toStartOf="@id/iv_edit"
+                        android:layout_toEndOf="@id/iv_close"
+                        android:text="@string/wishlists"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h4"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@id/group_name"
+                        android:layout_centerVertical="true"
+                        android:layout_alignBottom="@id/group_name"
+                        android:layout_toStartOf="@id/iv_option"
+                        android:padding="4dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ic_edit_green"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/iv_option"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@id/group_name"
+                        android:layout_centerVertical="true"
+                        android:layout_alignBottom="@id/group_name"
+                        android:layout_alignParentEnd="true"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_delete_blue"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_saved_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/abl_saved">
+
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/rv_saved_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+            </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+
+        <LinearLayout
+            android:id="@+id/rlSaveNoListPlaceholder"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?android:attr/actionBarSize"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nothing_saved_yet"
+                android:textSize="20sp"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textDirection="locale" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/when_you_see_something_you_like_tap_on_the_heart_to_save_it_if_you_re_planning_a_trip_with_others_invite_them_so_they_can_save_and_vote_on_their_favorites"
+                android:textSize="@dimen/text_size_18"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                />
+
+            <TextView
+                android:id="@+id/tv_start_explore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_exploring"
+                android:textSize="@dimen/text_size_h2"
+                android:textColor="@color/status_bar_color"
+                android:layout_marginTop="40dp"
+                android:textDirection="locale"
+                />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_search_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="visible"
+            android:background="@color/white">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="true"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/place_holder_search_listing" />
+
+                        <include layout="@layout/place_holder_search_listing" />
+
+                        <include layout="@layout/place_holder_search_listing" />
+                    </LinearLayout>
+                </ScrollView>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</layout>

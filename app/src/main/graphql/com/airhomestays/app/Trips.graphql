@@ -1,0 +1,122 @@
+#Trips
+query getAllReservation ($userType: String, $currentPage: Int, $dateFilter: String){
+getAllReservation(userType: $userType, currentPage: $currentPage, dateFilter: $dateFilter){
+result {
+id
+listId
+hostId
+guestId
+checkIn
+checkOut
+guests
+hostUser{
+		email
+	}
+	guestUser{
+		email
+	}
+guestServiceFee
+hostServiceFee
+reservationState
+total
+currency
+checkInStart
+checkInEnd
+messageData {
+id
+}
+listData {
+id
+title
+street
+city
+state
+country
+zipcode
+reviewsCount
+reviewsStarRating
+roomType
+bookingType
+wishListStatus
+listPhotoName
+listPhotos {
+id
+name
+}
+listingData {
+currency
+basePrice
+checkInStart
+checkInEnd
+}
+settingsData {
+id
+listsettings {
+id
+itemName
+}
+}
+}
+hostData {
+profileId
+displayName
+picture
+phoneNumber
+fullPhoneNumber
+verifiedPhoneNumber
+firstName
+userId
+userData {
+email
+}
+userVerification{
+     id
+     isEmailConfirmed
+     isFacebookConnected
+     isGoogleConnected
+     isIdVerification
+     isPhoneVerified
+     status
+     }
+}
+guestData {
+profileId
+displayName
+picture
+firstName
+fullPhoneNumber
+phoneNumber
+verifiedPhoneNumber
+userId
+userData {
+email
+}
+userVerification{
+     id
+     isEmailConfirmed
+     isFacebookConnected
+     isGoogleConnected
+     isIdVerification
+     isPhoneVerified
+     status
+     }
+}
+}
+count
+status
+}
+}
+
+
+
+query contactSupport($message: String, $listId: Int, $reservationId: Int, $userType: String) {
+  contactSupport(message: $message, listId: $listId, reservationId: $reservationId, userType: $userType) {
+    result{
+      userId
+      email
+      firstName
+  	}
+     status
+      errorMessage
+  }
+}

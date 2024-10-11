@@ -1,0 +1,106 @@
+query showUserProfile($profileId: Int, $isUser: Boolean) {
+  showUserProfile(profileId: $profileId, isUser: $isUser) {
+    results {
+      userId
+      profileId
+      firstName
+      lastName
+      dateOfBirth
+      gender
+      phoneNumber
+      preferredLanguage
+      preferredCurrency
+      location
+      info
+      createdAt
+      picture
+      reviewsCount
+      userVerifiedInfo{
+          id
+          isEmailConfirmed
+          isFacebookConnected
+          isGoogleConnected
+          isIdVerification
+          isPhoneVerified
+          status
+      }
+    }
+    status
+    errorMessage
+  }
+}
+
+fragment userprofileFields on userProfile {
+  profileId
+  firstName
+  lastName
+  picture
+  location
+}
+
+#Report User
+mutation CreateReportUser($reporterId: String, $userId: String, $reportType: String, $profileId: Int){
+  createReportUser(reporterId: $reporterId, userId: $userId, reportType: $reportType, profileId: $profileId) {
+    status
+    errorMessage
+  }
+}
+
+#User Reviews
+query userReviews($ownerType: String, $currentPage: Int, $profileId: Int) {
+  userReviews(ownerType: $ownerType, currentPage: $currentPage, profileId: $profileId) {
+    results {
+      id
+      reservationId
+      listId
+      authorId
+      userId
+      reviewContent
+      rating
+      parentId
+      automated
+      createdAt
+      status
+      isAdmin
+      yourReviewsCount
+      reviewsCount
+      authorData {
+        ...profileFields
+      }
+      userData {
+        ...profileFields
+      }
+      response {
+        id
+        reservationId
+        listId
+        authorId
+        userId
+        reviewContent
+        rating
+        parentId
+        automated
+        createdAt
+        status
+        isAdmin
+        authorData {
+          ...profileFields
+        }
+        userData {
+          ...profileFields
+        }
+      }
+    }
+    status
+    errorMessage
+  }
+}
+
+fragment profileFields on userProfile {
+  profileId
+  firstName
+  lastName
+  picture
+  location
+}
+

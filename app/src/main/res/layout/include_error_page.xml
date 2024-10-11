@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ll_404_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layoutDirection="locale">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/uh_oh"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_marginBottom="0dp"
+        android:textDirection="locale"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="10dp"
+        android:text="@string/we_can_t_seem_to_find_the_anything_that_you_re_looking_for"
+        android:textDirection="locale"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/error_code_404"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:textDirection="locale"/>
+
+</LinearLayout>

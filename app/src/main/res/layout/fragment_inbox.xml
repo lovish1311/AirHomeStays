@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale"
+        android:paddingBottom="@dimen/bottomNavigationHeight">
+
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_inbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp">
+        </com.airbnb.epoxy.EpoxyRecyclerView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_inbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@string/inbox"
+                android:textSize="@dimen/text_size_h5"
+                android:textColor="@color/black"
+                android:paddingTop="20dp"
+                android:paddingBottom="15dp"
+                android:textDirection="locale"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="true"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+
+                        <include layout="@layout/place_holder_inbox" />
+                    </LinearLayout>
+                </ScrollView>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_inbox_nomessage_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/saved_iv"
+                android:layout_width="200dp"
+                android:background="@drawable/ic_no_inbox_image"
+                android:paddingBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/saved_detail"
+                android:layout_marginBottom="20dp"
+                android:layout_height="200dp"/>
+
+            <TextView
+                android:id="@+id/saved_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:gravity="center"
+                android:text="@string/no_inbox_messages"
+                android:textSize="@dimen/text_size_15"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</layout>

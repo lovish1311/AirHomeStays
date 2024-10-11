@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "AirHomeStays">
+    ]>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">&appname;</string>
+
+
+    <string name="logintext">Entrar</string>
+    <string name="login_txt">Entrar</string>
+    <string name="signup">Inscrever-se</string>
+    <string name="welcome_to_appname">Bem-vindo ao &appname;</string>
+    <string name="fb_button">Continue com o Facebook</string>
+    <string name="google_button">Continue com o Google</string>
+    <string name="please_login_to_verify_your_email">Por favor entre para verificar o seu email.</string>
+    <string name="verified">Verificado</string>
+
+    <string name="limit_exceeded">O comprimento do título deve ter menos de 250 caracteres.</string>
+    <string name="your_email">E seu email?</string>
+    <string name="email_address">ENDEREÇO DE E-MAIL</string>
+    <string name="email_promotional">Eu gostaria de receber comunicações promocionais, incluindo descontos, pesquisas, inspiração e amor da &appname; via e-mail, SMS e telefone</string>
+    <string name="avg_rate_per_night">Taxa média por noite para sua viagem.</string>
+    <string name="spl_price_valid">Insira um preço especial válido</string>
+    <string name="create_password">Crie uma senha</string>
+    <string name="password_condition_text">Sua senha deve ter 8 ou mais caracteres. Não use senhas, repetições ou seqüências comuns. Tente aumentar ou adicionar símbolos, como /!, /</string>
+    <string name="password">SENHA</string>
+    <string name="show">exposição</string>
+    <string name="hide">ocultar</string>
+    <string name="server_error">servidor não responder, tente novamente mais tarde !!</string>
+    <string name="invalid_info">informação do usuário não deve estar vazio</string>
+    <string name="invalid_user_info">informações inválido</string>
+    <string name="invalid_location">Localização inválida</string>
+    <string name="location_should_not_be_empty">Localização não deve estar vazio</string>
+    <string name="when_birthday">Quando é seu aniversário?</string>
+    <string name="age_limit">Você deve ter pelo menos 18 anos para usar o &appname;. Outros não verão o seu aniversário.</string>
+    <string name="birthday">ANIVERSÁRIO</string>
+
+
+    <string name="forgotpassword">Esqueceu a senha?</string>
+
+
+    <string name="forgot_your_password">Esqueceu sua \ npassword?</string>
+    <string name="enter_email">Digite seu e-mail para encontrar sua \ nconta.</string>
+    <string name="link_msg">Um link para redefinir sua senha foi enviado para %s</string>
+
+
+    <string name="change_your_password">Redefinir sua senha</string>
+    <string name="success_reset_msg">Senha redefinida com sucesso. Por favor faça o login para continuar</string>
+
+
+    <string name="menu_1">Explorar</string>
+    <string name="saved">Salvou</string>
+    <string name="menu_2">Viagens</string>
+    <string name="menu_3">Caixa de entrada</string>
+    <string name="menu_4">Perfil</string>
+    <string name="menu_5">Listas</string>
+    <string name="menu_6">Calendario</string>
+    <string name="menu_7">Progresso</string>
+    <string name="no_results_found">Nenhum resultado encontrado</string>
+    <string name="flexible_check_in_time">Verificação flexível no tempo</string>
+    <string name="upto">Até</string>
+    <string name="search_box">Tente "Los Angeles"</string>
+    <string name="dates">Encontro</string>
+    <string name="filter">Filtro</string>
+    <string name="filter_small"> filtro</string>
+    <string name="filters_small"> filtro</string>
+    <string name="listings_you_can_book_without_waiting_for_host_approval" tools:ignore="ExtraTranslation">Listagens que você pode reservar sem esperar pela aprovação do host.</string>
+    <string name="instant_book">Livro Instantâneo</string>
+    <string name="no_result">Nenhum resultado</string>
+    <string name="no_list_found">Nenhum anúncio encontrado</string>
+    <string name="try_adjusting_your_search_here_are_some_ideas">  Tente ajustar sua pesquisa. Aqui estão algumas idéias:</string>
+    <string name="change_your_filters_or_dates">\u2022 Alterar seus filtros ou datas</string>
+    <string name="entire_house">Casa inteira</string>
+    <string name="price_per_night">US $ 245 por noite</string>
+    <string name="list_name">Chalé Contemporâneo - Lake Annecy</string>
+    <string name="search_for_a_specific_city_address">\u2022 Procurar uma cidade, endereço específico</string>
+    <string name="most_viewed">Listagem mais visualizada</string>
+    <string name="recommed_viewed">Recomendar listagem</string>
+
+
+
+    <string name="guest">Convidado</string>
+    <string name="guests">Convidados</string>
+    <string name="guest_small"> convidado</string>
+    <string name="guests_small"> convidados</string>
+    <string name="see_results">Veja os resultados</string>
+
+
+    <string name="reset">Restabelecer</string>
+
+
+    <string name="clear">Claro</string>
+    <string name="price_range">Faixa de preço</string>
+    <string name="facilities">Instalações</string>
+    <string name="amenities">Facilidades</string>
+    <string name="show_all_amenities">Mostrar todas as comodidades</string>
+    <string name="home_type">Tipo de casa</string>
+    <string name="Rooms_and_beds">Quartos e camas</string>
+    <string name="house_rules">Regras da casa</string>
+
+
+    <string name="divider">/</string>
+    <string name="phone">Número de telefone</string>
+    <string name="location_edit">Localização</string>
+    <string name="edit_about_me">Edite sobre mim</string>
+    <string name="email">O email</string>
+    <string name="languages">línguas</string>
+    <string name="email_info_edit">Isso é usado para login e e-mails da &appname; e não é compartilhado com outros usuários.</string>
+    <string name="gender">Gênero</string>
+    <string name="birth_date">Data de nascimento</string>
+    <string name="Error_msg">Desculpe, tivemos problemas para atualizar seu %s neste momento</string>
+    <string name="logout">Sair</string>
+    <string name="grant_camera_permission">Conceder permissão para acessar sua galeria e fotos</string>
+
+    <string name="email_confirmed">Email confirmado</string>
+    <string name="document_verification">Verificação de Documento</string>
+    <string name="google_connected">Google conectado</string>
+    <string name="facebook_connected">Facebook conectado</string>
+    <string name="phone_verified">Telefone verificado</string>
+    <string name="verify_phone">Verificar o número de telefone</string>
+
+    <string name="confirm_email">confirmar e-mail</string>
+    <string name="connect_google">Conectado ao Google</string>
+    <string name="connect_fb">Conectado ao Facebook</string>
+
+
+    <string name="first_name_edit">Primeiro nome</string>
+    <string name="last_name_edit">Último nome</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="done">Feito</string>
+
+
+    <string name="authtoken_desc">Sua sessão expirou e você foi desconectado. Por favor faça login novamente.</string>
+    <string name="login">Entrar</string>
+
+
+    <string name="invalid_email">E-mail inválido.</string>
+    <string name="invalid_email_desc">Por favor, verifique se o seu email foi digitado corretamente.</string>
+    <string name="invalid_login_credentials">Credenciais de login inválidas</string>
+    <string name="show_password">Mostrar senha</string>
+    <string name="error">Erro</string>
+    <string name="currently_offline">Você está atualmente offline</string>
+    <string name="birthday_error">Erro de aniversário.</string>
+    <string name="to_sign_up">Para se inscrever, você deve ter 18 anos ou mais.</string>
+    <string name="age_18_limit">Você deve ter 18 anos ou mais.</string>
+    <string name="email_already_exists">e-mail já existe</string>
+    <string name="password_error">Erro de senha</string>
+    <string name="password_limit">O limite de senha deve ter mais de 7 caracteres</string>
+    <string name="something_went_wrong">Algo deu errado. Tente mais tarde</string>
+    <string name="reset_password_error">Redefinir Erro de Senha</string>
+    <string name="reset_password_error_desc">Sua solicitação para redefinir a senha já expirou.</string>
+    <string name="something_went_wrong_action">Algo deu errado com o seu pedido.</string>
+    <string name="invalid_name">Nome inválido</string>
+    <string name="invalid_name_desc">Tanto o nome como o sobrenome não devem estar vazios</string>
+    <string name="invalid_phone">Número de telefone inválido.</string>
+    <string name="invalid_phone_desc">Número de telefone deve ter mais de 6 caracteres</string>
+
+
+    <string name="radio_male">Masculino</string>
+    <string name="radio_female">Fêmea</string>
+    <string name="radio_other">De outros</string>
+
+
+    <string name="cancel" tools:ignore="ButtonCase">CANCELAR</string>
+    <string name="apply">APLIQUE</string>
+
+
+    <string name="check_in">Check-in</string>
+    <string name="check_out">Confira</string>
+    <string name="anytime">A qualquer momento</string>
+    <string name="cancellation_policy_points">As taxas de limpeza são sempre reembolsadas se o hóspede não fizer o check-in.
+        \n\n\u25AA A taxa de serviço da &appname; é reembolsável se o hóspede cancelar antes do início da viagem. Se um hóspede reservar uma reserva sobreposta a qualquer parte de uma reserva existente, não reembolsaremos a taxa de serviço da &appname; se decidirem cancelar.
+        \n\n\u25AA As taxas de hospedagem (a taxa total noturna que você cobra) são reembolsáveis em determinadas circunstâncias, conforme descrito abaixo.
+        \n\n\u25AA Se houver uma reclamação de qualquer das partes, o aviso deve ser dado ao &appname; dentro de 24 horas após o check-in.
+        \n\n\n\u25AA O &appname; mediará quando necessário e terá a palavra final em todas as disputas.
+        \n\n\u25AA Uma reserva é oficialmente cancelada quando o hóspede clica no botão de cancelamento na página de confirmação de cancelamento, que pode encontrar em Painel&gt; Suas Viagens&gt; Cancelar.
+        \n\n\n\u25AA As políticas de cancelamento podem ser substituídas pela Política de Reembolso do Hóspede, circunstâncias atenuantes ou cancelamentos pela &appname; por qualquer outro motivo permitido sob os Termos de Serviço. Por favor, revise estas exceções.
+        \n\n\n\u25AA Os impostos aplicáveis serão retidos e remetidos.</string>
+    <string name="exact_location_provided_after_booking">Localização exata fornecida após a reserva</string>
+    <string name="currency">Moeda</string>
+    <string name="theme">Tema</string>
+    <string name="book_txt">Livro</string>
+    <string name="message">mensagem</string>
+    <string name="itinerary">Itinerário</string>
+    <string name="approve">Aprovar</string>
+    <string name="decline">Declínio</string>
+    <string name="receipt">Recibo</string>
+    <string name="cancel_">Cancelar</string>
+    <string name="contact_support">contate o suporte</string>
+    <string name="pay_with_your_credit_card">Pague com seu cartão de débito/crédito</string>
+    <string name="pay">Pagar</string>
+    <string name="send_message">Enviar mensagem</string>
+    <string name="start_planning_your_first_adventure_on_appname">Comece a planejar sua primeira aventura em &appname;</string>
+
+
+    <string name="set_your_birthday">Defina sua data de nascimento</string>
+
+
+    <string name="retry">Tente novamente</string>
+    <string name="show_all">Mostre tudo</string>
+    <string name="show_less">Mostre menos</string>
+    <string name="okay">OK</string>
+
+
+    <string name="verified_info">Informação Verificada </string>
+    <string name="review">Reveja</string>
+    <string name="delete">Excluir</string>
+
+
+    <string name="email_address_small">Endereço de e-mail</string>
+    <string name="email_verifiy_header">por favor verifique seu endereço de email</string>
+    <string name="verify_email_text">verificar email</string>
+    <string name="already_verified_text">Você verificou seu endereço de e-mail</string>
+    <string name="error_message_for_verify">Parece que o e-mail ou token é invalido</string>
+    <string name="facebook_header">Facebook</string>
+    <string name="fb_sub_text">Faça login com o Facebook e descubra suas conexões confiáveis com hosts e convidados em todo o mundo.</string>
+    <string name="google_header">Google</string>
+    <string name="google_sub_text">Conecte sua conta à sua conta do Google para simplificar e facilitar.</string>
+    <string name="connect">Conectar</string>
+    <string name="disconnect">desconectar</string>
+    <string name="trust_verify">Confiança e Verificação</string>
+
+
+    <string name="start_in">Começar</string>
+    <string name="staying_for">Ficar por</string>
+    <string name="traveling_with">Viajando com</string>
+    <string name="tell_why_you_need_to_cancel">Diga por que você precisa cancelar</string>
+    <string name="the_reservation_will_be_canceled_immediately">A reserva será cancelada imediatamente</string>
+    <string name="non_refundable">Não-Reembolsável</string>
+    <string name="refundable">Reembolsável</string>
+    <string name="keep_reservation">Manter reserva</string>
+    <string name="tell_you">Diga %1$s por que você precisa cancelar</string>
+    <string name="enter_msg">Por favor insira a mensagem</string>
+    <string name="write_your_message_here">Escreva sua mensagem aqui</string>
+    <string name="send">MANDAR</string>
+    <string name="contact_us">Contate-Nos</string>
+    <string name="uh_oh">Uh-oh!</string>
+    <string name="we_can_t_seem_to_find_the_anything_that_you_re_looking_for">Nós não podemos encontrar o que você está procurando!</string>
+    <string name="error_code_404">Código de erro: 404</string>
+    <string name="explore_appname">Conheça &appname;</string>
+    <string name="cancel_your_reservation">Cancelar sua reserva</string>
+    <string name="day">dia</string>
+    <string name="missed_earnings">Ganhos perdidos</string>
+    <string name="cancel_your_trip">Cancelar sua viagem</string>
+    <string name="you_will_be_refunded_with_the_above_cost">Você será reembolsado com o custo acima</string>
+    <string name="reservation_cancelled">Reserva cancelada</string>
+
+
+    <string name="confirm_phnumber">Confirme seu número de telefone</string>
+    <string name="ph_phone">TELEFONE</string>
+    <string name="guests_contact">Isso é para que os anfitriões ou convidados possam contatá-lo durante uma viagem, e a &appname; sabe como chegar até você.</string>
+
+
+    <string name="enter_four_digit">Digite o código de 4 dígitos</string>
+    <string name="code_sent">Acabamos de enviar um código para o número registrado. Digite o código nessa mensagem.</string>
+    <string name="digit_code">CÓDIGO DE 4 DÍGITOS</string>
+    <string name="send_again">Envie o código novamente</string>
+    <string name="change_number">Mude meu numero</string>
+
+
+    <string name="nothing_saved_yet">Nada salvo ainda</string>
+
+
+    <string name="max">máximo</string>
+    <string name="min">min</string>
+    <string name="per_night">por noite</string>
+
+
+
+    <string name="please_add_a_msg_to_ur_host">Por favor, adicione uma mensagem ao seu host.</string>
+    <string name="add_msg">Adicionar mensagem</string>
+    <string name="tell_your_host_about_your_trip">Informe seu anfitrião sobre sua viagem</string>
+    <string name="help_your_host_prepare_for_your_stay_by_answering_their_questions">Ajude seu anfitrião a se preparar para a sua estadia respondendo às perguntas deles</string>
+    <string name="review_and_pay">Revise e pague</string>
+    <string name="review_cancel_desc">Concordo com as Regras da Casa, Política de Cancelamento e Política de Reembolso do Visitante. Eu também concordo em pagar o valor total mostrado, que inclui as taxas de serviço.</string>
+    <string name="book_your_stay">Reserve a sua estadia</string>
+    <string name="please_keep_in_mind">Por favor considerem</string>
+    <string name="add_your_profile_photo">Adicione sua foto de perfil</string>
+    <string name="dollar_currency">(BGN)</string>
+    <string name="dollar_amount">$ 1234,23</string>
+    <string name="profile_photo_desc">Isso ajuda seu host a reconhecer você quando se encontrar, portanto, certifique-se de que ele mostre seu rosto.</string>
+
+
+
+
+    <string name="become_host">Torne-se um host</string>
+    <string name="publish_now">Publique agora</string>
+    <string name="preview_listing">Visualizar listagem</string>
+    <string name="Continue">Continuar</string>
+    <string name="preview">Visualizar</string>
+
+
+    <string name="save_and_exit">Salve &amp; Saída</string>
+    <string name="lets_get_ready">Oi ! Vamos deixar você pronto para se tornar um host.</string>
+    <string name="what_kindof_place">Que tipo de lugar você tem?</string>
+    <string name="entire_place">Lugar Inteiro</string>
+    <string name="say_your_space">Diga seu espaço</string>
+    <string name="step_one_content">Camas, banheiros, comodidades e muito mais</string>
+    <string name="set_the_screen">Definir a cena</string>
+    <string name="step_two_content">Fotos, breve descrição, título</string>
+    <string name="get_ready_for_guest">Prepare-se para os convidados</string>
+    <string name="step_three_content">Configurações de reserva, duração da viagem, preço</string>
+    <string name="STEP1">PASSO 1</string>
+    <string name="STEP2">PASSO 2</string>
+    <string name="STEP3">PASSO 3</string>
+
+
+    <string name="skip_for_now">Saltar por agora</string>
+    <string name="add_photo_to_your_listing">Adicione fotos à sua listagem</string>
+    <string name="add_photo_sub_text">As fotos ajudam os hóspedes a imaginarem ficar no seu lugar. Você pode começar com um e adicionar mais depois de publicar.</string>
+    <string name="add_cover_header">Escolha uma foto para a imagem da capa</string>
+    <string name="cover">FOTO DE CAPA</string>
+    <string name="name_your_listing">Nomeie sua listagem</string>
+    <string name="title_sub_text">Atraia os convidados com um título de listagem que destaque o que torna seu lugar especial.</string>
+    <string name="add_title">Adicionar título</string>
+    <string name="title">Título</string>
+    <string name="edit_desc">Edite sua descrição</string>
+    <string name="desc">Descrição</string>
+    <string name="summary">Resumo</string>
+    <string name="desc_hint">Descreva a decoração, a luz, o que está por perto, etc.</string>
+    <string name="add_title_alert">Por favor, adicione um título à sua lista.</string>
+    <string name="add_desc_alert">Por favor, adicione uma descrição à sua lista.</string>
+
+
+    <string name="guest_req">Analise os requisitos dos hóspedes</string>
+    <string name="guest_req_sub">Requer que todos os hóspedes enviem o seguinte antes de poderem reservar:</string>
+    <string name="set_house_rule">Definir regras da casa para seus convidados</string>
+    <string name="house_rule_sub">Os hóspedes devem concordar com as Regras da Casa antes de fazer a reserva.</string>
+    <string name="how_book">Como os hóspedes reservam: instantaneamente</string>
+    <string name="how_book_sub">Os hóspedes podem reservar dias disponíveis instantaneamente, desde que:</string>
+    <string name="meet_req">Os hóspedes que não atenderem aos seus requisitos devem enviar uma solicitação de reserva.</string>
+
+    <string name="notice_header">Quanto aviso você precisa antes de um convidado chegar?</string>
+    <string name="booking_window">Janela de reserva</string>
+    <string name="advance_notice">Aviso prévio</string>
+    <string name="when_guest_checkin">Quando os hóspedes podem fazer o check-in?</string>
+    <string name="from">De</string>
+    <string name="to">Para</string>
+    <string name="cancel_policy">Política de cancelamento</string>
+    <string name="trip_length">Duração da viagem</string>
+
+    <string name="base_price">Preço base</string>
+    <string name="price_text">Seu preço base é sua taxa padrão de pernoite.</string>
+    <string name="cleaning_price">Preço de limpeza</string>
+    <string name="base_price_hint">Preço por noite</string>
+    <string name="price_breakdown">Quebra de preço</string>
+    <string name="cleaning_price_hint">Preço de limpeza</string>
+    <string name="discounts">Descontos</string>
+    <string name="discount_long">Desconto para estadias mais longas</string>
+    <string name="weekly_discount">Desconto semanal</string>
+    <string name="monthly_discount">Desconto mensal</string>
+    <string name="discount_hint">% fora</string>
+
+    <string name="min_stay">Estadia Mínima \ n (Noites)</string>
+    <string name="max_stay">Estadia Máxima \ n (Noites)</string>
+
+    <string name="price_error_text">Preço Base Inválido, apenas números (ex .: 25) são permitidos</string>
+    <string name="cleaning_price_error">Preço de Limpeza Inválido, apenas números (ex: 25) são permitidos</string>
+    <string name="base_price_error">O preço base é obrigatório</string>
+    <string name="stay_error_text">Noites mínimas não podem ser maiores do que noites máximas</string>
+    <string name="discount_error_text">Desconto inválido O desconto deve estar entre 0% e 99%.</string>
+    <string name="checkin_error_text">Desde o início deve ser anterior ao período</string>
+    <string name="time">Tempo</string>
+
+    <string name="instant_book_title">Aumente seus ganhos com o Instant Book</string>
+    <string name="instant_book_text">O Instant Book pode dar uma vantagem à sua listagem.Não apenas os hóspedes preferem reservar instantaneamente, estamos promovendo listagens de livros instantâneos nos resultados de pesquisa.</string>
+    <string name="who_booked">Quem pode reservar instantaneamente</string>
+    <string name="choose_book">Escolha quem pode reservar dias disponíveis sem solicitar aprovação.</string>
+    <string name="auto_approval_text">Convidados que atendem aos seus requisitos e concordam com suas regras.</string>
+    <string name="auto_sub">Qualquer outra pessoa deve enviar uma solicitação de reserva.</string>
+    <string name="not_auto_approve">Ninguém. Todos os hóspedes devem enviar pedidos de reserva.</string>
+    <string name="local_laws">Suas leis e impostos locais</string>
+    <string name="local_laws_text">Reserve um momento para rever suas leis locais. Queremos ter certeza de que você tem tudo de que precisa para começar bem.</string>
+    <string name="local_laws_content">Informe-se sobre as leis em sua jurisdição antes de listar seu espaço. \ N \ nA maioria das cidades tem regras sobre compartilhamento de residências, e os códigos e ordenanças específicos podem aparecer em muitos lugares (como códigos de zoneamento, construção, licenciamento ou impostos). Na maioria dos lugares, você deve se registrar, obter uma permissão ou obter uma licença antes de listar sua propriedade ou aceitar convidados. Você também pode ser responsável por coletar e remeter certos impostos. Em alguns lugares, aluguéis de curto prazo podem ser totalmente proibidos. \ N \ nUma vez que você é responsável por sua própria decisão de listar ou reservar, você deve se familiarizar com as regras aplicáveis antes de listar no &appname;. Para começar, oferecemos alguns recursos úteis em \ "Suas Leis da Cidade \" \ n \ nAo aceitar nossos Termos de Serviço e listar seu espaço, você certifica que seguirá as leis e regulamentos aplicáveis.</string>
+    <string name="decimal_string">0123456789.</string>
+    <string name="number_string">0123456789</string>
+
+    <string name="before_publish">Sua listagem está pronta para ser publicada.</string>
+    <string name="after_publish">Sua listagem é publicada!</string>
+    <string name="publish">Publique agora</string>
+    <string name="unpublish">Cancelar publicação agora</string>
+
+    <string name="in_progress">Em progresso</string>
+    <string name="completed">Concluído</string>
+
+    <string name="confrim_delete">Tem certeza de que deseja excluir a listagem?</string>
+
+
+
+    <string name="agree">Aceita</string>
+    <string name="for_">"para"</string>
+    <string name="step_1_of_3">Etapa 1 de 3</string>
+    <string name="step_1_of_4">Etapa 1 de 4</string>
+    <string name="service_fee">Taxa de serviço</string>
+    <string name="total">Total</string>
+    <string name="email_not_exist">O e-mail não existe na sua conta do FB, use outro para fazer login.</string>
+
+    <string name="step_3_of_3">Etapa 3 de 3</string>
+    <string name="step_4_of_4">Etapa 4 de 4</string>
+    <string name="add_payment">Adicionar pagamento</string>
+    <string name="payment_failed">Pagamento falhou</string>
+    <string name="cancellation_policy">Política de cancelamento</string>
+    <string name="cancellation_policy_with_dot">Política de cancelamento: </string>
+
+
+    <string name="step_2_of_3">Etapa 2 de 3</string>
+    <string name="step_2_of_4">Etapa 2 de 4</string>
+
+
+    <string name="step_3_of_5">Etapa 3 de 5</string>
+    <string name="check_your_email">Verifique seu e-mail</string>
+
+
+    <string name="step_3_of_4">Etapa 3 de 4</string>
+    <string name="image_size_is_too_large">O tamanho da imagem é muito grande.</string>
+    <string name="tap_the_link_in_the_email_we_sent_you_Confirming_your_email_address_helps_us_send_you_trip_information">Toque no link do email que lhe enviamos. Confirmar seu endereço de e-mail nos ajuda a enviar informações sobre sua viagem.</string>
+
+
+    <string name="start_exploring">Comece a explorar</string>
+    <string name="new_message">Nova mensagem</string>
+    <string name="write_a_message">Escreve uma mensagem</string>
+    <string name="inbox">Caixa de entrada</string>
+    <string name="pre_approved_header">Convide %s para reservar com aprovação prévia desta viagem</string>
+    <string name="pre_approved_sub_text">Deixe %s saber que essas datas estão disponíveis, aprovando-as antecipadamente</string>
+    <string name="timer_text_before">Responda dentro de %s para manter sua taxa de resposta</string>
+    <string name="pre_approval_text">Pré-aprovar</string>
+    <string name="request_book_text">%s enviou uma solicitação de reserva para seu anúncio</string>
+
+
+    <string name="book_header">Sua solicitação de reserva aprovada por %s</string>
+    <string name="book_with_in">Você precisa reservar em %s</string>
+    <string name="book_button">Livro</string>
+    <string name="request_approved">Pedido aprovado</string>
+    <string name="approval_text">Seu convidado tem 24 horas para responder a isso ou ele será expirado</string>
+
+    <string name="booking_request_cancelled">Pedido de reserva cancelado</string>
+    <string name="cancelled_content">%s a solicitação de reserva é cancelada.</string>
+    <string name="booking_cancelled_by_guest">Sua solicitação de reserva foi cancelada.</string>
+
+    <string name="declined_booking">Pedido recusado</string>
+    <string name="declined_content">Verifique se sua agenda está atualizada e se sua página de listagem reflete com precisão as regras e os requisitos da sua casa.</string>
+    <string name="declined_guest_content">Sua solicitação é recusada pelo host. Você pode escolher datas diferentes ou procurar outras listas.</string>
+
+    <string name="booking_confirmed_txt">Reserva confirmada</string>
+    <string name="host_cancel_text">Você pode entrar em contato com seu convidado e fazer arranjos necessários ou cancelar.</string>
+    <string name="cancel_reserve">Cancelar reserva</string>
+    <string name="request_to_book_header">Você enviou uma mensagem de %s sobre sua listagem</string>
+    <string name="respond_text">Se esta listagem for sua melhor escolha, insira suas informações de pagamento para solicitar oficialmente uma reserva.</string>
+
+
+    <string name="trip_is_completed">A viagem está concluída</string>
+    <string name="your_trip_is_completed">Sua viagem está completa.</string>
+    <string name="reserv_compelted">A reserva está concluída</string>
+    <string name="completed_content">A reserva da sua listagem está concluída.</string>
+
+    <string name="request_to_book_txt">Sua solicitação de reserva enviada para %s para sua listagem</string>
+    <string name="most_host_respond">A maioria dos anfitriões responde dentro de 24 horas.</string>
+
+    <string name="please_select_date">Selecione a data para prosseguir</string>
+    <string name="please_select_guest">Por favor, selecione convidado</string>
+    <string name="please_enter_the_message">Por favor insira a mensagem</string>
+    <string name="add_date">Adicionar data</string>
+    <string name="details">Detalhes</string>
+    <string name="inn">em</string>
+    <string name="location">Localização</string>
+    <string name="you_cannot_book_your_own_list">Você não pode reservar sua própria lista</string>
+    <string name="please_select_another_date_to_book">Por favor, selecione outra data para reservar</string>
+    <string name="info">Erro</string>
+    <string name="no_dates_available_to_book_please_select_another_date">Não há datas disponíveis para reservar. Por favor selecione outra data</string>
+    <string name="verified_by">Verificado por</string>
+    <string name="copied_to_clipboard">Copiado para a área de transferência</string>
+    <string name="check_out_this_listing_on_appname">Confira este anúncio na &appname;</string>
+
+
+    <string name="check_availability">Verificar disponibilidade</string>
+    <string name="this_listing_is_not_available_to_book">Esta listagem não está disponível para reservar</string>
+    <string name="similar_listing">Listagens semelhantes</string>
+    <string name="read_more">consulte Mais informação…</string>
+    <string name="min_max_nights">Min / Max Noites</string>
+    <string name="contact_host">Fale com o Anfitrião</string>
+    <string name="check">Verifica</string>
+    <string name="availability">Disponibilidade</string>
+    <string name="read">Ler</string>
+    <string name="user_safety">Características de segurança</string>
+    <string name="user_space">Espaços Compartilhados</string>
+    <string name="hosted_by">Hospedado por</string>
+    <string name="reviews">rever</string>
+    <string name="verification">Verificação</string>
+    <string name="email_not_verified">Email não está verificado. Por favor, verifique.</string>
+    <string name="dismiss">Dispensar</string>
+    <string name="your_message_sent_to_host">Sua mensagem enviada para o host.</string>
+
+
+    <string name="enter_correct_card_details">Insira os detalhes corretos do cartão</string>
+    <string name="set_up_your_appname_payout_method">Configure o seu método de pagamento &appname;</string>
+    <string name="your_payout_is_what_you_earn_from_hosting_a_guest_payouts_are_sent_24_hours_after_each_check_in">Seu pagamento é o que você ganha ao hospedar um convidado. Os pagamentos são enviados 24 horas após cada check-in.</string>
+    <string name="learn_more_about_payouts">Saiba mais sobre pagamentos</string>
+    <string name="start">Começar</string>
+    <string name="default_txt">Padrão</string>
+    <string name="set_default">conjunto padrão</string>
+    <string name="address_line_one">Endereço Linha 1</string>
+    <string name="address_line_two">Endereço Linha 2</string>
+
+    <string name="zip_or_postal">CEP / Código Postal</string>
+    <string name="routing_number">Número de roteamento</string>
+    <string name="account_number">Número da conta</string>
+    <string name="confirm_acc_number">Confirme o número da conta</string>
+    <string name="not_ready">Não está pronto</string>
+    <string name="stripe_tooltip_text">Usamos o Stripe para garantir que você seja pago com pontualidade e segurança. Requer verificação adicional para conectar sua conta bancária à plataforma.</string>
+    <string name="member_since">Membro desde</string>
+    <string name="switch_to_travelling">Mudar para viajar</string>
+    <string name="log_out">SAIR</string>
+    <string name="are_you_sure_you_want_to_logout">Tem certeza que deseja sair?</string>
+    <string name="payout_preference">Preferência de Pagamento</string>
+    <string name="switch_to_hosting">Mudar para hospedagem</string>
+    <string name="become_a_host">Torne-se um host</string>
+    <string name="ok">Está bem</string>
+
+
+    <string name="confirmation_link_is_sent_to_your_email">O link de confirmação é enviado para o seu email.</string>
+    <string name="invalid_link">Link inválido</string>
+    <string name="your_email_is_confirmed">Seu email foi confirmado</string>
+    <string name="facebook_disconnected">Facebook desconectado</string>
+    <string name="google_disconnected">Google desconectado</string>
+
+
+    <string name="phone_number">Número de telefone</string>
+    <string name="invalid_phone_number">Número de telefone inválido</string>
+    <string name="we_sent_the_code_to_your_phone_number">Enviamos o código para o seu número de telefone</string>
+    <string name="the_entered_4_digit_code_is_incorrect">O código digitado de 4 dígitos está incorreto</string>
+    <string name="select_the_country">Selecione o país / região para o seu número</string>
+
+
+    <string name="create"> Crio</string>
+    <string name="please_enter_the_title_of_wishlist_group">Por favor insira o título do grupo de lista de desejos</string>
+    <string name="create_a_list">Crie uma lista</string>
+
+
+    <string name="your_message_sent_successfully_we_will_contact_you_soon">Sua mensagem foi enviada com sucesso. Nós entraremos em contato com você em breve.</string>
+
+
+    <string name="upcoming_trips">Próximas viagens</string>
+    <string name="previous_trips">Viagens anteriores</string>
+
+
+    <string name="inappropriate_content_of_spam">Conteúdo impróprio de spam</string>
+    <string name="do_you_want_to_report_this_user">Deseja denunciar este usuário?</string>
+    <string name="if_so_please_choose_one_of_the_following_reasons">Se sim, por favor escolha um dos seguintes motivos.</string>
+    <string name="this_profile_should_not_be_on_appname">Este perfil não deve estar no &appname;</string>
+    <string name="attempt_to_share_contact_information">Tentativa de compartilhar informações de contato</string>
+    <string name="reported_successfully">Reportado com sucesso</string>
+    <string name="read_all">Leia tudo</string>
+    <string name="preferred_language">Língua preferida</string>
+    <string name="report_this_user">Denunciar este usuário</string>
+    <string name="please_select_the_option">Por favor, selecione as opções</string>
+
+
+    <string name="message_host">Host de mensagens</string>
+    <string name="host">Hospedeiro</string>
+    <string name="view_Listing">Visualizar listagem</string>
+    <string name="address">Endereço</string>
+    <string name="shared_room">Quarto compartilhado</string>
+    <string name="view_receipt">Veja o recibo</string>
+    <string name="preferred_currency">Moeda preferencial</string>
+    <string name="reservation_code">Código de reserva:</string>
+    <string name="you_are_going_to">Você vai</string>
+    <string name="billing">Faturamento</string>
+    <string name="receipt_desc">está autorizado a aceitar taxas de acomodação em nome do anfitrião como seu agente limitado. Isso significa que sua obrigação de pagamento ao Host é satisfeita pelo seu pagamento ao &appname;. Qualquer desacordo do Host com relação ao pagamento deve ser resolvido entre o Host e o &appname;.</string>
+    <string name="payment_received">Pagamento recebido:</string>
+    <string name="accommodation_host">Host de Alojamento</string>
+    <string name="accommodation_address">Endereço da acomodação</string>
+    <string name="accommodation_type">Tipo de acomodação</string>
+    <string name="duration">Duração</string>
+    <string name="travel_destination">Destino de viagem</string>
+    <string name="name">Nome</string>
+    <string name="customer_receipt">Recibo do cliente</string>
+    <string name="savedd">Salvou</string>
+    <string name="no_wishlist_groups_added_please_create_group_by_click_add_icon">Nenhum grupo de lista de desejos adicionado. Por favor, crie grupo por clique em Adicionar ícone.</string>
+    <string name="delete_list">Excluir lista</string>
+    <string name="DELETE">EXCLUIR</string>
+    <string name="CANCEL" tools:ignore="ButtonCase">CANCELAR</string>
+    <string name="are_you_sure_you_want_to_delete">Tem certeza de que deseja excluir</string>
+    <string name="when_you_see_something_you_like_tap_on_the_heart_to_save_it_if_you_re_planning_a_trip_with_others_invite_them_so_they_can_save_and_vote_on_their_favorites">Quando vir algo de que gosta, toque no coração para salvá-lo. Se estiver planejando uma viagem com outras pessoas, convide-as para que possam salvar e votar nos favoritos.</string>
+
+
+    <string name="your_dates_updated">Suas datas atualizadas</string>
+    <string name="booked">Reservado</string>
+    <string name="not_available">Não disponível</string>
+    <string name="available">acessível</string>
+    <string name="save">Salve</string>
+    <string name="calendar">Calendário</string>
+    <string name="when_you_publish_a_listing_you_ll_be_able_to_see_and_edit_your_calendar_here">Ao publicar uma listagem, você poderá ver e editar sua agenda aqui.</string>
+
+
+    <string name="please_select_currency">Por favor selecione moeda</string>
+    <string name="please_enter_valid_email_address">Por favor insira o endereço de e-mail válido</string>
+    <string name="please_enter_email_address">Por favor insira o endereço de email</string>
+    <string name="please_enter_zip_code">Por favor, digite o código postal</string>
+    <string name="please_enter_street">Por favor entre na rua</string>
+    <string name="please_enter_the_state">Por favor, insira o estado</string>
+    <string name="please_enter_city">Por favor insira a cidade</string>
+    <string name="please_enter_address_1">Por favor insira o endereço 1</string>
+    <string name="please_enter_correct_confirm_account_number">Por favor, insira o número correto da conta de confirmação</string>
+    <string name="please_enter_confirm_account_number">Por favor, insira o número da conta confirmada</string>
+    <string name="please_enter_account_number">Por favor, digite o número da conta</string>
+    <string name="please_enter_routing_number">Por favor insira o número de roteamento</string>
+    <string name="please_enter_last_name">Por favor insira o sobrenome</string>
+    <string name="please_enter_first_name">Por favor, insira o primeiro nome</string>
+    <string name="finish">Terminar</string>
+    <string name="account_details_of_payout">Detalhes da conta de pagamento</string>
+    <string name="paypal">PayPal</string>
+    <string name="paypal_desc">O PayPal é um serviço de processamento de pagamentos on-line que permite que você receba pagamentos do &appname;. Para usar o PayPal com o &appname;, você deve ter uma conta existente no PayPal.</string>
+    <string name="choose_how_we_pay_you">Escolha como pagamos a você</string>
+    <string name="fees">Honorários</string>
+    <string name="processed_in">Processado em</string>
+    <string name="countries">paises</string>
+    <string name="result_not_found">Resultado não encontrado</string>
+    <string name="search_for_country_region">Pesquisar país / região</string>
+    <string name="add_payout_method">Adicionar método de pagamento</string>
+    <string name="status">Status</string>
+    <string name="ready">pronto</string>
+    <string name="update_error">Atualizar erro de listagem:</string>
+
+    <string name="add_description">Adicionar descrição</string>
+    <string name="update">atualizar</string>
+    <string name="upload_photo">Carregar foto</string>
+    <string name="please_add_a_title_to_your_list">Por favor, adicione um título à sua lista.</string>
+    <string name="please_add_a_description_to_your_list">Por favor, adicione uma descrição à sua lista.</string>
+    <string name="upload_failed">Upload falhou</string>
+    <string name="photo">foto</string>
+    <string name="select_list_photos">Selecione a lista de fotos</string>
+    <string name="add_photo">Adicionar fotos</string>
+
+
+    <string name="last_updated_on">Última atualização em</string>
+    <string name="You_re">Você é</string>
+    <string name="done_with_your_listing">feito com sua listagem</string>
+    <string name="delete_listing">Excluir listagem</string>
+    <string name="you_re_100_done_with_your_listing">Você está 100% pronto com sua listagem</string>
+    <string name="you_don_t_have_any_listings">Você não tem nenhuma listagem!</string>
+    <string name="make_money_by_renting_out_your_extra_space_you_ll_also_get_to_meet_interesting_travelers_from_around_the_world">Ganhar dinheiro alugando o seu espaço extra.Você também vai conhecer viajantes interessantes de todo o mundo!</string>
+    <string name="post_a_new_listing">Postar uma nova listagem</string>
+    <string name="upcoming">próximos</string>
+    <string name="previous">Anterior</string>
+    <string name="you_don_t_have_any_upcoming_reservations">Você não tem nenhuma reserva futura!</string>
+    <string name="you_don_t_have_any_previous_reservations">Você não tem nenhuma reserva anterior!</string>
+    <string name="reservation_approved">Reserva aprovada</string>
+    <string name="reservation_declined">Reserva recusada</string>
+    <string name="error_1">Erro!</string>
+    <string name="please_enter_country">Por favor insira o país</string>
+    <string name="please_enter_state">Por favor entre no estado</string>
+    <string name="incorrect_location">Localização incorreta</string>
+    <string name="where_your_place_located">Onde seu lugar está localizado?</string>
+    <string name="country_region">País / região</string>
+    <string name="afghanistan">Afeganistão</string>
+    <string name="street">Rua</string>
+    <string name="main_st">por exemplo. 123 Main St</string>
+    <string name="apt_suite_etc">Apto, suite, etc., (opcional)</string>
+    <string name="apt">por exemplo. Apt</string>
+    <string name="city">Cidade</string>
+    <string name="san_francisco">por exemplo. São Francisco</string>
+    <string name="state">Estado/Província</string>
+    <string name="ca">CA</string>
+    <string name="code">94101</string>
+    <string name="hwat_amenities_will_you_offer">Quais comodidades você oferecerá?</string>
+    <string name="please_fill_them">Por favor, preencha-os!</string>
+    <string name="it_seems_you_have_missed_some_required_fields_in_address_page">Parece que você perdeu alguns campos obrigatórios na página de endereço. !</string>
+    <string name="you_have_entered_an_incorrect_location">Você inseriu um local incorreto</string>
+    <string name="what_spaces_can_guests_use">Quais espaços os hóspedes podem usar?</string>
+    <string name="ss_this_your_personal_home">Esta é sua casa pessoal?</string>
+    <string name="how_many_total_rooms_does_your_property_have">Quantos quartos totais sua propriedade possui?</string>
+    <string name="what_will_guest_have">O que o convidado terá?</string>
+    <string name="what_type_of_property_is_this">Que tipo de propriedade é essa?</string>
+    <string name="is_the_pin_in_the_right_place">O pino está no lugar certo?</string>
+    <string name="tn">TN</string>
+    <string name="madurai">Madurai</string>
+    <string name="how_many_guests_can_stay">Quantos convidados podem ficar?</string>
+    <string name="total_guest">Convidado total</string>
+    <string name="total_guests">Total de convidados</string>
+    <string name="bedroom_for_guest">Quarto para o hóspede</string>
+    <string name="Bedroom_for_guests">Quarto para convidados</string>
+    <string name="bed_for_guest">Cama para hóspedes</string>
+    <string name="bed_for_guests">Cama para convidados</string>
+    <string name="select_country">Selecione o pais</string>
+    <string name="For">Para</string>
+
+    <string name="bed_count">Contagem de camas</string>
+    <string name="choosen_bed_count_is_exceeded_than_bed_for_guest_count">A quantidade de leitos escolhidos é excedida do que a da cama para contagem de hóspedes</string>
+    <string name="maximum_bed_count_is_selected">A contagem máxima de leitos é selecionada</string>
+    <string name="how_many_beds_can_guest_use">Quantas camas podem usar os hóspedes?</string>
+    <string name="flexible">Flexível</string>
+    <string name="moderate">Moderado</string>
+    <string name="strict">Rigoroso</string>
+    <string name="unavailable">Datas indisponíveis por padrão</string>
+    <string name="three_month">3 meses no futuro</string>
+    <string name="six_month">6 meses no futuro</string>
+    <string name="nine_month">9 meses no futuro</string>
+    <string name="available_by_default">Todas as datas futuras</string>
+    <string name="twelve_month">12 meses no futuro</string>
+    <string name="add_price">Adicionar Preços</string>
+    <string name="guests_txt">Convidados</string>
+    <string name="search_here">Procure aqui</string>
+    <string name="Inquiry">Inquérito</string>
+    <string name="request_to_book">Pedido de reserva</string>
+    <string name="pre_approved">Pré-aprovado</string>
+    <string name="declined">Recusado</string>
+    <string name="cancelled_by_host">Cancelado pelo host</string>
+    <string name="cancelled_by_guest">Cancelado por convidado</string>
+    <string name="cancelled">Cancelado por</string>
+    <string name="expired">Expirado</string>
+    <string name="approved">Aprovado</string>
+    <string name="booking_confirmed">Reserva confirmada</string>
+    <string name="pending">Pendente</string>
+    <string name="how_many_bathrooms">Quantos banheiros?</string>
+    <string name="remove">remover</string>
+
+
+    <string name="why_host">Por que hospedar?</string>
+    <string name="about_us">Sobre nós</string>
+    <string name="list_your_space">Listar seu espaço</string>
+    <string name="text_one">Participe de uma comunidade de anfitriões apaixonados e aproveite o suporte 24 horas</string>
+    <string name="text_two">Bem-vindo viajantes de todo o mundo para o seu bairro</string>
+    <string name="text_three">Ganhe dinheiro compartilhando seu espaço extra ou casa inteira</string>
+    <string name="text_four">Com perfis e ferramentas confiáveis, você decide quem fica e quando hospedar</string>
+    <string name="about">Sobre</string>
+    <string name="view_and_edit">Visualizar e editar perfil</string>
+    <string name="setting">Definições</string>
+    <string name="get_help">Obter ajuda</string>
+    <string name="give_feedback">Nos dê seu feedback</string>
+    <string name="feedback">Comentários</string>
+    <string name="bug">Erro</string>
+    <string name="how_we_doing">Como estamos indo?</string>
+    <string name="feedback_content">Estamos sempre trabalhando para melhorar a experiência da &appname;, então adoraríamos saber o que está funcionando e como podemos fazer melhor.</string>
+    <string name="like_to_do">What would you like to do?O que você gostaria de fazer?</string>
+    <string name="give_product_feedback">Dê feedback do produto</string>
+    <string name="report_bug">Reportar um erro</string>
+    <string name="terms_privacy">Política de Privacidade</string>
+    <string name="trust_and_safty">Confiança e Segurança</string>
+    <string name="sign_up_error">Erro de inscrição: </string>
+    <string name="enter_feedback">Digite seu comentário aqui</string>
+    <string name="enter_bug_here">Digite um bug aqui</string>
+    <string name="please_enter_feedback">Por favor insira qualquer comentário!</string>
+    <string name="pls_enter_bug">Por favor, insira qualquer bug!</string>
+    <string name="your_feedback">Seu </string>
+    <string name="has_been_sent"> foi enviado com sucesso!</string>
+    <string name="feedback_sent">Seu feedback foi enviado com sucesso!</string>
+    <string name="next">Próximo</string>
+    <string name="invalid_firstname_desc">Primeiro nome não deve estar vazio</string>
+    <string name="invalid_lastname_desc">O sobrenome não deve estar vazio</string>
+    <string name="list_not_available">Lista não está disponível</string>
+    <string name="notif_action_reply">Reply</string>
+    <string name="specialPrice">Preço especial</string>
+    <string name="specialPriceToLongPress">Preço especial - Pressão longa para ver o preço</string>
+    <string name="edit">Editar</string>
+    <string name="message_small">mensagem</string>
+
+    <string name="dob_msg">Opa! Adicione sua data de nascimento no seu perfil de edição.</string>
+    <string name="dob">DOB</string>
+    <string name="safety_amenities">Equipamentos de Segurança</string>
+    <string name="verify">VERIFICAR</string>
+    <string name="set_default_caps">CONJUNTO PADRÃO</string>
+    <string name="bank_account">Conta bancária</string>
+    <string name="company">Companhia</string>
+    <string name="individual">Individual</string>
+    <string name="ok_text">Está bem</string>
+    <string name="about_you">SOBRE VOCÊ</string>
+    <string name="by_you">POR VOCÊ</string>
+    <string name="past">Passado</string>
+    <string name="no_reviews_yet">Ainda não há comentários</string>
+    <string name="you_reviewed">Você revisou</string>
+    <string name="write_a_review">Escreva uma crítica</string>
+    <string name="view_itinerary">Ver Itinerário</string>
+    <string name="submit_a_public_review_for">Envie uma crítica pública para</string>
+    <string name="submit">Enviar</string>
+    <string name="describe_your_experience">Descreva sua experiência (requerido)</string>
+    <string name="your_review_will_be_public">Seu comentário será pública no seu perfil de hóspedes</string>
+    <string name="what_was_it_like_to_host_this_guest">\ Como foi para hospedar este convidado</string>
+    <string name="overall_rating">Avaliação geral</string>
+    <string name="description">Descrição</string>
+    <string name="rating">Avaliação</string>
+    <string name="required">Requerida</string>
+    <string name="read_more_with_out_dot">consulte Mais informação</string>
+    <string name="your_review_will_be_public_on_your_host_profile">Sua avaliação será pública em seu perfil de host</string>
+    <string name="reviews_small">avaliações</string>
+    <string name="select_payment_type">Selecione o tipo de pagamento</string>
+    <string name="please_select_payment_type_to_continue">Selecione qualquer tipo de pagamento para continuar</string>
+    <string name="return_url_not_fount">URL de retorno não encontrado</string>
+    <string name="reservation_id_not_found">Id de reserva não encontrado</string>
+    <string name="payment_type">Tipo de pagamento</string>
+    <string name="proceed_to_pay">Prossiga para pagar</string>
+    <string name="payment_cancelled">Pagamento cancelado</string>
+    <string-array name="label_calender_month">
+        <item name="0" />
+        <item name="1">janeiro</item>
+        <item name="2">fevereiro</item>
+        <item name="3">Março</item>
+        <item name="4">abril</item>
+        <item name="5">Maio</item>
+        <item name="6">Junho</item>
+        <item name="7">Julho</item>
+        <item name="8">agosto</item>
+        <item name="9">setembro</item>
+        <item name="10">Outubro</item>
+        <item name="11">novembro</item>
+        <item name="12">dezembro</item>
+    </string-array>
+    <string name="iban_number">Número IBAN</string>
+    <string name="company_name">nome da empresa</string>
+    <string name="account_type">Tipo de conta</string>
+    <string name="account_type_error">Por favor, escolha o tipo de conta</string>
+    <string name="guest_cancel_text">Você pode entrar em contato com seu anfitrião e fazer os arranjos necessários ou pode cancelar sua reserva.</string>
+    <string name="please_enter_sort_number">Insira o número SORT</string>
+    <string name="unsupported_format">Formato de arquivo não suportado</string>
+    <string name="sort">SORT número</string>
+    <string name="popular_location">Destinos populares</string>
+    <string name="ready_ver">Sua listagem está pronta para verificação</string>
+    <string name="submitted_ver">Sua listagem foi enviada para verificação</string>
+    <string name="sub_verify">Enviar para verificação</string>
+    <string name="waiting">Esperando aprovação</string>
+    <string name="appeal">Enviar para apelação</string>
+    <string name="about_list">Sobre esta lista</string>
+    <string name="night">Noite</string>
+    <string name="my_trips">Minhas viagens</string>
+    <string name="map">Mapa</string>
+    <string name="map_view">Visão do mapa</string>
+    <string name="account">Conta</string>
+    <string name="support">Apoiar</string>
+    <string name="version_">Versão -</string>
+    <string name="view_profile">Ver perfil</string>
+    <string name="show_all_shared">Mostre todos os espaços compartilhados</string>
+    <string name="show_all_safety">Mostre todos os recursos de segurança</string>
+    <string name="check_in_checkout">Check -in / Checkout</string>
+    <string name="you_will_be_here">Você estara aqui</string>
+    <string name="personal_info">Informação pessoal</string>
+    <string name="more">Mais</string>
+    <string name="report_this_host">Relate este host</string>
+    <string name="report">Relatório</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="or_continue_with">ou continue com</string>
+    <string name="don_t_have_account">Não tem uma conta?</string>
+    <string name="signup_here">Assine aqui</string>
+    <string name="dot_seperator">.</string>
+    <string name="hosting">Hospedagem</string>
+    <string name="check_out_">Confira</string>
+    <string name="check_in_">Check-in</string>
+    <string name="user">Do utilizador</string>
+    <string name="hi_lets_get_you_ready">Oi! Vamos prepará -lo para se tornar um anfitrião.</string>
+    <string name="listings">Listagens</string>
+    <string name="skip">Pular</string>
+    <string name="available_for_booking">Disponível para reserva</string>
+    <string name="clear_all">Limpar tudo</string>
+    <string name="show_more">Mostre mais</string>
+    <string name="close_all">Feche tudo</string>
+    <string name="add_guest">Adicionar convidado</string>
+    <string name="select_date">Selecione datas</string>
+    <string name="enter_your_phone_number">Digite seu número de telefone</string>
+    <string name="enter_your_email">Digite seu e-mail</string>
+    <string name="no_upcoming_trip">Sem viagens futuras</string>
+    <string name="reviewed">revisado</string>
+    <string name="country">País</string>
+    <string name="select">Selecione</string>
+    <string name="my_reservation">Minhas reservas</string>
+    <string name="explore_the_world_by_travelling">Explore o mundo! Viajando</string>
+    <string name="desc_about_me">Escreva algo sobre você dentro de 250 caracteres.</string>
+    <string name="add_about">Adicione sobre</string>
+    <string name="add">Adicionar</string>
+    <string name="no_result_saved">Nenhuma listagem salva está disponível. Explore as listagens e clique no ícone \'Heart \' para adicioná -las aqui.</string>
+    <string name="no_inbox_messages">Mensagens do seu convidado aparecerão aqui</string>
+    <string name="your_email_address">Seu endereço de email</string>
+    <string name="list_your_unused_space">Liste seu espaço não utilizado para ganhar dinheiro.</string>
+    <string name="your_message">Sua mensagem</string>
+    <string name="edit_guests">Edite convidados</string>
+    <string name="place_type">Tipo de local</string>
+    <string name="guest_requirements">Requisitos de convidado</string>
+    <string name="review_guestbook">Revise o livro de visitas</string>
+    <string name="min_max_nights_string">Noites min/max</string>
+    <string name="pricing">Preço</string>
+    <string name="discount">Desconto</string>
+    <string name="booking">Reserva</string>
+    <string name="local_laws_string">Leis locais</string>
+    <string name="manage_account">Gerenciar sua conta</string>
+    <string name="delete_account_desc">Todos os seus dados e reservas e reservas atuais serão perdidos se você excluir sua conta &appname;.</string>
+    <string name="delete_account">Deletar conta</string>
+    <string name="delete_account_permenent">Exclua sua conta permanentemente</string>
+    <string name="delete_your_account_permanently">Tem certeza de que deseja excluir sua conta permanentemente?</string>
+    <string name="yes_delete">Sim</string>
+    <string name="no">Não</string>
+    <string name="photos">Fotos</string>
+    <string name="do_you_want_to_report_this_host">Você quer relatar este host?</string>
+    <string name="moderate_desc">100% reembolsar apenas se cancelado 5 dias antes do horário de check-in.</string>
+    <string name="moderate_descday">Por exemplo, digamos que um convidado reservou uma estadia e o horário de check-in é 15:00 no dia 9 de junho.</string>
+    <string name="moderate_date">Antes de 5 dias</string>
+    <string name="moderate_dayy">Por exemplo, se um hóspede cancelar a reserva antes das 15:00 do dia 4 de junho, um reembolso de 100% será processado.</string>
+    <string name="moderate_content">Somente se um hóspede cancelar sua reserva 5 dias antes do horário de check-in, eles receberão um reembolso total.</string>
+    <string name="moderate_checkin_day">Por exemplo, se um hóspede cancelar sua reserva após as 15:00 do dia 5 de junho, a primeira noite de sua estadia não é reembolsável e 50% das noites restantes serão reembolsadas em sua conta bancária.</string>
+    <string name="moderate_checkin_content">Se um hóspede cancelar sua reserva menos de 5 dias antes do horário de check-in, a primeira noite da estadia não será reembolsável. Mas 50% de valor para o resto das noites serão reembolsados. \ ""</string>
+    <string name="moderate_checkout_content">50% das taxas de acomodação para as noites não gastas serão reembolsadas (24 horas após o cancelamento) se um hóspede fizer o check -in e decidir sair mais cedo.</string>
+    <string name="strict_desc">50% de reembolso apenas se cancelado 7 dias antes do horário de check-in.</string>
+    <string name="strict_descday">Por exemplo, digamos que um convidado reservou uma estadia e o horário de check-in é 15:00 no dia 9 de junho.</string>
+    <string name="strict_date">Antes de 7 dias</string>
+    <string name="strict_dayy">Por exemplo, se um hóspede cancelar a reserva antes das 15:00 no dia 2 de junho, um reembolso de 50% será processado.</string>
+    <string name="strict_content">Somente se um hóspede cancelar sua reserva 7 dias antes do horário de check-in, eles receberão um reembolso de 50%.</string>
+    <string name="strict_checkin_day">Por exemplo, nenhum reembolso será concedido se um hóspede cancelar sua reserva depois das 15:00 do dia 1º de junho.</string>
+    <string name="strict_checkin_content">Não haverá reembolso se um hóspede cancelar sua reserva menos de 7 dias antes do horário de check-in.</string>
+    <string name="strict_checkout_content">Se um hóspede fizer o check -in e decidir sair mais cedo, não haverá reembolso para as noites não gastas.</string>
+    <string name="flexible_desc">100% de reembolso mesmo se cancelado 1 dia antes da chegada.</string>
+    <string name="flexible_descday">Por exemplo, digamos que um convidado reservou uma estadia e o horário de check-in é 15:00 no dia 9 de junho.</string>
+    <string name="flexible_date">Antes de 1 dia</string>
+    <string name="flexible_dayy">Por exemplo, se um hóspede cancelar a reserva antes das 15:00 do dia 8 de junho, um reembolso de 100% será processado.</string>
+    <string name="flexible_content">Um reembolso total será processado se um hóspede cancelar uma reserva de 24 horas antes do horário de check-in.</string>
+    <string name="flexible_checkin_day">Por exemplo, se um hóspede cancelar a reserva depois das 15:00 de 8 de junho, a primeira noite da estadia não é reembolsável e o restante será reembolsado em sua conta bancária.</string>
+    <string name="flexible_checkin_content">Se um hóspede cancelar sua reserva com menos de 24 horas antes do horário de check-in, a primeira noite da estadia não é reembolsável.</string>
+    <string name="flexible_checkout_content">As taxas de acomodação para as noites não gastas serão devolvidas se um hóspede fizer o check -in e decidir sair mais cedo.</string>
+    <string name="capacity">Capacidade</string>
+    <string name="bed_types">Tipos de cama</string>
+    <string name="baths">Banhos</string>
+    <string name="are_you_sure_you_want_to_report_listing">Tem certeza de que deseja relatar esta listagem?</string>
+    <string name="what_was_it_like_to_host_this_host">\ Como foi ficar na propriedade deste anfitrião.</string>
+    <string name="delete_account_caution">CUIDADO: </string>
+    <string name="delete_account_first"> All of your data and reservations\/bookings</string>
+    <string name="delete_account_dsec"> will be lost if you delete your &appname; account.</string>
+    <string name="account_delete_message">Your account has been deleted successfully!</string>
+    <string name="are_you_sure_delete_account_permenently">Tem certeza de que deseja excluir sua conta permanentemente?</string>    <string name="yes">Yes</string>
+
+    <string name="cancellation_description">Descrição do cancelamento</string>
+    <string name="tips_one">Os hóspedes gostam de saber se este é um lugar onde você mora e guarda seus pertences pessoais.</string>
+    <string name="edit_bed">Editar tipos de cama</string>
+    <string name="upload_your_place_photos">Faça upload das fotos do seu lugar</string>
+    <string name="tips_two">As fotos ajudam os hóspedes a imaginarem ficar em sua casa. Você pode começar com um e adicionar mais após a publicação.</string>
+    <string name="tips_three">Atraia hóspedes com um título de anúncio que destaque o que torna seu lugar especial.</string>
+    <string name="name_and_description">Dê um nome e descreva seu lugar</string>
+    <string name="what_house">Quais são as regras da sua casa?</string>
+    <string name="advance_notice_new">Aviso prévio e política de cancelamento</string>
+    <string name="tips_four">De quanto tempo você precisa antes de um convidado chegar?</string>
+    <string name="tips_five">Cancele até 1 dia antes da chegada e receba 100% de reembolso</string>
+    <string name="tips_six">Seu preço base é sua diária padrão</string>
+    <string name="tips_seven">Descontos para estadias mais longas</string>
+    <string name="avail_window"><![CDATA[Janela de disponibilidade e duração da viagem]]></string>
+    <string name="instant_booking">Qual ​​é o seu tipo de reserva preferido?</string>
+    <string name="tips_eight">Escolha quem pode reservar dias disponíveis sem solicitar aprovação.</string>
+
+    <string name="become_a_host_welcome">Vamos prepará-lo para se tornar um anfitrião.</string>
+    <string name="complete_all_steps">*Você precisa concluir todas as 3 etapas.</string>
+    <string name="let_s_start">Vamos começar</string>
+    <string name="what_kindof_place2">Que tipo de lugar você está ouvindo?</string>
+
+    <string name="hi">Olá,</string>
+    <string name="availablity_window">Janela de disponibilidade</string>
+    <string name="title_and_description">Título e descrição</string>
+
+    <string name="name_space">Dê um nome ao seu lugar</string>
+    <string name="name_hint">Nome do seu lugar</string>
+    <string name="cover_photo">Foto da capa</string>
+    <string name="state_or_province">Estado/Província</string>
+    <string name="zip_postal_code">CEP</string>
+    <string name="enter_location">Digite o local</string>
+    <string name="bathroom">Banheiro</string>
+    <string name="bathrooms">Banheiros</string>
+    <string name="invalid_password">Senha inválida</string>
+    <string name="invalid_password_desc">A contagem de senhas deve ter mais de 6 caracteres</string>
+    <string name="invalid_birth">Aniversário inválido</string>
+    <string name="invalid_birth_desc">Digite sua data de nascimento</string>
+    <string name="preferred_check_in_">Check-in preferencial</string>
+    <string name="drag_the_pin_to_set_your_location">Arraste o alfinete para definir sua localização</string>
+    <string name="map_toaster_change">Ótimo! Obrigado!</string>
+    <string name="by_signing_up_i_agree_to_terms_of_service_and_privacy_policy">Ao me inscrever, concordo com os termos de serviço e a política de privacidade.</string>
+    <string name="send_reset_link">Enviar link de redefinição</string>
+    <string name="wishlists">Listas de desejos</string>
+    <string name="create_your_first_wishlist">Crie sua primeira lista de desejos</string>
+    <string name="start_searching">Iniciar pesquisa</string>
+    <string name="edit_listing">Editar listagem</string>
+    <string name="we_ve_improved">Melhoramos!</string>
+    <string name="update_now">Atualizar agora</string>
+    <string name="uh_the_version">Uh! A versão que você usa está desatualizada. Temos algumas atualizações legais na loja. Atualize o aplicativo para usá-lo ainda mais.</string>
+    <string name="copy_to_clipboard">Copiar para a área de transferência</string>
+    <string name="no_previous_trip">Nenhuma viagem anterior encontrada</string>
+    <string name="travelling">Viajando</string>
+    <string name="how_many_guest_accom">Quantos convidados podem ser acomodados?</string>
+    <string name="keep_trip">Mantenha sua viagem</string>
+    <string name="block_selected_dates">Bloquear datas selecionadas</string>
+    <string name="no_inbox_host">Nenhuma mensagem nova do seu convidado.</string>
+
+
+    <string name="auto">Auto</string>
+    <string name="light">Luz</string>
+    <string name="dark">Escuro</string>
+
+    <string name="change_your_password_header">Alterar sua senha</string>
+    <string name="enter_new_password">Digite sua nova senha</string>
+    <string name="enter_confirm_password">Confirmar nova senha</string>
+    <string name="new_password_err">A nova senha deve ter no mínimo 8 caracteres</string>
+    <string name="confirm_password_err">A senha de confirmação deve ter no mínimo 8 caracteres</string>
+    <string name="old_password_err">Digite sua senha antiga para alterar uma nova senha</string>
+    <string name="new_password_mismatch_err">A nova senha e a confirmação da senha devem ser iguais</string>
+    <string name="update_password">Atualizar senha</string>
+    <string name="change_password">Alterar senha</string>
+    <string name="password_updated">A senha foi atualizada com sucesso!</string>
+    <string name="old_password">Senha atual</string>
+    <string name="new_password">Nova senha</string>
+    <string name="confirm_password">Confirmar nova senha</string>
+    <string name="enter_old_password">Digite sua senha atual</string>
+    <string name="listing_not_available">Anúncio não disponível</string>
+    <string name="display_total_price">Exibir preço total</string>
+    <string name="include_fee_beforetaxes">Inclui todas as taxas, antes dos impostos</string>
+    <string name="taxes">Impostos</string>
+    <string name="taxprice_error_text">Imposto inválido. O imposto deve estar entre 0% e 99%.</string>
+    <string name="onetotal_pricebreakdown">Detalhamento de preços</string>
+    <string name="total_before_taxes">Total antes dos impostos</string>
+    <string name="before_taxes">total antes dos impostos</string>
+</resources>

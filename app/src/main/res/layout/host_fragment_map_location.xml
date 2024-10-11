@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_one.StepOneViewModel.NextScreen"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_one.StepOneViewModel" />
+        <variable
+            name="clickNext"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="text"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="placeType"
+            type="Boolean" />
+        <variable
+            name="noOfGuests"
+            type="Boolean" />
+        <variable
+            name="bedrooms"
+            type="Boolean" />
+        <variable
+            name="baths"
+            type="Boolean" />
+        <variable
+            name="address"
+            type="Boolean" />
+        <variable
+            name="map"
+            type="Boolean" />
+        <variable
+            name="location"
+            type="Boolean" />
+        <variable
+            name="amenities"
+            type="Boolean" />
+        <variable
+            name="safety"
+            type="Boolean" />
+        <variable
+            name="space"
+            type="Boolean" />
+        <variable
+            name="placeTypeClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="noOfGuestsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bedroomsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bathsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="addressClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="locationClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="amenitiesClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="safetyClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="spaceClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/rl_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="10dp"
+        android:background="@drawable/host_steps_bg"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/action_bar"
+            style="@style/Toolbar"
+            layout="@layout/toolbar" />
+
+        <HorizontalScrollView
+            android:id="@+id/chips"
+            android:layout_below="@id/action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            chip1="@{placeType?idPlaceType:null}"
+            chip2="@{noOfGuests?idNoOfGuests:null}"
+            chip5="@{address?idAddress:null}"
+            chip6="@{location?idLocation:null}"
+            chip7="@{amenities?idAmenities:null}"
+            chip8="@{safety?idSafety:null}"
+            chip9="@{space?idSpace:null}"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/explore_header_bg"
+                android:layoutDirection="locale">
+                <com.google.android.material.chip.ChipGroup
+                    android:textAppearance="@style/chipText"
+                    android:id="@+id/chip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="@{@bool/is_left_to_right_layout?@dimen/paddingDefaultDimen:@dimen/no_padding}"
+                    >
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idPlaceType"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/place_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        android:checked="@{placeType}"
+                        chip="@{1}"
+                        chipStatus="@{placeType}"
+                        android:onClick="@{placeTypeClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idNoOfGuests"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/capacity"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        app:chipEndPadding="10dp"
+                        chip="@{2}"
+                        app:chipStartPadding="10dp"
+                        android:checked="@{noOfGuests}"
+                        chipStatus="@{noOfGuests}"
+                        android:onClick="@{noOfGuestsClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idAddress"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/location"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        chip="@{3}"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        android:checked="@{address}"
+                        chipStatus="@{address}"
+                        android:onClick="@{addressClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idLocation"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/map"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        chip="@{4}"
+                        android:checked="@{location}"
+                        chipStatus="@{location}"
+                        android:onClick="@{locationClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idAmenities"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/amenities"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        chip="@{5}"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        android:checked="@{amenities}"
+                        chipStatus="@{amenities}"
+                        android:onClick="@{amenitiesClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idSafety"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@string/safety_amenities"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        chip="@{6}"
+                        android:checked="@{safety}"
+                        chipStatus="@{safety}"
+                        android:onClick="@{safetyClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                        android:id="@+id/idSpace"
+                        android:textAppearance="@style/chipText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Shared spaces"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_h2"
+                        app:chipEndPadding="10dp"
+                        chip="@{7}"
+                        app:chipStartPadding="10dp"
+                        android:checked="@{space}"
+                        chipStatus="@{space}"
+                        android:onClick="@{spaceClick}"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/chip_border_gray"
+                        app:chipStrokeWidth="1dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_item_listing_header"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_below="@id/chips"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="@{text}"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h4" />
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/container_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/container_bottom"
+            android:layout_below="@id/tv_item_listing_header"
+            android:layout_centerVertical="true"
+            map:cardCornerRadius="20dp"
+            map:cardElevation="0dp">
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                map:uiZoomControls="true" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignTop="@id/container_map"
+            android:layout_centerHorizontal="true"
+            android:background="@{map?@drawable/bg_map_toaster_change:@drawable/bg_map_toaster_default}">
+
+
+            <TextView
+                android:id="@+id/map_toaster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@{map?@string/map_toaster_change:@string/drag_the_pin_to_set_your_location}"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_h2"
+                android:drawableStart="@drawable/ic_information_icon" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/container_map"
+            android:layout_alignBottom="@id/container_map"
+            android:layout_centerHorizontal="true"
+            />
+
+        <RelativeLayout
+            android:id="@+id/container_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/pg_bar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:indeterminate="false"
+                android:max="100"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:scaleY="3"
+                android:progress="20"
+                android:progressTint="@color/colorPrimary"
+                android:layout_marginBottom="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv_rightside_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:text="@string/logintext"
+                android:textColor="@color/colorPrimary"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curve_button_red"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:paddingStart="25dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="10dp"
+                android:splitMotionEvents="false"
+                android:text="@string/next"
+                android:textColor="@android:color/white"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_17"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

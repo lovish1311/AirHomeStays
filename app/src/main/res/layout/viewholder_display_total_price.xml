@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="isChecked"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rootrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <RelativeLayout
+          android:id="@+id/rl_toggle"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:onClick="@{onClick}"
+          android:background="@drawable/bg_onetotalprice"
+          android:padding="15dp"
+          >
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_alignParentStart="true"
+              android:layout_toStartOf="@id/switch1"
+              >
+              <TextView
+                  android:id="@+id/displaytotalprice_head_tv"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/display_total_price"
+                  android:fontFamily="@font/be_vietnampro_medium"
+                  android:textColor="@color/black"
+                  android:textSize="16sp"
+                  />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/displaytotalprice_head_tv"
+                  android:text="@string/include_fee_beforetaxes"
+                  />
+
+          </RelativeLayout>
+
+
+          <com.google.android.material.materialswitch.MaterialSwitch
+              android:id="@+id/switch1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:track="@drawable/instant_check_back_drawable"
+              android:thumb="@drawable/instant_check_thumb_selector"
+              android:soundEffectsEnabled="false"
+              android:duplicateParentState="true"
+              app:switchMinWidth="40dp"
+              android:textOff=""
+              android:textOn=""
+              android:clickable="false"
+              android:checked="@{isChecked}"
+              android:layout_alignParentEnd="true"
+              android:layout_centerVertical="true"
+              />
+      </RelativeLayout>
+    </RelativeLayout>
+</layout>

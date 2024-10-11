@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="img"
+            type="String" />
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.host.calendar.CalendarListingViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale">
+
+        <FrameLayout
+            android:id="@+id/rl_lottie_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            goneUnless="@{viewModel.isLoading}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:lottie_rawRes="@raw/animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_root"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_listing_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_listing_image"
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="20dp"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    imgUrl="@{img}"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_listing_image"
+                    android:layout_toStartOf="@id/iv_drop_down"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/tv_listing_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_18"
+                        android:padding="0dp"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:textColor="@color/text_color"
+                        android:textDirection="locale" />
+
+                    <TextView
+                        android:id="@+id/tv_listing_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_listing_name"
+                        android:textColor="#A52903"
+                        android:textSize="16sp"
+                        android:padding="0dp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textDirection="locale"/>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_drop_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_listing_details"
+                >
+<!--goneUnlessInverse="@{viewModel.isCalendarLoading}"-->
+                <com.squareup.timessquare.CalendarPickerView
+                    android:id="@+id/calendar_picker_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="50dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:tsquare_dayBackground="@drawable/custom_calendar_bg_selector"
+                    app:tsquare_displayDayNamesHeaderRow="false"
+                    app:tsquare_dividerColor="#00000000"
+                    />
+
+                <com.kizitonwose.calendarview.CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cv_dayViewResource="@layout/calendar_day_layout" />
+
+                <LinearLayout
+                    android:id="@+id/ll_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:padding="15dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/booked"
+                        android:drawableStart="@drawable/ic_square_booked"
+                        android:drawablePadding="5dp"
+                        android:textSize="@dimen/text_size_h1"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textDirection="locale"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_available"
+                        android:textSize="@dimen/text_size_h1"
+                        android:singleLine="true"
+                        android:drawableStart="@drawable/ic_square_not_available"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textDirection="locale"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/available"
+                        android:textSize="@dimen/text_size_h1"
+                        android:singleLine="true"
+                        android:drawableStart="@drawable/ic_square_available"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textDirection="locale"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:drawablePadding="5dp"
+                    android:layout_margin="30dp"
+                    android:textSize="@dimen/text_size_18"
+                    android:text="@string/save"
+                    android:background="@drawable/curve_button_green"
+                    android:fontFamily="@font/linetocircular"
+                    android:textColor="@android:color/white"
+                    android:drawableEnd="@drawable/ic_next_arrow"
+                    style="@style/AuthScreenLottieLayout"
+                    android:layout_gravity="bottom|end"
+                    android:textDirection="locale"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_lottie_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <!-- goneUnless="@{viewModel.isCalendarLoading}" -->
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lt_loading_view_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/animation"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    android:layout_gravity="center"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calendar"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_h5"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:gravity="start"
+                android:layout_marginTop="30dp"
+                android:textDirection="locale"
+                android:text="@string/when_you_publish_a_listing_you_ll_be_able_to_see_and_edit_your_calendar_here"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

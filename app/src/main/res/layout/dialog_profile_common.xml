@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="title"
+            type="String"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:cardBackgroundColor="#F5F6F5"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingTop="15dp"
+            app:contentPaddingRight="20dp"
+            app:contentPaddingLeft="20dp"
+            app:contentPaddingBottom="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_languages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{title}"
+                    android:textSize="20sp"
+                    android:textDirection="locale"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_languages"
+                    android:layout_above="@id/btn_apply"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/text_color"
+                    android:padding="10dp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:background="?android:selectableItemBackground"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/btn_apply"
+                    />
+
+                <Button
+                    android:id="@+id/btn_apply"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="15dp"
+                    android:background="?android:selectableItemBackground"
+                    android:padding="10dp"
+                    android:text="@string/apply"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_h1_5" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lt_loading"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_centerInParent="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loading_qwe"
+                    android:background="@drawable/lottie_background"
+                    android:visibility="visible"
+                    app:lottie_autoPlay="true"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

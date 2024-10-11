@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <plurals name="caps_bed_count">
+        <item quantity="other"> Beds</item>
+        <item quantity="one"> Bed</item>
+    </plurals>
+    <plurals name="guest_count">
+        <item quantity="other"> ospiti</item>
+        <item quantity="one"> ospite</item>
+    </plurals>
+
+    <plurals name="guest_singlular">
+        <item quantity="other"> ospiti</item>
+        <item quantity="one"> ospite</item>
+    </plurals>
+    <plurals name="review_count">
+        <item quantity="other"> Recensioni</item>
+        <item quantity="one"> Revisione</item>
+    </plurals>
+    <plurals name="night_count">
+        <item quantity="other"> notti</item>
+        <item quantity="one"> Notte</item>
+    </plurals>
+    <plurals name="review_count_profile">
+        <item quantity="other">%1$d Recensioni</item>
+        <item quantity="one">%1$d Revisione</item>
+    </plurals>
+    <plurals name="day_count">
+        <item quantity="other"> giorni</item>
+        <item quantity="one"> giorno</item>
+    </plurals>
+</resources>

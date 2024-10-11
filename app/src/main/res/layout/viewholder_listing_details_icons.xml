@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="guestCount"
+            type="String" />
+        <variable
+            name="bedCount"
+            type="String" />
+        <variable
+            name="bedroomCount"
+            type="String" />
+        <variable
+            name="bathCount"
+            type="String" />
+        <variable
+            name="totalRooms"
+            type="String" />
+        <variable
+            name="roomType"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layoutDirection="locale">
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text= "@{roomType}"
+                android:gravity="center_vertical"
+                android:drawablePadding="7dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                app:drawableStartCompat="@drawable/ic_chip_roomtype" />
+
+            <!--                 android:visibility="@{Integer.parseInt(bedCount) > 0 ? View.VISIBLE : View.INVISIBLE }"
+-->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text= "@{bedroomCount}"
+                android:textColor="@color/text_color"
+                android:gravity="center_vertical"
+                android:drawablePadding="7dp"
+                android:textSize="@dimen/text_size_13"
+                android:textDirection="locale"
+                app:drawableStartCompat="@drawable/ic_bed" />
+
+
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text= "@{bedCount}"
+                android:gravity="center_vertical"
+                android:drawablePadding="7dp"
+                android:textSize="@dimen/text_size_13"
+                android:layout_weight="1"
+                android:textColor="@color/text_color"
+                android:textDirection="locale"
+                app:drawableStartCompat="@drawable/ic_bed" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text= "@{bathCount}"
+            android:gravity="center_vertical"
+            android:drawablePadding="7dp"
+            android:textSize="@dimen/text_size_13"
+            android:maxLines="2"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            app:drawableStartCompat="@drawable/ic_bathroom" />
+
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="20dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text= "@{guestCount}"
+            android:gravity="center_vertical"
+            android:drawablePadding="7dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            app:drawableStartCompat="@drawable/ic_guest" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text= "@{totalRooms}"
+            android:gravity="center_vertical"
+            android:drawablePadding="7dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"
+            app:drawableStartCompat="@drawable/ic_total_rooms" />
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
+

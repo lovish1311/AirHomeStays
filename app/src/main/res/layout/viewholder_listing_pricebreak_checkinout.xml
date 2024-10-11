@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="checkIn"
+            type="String"/>
+        <variable
+            name="checkOut"
+            type="String"/>
+        <variable
+            name="guest"
+            type="Integer"/>
+        <variable
+            name="checkInOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="checkOutOnClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="guestOnClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_checkin_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_h1"
+                android:textColor="@color/text_color"
+                android:text="@string/check_in"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/tv_checkin_add_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{checkIn}"
+                android:onClick="@{checkInOnClick}"
+                android:textSize="@dimen/text_size_19"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/tv_checkin_placeholder"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/tv_checkout_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_h1"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text_color"
+                android:text="@string/check_out"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/tv_checkout_add_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{checkOut}"
+                android:onClick="@{checkOutOnClick}"
+                android:textSize="@dimen/text_size_19"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/tv_checkout_placeholder"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_guest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_guest_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_h1"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/text_color"
+                android:text="@string/guests_txt"
+                android:textDirection="locale"/>
+
+            <TextView
+                android:id="@+id/tv_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{(guest == 0)? (guest + @plurals/guest_singlular(guest) ) : (guest + @plurals/guest_count(guest))}"
+                android:onClick="@{guestOnClick}"
+                android:textSize="@dimen/text_size_19"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/tv_guest_placeholder"
+                android:textDirection="locale"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="drawable"
+            type="Integer"/>
+        <variable
+            name="isChecked"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="visible"
+            type="Boolean" />
+        <variable
+            name="onCurrencyClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.payment.PaymentViewModel" />
+        <variable
+            name="selectedCurrency"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+    </data>
+        <RelativeLayout
+            android:id="@+id/cl_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:soundEffectsEnabled="false"
+            android:onClick="@{onClick}"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layoutDirection="locale">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/toggle">
+
+                <ImageView
+                    drawableImage="@{drawable}"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:text="@{text}"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/toggle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:background="@{isChecked ? @drawable/check_radio_on_green : @drawable/check_radio_off }"
+                android:clickable="false"
+                android:duplicateParentState="true" />
+
+            <RelativeLayout
+                android:visibility="@{visible?View.VISIBLE:View.GONE}"
+                android:id="@+id/rl_currency_drop_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:onClick="@{onCurrencyClick}"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/curve_button_gray_outline">
+
+                <TextView
+                    android:id="@+id/tv_choose_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="3dp"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{selectedCurrency}"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/tv_choose_currency"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingTop="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_down_arrow_blue" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+</layout>

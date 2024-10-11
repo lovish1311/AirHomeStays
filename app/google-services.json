@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "445200847344",
+    "project_id": "airhomestays",
+    "storage_bucket": "airhomestays.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445200847344:android:ea9f68fd6a5ccdc1e00d35",
+        "android_client_info": {
+          "package_name": "com.airhomestays.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445200847344-rnnlo27nqv9hkfq94psvklev0kqea7na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.airhomestays.app",
+            "certificate_hash": "6993e30879e2509a2391bbff5c38430ab1585252"
+          }
+        },
+        {
+          "client_id": "445200847344-rqifmlja4ecgrcoa06a0kv53koitrvs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9zs0QDwO5J0QJTTbMlFJOMWN5JKHCPWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445200847344-nmissotro294dqmn4ro3gh46ionhbhpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

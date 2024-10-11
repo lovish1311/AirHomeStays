@@ -1,0 +1,151 @@
+query getPopularLocations {
+	getPopularLocations {
+		results {
+			id
+			location
+			locationAddress
+			image
+		}
+		status
+		errorMessage
+	}
+}
+
+
+query getExploreListings{
+
+# MostViewedListing
+  getMostViewedListing {
+   results {
+    id
+    title
+    personCapacity
+    beds
+    bookingType
+    coverPhoto
+    reviewsCount,
+    reviewsStarRating,
+    listPhotos {
+      id
+      name
+      type
+      status
+    }
+    listingData {
+      basePrice
+      currency
+    }
+    settingsData {
+      listsettings {
+        id
+        itemName
+      }
+    }
+    wishListStatus
+    wishListGroupCount
+    isListOwner
+    listPhotoName
+    roomType
+    }
+   status
+   errorMessage
+  }
+  # Recommend Listing
+  getRecommend {
+
+    results {
+
+       id
+       title
+       personCapacity
+       beds
+       bookingType
+       coverPhoto
+       reviewsCount,
+       reviewsStarRating,
+       listPhotos {
+         id
+         name
+         type
+         status
+       }
+       listingData {
+         basePrice
+         currency
+       }
+       settingsData {
+         listsettings {
+           id
+           itemName
+         }
+       }
+       wishListStatus
+       wishListGroupCount
+       isListOwner
+       listPhotoName
+       roomType
+    }
+    status
+    errorMessage
+  }
+    # Currency Rate
+    currency: Currency {
+        result {
+            base
+            rates
+        }
+        status
+        errorMessage
+    }
+
+    #Default price in filter
+    getSearchSettings {
+        results {
+            id
+            minPrice
+            maxPrice
+            priceRangeCurrency
+        }
+        status
+        errorMessage
+    }
+
+    # Filters
+    getListingSettingsCommon {
+        status
+        errorMessage
+        results {
+            id
+            typeName
+            fieldType
+            typeLabel
+            step
+            isEnable
+            listSettings {
+                id
+                typeId
+                itemName
+                image
+                otherItemName
+                maximum
+                minimum
+                startValue
+                endValue
+                isEnable
+            }
+        }
+    }
+
+    # Site Settings
+    getImageBanner {
+        result {
+            id
+            title
+            description
+            buttonLabel
+            image
+        }
+        status
+        errorMessage
+    }
+}

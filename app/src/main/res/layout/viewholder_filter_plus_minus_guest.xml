@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="minusLimit1"
+            type="Integer"/>
+        <variable
+            name="plusLimit1"
+            type="Integer"/>
+        <variable
+            name="onPlusClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="onMinusClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.explore.ExploreViewModel"/>
+    </data>
+
+    <RelativeLayout android:id="@+id/rsoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/ib_guest_minus">
+
+            <TextView
+                android:id="@+id/tv_guest_placeholder_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/guests"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_guest_placeholder_add_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_guest_placeholder_guest"
+                android:text="@string/add_guest"
+                android:textColor="@color/grey_font"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h2" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/ib_guest_minus"
+            guestCount="@{viewModel.personCapacity1}"
+            minusLimit="@{minusLimit1}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/tv_guest_count"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{onMinusClick}"
+            android:soundEffectsEnabled="false"
+            app:srcCompat="@drawable/ic_minus"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_guest_count"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/ib_guest_plus"
+            android:gravity="center"
+            android:maxLength="3"
+            android:padding="0dp"
+            android:text="@={viewModel.personCapacity1}"
+            android:textDirection="locale"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18" />
+
+        <ImageButton
+            android:id="@+id/ib_guest_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_circle_plus"
+            guestCount="@{viewModel.personCapacity1}"
+            plusLimit="@{plusLimit1}"
+            android:onClick="@{onPlusClick}"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:soundEffectsEnabled="false"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/exFourHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textDirection="locale"
+        android:textSize="@dimen/text_size_h3"
+        android:textStyle="bold"
+        tools:text="October 2019" />
+
+    <LinearLayout
+        android:id="@+id/container_days"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/exFourHeaderText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:weightSum="7"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="S" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="M" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="T" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="W" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="T" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="F" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/search_text_color"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="S" />
+    </LinearLayout>
+</RelativeLayout>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.util.LayoutDirection"/>
+        <import type="android.view.View"/>
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="radioVisibility"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="direction"
+            type="Boolean"/>
+        <variable
+            name="subText"
+            type="String"/>
+        <variable
+            name="paddingBottom"
+            type="Boolean"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="@{paddingBottom ?@dimen/no_padding  :@dimen/paddingDefaultDimen }"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection='@{direction? LayoutDirection.RTL : LayoutDirection.LTR}'
+        android:background="@null"
+        android:onClick="@{onClick}">
+
+        <ImageView
+            android:id="@+id/radio"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
+            android:background="@{radioVisibility ? @drawable/check_radio_on_green : @drawable/check_radio_off }"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/radio"
+            android:lineSpacingExtra="5dp"
+            android:text="@{text}"
+            android:fontFamily="@font/be_vietnampro_medium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_15"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/radio"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/textradio"
+            android:textColor="@color/grey_font"
+            android:textSize="@dimen/text_size_15"
+            android:text="@{subText}"
+            android:textDirection="locale"/>
+
+
+    </RelativeLayout>
+
+</layout>

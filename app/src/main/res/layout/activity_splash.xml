@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.splash.SplashViewModel" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash_screen"
+            android:visibility="@{viewModel.isHostGuest==0 ? View.VISIBLE : View.GONE}"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_welcome_logo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_above="@id/text"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_welcome_logo"
+            android:visibility="@{viewModel.isHostGuest==1 || viewModel.isHostGuest==2 ? View.VISIBLE : View.GONE}"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:layout_centerInParent="true"
+                android:visibility="@{viewModel.isHostGuest==1|| viewModel.isHostGuest==2 ? View.VISIBLE : View.GONE}"
+                android:text="@{viewModel.isHostGuest==1 ? @string/switch_to_hosting : @string/switch_to_travelling }"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</layout>

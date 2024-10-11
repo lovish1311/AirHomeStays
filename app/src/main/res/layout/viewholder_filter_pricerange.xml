@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="price"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_filter_pricerange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{price}"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textSize="@dimen/text_size_h2"
+            android:textColor="@color/grey_font"
+            android:textDirection="locale"
+            />
+
+        <com.jaygoo.widget.RangeSeekBar
+            android:id="@+id/rangebar_filter_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rsb_mode="range"
+            app:rsb_tick_mark_gravity="center"
+            app:rsb_progress_height="4dp"
+            app:rsb_progress_radius="0dp"
+            app:rsb_progress_default_color="@color/rsbColorThumbPressed"
+            app:rsb_progress_color="@color/status_bar_color"
+            app:rsb_indicator_height="20dp"
+            app:rsb_thumb_size="32dp"
+            app:rsb_thumb_drawable="@drawable/thumb_circle"
+            app:rsb_indicator_padding_left="20dp"
+            app:rsb_indicator_padding_right="20dp"
+            app:rsb_indicator_show_mode="alwaysHide"
+            app:rsb_thumb_scale_ratio="1.2"
+            />
+
+    </LinearLayout>
+
+</layout>

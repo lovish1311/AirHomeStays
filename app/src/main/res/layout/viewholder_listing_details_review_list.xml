@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="imgUrl"
+            type="String" />
+        <variable
+            name="onAvatarClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="isAdmin"
+            type="Boolean" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="profileId"
+            type="Integer" />
+        <variable
+            name="type"
+            type="String" />
+        <variable
+            name="ratingTotal"
+            type="Double"/>
+        <variable
+            name="reviewsTotal"
+            type="Integer"/>
+        <variable
+            name="reviewContent"
+            type="String" />
+        <variable
+            name="date"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="isListingDetails"
+            type="Boolean" />
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.review.ReviewViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="283dp"
+        android:layout_height="195dp"
+        android:padding="20dp"
+        android:background="@drawable/curve_button_gray_outline_large">
+
+        <RelativeLayout
+            android:id="@+id/rel_image_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_circle_image"
+                img="@{imgUrl}"
+                isAdmin="@{isAdmin}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="@{onAvatarClick}"
+                android:src="@drawable/placeholder_avatar" />
+
+            <RelativeLayout
+                android:id="@+id/rel_tv_name_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/img_circle_image">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    isAdmin="@{isAdmin}"
+                    isListing="@{isListingDetails}"
+                    listId="@{profileId}"
+                    spanString="@{name}"
+                    title="@{title}"
+                    type="@{type}"
+                    viewModels="@{viewModel}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:maxLines="2"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+
+                <RatingBar
+                    android:id="@+id/tv_item_listing_similar_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    ratingTotal="@{ratingTotal}"
+                    reviewsTotal="@{reviewsTotal}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name"
+                    android:layout_marginTop="5dp"
+                    android:numStars="5"
+                    android:progressTint="@color/colorAccent"
+                    android:secondaryProgressTint="@color/colorAccent"
+                    android:stepSize="1" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_image_name"
+            android:layout_alignStart="@+id/rel_image_name">
+
+            <TextView
+                android:id="@+id/tv_reviewContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="3"
+                android:text="@{reviewContent}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                memberSinceComma="@{date}"
+                android:textDirection="locale"
+                android:layout_below="@+id/tv_reviewContent"
+                android:textSize="@dimen/text_size_13"
+                android:layout_marginTop="10dp" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>

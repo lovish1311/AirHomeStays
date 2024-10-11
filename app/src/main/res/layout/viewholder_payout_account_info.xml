@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="country"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="address1"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="address2"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="city"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="state"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+        <variable
+            name="zip"
+            type="androidx.databinding.ObservableField&lt;String&gt;"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale">
+
+        <RelativeLayout
+            android:id="@+id/cv_carddetails_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="3dp"
+            card_view:contentPadding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/country"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{country}"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/address_line_one"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address_line_one"
+                    android:text="@={address1}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/address_line_two"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address_line_two"
+                    android:text="@={address2}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/city"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/city"
+                    android:text="@={city}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/state_or_province"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/state_or_province"
+                    android:text="@={state}"
+                    android:inputType="textCapWords"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/zip_or_postal"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/zip_or_postal"
+                    android:text="@={zip}"
+                    android:padding="15dp"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:inputType="textCapCharacters"
+                    android:textSize="@dimen/text_size_h1_5"
+                    android:textDirection="locale"
+                    android:textAlignment="viewStart"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

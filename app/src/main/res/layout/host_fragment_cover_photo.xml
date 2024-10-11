@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.airhomestays.app.ui.host.step_two.StepTwoViewModel.NextScreen"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.host.step_two.StepTwoViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/cover_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            layout="@layout/toolbar"/>
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/rv_cover_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cover_toolbar"
+            android:padding="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_above="@id/tv_next"
+            android:background="@color/edittext_line" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/AuthScreenLottieLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curve_button_green"
+            android:drawableEnd="@drawable/ic_next_arrow"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/linetocircular"
+            android:onClick="@{() -> viewModel.onClick(NextScreen.LISTTITLE)}"
+            android:padding="10dp"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</layout>

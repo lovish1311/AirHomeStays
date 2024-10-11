@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.review.ReviewViewModel" />
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp">
+
+        <RelativeLayout
+            android:id="@+id/rel_rating_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+            <TextView
+                android:id="@+id/tv_rating_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="@{title}"
+                android:fontFamily="@font/be_vietnampro_semibold"
+                android:textColor="@color/black"
+                />
+        </RelativeLayout>
+
+      <!--  <com.idlestar.ratingstar.RatingStarView
+            android:id="@+id/tv_item_listing_similar_rating"
+            rating_star="@{viewModel.userRating}"
+            viewmodel="@{viewModel}"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/rel_rating_title"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:numStars="5"
+            android:paddingLeft="0dp"
+            android:paddingTop="2dp"
+            android:paddingRight="0dp"
+            android:stepSize="1"
+            app:rsv_cornerRadius="2dp"
+            app:rsv_drawStrokeForEmptyStar="false"
+            app:rsv_drawStrokeForHalfStar="true"
+            app:rsv_enableSelectRating="true"
+            app:rsv_onlyHalfStar="true"
+            app:rsv_starBackgroundColor="#E8E8E8"
+            app:rsv_starForegroundColor="@color/colorAccent"
+            app:rsv_starMargin="5dp"
+            app:rsv_starNum="5"
+            app:rsv_starThickness="0.6"
+            app:rsv_strokeColor="@color/colorAccent"
+            app:rsv_strokeWidth="3px" />-->
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/tv_item_listing_similar_rating"
+            rating_star="@{viewModel.userRating}"
+            viewmodel="@{viewModel}"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/rel_rating_title"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:numStars="5"
+            android:paddingLeft="0dp"
+            android:paddingTop="2dp"
+            android:paddingRight="0dp"
+            android:stepSize="1"
+           />
+
+    </RelativeLayout>
+</layout>

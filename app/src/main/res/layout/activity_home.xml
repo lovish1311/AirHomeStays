@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.home.HomeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager
+                android:id="@+id/vp_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:splitMotionEvents="false"
+                android:layoutDirection="locale"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                />
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottomNavigationHeight"
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="6dp"
+                app:fabCradleRoundedCornerRadius="0dp"
+                android:backgroundTint="@color/bottom_nav_color"
+                app:fabCradleVerticalOffset="8dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bn_explore"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:menu="@menu/bottom_navigation_menu"
+                    app:labelVisibilityMode="labeled"
+                    android:background="@android:color/transparent"
+                    app:elevation="0dp"
+                    app:itemIconTint="@drawable/bottom_navigation_view_selector"
+                    app:itemTextColor="@drawable/bottom_navigation_text_selector"/>
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:background="@color/colorAccent"
+                android:contentDescription="@string/app_name"
+                android:elevation="20dp"
+                android:src="@drawable/ic_applogo_white"
+                android:tint="@color/colorAccent"
+                app:backgroundTint="@color/colorAccent"
+                app:elevation="50dp"
+                app:fabCustomSize="50dp"
+                app:layout_anchor="@id/bottomAppBar"
+                app:tint="@android:color/white" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_loading_bg"
+            goneUnless="@{viewModel.isLoading}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#40000000"
+            android:clickable="true"
+            android:focusable="true">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <data><import type="android.view.View"/>
+        <variable
+            name="desc"
+            type="String"/>
+        <variable
+            name="padding"
+            type="Boolean"/>
+        <variable
+            name="datevisiblity"
+            type="Boolean"/>
+        <variable
+            name="descvisiblity"
+            type="Boolean"/>
+        <variable
+            name="descdate"
+            type="String"/>
+        <variable
+            name="content"
+            type="String"/>
+        <variable
+            name="day"
+            type="String"/>
+        <variable
+            name="date"
+            type="String"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layoutDirection="locale">
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:textColor="@color/bottom_navigation_text_color"
+            android:textSize="@dimen/text_size_h2"
+            android:visibility="@{descvisiblity?View.VISIBLE:View.GONE}"
+            android:text="@{desc}"
+            android:textDirection="locale"/>
+        <TextView
+            android:id="@+id/descdate1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="@{descvisiblity?View.VISIBLE:View.GONE}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_h2"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/description"
+            android:fontFamily="@font/be_vietnampro_regular"
+            android:text="@{descdate}"
+            android:textDirection="locale"/>
+
+        <View
+            android:id="@+id/descdatedivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/descdate1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/gray_divider_light"
+            android:visibility="@{descvisiblity?View.VISIBLE:View.GONE}" />
+
+        <TextView
+            android:id="@+id/jii1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:layout_below="@id/descdatedivider"
+            android:text="@{date+`:`}"
+            android:fontFamily="@font/be_vietnampro_semibold"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_h2"
+            />
+
+
+                <TextView
+                    android:id="@+id/textt"
+                    android:layout_below="@id/jii1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:textColor="@color/bottom_navigation_text_color"
+                    android:textSize="@dimen/text_size_h2"
+                    android:text="@{content}"
+                    android:paddingBottom="@{padding?@dimen/text_very_small:@dimen/no_padding}"
+                    android:textDirection="locale"/>
+
+                <TextView
+                    android:id="@+id/jii"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_h2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/textt"
+                    android:fontFamily="@font/be_vietnampro_regular"
+                    android:text="@{day}"
+                    android:visibility="@{datevisiblity?View.GONE:View.VISIBLE}"
+                    android:textDirection="locale"/>
+
+
+        <View
+            android:layout_below="@id/jii"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_divider_light"
+            />
+
+
+    </RelativeLayout>
+
+</layout>

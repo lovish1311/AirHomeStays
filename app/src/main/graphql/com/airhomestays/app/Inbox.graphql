@@ -1,0 +1,167 @@
+#Inbox List
+query getAllThreads($threadType: String, $threadId: Int, $currentPage: Int) {
+  getAllThreads(threadType: $threadType, threadId: $threadId, currentPage: $currentPage) {
+    results {
+      id
+      listId
+      guest
+      host
+      listData {
+        city
+        state
+        country
+      }
+      threadItem {
+        id
+        threadId
+        content
+        sentBy
+        isRead
+        type
+        startDate
+        endDate
+        createdAt
+      }
+      guestProfile {
+        profileId
+        displayName
+        firstName
+        picture
+      }
+      hostProfile {
+        profileId
+        displayName
+        firstName
+        picture
+      }
+    }
+    count
+    status
+  }
+}
+
+# Message unReadCount
+query getUnReadCount{
+  getUnReadCount {
+	results {
+  	hostCount
+  	guestCount
+  	userBanStatus
+  	total
+	}
+	status
+	errorMessage
+  }
+}
+
+# Message
+query getThreads($threadType: String, $threadId: Int, $currentPage: Int) {
+  getThreads(threadType: $threadType, threadId: $threadId, currentPage: $currentPage) {
+    status
+    errorMessage
+    results {
+        threadItems {
+          id
+          threadId
+          reservationId
+          content
+          sentBy
+          type
+          startDate
+          endDate
+          createdAt
+          personCapacity
+          visitors
+          pets
+          infants
+        }
+        guestProfile {
+          userId
+          profileId
+          displayName
+          firstName
+          picture
+          location
+        }
+        hostProfile {
+          userId
+          profileId
+          displayName
+          firstName
+          picture
+          location
+        }
+        threadItemForType{
+        			    id
+                  threadId
+                  reservationId
+                  content
+                  sentBy
+                  type
+                  startDate
+                  endDate
+                  createdAt
+                  personCapacity
+                  visitors
+                  pets
+                  infants
+        		}
+    }
+  }
+}
+
+#sendMessage
+mutation sendMessage(
+          $threadId: Int!,
+          $content: String,
+          $type: String,
+          $startDate: String,
+          $endDate: String,
+          $personCapacity: Int,
+          $reservationId: Int
+          ) {
+            sendMessage(
+            threadId: $threadId,
+            content: $content,
+            type: $type,
+            startDate: $startDate,
+            endDate: $endDate,
+            personCapacity: $personCapacity,
+            reservationId: $reservationId
+            ){
+                results{
+                  id
+                  sentBy
+                  content
+                  type
+                  reservationId
+                  startDate
+                  endDate
+                  createdAt
+                  personCapacity
+                }
+                  status
+                  errorMessage
+            }
+          }
+
+#readMessage
+mutation readMessage($threadId: Int!) {
+  readMessage(threadId: $threadId) {
+    status
+    message
+    errorMessage
+  }
+}
+
+# NewMessage
+query getUnReadThreadCount($threadId: Int){
+  getUnReadThreadCount (threadId: $threadId){
+	results {
+  	    isUnReadMessage
+        messageCount
+	}
+	status
+	errorMessage
+  }
+}

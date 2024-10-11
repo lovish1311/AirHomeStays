@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="locale">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_listing_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_toolbar_navigateup"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_navigateup"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/curve_button_gray_map"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_left_arrow"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@id/iv_navigateup"
+                    android:fontFamily="@font/be_vietnampro_medium"
+                    android:text="@string/payout_preference"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h3" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/container_add_payout_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar_listing_details"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curve_button_filter_date" >
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/tv_add_payout_method"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                android:id="@+id/tv_add_payout_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="17dp"
+                android:text="@string/add_payout_method"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_update_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar_listing_details"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+
+                android:background="@drawable/curve_button_border_red"
+                android:backgroundTint="@null"
+                android:text="@string/ok"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_h2"
+                android:textStyle="bold"
+                tools:targetApi="m" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btnOk"
+
+                android:layout_marginTop="20dp"
+                android:background="@drawable/curve_button_red"
+                android:backgroundTint="@null"
+                android:text="@string/update"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_h2"
+                android:textStyle="bold"
+                tools:targetApi="m" />
+        </RelativeLayout>
+
+
+
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/rl_edit_payout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/container_add_payout_method">
+            </com.airbnb.epoxy.EpoxyRecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/epoxy_Relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_edit_payout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+</layout>

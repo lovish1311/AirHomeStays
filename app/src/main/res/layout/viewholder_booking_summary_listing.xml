@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="date"
+            type="String" />
+        <variable
+            name="image"
+            type="String" />
+        <variable
+            name="imageClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            android:textSize="@dimen/text_size_h2"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/text_color"
+            android:layout_toStartOf="@id/image"
+            android:textDirection="locale"/>
+
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{date}"
+            android:textSize="@dimen/text_size_h2"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/title1"
+            android:textColor="@color/text_color"
+            android:layout_toStartOf="@id/image1"
+            android:textDirection="locale"/>
+
+        <ImageView
+            android:id="@+id/image1"
+            imgListing="@{image}"
+            android:layout_width="112dp"
+            android:layout_height="75dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:onClick="@{imageClick}"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</layout>

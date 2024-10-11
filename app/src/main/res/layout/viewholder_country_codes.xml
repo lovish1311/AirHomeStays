@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="header"
+            type="String" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="switcher"
+            type="Boolean" />
+        <variable
+            name="isWhite"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="@{switcher? View.TEXT_ALIGNMENT_VIEW_START : View.TEXT_ALIGNMENT_CENTER}"
+            android:text="@{header}"
+            android:textSize="14sp"
+            android:textColor="@{isWhite? @color/white : @color/black}"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textDirection="locale"
+            />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.graphics.Typeface"/>
+        <import type="android.view.View"/>
+        <variable
+            name="name"
+            type="String"/>
+        <variable
+            name="image"
+            type="Integer"/>
+        <variable
+            name="iconVisible"
+            type="Boolean"/>
+        <variable
+            name="textVisible"
+            type="Boolean"/>
+        <variable
+            name="paddingtop"
+            type="Boolean"/>
+        <variable
+            name="currencyText"
+            type="String"/>
+        <variable
+            name="paddingbottam"
+            type="Boolean"/>
+        <variable
+            name="arrowVisibile"
+            type="Boolean"/>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@{@bool/is_left_to_right_layout?@dimen/exploreListingLTR:@dimen/paddingListing_20}"
+        android:paddingEnd="20dp"
+        android:paddingTop="@{paddingtop? @dimen/paddingListing : @dimen/profile_text_padding}"
+        android:paddingBottom="@{paddingbottam? @dimen/paddingListing : @dimen/profile_text_padding}"
+        android:orientation="vertical"
+        android:onClick="@{onClick}"
+        android:layoutDirection="locale">
+
+
+        <ImageView
+            android:id="@+id/ic_icon"
+            drawableImage="@{image}"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:padding="10dp"
+            android:visibility="@{iconVisible? View.GONE : View.VISIBLE}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/ic_icon"
+            android:ellipsize="none"
+            android:singleLine="true"
+            android:text="@{name}"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="@dimen/text_size_15"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/ic_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_h1_5"
+            android:text="@{currencyText}"
+            android:visibility="@{textVisible? View.VISIBLE : View.GONE}"
+            android:textDirection="locale" />
+
+        <ImageView
+            android:id="@+id/ic_arrow_right"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_right"
+            android:visibility="@{arrowVisibile? View.VISIBLE : View.GONE}" />
+
+    </RelativeLayout>
+</layout>

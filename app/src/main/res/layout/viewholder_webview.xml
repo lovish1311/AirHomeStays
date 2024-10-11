@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="backVisible"
+            type="Boolean"/>
+        <variable
+            name="headerText"
+            type="String"/>
+        <variable
+            name="headerVisible"
+            type="Boolean"/>
+        <variable
+            name="backImage"
+            type="Integer"/>
+        <variable
+            name="backClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.ProfileViewModel"/>
+    </data>
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="locale">
+
+    <LinearLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:paddingStart="@dimen/toolbar_padding"
+            android:paddingEnd="@dimen/toolbar_padding"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            drawableImage="@{backImage}"
+            android:onClick="@{backClick}"
+            android:visibility="@{backVisible? View.GONE : View.VISIBLE}"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/webview_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{headerText}"
+            android:visibility="@{headerVisible? View.GONE : View.VISIBLE}"
+            android:layout_toEndOf="@id/iv_navigateup"
+            android:layout_toStartOf="@id/iv_camera_toolbar"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_18"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textDirection="locale"
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/actionBar" />
+
+</RelativeLayout>
+</layout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.airhomestays.app.ui.profile.confirmPhonenumber.ConfirmPhnoViewModel.PHScreen"/>
+        <variable
+            name="viewModel"
+            type="com.airhomestays.app.ui.profile.confirmPhonenumber.ConfirmPhnoViewModel" />
+        <variable
+            name="onNextClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="locale">
+
+        <include
+            android:id="@+id/iv_close"
+            layout="@layout/include_toolbar_listing_sub_screen" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_next"
+            android:layout_below="@id/iv_close"
+            android:scrollbarThumbVertical="@null"
+            android:windowSoftInputMode="adjustResize">
+
+            <RelativeLayout
+                android:id="@+id/content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/tv_confirm_phn"
+                    style="@style/AuthScreenTitle"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/be_vietnampro_semibold"
+                    android:text="@string/confirm_phnumber"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/black"
+                    android:textDirection="locale"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <TextView
+                    android:id="@+id/tv_contact_guest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_confirm_phn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/guests_contact"
+                    android:textColor="@color/grey_font"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/text_size_15" />
+
+                <TextView
+                    android:id="@+id/tv_placeholder_phone"
+                    style="@style/AuthScreenInputPlaceholder"
+                    android:layout_below="@id/tv_contact_guest"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/ph_phone"
+                    android:textColor="@color/black"
+                    android:textDirection="locale" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_placeholder_phone"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/bg_edit_text_login">
+
+                    <TextView
+                        android:id="@+id/tv_country_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:enabled="@{viewModel.isCountryCodeLoad ? true : false}"
+                        android:onClick="@{() -> viewModel.onClick(PHScreen.COUNTRYCODE)}"
+                        android:padding="10dp"
+                        android:text="@{viewModel.countryCode}"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h1_5" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="1dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/tv_country_code"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/border_color" />
+
+                    <EditText
+                        android:id="@+id/et_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/divider"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:hint="@string/enter_your_phone_number"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="@={viewModel.phoneno}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_h1_5" />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rl_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_next"
+                goneUnlessInverse="@{viewModel.isNext}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/curve_button_red"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.addPhnumber()}"
+                android:padding="15dp"
+                android:text="@string/next"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:textColor="@android:color/white"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_17"
+                 />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lt_loading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/curve_button_red"
+                android:visibility="gone"
+                app:hideNext="@{viewModel.lottieProgress}"
+                goneUnless="@{viewModel.isNext}"
+                app:lottie_loop="true"
+             />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
+

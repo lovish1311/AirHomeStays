@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="listings">Listings</string>
+    <string name="skip">Skip</string>
+    <string name="available_for_booking">Available for booking</string>
+</resources>

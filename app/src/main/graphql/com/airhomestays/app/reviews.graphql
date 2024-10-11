@@ -1,0 +1,137 @@
+query getUserReviews($currentPage: Int, $ownerType: String) {
+    getUserReviews(currentPage: $currentPage, ownerType: $ownerType) {
+        status
+        errorMessage
+        count
+        currentPage
+        results {
+            id
+            reservationId
+            listId
+            authorId
+            userId
+            reviewContent
+            rating
+            reviewsCount
+            createdAt
+            isAdmin
+            listData{
+                id
+                title
+            }
+            authorData {
+                ...profileFields     # profileFields fragment will be referred from UserProfile.graphql file
+            }
+            userData {
+                ...profileFields     # profileFields fragment will be referred from UserProfile.graphql file
+            }
+        }
+    }
+}
+
+query getPropertyReviews($currentPage: Int!, $listId: Int!) {
+    getPropertyReviews(currentPage: $currentPage, listId: $listId) {
+        status
+        errorMessage
+        count
+        currentPage
+        results {
+            id
+            reservationId
+            listId
+            authorId
+            userId
+            reviewContent
+            rating
+            createdAt
+            isAdmin
+            authorData {
+                ...profileFields     # profileFields fragment will be referred from UserProfile.graphql file
+            }
+            userData {
+                ...profileFields     # profileFields fragment will be referred from UserProfile.graphql file
+            }
+        }
+    }
+}
+
+
+query getPendingUserReviews($currentPage: Int) {
+    getPendingUserReviews(currentPage: $currentPage) {
+        status
+        errorMessage
+        count
+        currentPage
+        results {
+            id
+            listId
+            hostId
+            guestId
+            listData{
+                id
+                title
+            }
+            listingData{
+
+                            title
+                        }
+            threadData{
+                id
+                reservationId
+            }
+            hostData {
+                userId
+                profileId
+                firstName
+                lastName
+                picture
+            }
+            guestData {
+                userId
+                profileId
+                firstName
+                lastName
+                picture
+            }
+        }
+    }
+}
+
+
+query getPendingUserReview($reservationId: Int!) {
+    getPendingUserReview(reservationId: $reservationId) {
+        status
+        errorMessage
+        result {
+            id
+            listId
+            guestId
+            hostId
+            listData {
+                id
+                title
+                roomType
+                city
+                state
+                country
+                reviewsCount
+                reviewsStarRating
+                coverPhoto
+                listPhotoName
+                listPhotos {
+                    id
+                    name
+                }
+            }
+        }
+    }
+}
+
+
+mutation writeUserReview($reservationId: Int!, $listId: Int!, $reviewContent: String!, $rating: Float!, $receiverId: String!) {
+    writeUserReview(reservationId: $reservationId, listId: $listId, reviewContent: $reviewContent, rating: $rating, receiverId: $receiverId) {
+        status
+        errorMessage
+    }
+}
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="header"
+            type="String" />
+        <variable
+            name="reviewsStarRating"
+            type="Integer" />
+        <variable
+            name="reviewsCount"
+            type="Integer" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:id="@+id/tv_item_review_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="29sp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:text="@{header}"
+            android:textColor="@color/text_color"
+            android:textDirection="locale"/>
+
+        <RatingBar
+            android:id="@+id/tv_item_review_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:numStars="5"
+            ratingCount="@{reviewsStarRating}"
+            reviewsCount="@{reviewsCount}"
+            android:progressTint="@color/status_bar_color"
+            android:secondaryProgressTint="@color/status_bar_color"
+            android:stepSize="1"
+            android:layout_below="@id/tv_item_review_header"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+</layout>

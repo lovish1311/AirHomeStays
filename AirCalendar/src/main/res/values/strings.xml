@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string-array name="label_calender_week">
+        <item name="0"></item>
+        <item name="1">S</item>
+        <item name="2">M</item>
+        <item name="3">T</item>
+        <item name="4">W</item>
+        <item name="5">T</item>
+        <item name="6">F</item>
+        <item name="7">S</item>
+    </string-array>
+    <string name="clear">Clear</string>
+    <string name="dates_not_available">Those dates are not available</string>
+    <string name="save">Save</string>
+    <string name="check_in">Check-in</string>
+    <string name="check_out">Checkout</string>
+    <string name="start_date">Check-in</string>
+    <string name="end_date">Checkout</string>
+    <string name="night_select">selected</string>
+    <string name="day_label">%1$d</string>
+    <string name="check_out_only">The selected date is available for checkout only</string>
+
+    <!--    <string name="sun">S</string>
+        <string name="mon">M</string>
+        <string name="3">T</string>
+        <string name="4">W</string>
+        <string name="5">T</string>
+        <string name="6">F</string>
+        <string name="7">S</string>-->
+</resources>

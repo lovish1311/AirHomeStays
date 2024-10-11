@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="avatarImg"
+            type="String"/>
+        <variable
+            name="avatarClick"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="isNameVisible"
+            type="Boolean" />
+        <variable
+            name="list"
+            type="String" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="isRed"
+            type="Boolean" />
+        <variable
+            name="text"
+            type="String"/>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="15dp"
+        android:layoutDirection="locale">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_listing_hosting_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:onClick="@{avatarClick}"
+            img="@{avatarImg}"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/iv_listing_hosting_image"
+            android:visibility="@{isNameVisible? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/tv_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{list}"
+                android:textSize="@dimen/text_size_13"
+                android:textDirection="locale"
+                android:fontFamily="@font/be_vietnampro_regular"
+                android:textColor="@color/bottom_navigation_text_color"/>
+
+            <TextView
+                android:id="@+id/message_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{text}"
+                android:onClick="@{clickListener}"
+                android:textSize="@{large? @dimen/text_size_h5 : @dimen/text_size_15}"
+                android:textColor="@{isRed? @color/colorPrimary : @color/search_text_color}"
+                android:textDirection="locale"
+                android:layout_below="@+id/tv_list"
+                android:paddingTop="7dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

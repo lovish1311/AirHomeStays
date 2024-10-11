@@ -1,0 +1,30 @@
+mutation CreateRequestToBook(
+  	$listId: Int!,
+  	$hostId: String!,
+  	$content: String!,
+  	$userId: String!,
+  	$type: String,
+  	$startDate: String!,
+  	$endDate: String!,
+  	$personCapacity: Int,
+  	$visitors: Int,
+  	$pets: Int,
+  	$infants: Int
+) {
+    createRequestToBook : CreateRequestToBook(
+    listId: $listId,
+    hostId: $hostId,
+    userId: $userId,
+    content: $content,
+    type: $type,
+    startDate: $startDate,
+    endDate: $endDate,
+    personCapacity: $personCapacity,
+    visitors: $visitors,
+    pets: $pets,
+    infants: $infants
+  ) {
+     status
+     errorMessage
+  }
+}

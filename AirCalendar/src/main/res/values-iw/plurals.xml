@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="night_selected">
+        <item quantity="other">%1$s נבחרו לילות</item>
+        <item quantity="one">%1$s נבחר לילה</item>
+    </plurals>
+    <plurals name="night_maximum">
+        <item quantity="other"> השהייה המרבית היא %1$d לילות</item>
+        <item quantity="one">השהייה המרבית היא %1$d לילה</item>
+    </plurals>
+    <plurals name="night_minimum">
+        <item quantity="other">שהייה מינימלית היא %1$d לילות</item>
+        <item quantity="one">שהייה מינימלית היא %1$d לילה</item>
+    </plurals>
+</resources>

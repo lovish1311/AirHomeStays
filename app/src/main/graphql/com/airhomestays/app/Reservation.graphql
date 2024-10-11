@@ -1,0 +1,33 @@
+# approve/decline reservation
+mutation ReservationStatus(
+  	$threadId: Int!,
+  	$content: String,
+  	$type: String,
+  	$startDate: String,
+  	$endDate: String,
+  	$personCapacity: Int,
+  	$visitors: Int,
+  	$pets: Int,
+  	$infants: Int,
+  	$reservationId: Int,
+  	$actionType: String
+) {
+	reservationStatus : ReservationStatus(
+  	threadId: $threadId,
+  	content: $content,
+  	type: $type,
+  startDate: $startDate,
+  endDate: $endDate,
+  personCapacity: $personCapacity,
+  visitors: $visitors,
+  pets: $pets,
+  infants: $infants,
+  reservationId: $reservationId,
+  actionType: $actionType
+
+) {
+   status
+   errorMessage
+
+ }
+}

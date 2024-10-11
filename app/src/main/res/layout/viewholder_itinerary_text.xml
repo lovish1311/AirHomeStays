@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="text"
+            type="String" />
+        <variable
+            name="large"
+            type="Boolean" />
+        <variable
+            name="isRed"
+            type="Boolean" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="isBold"
+            type="Boolean" />
+        <variable
+            name="isSmall"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:onClick="@{clickListener}"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{text}"
+            android:onClick="@{clickListener}"
+            android:paddingTop="@{paddingTop ? @dimen/paddingListing : @dimen/no_padding}"
+            android:paddingBottom="@{paddingBottom ? @dimen/exploreListingHeaderRTL : @dimen/no_padding}"
+            android:textSize="@{large? @dimen/text_size_h6 : isSmall? @dimen/text_size_13 : @dimen/text_size_15}"
+            android:textColor="@{isRed? @color/colorPrimary : @color/black}"
+            android:textDirection="locale"
+            fontFamily="@{isBold? `bold` : `regular`}"/>
+
+    </LinearLayout>
+
+</layout>

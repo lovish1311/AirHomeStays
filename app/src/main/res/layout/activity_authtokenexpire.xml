@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_light_profile"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="@dimen/gutter_padding"
+        android:layoutDirection="locale">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_18"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:textDirection="locale"
+            android:maxWidth="300.0dip"
+            android:textColor="@color/text_color"
+            android:text="@string/authtoken_desc"/>
+
+        <Button
+            android:id="@+id/btn_auth_token_log_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="@dimen/text_size_18"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:minHeight="60dp"
+            android:shadowColor="@color/black"
+            android:visibility="gone"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+        <Button
+            android:id="@+id/btn_log_in"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10.0dip"
+            android:text="@string/login"
+            style="@style/Canonical.Button.Raised" />
+
+    </LinearLayout>
+
+</layout>

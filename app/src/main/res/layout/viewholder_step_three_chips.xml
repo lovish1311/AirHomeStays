@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="scrollPosition"
+            type="Integer" />
+        <variable
+            name="paddingBottom"
+            type="Boolean" />
+        <variable
+            name="paddingTop"
+            type="Boolean" />
+        <variable
+            name="guestReq"
+            type="Boolean" />
+        <variable
+            name="houseRules"
+            type="Boolean" />
+        <variable
+            name="reviewGuestBook"
+            type="Boolean" />
+        <variable
+            name="advanceNotice"
+            type="Boolean" />
+        <variable
+            name="bookingWindow"
+            type="Boolean" />
+        <variable
+            name="minMaxNights"
+            type="Boolean" />
+        <variable
+            name="pricing"
+            type="Boolean" />
+        <variable
+            name="discount"
+            type="Boolean" />
+        <variable
+            name="booking"
+            type="Boolean" />
+        <variable
+            name="localLaws"
+            type="Boolean" />
+        <variable
+            name="guestReqClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="houseRulesClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="reviewGuestBookClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="advanceNoticeClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bookingWindowClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="minMaxNightsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="pricingClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="discountClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="bookingClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="localLawsClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.airhomestays.app.ui.host.step_one.StepOneViewModel" />-->
+    </data>
+
+    <HorizontalScrollView
+        android:id="@+id/chip3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        chip1="@{guestReq?idGuestReq:null}"
+        chip2="@{houseRules?idHouseRules:null}"
+        chip4="@{advanceNotice?idAdvanceNotice:null}"
+        chip5="@{bookingWindow?idBookingWindow:null}"
+        chip7="@{pricing?idPricing:null}"
+        chip8="@{discount?idDiscount:null}"
+        chip9="@{booking?idBooking:null}"
+        chip10="@{localLaws?idLocalLaws:null}"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@{paddingTop ? @dimen/paddingListing : @dimen/no_padding}"
+            android:paddingBottom="@{paddingBottom ? @dimen/paddingListing : @dimen/no_padding}"
+            android:orientation="vertical"
+            android:background="@color/explore_header_bg"
+            android:layoutDirection="locale">
+             <com.google.android.material.chip.ChipGroup
+                 android:textAppearance="@style/chipText"
+                android:id="@+id/chip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idHouseRules"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/house_rules"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     app:chipIconSize="30dp"
+                    app:chipStartPadding="5dp"
+                    android:checked="@{houseRules}"
+                     chip="@{10}"
+                    chipStatus="@{houseRules}"
+                    android:onClick="@{houseRulesClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idAdvanceNotice"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                     app:chipIconSize="30dp"
+                    android:text="@string/advance_notice"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     chip="@{11}"
+                    app:chipStartPadding="5dp"
+                    android:checked="@{advanceNotice}"
+                    chipStatus="@{advanceNotice}"
+                    android:onClick="@{advanceNoticeClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idPricing"
+                    android:layout_width="wrap_content"
+                     android:textAppearance="@style/chipText"
+                    android:layout_height="55dp"
+                    android:text="@string/pricing"
+                     app:chipIconSize="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                     chip="@{12}"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="5dp"
+                    android:checked="@{pricing}"
+                    chipStatus="@{pricing}"
+                    android:onClick="@{pricingClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idDiscount"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/discount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     app:chipIconSize="30dp"
+                    app:chipStartPadding="5dp"
+                     chip="@{13}"
+                    android:checked="@{discount}"
+                    chipStatus="@{discount}"
+                    android:onClick="@{discountClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idBookingWindow"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/booking_window"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                     app:chipIconSize="30dp"
+                    app:chipEndPadding="10dp"
+                     chip="@{14}"
+                    app:chipStartPadding="5dp"
+                    android:checked="@{bookingWindow}"
+                    chipStatus="@{bookingWindow}"
+                    android:onClick="@{bookingWindowClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idBooking"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/booking"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="5dp"
+                     app:chipIconSize="30dp"
+                     chip="@{15}"
+                    android:checked="@{booking}"
+                    chipStatus="@{booking}"
+                    android:onClick="@{bookingClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idGuestReq"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/guest_requirements"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_h2"
+                    app:chipEndPadding="10dp"
+                     app:chipIconSize="30dp"
+                    app:chipStartPadding="5dp"
+                     chip="@{16}"
+                    android:checked="@{guestReq}"
+                    chipStatus="@{guestReq}"
+                    android:onClick="@{guestReqClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+                 <com.google.android.material.chip.Chip  android:fontFamily="@font/be_vietnampro_medium"
+                    android:id="@+id/idLocalLaws"
+                     android:textAppearance="@style/chipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="@string/local_laws_string"
+                    android:textColor="@color/black"
+                     app:chipIconSize="30dp"
+                    android:textSize="@dimen/text_size_h2"
+                     chip="@{17}"
+                    app:chipEndPadding="10dp"
+                    app:chipStartPadding="5dp"
+                    android:checked="@{localLaws}"
+                    chipStatus="@{localLaws}"
+                    android:onClick="@{localLawsClick}"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="@color/chip_border_gray"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+</layout>
