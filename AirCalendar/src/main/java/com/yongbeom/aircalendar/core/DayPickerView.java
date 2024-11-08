@@ -46,10 +46,12 @@ public class DayPickerView extends RecyclerView {
     protected int mMaxActiveMonth = -1;
     protected boolean isBooking = false;
     protected boolean isCheckInBooking = false;
+    protected boolean isCheckOutBooking = false;
     protected boolean isMonthDayLabels = false;
     protected boolean isSingleSelect = false;
     protected ArrayList<String> mBookingDates;
     protected ArrayList<String> mCheckInBookingDates;
+    protected ArrayList<String> mCheckOutBookingDates;
     protected ArrayList<String> mCheckInDayStatus;
 
     private TypedArray typedArray;
@@ -95,10 +97,14 @@ public class DayPickerView extends RecyclerView {
     public void setShowCheckInBooking(boolean isCheckInBooking){
         this.isCheckInBooking = isCheckInBooking;
     }
+    public void setShowCheckOutBooking(boolean isCheckOutBooking){
+        this.isCheckOutBooking = isCheckOutBooking;
+    }
 
     public void setBookingDateArray(ArrayList<String> dates){this.mBookingDates = dates;}
 
     public void setCheckInBookingDateArray(ArrayList<String> dates){this.mCheckInBookingDates = dates;}
+    public void setCheckOutBookingDateArray(ArrayList<String> dates){this.mCheckOutBookingDates = dates;}
 
     public void setCheckInDayStatusArray(ArrayList<String> dates){this.mCheckInDayStatus = dates;}
 
@@ -122,7 +128,7 @@ public class DayPickerView extends RecyclerView {
 
     protected void setUpAdapter(Context context) {
         if (mAdapter == null) {
-            mAdapter = new AirMonthAdapter(context, mController, typedArray , isBooking ,isCheckInBooking, isMonthDayLabels , isSingleSelect , mBookingDates ,mCheckInBookingDates,mCheckInDayStatus, mSelectModel , mMaxActiveMonth,minBookingDay,dates);
+            mAdapter = new AirMonthAdapter(context, mController, typedArray , isBooking ,isCheckInBooking, isCheckOutBooking, isMonthDayLabels , isSingleSelect , mBookingDates ,mCheckInBookingDates, mCheckOutBookingDates, mCheckInDayStatus, mSelectModel , mMaxActiveMonth,minBookingDay,dates);
         }
         mAdapter.notifyDataSetChanged();
     }

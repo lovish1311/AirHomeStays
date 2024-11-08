@@ -11,7 +11,7 @@
       android:pivotY="0">
   <path
       android:pathData="M38.5,33.5m-22,0a22,22 0,1 1,44 0a22,22 0,1 1,-44 0"
-      android:fillColor="@color/colorPrimary"/>
+      android:fillColor="#e21a20"/>
   <path
       android:pathData="M46.862,23.5 L26.5,34.954l6.507,2.41 10.037,-9.41L35.41,38.254l0.006,0 -0.008,0v5.609L39.058,39.6l4.623,1.712Z"
       android:fillColor="#fff"/>

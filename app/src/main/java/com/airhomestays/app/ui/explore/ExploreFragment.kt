@@ -58,6 +58,9 @@ import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
 import kotlin.math.round
+import java.text.NumberFormat
+import java.util.Locale
+
 
 
 class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(),
@@ -249,13 +252,10 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                         Carousel.setDefaultGlobalSnapHelperFactory(snapHelperFactory)
                         models(mutableListOf<ViewholderListingBindingModel_>().apply {
                             recommend.forEachIndexed { index, item ->
-
-                                val currency = viewModel.getCurrencySymbol() + Utils.formatDecimal(
-                                    viewModel.getConvertedRate(
-                                        item.currency, item.basePrice
-                                    )
-                                )
-
+                                val baseGuestValue = item.personCapacity
+                                val priceValue = viewModel.getConvertedRate(item.currency, item.basePrice)
+                                val formattedPrice = NumberFormat.getInstance(Locale.getDefault()).format(priceValue)
+                                val currency = viewModel.getCurrencySymbol() + formattedPrice + " for $baseGuestValue guests"
                                 var ratingCount = ""
                                 if (item.reviewsStarRating != null && item.reviewsStarRating != 0 && item.reviewsCount != null && item.reviewsCount != 0) {
                                     ratingCount =

@@ -1820,6 +1820,7 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
             intent.setBookingDateArray(viewModel.blockedDatesArray)
             intent.setDayStatus(viewModel.dayStatus)
             intent.setCheckInBlockedDate(viewModel.checkInBlockedDatesArray)
+            intent.setCheckOutBlockedDate(viewModel.checkOutBlockedDatesArray)
             intent.setStartDate(viewModel.startDate.value)
             intent.setEndDate(viewModel.endDate.value)
             intent.isMonthLabels(false)

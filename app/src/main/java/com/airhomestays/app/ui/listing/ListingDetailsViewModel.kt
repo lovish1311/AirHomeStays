@@ -96,6 +96,7 @@ class ListingDetailsViewModel @Inject constructor(
 
     var blockedDatesArray = ArrayList<String>()
     var checkInBlockedDatesArray = ArrayList<String>()
+    var checkOutBlockedDatesArray = ArrayList<String>()
     var dayStatus = ArrayList<String>()
 
     var isPreview = false
@@ -319,6 +320,23 @@ class ListingDetailsViewModel @Inject constructor(
                                         ) {
                                             val timestamp = blockedDate?.blockedDates!!
                                             checkInBlockedDatesArray.add(
+                                                Utils.getBlockedDateFormat(
+                                                    timestamp
+                                                )
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                            val checkOutBlockedDates = data.results!!.checkOutBlockedDates
+                            if (checkOutBlockedDates != null) {
+                                if (checkOutBlockedDates.size > 0) {
+                                    checkOutBlockedDates.forEachIndexed { index, blockedDate ->
+                                        if (blockedDate?.calendarStatus.equals("available")
+                                                .not()
+                                        ) {
+                                            val timestamp = blockedDate?.blockedDates!!
+                                            checkOutBlockedDatesArray.add(
                                                 Utils.getBlockedDateFormat(
                                                     timestamp
                                                 )

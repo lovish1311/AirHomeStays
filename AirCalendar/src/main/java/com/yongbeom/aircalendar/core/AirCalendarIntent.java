@@ -150,6 +150,9 @@ public class AirCalendarIntent  extends Intent implements Parcelable {
     public void setCheckInBlockedDate(ArrayList<String> arrays){
         this.putExtra(AirCalendarDatePickerActivity.CHECK_IN_BLOCKED_DATES, arrays);
     }
+    public void setCheckOutBlockedDate(ArrayList<String> arrays){
+        this.putExtra(AirCalendarDatePickerActivity.CHECK_OUT_BLOCKED_DATES, arrays);
+    }
 
     public void setDayStatus(ArrayList<String> arrays){
         this.putExtra(AirCalendarDatePickerActivity.CHECK_IN_DAY_STATUS, arrays);

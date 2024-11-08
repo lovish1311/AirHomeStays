@@ -24,6 +24,7 @@ import com.airhomestays.app.ui.inbox.InboxNavigator
 import com.airhomestays.app.util.Utils
 import com.airhomestays.app.util.performOnBackOutOnMain
 import com.airhomestays.app.util.resource.ResourceProvider
+import com.airhomestays.app.util.ChatMaskingUtil
 import com.airhomestays.app.util.rx.Scheduler
 import com.airhomestays.app.util.toOptional
 import com.airhomestays.app.vo.BillingDetails
@@ -167,10 +168,14 @@ class InboxMsgViewModel @Inject constructor(
 
     fun sendMsg() {
         isRetry.set(1)
-        if (msg.get()!!.trim().isNotEmpty()) {
+        val chatMaskingUtil = ChatMaskingUtil()
+
+        val message = msg.get()!!.trim()
+        if (message.isNotEmpty()) {
+            val maskedMessage = chatMaskingUtil.applyChatMasking(message)
             val mutate = SendMessageMutation(
                 threadId = inboxInitData.value!!.threadId,
-                content = msg.get()!!.trim().toOptional(),
+                content = maskedMessage.toOptional(),
                 type = "message".toOptional()
             )
             compositeDisposable.add(dataManager.sendMessage(mutate)
@@ -198,6 +203,7 @@ class InboxMsgViewModel @Inject constructor(
                 ))
         }
     }
+
 
     fun newMsg() {
         if (::disposable.isInitialized) {

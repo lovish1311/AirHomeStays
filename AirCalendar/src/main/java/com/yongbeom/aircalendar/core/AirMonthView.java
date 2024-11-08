@@ -1,4 +1,4 @@
-/***********************************************************************************
+/*****************************
  * The MIT License (MIT)
  * <p/>
  * Copyright (c) 2017 LeeYongBeom
@@ -21,7 +21,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- ***********************************************************************************/
+ *****************************/
 package com.yongbeom.aircalendar.core;
 
 import android.content.Context;
@@ -152,10 +152,12 @@ public class AirMonthView extends View {
     private OnDayClickListener mOnDayClickListener;
     private boolean isShowBooking = false;
     private boolean isCheckInBooking = false;
+    private boolean isCheckOutBooking = false;
     private boolean isMonthDayLabels = true;
     private Context mContext;
     SharedPreferences preferences;
     private ArrayList<String> checkInDateArray;
+    private ArrayList<String> checkOutDateArray;
     private ArrayList<String> checkInDayStatus;
     private String langType = "en";
     private ArrayList<String> bookingDateArray;
@@ -166,7 +168,7 @@ public class AirMonthView extends View {
 
     private Boolean draw=false;
 
-    public AirMonthView(Context context, TypedArray typedArray , boolean showBooking ,boolean showCheckInBooking , boolean monthDayLabels , ArrayList<String> bookingdates , ArrayList<String> checkInDates ,ArrayList<String> dayStatus , int maxActiveMonth) {
+    public AirMonthView(Context context, TypedArray typedArray , boolean showBooking ,boolean showCheckInBooking , boolean showCheckOutBooking, boolean monthDayLabels , ArrayList<String> bookingdates , ArrayList<String> checkInDates , ArrayList<String> checkOutDates, ArrayList<String> dayStatus , int maxActiveMonth) {
         super(context);
         setSaveEnabled(true);
 
@@ -176,7 +178,9 @@ public class AirMonthView extends View {
         bookingDateArray = bookingdates;
         mMaxActiveMonth = maxActiveMonth;
         isCheckInBooking = showCheckInBooking;
+        isCheckOutBooking = showCheckOutBooking;
         checkInDateArray = checkInDates;
+        checkOutDateArray = checkOutDates;
         checkInDayStatus=dayStatus;
 
         preferences= PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
@@ -288,9 +292,9 @@ public class AirMonthView extends View {
         mStringBuilder.setLength(0);
 
         long millis = mCalendar.getTimeInMillis();
-       String year= DateUtils.formatDateRange(getContext(), millis, millis, flags);
+        String year= DateUtils.formatDateRange(getContext(), millis, millis, flags);
         SimpleDateFormat finalDateFormat = new SimpleDateFormat("yyyy",Locale.US);
-       String finalDate = finalDateFormat.format(millis);
+        String finalDate = finalDateFormat.format(millis);
         return year+" "+finalDate;   // 지역화된 포멧으로 출력
     }
 
@@ -473,12 +477,38 @@ public class AirMonthView extends View {
                             }
                             String day_str = day+"";
                             if(day < 10){
+
                                 day_str = "0"+day_str;
                             }
 
                             String BOOKING_DATE = month_str+"-"+day_str+"-"+mYear;
                             if(checkInDateArray.get(i).equals(BOOKING_DATE)){
                                 mMonthNumPaint.setColor(Color.GRAY);
+                                mMonthNumPaint.setStyle(Style.FILL);
+                                mMonthNumPaint.setFakeBoldText(true);
+
+//                            mMonthNumPaint.setStrokeWidth(5);
+//                            canvas.drawLine(x-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE)+30,x + (bgw / 2)-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE)-30,mMonthNumPaint);
+                            }
+                        }
+                    }
+                }
+                if (isCheckOutBooking){
+                    if(checkOutDateArray != null && checkOutDateArray.size() != 0){
+                        for(int i=0; i< checkOutDateArray.size(); i++){
+                            String month_str = (mMonth + 1)+"";
+                            if((mMonth + 1) < 10){
+                                month_str = "0"+month_str;
+                            }
+                            String day_str = day+"";
+                            if(day < 10){
+
+                                day_str = "0"+day_str;
+                            }
+
+                            String BOOKING_DATE = month_str+"-"+day_str+"-"+mYear;
+                            if(checkOutDateArray.get(i).equals(BOOKING_DATE)){
+                                mMonthNumPaint.setColor(Color.RED);
                                 mMonthNumPaint.setStyle(Style.FILL);
                                 mMonthNumPaint.setFakeBoldText(true);
 
@@ -603,7 +633,7 @@ public class AirMonthView extends View {
                     mMonthNumPaint.setColor(mWeekEndColor);
                 }
             }
-            
+
             boolean isLeftToRight =mContext.getResources().getBoolean(R.bool.air_calendar_is_left_to_right_layout);
 
 
@@ -652,7 +682,31 @@ public class AirMonthView extends View {
                                 mMonthNumPaint.setStyle(Style.FILL);
 
 
-                            mMonthNumPaint.setStrokeWidth(5);
+                                mMonthNumPaint.setStrokeWidth(5);
+//                            canvas.drawLine(x-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE)+30,x + (bgw / 2)-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE)-30,mMonthNumPaint);
+                            }
+                        }
+                    }
+                }
+                if (isCheckOutBooking){
+                    if(checkOutDateArray != null && checkOutDateArray.size() != 0){
+                        for(int i=0; i< checkOutDateArray.size(); i++){
+                            String month_str = (mMonth + 1)+"";
+                            if((mMonth + 1) < 10){
+                                month_str = "0"+month_str;
+                            }
+                            String day_str = day+"";
+                            if(day < 10){
+                                day_str = "0"+day_str;
+                            }
+
+                            String BOOKING_DATE = month_str+"-"+day_str+"-"+mYear;
+                            if(!checkOutDateArray.get(i).equals(BOOKING_DATE)){
+                                mMonthNumPaint.setColor(Color.GRAY);
+                                mMonthNumPaint.setStyle(Style.FILL);
+
+
+                                mMonthNumPaint.setStrokeWidth(5);
 //                            canvas.drawLine(x-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) - DAY_SELECTED_CIRCLE_SIZE)+30,x + (bgw / 2)-30,((y - MINI_DAY_NUMBER_TEXT_SIZE / 3) + DAY_SELECTED_CIRCLE_SIZE)-30,mMonthNumPaint);
                             }
                         }
@@ -708,7 +762,7 @@ public class AirMonthView extends View {
                 }
             }
 
-         
+
 
             dayOffset++;
             if (dayOffset == mNumDays) {
@@ -762,10 +816,10 @@ public class AirMonthView extends View {
         int day;
 
         if (isLeftToRight){
-             day = 1 + ((int) ((x - padding) * mNumDays / (mWidth - padding - mPadding)) - findDayOffset()) + yDay * mNumDays;
+            day = 1 + ((int) ((x - padding) * mNumDays / (mWidth - padding - mPadding)) - findDayOffset()) + yDay * mNumDays;
 
         }else {
-             day = 1 + ( rtl - findDayOffset()) + yDay * mNumDays;
+            day = 1 + ( rtl - findDayOffset()) + yDay * mNumDays;
         }
 
         if (mMonth > 11 || mMonth < 0 || CalendarUtils.getDaysInMonth(mMonth, mYear) < day || day < 1)

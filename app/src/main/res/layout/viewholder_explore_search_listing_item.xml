@@ -136,7 +136,7 @@
             android:layout_below="@id/tv_item_explore_search_listing_title"
             android:fontFamily="@font/be_vietnampro_medium"
             android:text="@{locationName}"
-            android:textSize="@dimen/text_size_13"
+            android:textSize="@dimen/text_size_17"
             tools:text="czxcadasd"
             android:textDirection="locale"/>
         <RelativeLayout

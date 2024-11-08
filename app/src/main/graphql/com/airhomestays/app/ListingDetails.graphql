@@ -63,6 +63,13 @@ query viewListingDetails(
                 isSpecialPrice
                dayStatus
               }
+              checkOutBlockedDates{
+                listId
+                blockedDates
+                calendarStatus
+                isSpecialPrice
+               dayStatus
+              }
           fullBlockedDates{
                 listId
                 blockedDates

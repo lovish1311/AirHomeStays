@@ -4864,6 +4864,22 @@
             "deprecationReason": null
           },
           {
+            "name": "checkOutBlockedDates",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "listBlockedDates",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "fullBlockedDates",
             "description": null,
             "args": [],

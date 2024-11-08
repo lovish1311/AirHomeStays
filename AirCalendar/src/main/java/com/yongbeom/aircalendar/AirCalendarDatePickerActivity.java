@@ -87,6 +87,7 @@ public class AirCalendarDatePickerActivity extends AppCompatActivity implements 
     public final static String EXTRA_MAX_BOOKING_DAY = "MAX_BOOKING_DAY";
     public final static String EXTRA_MIN_BOOKING_DAY = "MIN_BOOKING_DAY";
     public final static String CHECK_IN_BLOCKED_DATES = "CHECK_IN_BLOCKED_DATES";
+    public final static String CHECK_OUT_BLOCKED_DATES = "CHECK_OUT_BLOCKED_DATES";
     public final static String CHECK_IN_DAY_STATUS = "CHECK_IN_DAY_STATUS";
 
     public final static String RESULT_SELECT_START_DATE = "start_date";
@@ -127,6 +128,7 @@ public class AirCalendarDatePickerActivity extends AppCompatActivity implements 
     private boolean isMonthLabel = false;
     private boolean isSingleSelect = false;
     private ArrayList<String> checkInBlockedDates;
+    private ArrayList<String> checkOutBlockedDates;
     private ArrayList<String> checkDayStatus;
     private ArrayList<String> dates;
     private SelectModel selectDate;
@@ -177,6 +179,7 @@ public class AirCalendarDatePickerActivity extends AppCompatActivity implements 
             maxActivieMonth = getData.getIntExtra(EXTRA_ACTIVE_MONTH_NUM , -1);
             maxYear = getData.getIntExtra(EXTRA_MAX_YEAR , -1);
             checkInBlockedDates = getData.getStringArrayListExtra(CHECK_IN_BLOCKED_DATES);
+            checkOutBlockedDates = getData.getStringArrayListExtra(CHECK_OUT_BLOCKED_DATES);
             checkDayStatus = getData.getStringArrayListExtra(CHECK_IN_DAY_STATUS);
 
 
@@ -310,11 +313,14 @@ public class AirCalendarDatePickerActivity extends AppCompatActivity implements 
             pickerView.setShowCheckInBooking(true);
             pickerView.setCheckInBookingDateArray(checkInBlockedDates);
         }
+        if(checkOutBlockedDates != null && checkOutBlockedDates.size() != 0 && isBooking){
+            pickerView.setShowCheckOutBooking(true);
+            pickerView.setCheckOutBookingDateArray(checkOutBlockedDates);
+        }
 
         if (checkDayStatus!=null&& Objects.requireNonNull(checkDayStatus).size()!=0){
             pickerView.setCheckInDayStatusArray(checkDayStatus);
         }
-
 
         if(isSelect){
             selectDate = new SelectModel();
@@ -526,6 +532,13 @@ public class AirCalendarDatePickerActivity extends AppCompatActivity implements 
                     for(int i =0;i<checkInBlockedDates.size();i++){
                         if(selectedDate.equals(checkInBlockedDates.get(i))){
                             tv_minimum_stay.setText(R.string.check_out_only);
+                        }
+                    }
+                }
+                if(checkOutBlockedDates !=null && checkOutBlockedDates.size()>0){
+                    for(int i =0;i<checkOutBlockedDates.size();i++){
+                        if(selectedDate.equals(checkOutBlockedDates.get(i))){
+                            tv_minimum_stay.setText("The selected date is available for checkin only");
                         }
                     }
                 }

@@ -135,7 +135,7 @@ dependencies {
     implementation 'net.gotev:uploadservice:4.9.2'
     implementation 'com.airbnb.android:epoxy-databinding:5.1.4'
     implementation 'jp.wasabeef:glide-transformations:4.3.0'
-    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.9'
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.1'
     implementation 'com.google.maps.android:android-maps-utils:3.8.2'
     implementation 'com.github.Jay-Goo:RangeSeekBar:v2.0.4'
     implementation 'com.kyleduo.switchbutton:library:2.1.0'
@@ -147,7 +147,7 @@ dependencies {
     implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
     implementation 'com.github.splatte:ViewPagerIndicator:3.0.0'
     implementation 'com.github.kizitonwose:CalendarView:0.3.4' // up upto breaking change
-   // implementation 'com.github.everhad:AndroidRatingStar:v1.0.4'
+    // implementation 'com.github.everhad:AndroidRatingStar:v1.0.4'
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
     implementation 'com.facebook.shimmer:shimmer:0.5.0@aar' //skeleton loading
     implementation "androidx.dynamicanimation:dynamicanimation:1.0.0" // spring animation
@@ -166,4 +166,3 @@ dependencies {
 configurations.all {
     exclude group: 'com.android.support', module: 'support-v13'
 }
-

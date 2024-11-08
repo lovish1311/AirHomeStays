@@ -51,7 +51,9 @@ import java.util.concurrent.TimeUnit;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHolder> implements AirMonthView.OnDayClickListener {
+public class
+
+AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHolder> implements AirMonthView.OnDayClickListener {
     private static final int MONTHS_IN_YEAR = 12;
     private final TypedArray typedArray;
     private final Context mContext;
@@ -67,6 +69,7 @@ public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHo
     private boolean isShowBooking = false;
     private boolean isSelected = false;
     private boolean isCheckInBooking = false;
+    private boolean isCheckOutBooking = false;
     private boolean isMonthDayLabels = false;
     private boolean isSingleSelect= false;
     private boolean isAutoSelect= false;
@@ -74,6 +77,7 @@ public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHo
     private SelectModel mSelectModel;
     private ArrayList<String> mBookingDates;
     private ArrayList<String> mCheckInDates;
+    private ArrayList<String> mCheckOutDates;
     private ArrayList<String> mCheckInDayStatus;
 
 
@@ -82,9 +86,11 @@ public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHo
                            TypedArray typedArray ,
                            boolean showBooking ,
                            boolean showCheckInBooking ,
+                           boolean showCheckOutBooking ,
                            boolean monthDayLabels ,
                            boolean isSingle, ArrayList<String> bookingDates ,
                            ArrayList<String> checkInDates ,
+                           ArrayList<String> checkOutDates ,
                            ArrayList<String> checkInDayStatus ,
                            SelectModel selectedDay,
                            int maxActiveMonth, int minBookingDay,ArrayList<String> dates) {
@@ -100,9 +106,11 @@ public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHo
         mController = datePickerController;
         isShowBooking = showBooking;
         isCheckInBooking = showCheckInBooking;
+        isCheckOutBooking = showCheckOutBooking;
         mSelectModel = selectedDay;
         mBookingDates = bookingDates;
         mCheckInDates = checkInDates;
+        mCheckOutDates= checkOutDates;
         mCheckInDayStatus=checkInDayStatus;
         isSingleSelect = isSingle;
         mMaxActiveMonth = maxActiveMonth;
@@ -121,7 +129,7 @@ public class AirMonthAdapter extends RecyclerView.Adapter<AirMonthAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        final AirMonthView airMonthView = new AirMonthView(mContext, typedArray , isShowBooking ,isCheckInBooking, isMonthDayLabels , mBookingDates ,mCheckInDates,mCheckInDayStatus, mMaxActiveMonth);
+        final AirMonthView airMonthView = new AirMonthView(mContext, typedArray , isShowBooking ,isCheckInBooking, isCheckOutBooking,isMonthDayLabels , mBookingDates ,mCheckInDates, mCheckOutDates ,mCheckInDayStatus, mMaxActiveMonth);
         return new ViewHolder(airMonthView, this);
     }
 
