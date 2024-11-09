@@ -144,9 +144,9 @@ class PaymentViewModel @Inject constructor(
                                     navigator.showToast(resourceProvider.getString(R.string.something_went_wrong))
                                 }
                             } else {
-                               /* navigator.moveToReservation(
-                                    it!!.data!!.createReservation!!.results!!.id!!
-                                )*/
+                                /* navigator.moveToReservation(
+                                     it!!.data!!.createReservation!!.results!!.id!!
+                                 )*/
                                 postVerifyOrderApi(stripeToken,billingDetails.value?.razorPayOrderID!!,"", it!!.data!!.createReservation!!.results!!.id!!,billingDetails.value?.total!!)
                             }
                         } else if (it.data?.createReservation?.status == 500) {
@@ -337,12 +337,12 @@ class PaymentViewModel @Inject constructor(
                 val response = RetrofitInstance.api.createOrder(request)
                 if (response.isSuccessful) {
                     val responseBody = response.body()
-                  razorPayOrderId.value = responseBody?.data?.id ?: ""
+                    razorPayOrderId.value = responseBody?.data?.id ?: ""
                     Log.d("API Response", "Order ID: ${razorPayOrderId.value}")
 
                     // Update UI on the main thread
                     withContext(Dispatchers.Main) {
-                    navigator.moveToRazorPay((amount).toString(), razorPayOrderId.value!!)
+                        navigator.moveToRazorPay((amount).toString(), razorPayOrderId.value!!)
                         billingDetails.value?.razorPayOrderID = razorPayOrderId.value!!
                     }
                 } else {
@@ -371,7 +371,7 @@ class PaymentViewModel @Inject constructor(
 
                     // Update UI on the main thread
                     withContext(Dispatchers.Main) {
-                      //  navigator.moveToRazorPay((amount*100).toString(),orderId)
+                        //  navigator.moveToRazorPay((amount*100).toString(),orderId)
                     }
                 } else {
                     Log.e("API Error", "Error: ${response.code()}")

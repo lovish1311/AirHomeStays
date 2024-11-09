@@ -76,24 +76,24 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
         }
 
         mBinding.btnPay.onClick {
-                if (viewModel.selectedPaymentType == 0) {
-                    viewModel.navigator.showSnackbar(getString(R.string.select_payment_type), getString(R.string.please_select_payment_type_to_continue))
-                } else {
-                    if (viewModel.selectedPaymentType == 1) {
-                        if (viewModel.selectedCurrency.get() != getString(R.string.currency)) {
-                            viewModel.createReservation("")
-                        } else {
-                            viewModel.navigator.showSnackbar(getString(R.string.currency), getString(R.string.please_select_currency))
-                        }
-                    }else if (viewModel.selectedPaymentType == 2) {
-                        val total = viewModel.billingDetails.value?.total ?: 0.0
-                        val multipliedTotal = BigDecimal(total).multiply(BigDecimal(100)).setScale(0, RoundingMode.HALF_UP)
-                        viewModel.postRazorPayAPI(multipliedTotal.toDouble(),"INR")
-                       /* stripe = Stripe(applicationContext, Constants.stripePublishableKey)
-                        viewModel.stripe=stripe
-                        addFragment(StripePaymentFragment(), "STRIPE_FRAGMENT")*/
+            if (viewModel.selectedPaymentType == 0) {
+                viewModel.navigator.showSnackbar(getString(R.string.select_payment_type), getString(R.string.please_select_payment_type_to_continue))
+            } else {
+                if (viewModel.selectedPaymentType == 1) {
+                    if (viewModel.selectedCurrency.get() != getString(R.string.currency)) {
+                        viewModel.createReservation("")
+                    } else {
+                        viewModel.navigator.showSnackbar(getString(R.string.currency), getString(R.string.please_select_currency))
                     }
+                }else if (viewModel.selectedPaymentType == 2) {
+                    val total = viewModel.billingDetails.value?.total ?: 0.0
+                    val multipliedTotal = BigDecimal(total).multiply(BigDecimal(100)).setScale(0, RoundingMode.HALF_UP)
+                    viewModel.postRazorPayAPI(multipliedTotal.toDouble(),"INR")
+                    /* stripe = Stripe(applicationContext, Constants.stripePublishableKey)
+                     viewModel.stripe=stripe
+                     addFragment(StripePaymentFragment(), "STRIPE_FRAGMENT")*/
                 }
+            }
         }
 
         subscribeToLiveData()
@@ -106,7 +106,7 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
         val checkout = Checkout()
 
         // on the below line we have to see our id.
-       // checkout.setKeyID("rzp_test_ySqOhBgupFu1xq")
+        // checkout.setKeyID("rzp_test_ySqOhBgupFu1xq")
         checkout.setKeyID("rzp_live_rSubgkgENfYNid")
 
         // set image
@@ -116,10 +116,10 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
         val obj = JSONObject()
         try {
             // to put name
-         //   obj.put("name", "Home")
+            //   obj.put("name", "Home")
 
             // put description
-         //   obj.put("description", "Test payment")
+            //   obj.put("description", "Test payment")
 
             // to set theme color
             obj.put("theme.color", "")
@@ -131,7 +131,7 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
             obj.put("amount", amount)
 
             // put mobile number
-         //   obj.put("prefill.contact", "9284064503")
+            //   obj.put("prefill.contact", "9284064503")
 
             // put email
 //            obj.put("prefill.email", "")
@@ -154,43 +154,56 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
         if(result.size<2){
             viewModel.selectedPaymentType=result[0]?.paymentType!!
         }else{
-            viewModel.selectedPaymentType=1
+            viewModel.selectedPaymentType=2
         }
         mBinding.rvPaymentType.withModels {
             result.forEachIndexed { index, paymentType ->
                 if(paymentType?.isEnable!!){
-                    viewholderSelectPaymentType {
-                        id("paymentType--$index")
-                        if(paymentType.paymentType==1){
-                            text("Paypal")
-                        }else {
-                            text("RazorPay")
-                        }
-                        if (viewModel.selectedPaymentType == 1) {
-                            if (paymentType.paymentType==1)
-                                visible(true)
+                    if(paymentType?.paymentType==2) {
+                        viewholderSelectPaymentType {
+
+                            id("paymentType--$index")
+//                            if (paymentType.paymentType == 1) {
+//                                text("Paypal")
+//                            } else {
+                                text("Pay Now")
+//                            }
+                            visible(true)
                             viewModel(viewModel)
-                            selectedCurrency(viewModel.selectedCurrency)
-                            onCurrencyClick(View.OnClickListener {
-                                PaymentDialogOptionsFragment.newInstance("paymentCurrency").show(supportFragmentManager, "paymentCurrency")
-                            })
-                        }
-
-                        if (paymentType.paymentType==1){
-                            drawable(R.drawable.ic_paypal)
-                        }else{
                             drawable(R.drawable.razor_pay)
-                        }
-                        onClick(View.OnClickListener {
-                            viewModel.selectedPaymentType = paymentType.paymentType!!
-                            this@withModels.requestModelBuild()
-                        })
-                        isChecked(viewModel.selectedPaymentType == paymentType.paymentType!!)
+                            onClick(View.OnClickListener {
+                                val total = viewModel.billingDetails.value?.total ?: 0.0
+                                val multipliedTotal = BigDecimal(total).multiply(BigDecimal(100)).setScale(0, RoundingMode.HALF_UP)
+                                viewModel.postRazorPayAPI(multipliedTotal.toDouble(),"INR")
+                            })
 
-                    }
-                    if(index==0 && result.size>1){
-                        viewholderDivider {
-                            id("idDivider")
+//                            if (viewModel.selectedPaymentType == 1) {
+//                                if (paymentType.paymentType == 1)
+//                                    visible(true)
+//                                viewModel(viewModel)
+//                                selectedCurrency(viewModel.selectedCurrency)
+//                                onCurrencyClick(View.OnClickListener {
+//                                    PaymentDialogOptionsFragment.newInstance("paymentCurrency")
+//                                        .show(supportFragmentManager, "paymentCurrency")
+//                                })
+//                            }
+
+//                            if (paymentType.paymentType == 1) {
+//                                drawable(R.drawable.ic_paypal)
+//                            } else {
+//                                drawable(R.drawable.razor_pay)
+//                            }
+//                            onClick(View.OnClickListener {
+//                                viewModel.selectedPaymentType = paymentType.paymentType!!
+//                                this@withModels.requestModelBuild()
+//                            })
+//                            isChecked(viewModel.selectedPaymentType == paymentType.paymentType!!)
+
+                        }
+                        if (index == 0 && result.size > 1) {
+                            viewholderDivider {
+                                id("idDivider")
+                            }
                         }
                     }
                 }
@@ -201,11 +214,11 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
 
     private fun addFragment(fragment: Fragment, tag: String?) {
         supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(R.anim.slide_up, R.anim.slide_down, R.anim.slide_up, R.anim.slide_down)
-                .add(mBinding.fragFrame.id, fragment, tag)
-                .addToBackStack(null)
-                .commit()
+            .beginTransaction()
+            .setCustomAnimations(R.anim.slide_up, R.anim.slide_down, R.anim.slide_up, R.anim.slide_down)
+            .add(mBinding.fragFrame.id, fragment, tag)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun moveToReservation(id: Int) {
@@ -292,7 +305,7 @@ class PaymentTypeActivity : BaseActivity<ActivityPaymentBinding, PaymentViewMode
     }
 
     override fun onPaymentSuccess(p0: String?) {
-Log.e("onPaymentSuccess",p0.toString())
+        Log.e("onPaymentSuccess",p0.toString())
         viewModel.billingDetails.value!!.razorPayPaymentID = p0.toString()
         viewModel.createReservation(p0.toString())
         //viewModel.postVerifyOrderApi(p0!!,viewModel.razorPayOrderId.value!!,"",viewModel.reservationId.value!!,viewModel.billingDetails.value?.total!!)

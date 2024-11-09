@@ -83,16 +83,16 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
 //                if (viewModel.msg.get()!!.trim().isEmpty()) {
 //                    showToast( baseActivity!!.resources.getString(R.string.please_enter_the_message))
 //                } else {
-                    hideKeyboard()
-                    if (viewModel.listingDetails.value!!.userId != viewModel.getUserId()) {
-                        if (viewModel.initialValue.value?.bookingType =="request"&&!viewModel.inboxIntent.value!!){
-                            viewModel.createRequestToBook()
-                        }else {
-                            viewModel.checkVerification()
-                        }
-                    } else {
-                        Toast.makeText(context,  baseActivity!!.resources.getString(R.string.you_cannot_book_your_own_list), Toast.LENGTH_LONG).show()
+                hideKeyboard()
+                if (viewModel.listingDetails.value!!.userId != viewModel.getUserId()) {
+                    if (viewModel.initialValue.value?.bookingType =="request"&&!viewModel.inboxIntent.value!!){
+                        viewModel.createRequestToBook()
+                    }else {
+                        viewModel.checkVerification()
                     }
+                } else {
+                    Toast.makeText(context,  baseActivity!!.resources.getString(R.string.you_cannot_book_your_own_list), Toast.LENGTH_LONG).show()
+                }
 //                }
             } else {
                 showSnackbar( baseActivity!!.resources.getString(R.string.info),  baseActivity!!.resources.getString(R.string.please_select_another_date_to_book))
@@ -124,13 +124,13 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
         })
 
         viewModel.listingDetails.observe(viewLifecycleOwner, Observer {
-            listingDetails -> listingDetails?.let {
+                listingDetails -> listingDetails?.let {
             it.houseRules?.forEachIndexed { _, t: ViewListingDetailsQuery.HouseRule? ->
-                    t?.itemName?.let { rules ->
-                        array.add(rules)
-                    }
+                t?.itemName?.let { rules ->
+                    array.add(rules)
                 }
             }
+        }
         })
     }
 
@@ -161,15 +161,15 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                     }else{
                         viewModel.additionalGuest.set("0")
                     }
-                   /* if (viewModel.additionalGuest.get()!=null) {
-                        viewModel.additionalGuest.set((it.guestCount - viewModel.listingDetails.value!!.listingData?.guestBasePrice!!.toInt()).toString())
-                        if (it.guestCount != 1) {
-                            it.additionalGuestCount =
-                                it.guestCount - viewModel.listingDetails.value!!.listingData?.guestBasePrice!!.toInt()
-                        }
-                    }else{
-                        viewModel.additionalGuest.set("0")
-                    }*/
+                    /* if (viewModel.additionalGuest.get()!=null) {
+                         viewModel.additionalGuest.set((it.guestCount - viewModel.listingDetails.value!!.listingData?.guestBasePrice!!.toInt()).toString())
+                         if (it.guestCount != 1) {
+                             it.additionalGuestCount =
+                                 it.guestCount - viewModel.listingDetails.value!!.listingData?.guestBasePrice!!.toInt()
+                         }
+                     }else{
+                         viewModel.additionalGuest.set("0")
+                     }*/
 
                 }
 
@@ -212,7 +212,7 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                 }
 
                 if (viewModel.billingCalculation.value!!.petLimit != 0.0 && viewModel.billingCalculation.value!!.petLimit != null) {
-                      isPetVisible(true)
+                    isPetVisible(true)
                 } else {
                     isPetVisible(false)
                 }
@@ -222,12 +222,12 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                     isAdditionalGuestVisible(false)
                 }
                 if(viewModel.billingCalculation.value!!.infantPrice != 0.0 && viewModel.billingCalculation.value!!.infantPrice != null){
-                      isInfantVisible(true)
+                    isInfantVisible(true)
                 }else{
                     isInfantVisible(false)
                 }
                 if(viewModel.billingCalculation.value!!.visitorsPrice != 0.0 && viewModel.billingCalculation.value!!.visitorsPrice != null){
-                      isVisitorGuestVisible(true)
+                    isVisitorGuestVisible(true)
                 }else{
                     isVisitorGuestVisible(false)
                 }
@@ -298,14 +298,14 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                     viewholderPricebreakSummary {
                         id("summary")
                         val isRTL= TextUtils.getLayoutDirectionFromLocale(Locale.getDefault())==View.LAYOUT_DIRECTION_RTL
-                       val baseRTL = viewModel.billingCalculation.value!!.nights.toString() + " x " + BindingAdapters.getCurrencySymbol(it.selectedCurrency) + Utils.formatDecimal(viewModel.billingCalculation.value!!.averagePrice!!)
+                        val baseRTL = viewModel.billingCalculation.value!!.nights.toString() + " x " + BindingAdapters.getCurrencySymbol(it.selectedCurrency) + Utils.formatDecimal(viewModel.billingCalculation.value!!.averagePrice!!)
 
                         val baseLTR = BindingAdapters.getCurrencySymbol(it.selectedCurrency) + Utils.formatDecimal(viewModel.billingCalculation.value!!.averagePrice!!) + " x " + viewModel.billingCalculation.value!!.nights
                         val ngt =  baseActivity!!.resources.getQuantityString(R.plurals.night_count, viewModel.billingCalculation.value!!.nights ?: 0);
                         basePrice(if(isRTL) baseRTL else baseLTR)
                         basePriceNights( ngt)
-                            basePriceRight(BindingAdapters.getCurrencySymbol(it.selectedCurrency) +
-                                    Utils.formatDecimal(viewModel.billingCalculation.value!!.priceForDays!!))
+                        basePriceRight(BindingAdapters.getCurrencySymbol(it.selectedCurrency) +
+                                Utils.formatDecimal(viewModel.billingCalculation.value!!.priceForDays!!))
 
                         if(viewModel.billingCalculation.value!!.isSpecialPriceAssigned!!) {
                             spIconVisible(true)
@@ -398,25 +398,25 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                 header( baseActivity!!.resources.getString(R.string.cancellation_policy))
             }
             if (viewModel.isListingDetailsInitialized()){
-            viewholderReviewAndPaySpanText {
-                id("DetailsDesc - CancellationContent")
-                span("")
-                spanColor( baseActivity!!.resources.getColor(R.color.colorPrimary))
-                desc( "Cancellation policy"+" is "+"'"+viewModel.listingDetails.value!!.listingData?.cancellation?.policyName
-                        +"'"+" and you can "+viewModel.listingDetails.value!!.listingData?.cancellation?.policyContent)
-                var end = 0
-                if(viewModel.listingDetails.value!!.listingData?.cancellation?.policyName=="Strict")
-                    end = 30
-                else
-                    end = 32
-                start(24)
-                end(end)
-                clickListener(View.OnClickListener {
-                    (baseActivity as ListingDetails).openFragment(CancellationFragment())
-                })
-                paddingTop(true)
-                paddingBottom(true)
-            }}
+                viewholderReviewAndPaySpanText {
+                    id("DetailsDesc - CancellationContent")
+                    span("")
+                    spanColor( baseActivity!!.resources.getColor(R.color.colorPrimary))
+                    desc( "Cancellation policy"+" is "+"'"+viewModel.listingDetails.value!!.listingData?.cancellation?.policyName
+                            +"'"+" and you can "+viewModel.listingDetails.value!!.listingData?.cancellation?.policyContent)
+                    var end = 0
+                    if(viewModel.listingDetails.value!!.listingData?.cancellation?.policyName=="Strict")
+                        end = 30
+                    else
+                        end = 32
+                    start(24)
+                    end(end)
+                    clickListener(View.OnClickListener {
+                        (baseActivity as ListingDetails).openFragment(CancellationFragment())
+                    })
+                    paddingTop(true)
+                    paddingBottom(true)
+                }}
             viewholderDivider {
                 id("viewholder_divider - 3")
             }
@@ -461,7 +461,7 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                 cal.set(year, month - 1, date)
                 monthPattern.format(cal.time)
             } else {
-                 getString(R.string.add_date)
+                getString(R.string.add_date)
             }
         } catch (e: Exception) {
             e.printStackTrace()

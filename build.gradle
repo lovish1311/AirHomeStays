@@ -164,6 +164,13 @@ allprojects {
         maven {
             url 'https://jitpack.io'
         }
+        // Changes made to suppress string error #Not Necessary
+        gradle.projectsEvaluated {
+            tasks.withType(JavaCompile) {
+                options.forkOptions.jvmArgs << "-Xms256m" << "-Xmx2048m"
+            }
+        }
+        // End of Change
         maven {
             url = uri("https://repo.grails.org/grails/core/")
         }
