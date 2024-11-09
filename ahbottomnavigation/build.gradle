@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion versions.compile_sdk
+    defaultConfig {
+        minSdkVersion versions.min_sdk
+        targetSdkVersion versions.target_sdk
+    }
+    lintOptions {
+        abortOnError true
+    }
+}
+
+dependencies {
+    implementation deps.design
+}
