@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
    <data>
        <variable
-           name="handlers"
-           type="com.airhomestays.app.ViewholderHelpBooking.Handlers" />
+           name="clickListener"
+           type="android.view.View.OnClickListener" />
    </data>
 
     <LinearLayout
@@ -38,7 +38,7 @@
             app:cardCornerRadius="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="@{() -> handlers.onCallUsNowClick()}">
+            android:onClick="@{clickListener}">
 
             <LinearLayout
                 android:layout_width="match_parent"

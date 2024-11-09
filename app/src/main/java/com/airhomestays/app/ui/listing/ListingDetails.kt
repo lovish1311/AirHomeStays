@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.location.Location
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
@@ -1277,6 +1278,16 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
                                         id(2098)
                                     }
                                 }
+                            }
+                            viewholderHelpBooking {
+                                id("booking_help")
+                                clickListener(View.OnClickListener {
+                                    val intent = Intent(Intent.ACTION_DIAL).apply {
+                                        data = Uri.parse("tel:9876543210")
+                                    }
+                                    startActivity(intent)
+                                })
+
                             }
 
                             viewholderHeaderSmall {

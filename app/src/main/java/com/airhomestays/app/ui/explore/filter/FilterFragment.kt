@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -455,6 +456,21 @@ class FilterFragment : BaseFragment<FragmentListingAmenitiesBinding, ExploreView
                 viewholderDivider {
                     id("3")
                 }
+                // code
+//                viewholderHelpBooking {
+//                    id("booking_help")
+//                    handlers(null)
+//                }
+//                viewholderHelpBooking {
+//                    id("booking_help")
+//                    clickListener(View.OnClickListener {
+//                        val intent = Intent(Intent.ACTION_DIAL).apply {
+//                            data = Uri.parse("tel:9876543210")
+//                        }
+//                        startActivity(intent)
+//                    })
+//
+//                }
 
 
                 viewholderFilterInstantbook {
