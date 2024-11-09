@@ -15,6 +15,7 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ImageSpan
+import android.text.style.RelativeSizeSpan
 import android.util.Log
 import android.view.View
 import android.view.Window
@@ -390,19 +391,34 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
                             )!!
                         )
                         var pricee = currency + " / " + getString(R.string.night) + " "
+                        // Changes
+                        var extraText = ""
+                        val initialGuests= (it.listingData?.guestBasePrice)?.toInt()
+                        val personCapacity=(it.personCapacity)
+                        if(it.listingData?.guestBasePrice!=null && it.listingData?.guestBasePrice !=0.0){
+                            extraText = " for $initialGuests "+ resources.getQuantityString(R.plurals.guest_count,it.listingData?.guestBasePrice!!.toInt())
+                        }
+                        else{
+                            extraText = " for $personCapacity"+ resources.getQuantityString(R.plurals.guest_count,it.personCapacity!!)
+                        }
+
                         val imageSpan = ImageSpan(applicationContext, R.drawable.ic_light, 1)
                         val spannableString =
-                            SpannableString(pricee + "*")
+                            SpannableString(pricee + "*"+extraText)
                         val spannableString1 =
-                            SpannableString(pricee)
+                            SpannableString(pricee+extraText)
 
                         val start = pricee.length
 
                         val end = pricee.length + 1
+
                         spannableString.setSpan(imageSpan, start, end, 0)
 
                         if (!initialListData.bookingType.isNullOrEmpty() && initialListData.bookingType == "instant") {
                             price = spannableString
+                            val sizeSpan = RelativeSizeSpan(1.5f)
+                            // 1.5 times the default size
+                            spannableString.setSpan(sizeSpan, start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
                         } else {
                             price = spannableString1
                         }
