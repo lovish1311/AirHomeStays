@@ -1289,6 +1289,9 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
                                 })
 
                             }
+                            viewholderDivider {
+                                id(459)
+                            }
 
                             viewholderHeaderSmall {
                                 id("staticMap")
