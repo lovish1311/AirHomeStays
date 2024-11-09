@@ -1999,7 +1999,7 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
         viewModel.loadSimilarWishList()
     }
     fun changeStatusBarColor(colorResId: Int) {
-
+//
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window: Window = this.window
             window.statusBarColor = getColor(android.R.color.white) // or use your preferred color resource
