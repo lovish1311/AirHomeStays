@@ -378,8 +378,6 @@ class SavedViewModel @Inject constructor(
                         wishListStatus = it.wishListStatus,
                         title = it.title!!,
                         roomType = it.roomType,
-                        bedrooms = it.bedrooms!!,
-                        additionalPrice = (it.listingData?.additionalPrice?:0.0),
                         reviewsStarRating = it.reviewsStarRating,
                         reviewsCount = it.reviewsCount,
                         personCapacity = it.personCapacity!!,

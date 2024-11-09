@@ -157,7 +157,6 @@ query getWishListGroup ($id: Int!, $currentPage: Int){
                 personCapacity
                 roomType
                 beds
-                bedrooms
                 bookingType
                 coverPhoto
                 reviewsCount
@@ -171,7 +170,6 @@ query getWishListGroup ($id: Int!, $currentPage: Int){
                   status
                 }
                 listingData {
-                additionalPrice
                 guestBasePrice
                   basePrice
                   currency

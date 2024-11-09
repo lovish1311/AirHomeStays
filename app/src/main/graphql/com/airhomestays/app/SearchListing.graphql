@@ -52,7 +52,6 @@ query SearchListing (
            city
            state
           beds
-          bedrooms
           bookingType
           coverPhoto
           roomType
@@ -66,7 +65,6 @@ query SearchListing (
             status
           }
           listingData {
-          additionalPrice
             guestBasePrice
             basePrice
             currency

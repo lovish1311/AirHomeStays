@@ -28,12 +28,6 @@
             name="bedsCount"
             type="Integer"/>
         <variable
-            name="bedroomsCount"
-            type="String" />
-        <variable
-            name="sleeps"
-            type="String"/>
-        <variable
             name="bookType"
             type="String"/>
         <variable
@@ -51,9 +45,7 @@
         <variable
             name="onPriceClick"
             type="android.view.View.OnClickListener"/>
-
     </data>
-
 
     <RelativeLayout
         android:id="@+id/cl_explore_listing_root"
@@ -76,22 +68,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:text="@{roomType + ` / ` + bedroomsCount+ ` / ` + sleeps}"
+            android:text="@{bedsCount==0 ? roomType : roomType +` /`}"
             android:textSize="@dimen/text_size_13"
             android:textDirection="locale"/>
 
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_item_explore_search_listing_beds"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="3dp"-->
-<!--            android:layout_marginStart="5dp"-->
-<!--            android:layout_toEndOf="@id/tv_item_explore_search_listing_type"-->
-<!--            bedsPlural="@{bedsCount}"-->
-<!--            android:textSize="@dimen/text_size_13"-->
-<!--            android:textDirection="locale"-->
-<!--            android:visibility="@{bedsCount==0 ? View.GONE : View.VISIBLE}"/>-->
+        <TextView
+            android:id="@+id/tv_item_explore_search_listing_beds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_item_explore_search_listing_type"
+            bedsPlural="@{bedsCount}"
+            android:textSize="@dimen/text_size_13"
+            android:textDirection="locale"
+            android:visibility="@{bedsCount==0 ? View.GONE : View.VISIBLE}"/>
 
 
         <ImageView

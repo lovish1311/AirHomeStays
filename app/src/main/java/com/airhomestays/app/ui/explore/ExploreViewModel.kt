@@ -550,8 +550,6 @@ class ExploreViewModel @Inject constructor(
                     coverPhoto = it.coverPhoto?:0,
                     bookingType = it.bookingType!!,
                     beds = it.beds!!,
-                    bedrooms = it.bedrooms!!,
-                    additionalPrice = (it.listingData.additionalPrice?:0.0),
                     basePrice = it.listingData?.basePrice!!,
                     listPhotos = photoList,
                     lat = it.lat?:0.0!!,
