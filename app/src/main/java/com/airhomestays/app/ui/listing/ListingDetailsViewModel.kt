@@ -548,16 +548,16 @@ class ListingDetailsViewModel @Inject constructor(
                     val data = response.data!!.userAccount
                     if (data?.status == 200) {
                         val result = data.result
-                        if (result!!.verification!!.isEmailConfirmed!!.equals(false)) {
-                            navigator.showToast(resourceProvider.getString(R.string.email_not_verified))
-                        } else {
-                            dataManager.currentUserProfilePicUrl = result.picture
-                            if (result.picture.isNullOrEmpty()) {
+//                        if (result!!.verification!!.isEmailConfirmed!!.equals(false)) {
+//                            navigator.showToast(resourceProvider.getString(R.string.email_not_verified))
+//                        } else {
+                            dataManager.currentUserProfilePicUrl = result?.picture
+                            if (result?.picture.isNullOrEmpty()) {
                                 navigator.openBillingActivity(false)
                             } else {
                                 navigator.openBillingActivity(true)
                             }
-                        }
+//                        }
                     } else if (data?.status == 500) {
                         navigator.openSessionExpire("ListingDetailsVM")
                     } else {
