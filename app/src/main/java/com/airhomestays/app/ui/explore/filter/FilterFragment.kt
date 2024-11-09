@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
@@ -186,7 +187,7 @@ class FilterFragment : BaseFragment<FragmentListingAmenitiesBinding, ExploreView
     private fun onActivityResults() {
         openCalendarActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ) { result ->
+        ) { result:ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK ) {
                 if (result.data != null) {
                     viewModel.TempstartDateFromResult =
@@ -468,327 +469,338 @@ class FilterFragment : BaseFragment<FragmentListingAmenitiesBinding, ExploreView
 //
 //                }
 
+               val boolValue= arguments?.getBoolean("boolValue")
+                if (boolValue==true) {
+                   if(viewModel.isCalenderOpened==false){
+                       openCalender()
+                       viewModel.isCalenderOpened=true
+                   }
+                }
+                else{
+                    viewholderFilterInstantbook {
+                        id("instantBook")
+                        isChecked(viewModel.TempbookingType == "instant")
+                        onClick(View.OnClickListener {
+                            viewModel.TempbookingType = if (viewModel.TempbookingType == "instant") {
+                                ""
+                            } else {
+                                "instant"
+                            }
+                            this@withModels.requestModelBuild()
+                        })
+                    }
 
-                viewholderFilterInstantbook {
-                    id("instantBook")
-                    isChecked(viewModel.TempbookingType == "instant")
-                    onClick(View.OnClickListener {
-                        viewModel.TempbookingType = if (viewModel.TempbookingType == "instant") {
-                            ""
-                        } else {
-                            "instant"
+
+                    viewholderDivider {
+                        id("1")
+                    }
+
+
+                    viewholderListingDetailsHeader {
+                        id("priceheader")
+                        header(resources.getString(R.string.price_range))
+                        large(false)
+                        isBlack(true)
+                        typeface(Typeface.DEFAULT_BOLD)
+                    }
+
+
+                    if (viewModel.maxRange.value!! > viewModel.minRange.value!!) {
+                        viewholderFilterPricerange {
+                            id("pricerange")
+                            price(viewModel.TempcurrencySymbol + viewModel.TempminRange.toString() + " - " + viewModel.TempcurrencySymbol + viewModel.TempmaxRange.toString())
+                            onBind { _, view, _ ->
+                                with(((view.dataBinding.root).findViewById<RangeSeekBar>(R.id.rangebar_filter_price))) {
+                                    setRange(
+                                        viewModel.minRange.value!!.toFloat(),
+                                        viewModel.maxRange.value!!.toFloat()
+                                    )
+                                    setValue(
+                                        viewModel.TempminRange.toFloat(),
+                                        viewModel.TempmaxRange.toFloat()
+                                    )
+                                    setOnRangeChangedListener(object : OnRangeChangedListener {
+                                        override fun onStartTrackingTouch(
+                                            view: RangeSeekBar?,
+                                            isLeft: Boolean
+                                        ) {
+                                        }
+
+
+                                        override fun onRangeChanged(
+                                            view: RangeSeekBar?,
+                                            leftValue: Float,
+                                            rightValue: Float,
+                                            isFromUser: Boolean
+                                        ) {
+                                            viewModel.TempminRange = leftValue.toInt()
+                                            viewModel.TempmaxRange = rightValue.toInt()
+
+                                            mBinding.rlListingAmenities.requestModelBuild()
+                                        }
+
+
+                                        override fun onStopTrackingTouch(
+                                            view: RangeSeekBar?,
+                                            isLeft: Boolean
+                                        ) {
+                                        }
+                                    })
+                                }
+                            }
+                            onUnbind { _, view ->
+                                with(((view.dataBinding.root).findViewById<RangeSeekBar>(R.id.rangebar_filter_price))) {
+                                    setOnRangeChangedListener(null)
+                                }
+                            }
                         }
-                        this@withModels.requestModelBuild()
-                    })
-                }
+                    }
 
 
-                viewholderDivider {
-                    id("1")
-                }
+                    viewholderDivider {
+                        id("2")
+                    }
 
 
-                viewholderListingDetailsHeader {
-                    id("priceheader")
-                    header(resources.getString(R.string.price_range))
-                    large(false)
-                    isBlack(true)
-                    typeface(Typeface.DEFAULT_BOLD)
-                }
+                    viewholderListingDetailsHeader {
+                        id("Roomsandbeds")
+                        header(resources.getString(R.string.Rooms_and_beds))
+                        large(false)
+                        isBlack(true)
+                        typeface(Typeface.DEFAULT_BOLD)
+                    }
 
-
-                if (viewModel.maxRange.value!! > viewModel.minRange.value!!) {
-                    viewholderFilterPricerange {
-                        id("pricerange")
-                        price(viewModel.TempcurrencySymbol + viewModel.TempminRange.toString() + " - " + viewModel.TempcurrencySymbol + viewModel.TempmaxRange.toString())
-                        onBind { _, view, _ ->
-                            with(((view.dataBinding.root).findViewById<RangeSeekBar>(R.id.rangebar_filter_price))) {
-                                setRange(
-                                    viewModel.minRange.value!!.toFloat(),
-                                    viewModel.maxRange.value!!.toFloat()
-                                )
-                                setValue(
-                                    viewModel.TempminRange.toFloat(),
-                                    viewModel.TempmaxRange.toFloat()
-                                )
-                                setOnRangeChangedListener(object : OnRangeChangedListener {
-                                    override fun onStartTrackingTouch(
-                                        view: RangeSeekBar?,
-                                        isLeft: Boolean
-                                    ) {
-                                    }
-
-
-                                    override fun onRangeChanged(
-                                        view: RangeSeekBar?,
-                                        leftValue: Float,
-                                        rightValue: Float,
-                                        isFromUser: Boolean
-                                    ) {
-                                        viewModel.TempminRange = leftValue.toInt()
-                                        viewModel.TempmaxRange = rightValue.toInt()
-
-                                        mBinding.rlListingAmenities.requestModelBuild()
-                                    }
-
-
-                                    override fun onStopTrackingTouch(
-                                        view: RangeSeekBar?,
-                                        isLeft: Boolean
-                                    ) {
-                                    }
+                    for (i in 0 until it.size) {
+                        if (it[i]?.id == 5 && it[i]?.listSettings!!.size > 0) {
+                            viewholderFilterPlusMinusBedroom {
+                                id(it[i]?.id)
+                                text(it[i]?.typeLabel)
+                                plusLimit1(it[i]?.listSettings!![0]?.endValue)
+                                minusLimit1(0)
+                                viewModel(viewModel)
+                                onPlusClick(View.OnClickListener {
+                                    viewModel.bedrooms1.set(
+                                        viewModel.bedrooms1.get()!!.toInt().plus(1).toString()
+                                    )
+                                })
+                                onMinusClick(View.OnClickListener {
+                                    viewModel.bedrooms1.set(
+                                        viewModel.bedrooms1.get()!!.toInt().minus(1).toString()
+                                    )
                                 })
                             }
+                            break
                         }
-                        onUnbind { _, view ->
-                            with(((view.dataBinding.root).findViewById<RangeSeekBar>(R.id.rangebar_filter_price))) {
-                                setOnRangeChangedListener(null)
+                    }
+                    for (i in 0 until it.size) {
+                        if (it[i]?.id == 6 && it[i]?.listSettings!!.size > 0) {
+                            viewholderFilterPlusMinusBathroom {
+                                id(it[i]?.id)
+                                text(it[i]?.typeLabel)
+                                plusLimit1(it[i]?.listSettings!![0]?.endValue)
+                                minusLimit1(0)
+                                viewModel(viewModel)
+                                onPlusClick(View.OnClickListener {
+                                    viewModel.bathrooms1.set(
+                                        viewModel.bathrooms1.get()!!.toInt().plus(1).toString()
+                                    )
+                                })
+                                onMinusClick(View.OnClickListener {
+                                    viewModel.bathrooms1.set(
+                                        viewModel.bathrooms1.get()!!.toInt().minus(1).toString()
+                                    )
+                                })
                             }
+                            break
                         }
                     }
-                }
-
-
-                viewholderDivider {
-                    id("2")
-                }
-
-
-                viewholderListingDetailsHeader {
-                    id("Roomsandbeds")
-                    header(resources.getString(R.string.Rooms_and_beds))
-                    large(false)
-                    isBlack(true)
-                    typeface(Typeface.DEFAULT_BOLD)
-                }
-
-                for (i in 0 until it.size) {
-                    if (it[i]?.id == 5 && it[i]?.listSettings!!.size > 0) {
-                        viewholderFilterPlusMinusBedroom {
-                            id(it[i]?.id)
-                            text(it[i]?.typeLabel)
-                            plusLimit1(it[i]?.listSettings!![0]?.endValue)
-                            minusLimit1(0)
-                            viewModel(viewModel)
-                            onPlusClick(View.OnClickListener {
-                                viewModel.bedrooms1.set(
-                                    viewModel.bedrooms1.get()!!.toInt().plus(1).toString()
-                                )
-                            })
-                            onMinusClick(View.OnClickListener {
-                                viewModel.bedrooms1.set(
-                                    viewModel.bedrooms1.get()!!.toInt().minus(1).toString()
-                                )
-                            })
+                    for (i in 0 until it.size) {
+                        if (it[i]?.id == 8 && it[i]?.listSettings!!.size > 0) {
+                            viewholderFilterPlusMinus {
+                                id(it[i]?.id)
+                                text(it[i]?.typeLabel)
+                                plusLimit1(it[i]?.listSettings!![0]?.endValue)
+                                minusLimit1(0)
+                                viewModel(viewModel)
+                                onPlusClick(View.OnClickListener {
+                                    viewModel.bed1.set(
+                                        viewModel.bed1.get()!!.toInt().plus(1).toString()
+                                    )
+                                })
+                                onMinusClick(View.OnClickListener {
+                                    viewModel.bed1.set(
+                                        viewModel.bed1.get()!!.toInt().minus(1).toString()
+                                    )
+                                })
+                            }
+                            break
                         }
-                        break
                     }
-                }
-                for (i in 0 until it.size) {
-                    if (it[i]?.id == 6 && it[i]?.listSettings!!.size > 0) {
-                        viewholderFilterPlusMinusBathroom {
-                            id(it[i]?.id)
-                            text(it[i]?.typeLabel)
-                            plusLimit1(it[i]?.listSettings!![0]?.endValue)
-                            minusLimit1(0)
-                            viewModel(viewModel)
-                            onPlusClick(View.OnClickListener {
-                                viewModel.bathrooms1.set(
-                                    viewModel.bathrooms1.get()!!.toInt().plus(1).toString()
-                                )
-                            })
-                            onMinusClick(View.OnClickListener {
-                                viewModel.bathrooms1.set(
-                                    viewModel.bathrooms1.get()!!.toInt().minus(1).toString()
-                                )
-                            })
-                        }
-                        break
+                    viewholderDivider {
+                        id("4")
                     }
-                }
-                for (i in 0 until it.size) {
-                    if (it[i]?.id == 8 && it[i]?.listSettings!!.size > 0) {
-                        viewholderFilterPlusMinus {
-                            id(it[i]?.id)
-                            text(it[i]?.typeLabel)
-                            plusLimit1(it[i]?.listSettings!![0]?.endValue)
-                            minusLimit1(0)
-                            viewModel(viewModel)
-                            onPlusClick(View.OnClickListener {
-                                viewModel.bed1.set(
-                                    viewModel.bed1.get()!!.toInt().plus(1).toString()
-                                )
-                            })
-                            onMinusClick(View.OnClickListener {
-                                viewModel.bed1.set(
-                                    viewModel.bed1.get()!!.toInt().minus(1).toString()
-                                )
-                            })
-                        }
-                        break
-                    }
-                }
-                viewholderDivider {
-                    id("4")
-                }
-                it.forEachIndexed { _, item ->
-                    if (item?.id == 10 && item.listSettings!!.size > 0) {
-                        viewholderListingDetailsHeader {
-                            id("initialAmenitiesSize")
-                            header(resources.getString(R.string.amenities))
-                            large(false)
-                            isBlack(true)
-                            typeface(Typeface.DEFAULT_BOLD)
-                        }
-                        item?.listSettings!!.subList(0, viewModel.TempinitialAmenitiesSize)
-                            .forEachIndexed { index, list ->
-                                viewholderFilterCheckbox {
-                                    id("initialAmenitiesSize ${list?.id}")
-                                    text(list!!.itemName)
-                                    isIconNeeded(true)
-                                    if (list.image != null && list.image != "") {
-                                        amenitiesImage(Constants.amenities + list.image)
+                    it.forEachIndexed { _, item ->
+                        if (item?.id == 10 && item.listSettings!!.size > 0) {
+                            viewholderListingDetailsHeader {
+                                id("initialAmenitiesSize")
+                                header(resources.getString(R.string.amenities))
+                                large(false)
+                                isBlack(true)
+                                typeface(Typeface.DEFAULT_BOLD)
+                            }
+                            item?.listSettings!!.subList(0, viewModel.TempinitialAmenitiesSize)
+                                .forEachIndexed { index, list ->
+                                    viewholderFilterCheckbox {
+                                        id("initialAmenitiesSize ${list?.id}")
+                                        text(list!!.itemName)
+                                        isIconNeeded(true)
+                                        if (list.image != null && list.image != "") {
+                                            amenitiesImage(Constants.amenities + list.image)
+                                        } else {
+                                            amenitiesImage("")
+                                        }
+                                        isChecked(viewModel.Tempamenities.contains(list.id))
+                                        onClick(View.OnClickListener {
+                                            if (viewModel.Tempamenities.contains(list.id!!)) {
+                                                viewModel.Tempamenities.remove(list.id!!)
+                                            } else {
+                                                viewModel.Tempamenities.add(list.id!!)
+                                            }
+                                            this@withModels.requestModelBuild()
+                                        })
+                                    }
+                                }
+                            if (item.listSettings!!.size > 3) {
+                                viewholderListingDetailsListShowmore {
+                                    id("readmore amenities")
+                                    if (viewModel.TempinitialAmenitiesSize == 2) {
+                                        text(resources.getString(R.string.show_more))
+                                        imgVisibility(1)
                                     } else {
-                                        amenitiesImage("")
+                                        text(resources.getString(R.string.close_all))
+                                        imgVisibility(0)
                                     }
-                                    isChecked(viewModel.Tempamenities.contains(list.id))
-                                    onClick(View.OnClickListener {
-                                        if (viewModel.Tempamenities.contains(list.id!!)) {
-                                            viewModel.Tempamenities.remove(list.id!!)
-                                        } else {
-                                            viewModel.Tempamenities.add(list.id!!)
-                                        }
+                                    clickListener(View.OnClickListener {
+                                        viewModel.TempinitialAmenitiesSize =
+                                            if (viewModel.TempinitialAmenitiesSize == 2) {
+                                                item.listSettings!!.size
+                                            } else {
+                                                2
+                                            }
                                         this@withModels.requestModelBuild()
                                     })
                                 }
                             }
-                        if (item.listSettings!!.size > 3) {
-                            viewholderListingDetailsListShowmore {
-                                id("readmore amenities")
-                                if (viewModel.TempinitialAmenitiesSize == 2) {
-                                    text(resources.getString(R.string.show_more))
-                                    imgVisibility(1)
-                                } else {
-                                    text(resources.getString(R.string.close_all))
-                                    imgVisibility(0)
-                                }
-                                clickListener(View.OnClickListener {
-                                    viewModel.TempinitialAmenitiesSize =
-                                        if (viewModel.TempinitialAmenitiesSize == 2) {
-                                            item.listSettings!!.size
-                                        } else {
-                                            2
-                                        }
-                                    this@withModels.requestModelBuild()
-                                })
+                            viewholderDivider {
+                                id("5")
                             }
                         }
-                        viewholderDivider {
-                            id("5")
-                        }
-                    }
-                    if (item?.id == 12 && item?.listSettings!!.size > 0) {
-                        viewholderListingDetailsHeader {
-                            id("Facilities")
-                            header(resources.getString(R.string.user_space))
-                            large(false)
-                            isBlack(true)
-                            typeface(Typeface.DEFAULT_BOLD)
-                        }
-                        item.listSettings!!.subList(0, viewModel.TempinitialHouseRulesSize)
-                            .forEachIndexed { index, list ->
-                                viewholderFilterCheckbox {
-                                    id("Facilities ${list?.id}")
-                                    text(list?.itemName)
-                                    isIconNeeded(true)
-                                    if (list?.image != null && list.image != "") {
-                                        amenitiesImage(Constants.amenities + list.image)
+                        if (item?.id == 12 && item?.listSettings!!.size > 0) {
+                            viewholderListingDetailsHeader {
+                                id("Facilities")
+                                header(resources.getString(R.string.user_space))
+                                large(false)
+                                isBlack(true)
+                                typeface(Typeface.DEFAULT_BOLD)
+                            }
+                            item.listSettings!!.subList(0, viewModel.TempinitialHouseRulesSize)
+                                .forEachIndexed { index, list ->
+                                    viewholderFilterCheckbox {
+                                        id("Facilities ${list?.id}")
+                                        text(list?.itemName)
+                                        isIconNeeded(true)
+                                        if (list?.image != null && list.image != "") {
+                                            amenitiesImage(Constants.amenities + list.image)
+                                        } else {
+                                            amenitiesImage("")
+                                        }
+                                        isChecked(viewModel.Tempspaces.contains(list?.id))
+                                        onClick(View.OnClickListener {
+                                            if (viewModel.Tempspaces.contains(list?.id!!)) {
+                                                viewModel.Tempspaces.remove(list.id!!)
+                                            } else {
+                                                viewModel.Tempspaces.add(list.id!!)
+                                            }
+                                            this@withModels.requestModelBuild()
+                                        })
+                                    }
+                                }
+                            if (item.listSettings!!.size > 3) {
+                                viewholderListingDetailsListShowmore {
+                                    id("readmore facilities")
+                                    if (viewModel.TempinitialHouseRulesSize == 2) {
+                                        text(resources.getString(R.string.show_more))
+                                        imgVisibility(1)
                                     } else {
-                                        amenitiesImage("")
+                                        text(resources.getString(R.string.close_all))
+                                        imgVisibility(0)
                                     }
-                                    isChecked(viewModel.Tempspaces.contains(list?.id))
-                                    onClick(View.OnClickListener {
-                                        if (viewModel.Tempspaces.contains(list?.id!!)) {
-                                            viewModel.Tempspaces.remove(list.id!!)
-                                        } else {
-                                            viewModel.Tempspaces.add(list.id!!)
-                                        }
+                                    clickListener(View.OnClickListener {
+                                        viewModel.TempinitialHouseRulesSize =
+                                            if (viewModel.TempinitialHouseRulesSize == 2) {
+                                                item.listSettings!!.size
+                                            } else {
+                                                2
+                                            }
                                         this@withModels.requestModelBuild()
                                     })
                                 }
                             }
-                        if (item.listSettings!!.size > 3) {
-                            viewholderListingDetailsListShowmore {
-                                id("readmore facilities")
-                                if (viewModel.TempinitialHouseRulesSize == 2) {
-                                    text(resources.getString(R.string.show_more))
-                                    imgVisibility(1)
-                                } else {
-                                    text(resources.getString(R.string.close_all))
-                                    imgVisibility(0)
-                                }
-                                clickListener(View.OnClickListener {
-                                    viewModel.TempinitialHouseRulesSize =
-                                        if (viewModel.TempinitialHouseRulesSize == 2) {
-                                            item.listSettings!!.size
-                                        } else {
-                                            2
-                                        }
-                                    this@withModels.requestModelBuild()
-                                })
+                            viewholderDivider {
+                                id("6")
                             }
                         }
-                        viewholderDivider {
-                            id("6")
-                        }
-                    }
-                    if (item?.id == 14 && item.listSettings!!.size > 0) {
-                        viewholderListingDetailsHeader {
-                            id("House rules")
-                            header(resources.getString(R.string.house_rules))
-                            large(false)
-                            isBlack(true)
-                            typeface(Typeface.DEFAULT_BOLD)
-                        }
-                        item.listSettings!!.subList(0, viewModel.TempinitialFacilitiesSize)
-                            .forEachIndexed { index, list ->
-                                viewholderFilterCheckbox {
-                                    id("House rules ${list?.id}")
-                                    text(list?.itemName)
-                                    isChecked(viewModel.TemphouseRule.contains(list?.id))
-                                    onClick(View.OnClickListener {
-                                        if (viewModel.TemphouseRule.contains(list?.id!!)) {
-                                            viewModel.TemphouseRule.remove(list.id!!)
-                                        } else {
-                                            viewModel.TemphouseRule.add(list.id!!)
-                                        }
+                        if (item?.id == 14 && item.listSettings!!.size > 0) {
+                            viewholderListingDetailsHeader {
+                                id("House rules")
+                                header(resources.getString(R.string.house_rules))
+                                large(false)
+                                isBlack(true)
+                                typeface(Typeface.DEFAULT_BOLD)
+                            }
+                            item.listSettings!!.subList(0, viewModel.TempinitialFacilitiesSize)
+                                .forEachIndexed { index, list ->
+                                    viewholderFilterCheckbox {
+                                        id("House rules ${list?.id}")
+                                        text(list?.itemName)
+                                        isChecked(viewModel.TemphouseRule.contains(list?.id))
+                                        onClick(View.OnClickListener {
+                                            if (viewModel.TemphouseRule.contains(list?.id!!)) {
+                                                viewModel.TemphouseRule.remove(list.id!!)
+                                            } else {
+                                                viewModel.TemphouseRule.add(list.id!!)
+                                            }
+                                            this@withModels.requestModelBuild()
+                                        })
+                                    }
+                                }
+                            if (item.listSettings!!.size > 3) {
+                                viewholderListingDetailsListShowmore {
+                                    id("readmore house rules")
+                                    if (viewModel.TempinitialFacilitiesSize == 2) {
+                                        text(resources.getString(R.string.show_more))
+                                        imgVisibility(1)
+                                    } else {
+                                        text(resources.getString(R.string.close_all))
+                                        imgVisibility(0)
+                                    }
+                                    clickListener(View.OnClickListener {
+                                        viewModel.TempinitialFacilitiesSize =
+                                            if (viewModel.TempinitialFacilitiesSize == 2) {
+                                                item.listSettings!!.size
+                                            } else {
+                                                2
+                                            }
                                         this@withModels.requestModelBuild()
                                     })
                                 }
                             }
-                        if (item.listSettings!!.size > 3) {
-                            viewholderListingDetailsListShowmore {
-                                id("readmore house rules")
-                                if (viewModel.TempinitialFacilitiesSize == 2) {
-                                    text(resources.getString(R.string.show_more))
-                                    imgVisibility(1)
-                                } else {
-                                    text(resources.getString(R.string.close_all))
-                                    imgVisibility(0)
-                                }
-                                clickListener(View.OnClickListener {
-                                    viewModel.TempinitialFacilitiesSize =
-                                        if (viewModel.TempinitialFacilitiesSize == 2) {
-                                            item.listSettings!!.size
-                                        } else {
-                                            2
-                                        }
-                                    this@withModels.requestModelBuild()
-                                })
-                            }
                         }
+
                     }
                 }
+
+
             }
         } catch (e: Exception) {
             e.printStackTrace()

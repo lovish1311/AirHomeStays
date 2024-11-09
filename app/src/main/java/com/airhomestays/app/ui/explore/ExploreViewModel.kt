@@ -80,7 +80,7 @@ class ExploreViewModel @Inject constructor(
     val personCapacity1 = ObservableField<String>()
     var isReset = MutableLiveData(false)
     var listingList = ArrayList<com.airhomestays.app.vo.Listing>()
-
+    var isCalenderOpened = false
     var personCount = 0;
     val bed1 = ObservableField<String>()
     val bathrooms1 = ObservableField<String>()

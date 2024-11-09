@@ -123,6 +123,7 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
     @SuppressLint("ClickableViewAccessibility")
     @RequiresApi(Build.VERSION_CODES.M)
     private fun initView() {
+        viewModel.isCalenderOpened=false
         mBinding.headerTitle.visible()
         mBinding.tabFl.gone()
         mBinding.exploreLl.elevation = 0f
@@ -171,7 +172,8 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
         }
         mBinding.filterCard.onClick {
             (baseActivity as HomeActivity).hideBottomNavigation()
-            openFragment(FilterFragment(), "filter")
+            openFragment2(FilterFragment(), "filter",false)
+            viewModel.isCalenderOpened=true
         }
 
     }
@@ -188,6 +190,17 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
             R.anim.slide_up, R.anim.slide_down, R.anim.slide_up, R.anim.slide_down
         ).add(mBinding.flExploreFragment.id, fragment, tag).addToBackStack(null).commit()
     }
+
+    fun openFragment2(fragment: androidx.fragment.app.Fragment, tag: String,boolValue:Boolean) {
+        viewModel.currentFragment = tag
+        val bundle = Bundle()
+        bundle.putBoolean("boolValue",boolValue)
+        fragment.arguments = bundle
+        childFragmentManager.beginTransaction().setCustomAnimations(
+            R.anim.slide_up, R.anim.slide_down, R.anim.slide_up, R.anim.slide_down
+        ).add(mBinding.flExploreFragment.id, fragment, tag).addToBackStack(null).commit()
+    }
+
 
     private fun checkLocationForSearch(location: String) {
         isFromLocationSearch = true
@@ -397,7 +410,7 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                     spString.setSpan(
                         ForegroundColorSpan(
                             ContextCompat.getColor(
-                                view!!.context, R.color.colorAccent
+                                requireView().context, R.color.colorAccent
                             )
                         ),
                         0,
@@ -441,7 +454,7 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                             maxGuest = baseGuestValue;
                         }
                         val additionalGuest = baseGuestValue - maxGuest;
-                        val sleeps = "Sleeps - $baseGuestValue"
+                        val sleeps = "Total Guests - $baseGuestValue"
                         val priceValue = viewModel.getConvertedRate(item.currency, item.basePrice)
                         val formattedPrice = NumberFormat.getInstance(Locale.getDefault()).format(priceValue)
                         val currency = viewModel.getCurrencySymbol() + formattedPrice + "";
@@ -748,16 +761,19 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                     ) {
                         viewModel.personCapacity.value = viewModel.personCapacity1.get()
                     }
-                    viewModel.startSearching()
-                    isFromLocationSearch = false
-                    mBinding.headerTitle.visibility = View.VISIBLE
-                    mBinding.tabFl.gone()
-                    mBinding.exploreLl.elevation = 0f
-                    mBinding.exploreLl.setBackgroundColor(
-                        getColor(
-                            requireContext()!!, R.color.explore_header_bg
-                        )
-                    )
+                    viewModel.isCalenderOpened=false
+                    openFragment2(FilterFragment(),"Search",true)
+
+//                    viewModel.startSearching()
+//                    isFromLocationSearch = false
+//                    mBinding.headerTitle.visibility = View.VISIBLE
+//                    mBinding.tabFl.gone()
+//                    mBinding.exploreLl.elevation = 0f
+//                    mBinding.exploreLl.setBackgroundColor(
+//                        getColor(
+//                            requireContext()!!, R.color.explore_header_bg
+//                        )
+//                    )
                 } else {
                     with(mBinding.searchTv) {
                         text = resources.getString(R.string.search_box)
