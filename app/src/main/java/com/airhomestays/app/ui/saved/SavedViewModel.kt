@@ -382,6 +382,7 @@ class SavedViewModel @Inject constructor(
                         reviewsCount = it.reviewsCount,
                         personCapacity = it.personCapacity!!,
                         listPhotoName = it.listPhotoName,
+                        guestBasePrice = (it.listingData?.guestBasePrice?:0.0).toInt(),
                         isListOwner = false,
                         currency = it.listingData?.currency!!,
                         coverPhoto = it.coverPhoto?:0,

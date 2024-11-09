@@ -306,6 +306,7 @@ data class SearchListing(
         val city: String?,
         val state: String?,
         val country: String?,
+        val guestBasePrice:Int,
         val basePrice: Double,
         val currency: String,
         var wishListGroupCount: Int = 0,

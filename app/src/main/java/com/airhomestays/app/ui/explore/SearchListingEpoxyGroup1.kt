@@ -9,6 +9,7 @@ import android.text.style.TypefaceSpan
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.airbnb.epoxy.Carousel
 import com.airbnb.epoxy.EpoxyModel
@@ -22,6 +23,7 @@ import com.airhomestays.app.util.CustomUnderlineTextView
 import com.airhomestays.app.util.Utils
 import com.airhomestays.app.util.binding.BindingAdapters
 import com.airhomestays.app.util.epoxy.ListingPhotosCarouselModel_
+import com.airhomestays.app.util.resource.ResourceProvider
 import com.airhomestays.app.vo.ListingInitData
 import com.airhomestays.app.vo.SearchListing
 import timber.log.Timber
@@ -140,13 +142,25 @@ fun buildModels1(
                      model.locationName(item.city)
                     if (item.bookingType=="instant") {
                         if(item.oneTotalpricechecked!!){
-                            spanString(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
-                                getCurrencyRateonetotal(item,listingInitData).length,true)
-                            totalPrice.showUnderlines(true)
+                            if(item.guestBasePrice!=null && item.guestBasePrice!=0){
+                            spanString2(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
+                                item.guestBasePrice,true)
+                            totalPrice.showUnderlines(true)}
+                            else{
+                                spanString2(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
+                                    item.personCapacity,true)
+                                totalPrice.showUnderlines(true)
+                            }
                         } else {
-                            spanString(totalPrice,convertedPrice +" / "+totalPrice.context.getString(R.string.night)+"   ",
-                                convertedPrice.length,true)
-                            totalPrice.showUnderlines(false)
+                            if(item.guestBasePrice!=null&& item.guestBasePrice!=0){
+                            spanString2(totalPrice,convertedPrice +" / "+totalPrice.context.getString(R.string.night)+"   ",
+                               item.guestBasePrice ,true)
+                            totalPrice.showUnderlines(false)}
+                            else{
+                                spanString2(totalPrice,convertedPrice +" / "+totalPrice.context.getString(R.string.night)+"   ",
+                                    item.personCapacity ,true)
+                                totalPrice.showUnderlines(false)
+                            }
                         }
 
                     } else {
@@ -184,6 +198,25 @@ private fun spanString(tvItemListingSimilarPrice: TextView, price : String, leng
     }
 
     tvItemListingSimilarPrice.text = spannableString
+
+}
+private fun spanString2(tvItemListingSimilarPrice: TextView, price : String,guestCount:Int,instant : Boolean) {
+    val spannableString = SpannableString(price+ "*" +" for $guestCount"+ " guests")
+    val spannableString2 = SpannableString(price+" for $guestCount"+" guests")
+    spannableString.setSpan(AbsoluteSizeSpan(tvItemListingSimilarPrice.resources.getDimensionPixelSize(R.dimen.text_size_h4)), 0, spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+    val imageSpan = ImageSpan(tvItemListingSimilarPrice.context, R.drawable.ic_light, ImageSpan.ALIGN_BASELINE)
+
+    if (instant) {
+        spannableString.setSpan(imageSpan,  price.length,
+            price.length+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        tvItemListingSimilarPrice.text = spannableString
+    }
+    else {
+        tvItemListingSimilarPrice.text = spannableString2
+    }
+
+
 
 }
 

@@ -546,6 +546,7 @@ class ExploreViewModel @Inject constructor(
                     listPhotoName = it.listPhotoName,
                     isListOwner = it.isListOwner,
                     currency = it.listingData?.currency!!,
+                    guestBasePrice = (it.listingData?.guestBasePrice?:0.0).toInt(),
                     coverPhoto = it.coverPhoto?:0,
                     bookingType = it.bookingType!!,
                     beds = it.beds!!,

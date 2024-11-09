@@ -65,6 +65,7 @@ query SearchListing (
             status
           }
           listingData {
+            guestBasePrice
             basePrice
             currency
             oneTotalPrice {

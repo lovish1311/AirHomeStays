@@ -170,6 +170,7 @@ query getWishListGroup ($id: Int!, $currentPage: Int){
                   status
                 }
                 listingData {
+                guestBasePrice
                   basePrice
                   currency
                 }
