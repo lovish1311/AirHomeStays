@@ -116,6 +116,34 @@ fun buildModels1(
         } else {
             ratingCount = ""
         }
+        var bedroomsString=""
+        if(item.bedrooms.toInt()>1){
+            bedroomsString=item.bedrooms+" bedrooms"
+        }
+        else{
+            bedroomsString=item.bedrooms+" bedroom"
+        }
+        var baseGuest = item.guestBasePrice
+        var totalguest=item.personCapacity
+    if(!(baseGuest!=null && baseGuest>0))
+            baseGuest=totalguest
+        val additionalGuests = totalguest-baseGuest
+        val additionalPrice = item.additionalPrice
+        var visibility=View.GONE
+        var additionalString=""
+        if(additionalGuests>0&& additionalPrice!=null && additionalPrice>0){
+            val additionalPriceInt=additionalPrice.toInt()
+            visibility=View.VISIBLE
+            var baseGuestString = ""
+            if(additionalGuests>1){
+                baseGuestString="guests"
+            }
+            else{
+                baseGuestString="guest"
+            }
+            additionalString="$additionalGuests additional $baseGuestString @$additionalPriceInt/person"
+        }
+     
         models.add(
             ViewholderExploreSearchListingItemBindingModel_()
                 .id(item.id)
@@ -123,6 +151,8 @@ fun buildModels1(
                 .roomType(item.roomType)
                 .bookType(item.bookingType)
                 .bedsCount(item.beds)
+                .sleeps("Sleeps - ${item.personCapacity}")
+                .bedroomsCount(bedroomsString)
                 .ratingsCount(ratingCount.toString())
                 .ratingStarCount(reviewStarRating)
                 .reviewsCount(item.reviewsCount)
@@ -165,9 +195,17 @@ fun buildModels1(
 
                     } else {
                         if(item.oneTotalpricechecked!!){
-                            spanString(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
-                                getCurrencyRateonetotal(item,listingInitData).length,false)
-                            totalPrice.showUnderlines(true)
+                            if(item.guestBasePrice!=null && item.guestBasePrice!=0){
+                                spanString2(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
+                                    item.guestBasePrice,false)
+                                totalPrice.showUnderlines(true)
+                            }
+                            else{
+                                spanString(totalPrice,getCurrencyRateonetotal(item,listingInitData) +" "+totalPrice.context.getString(R.string.before_taxes)+"   ",
+                                    item.personCapacity,false)
+                                totalPrice.showUnderlines(true)
+                            }
+
                         } else {
                             spanString(totalPrice,convertedPrice +" / "+totalPrice.context.getString(R.string.night)+"   ",
                                 convertedPrice.length,false)
