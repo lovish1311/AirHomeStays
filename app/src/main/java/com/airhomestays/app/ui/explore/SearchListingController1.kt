@@ -3,6 +3,7 @@ package com.airhomestays.app.ui.explore
 import android.util.Log
 import android.view.View
 import com.airbnb.epoxy.EpoxyController
+import com.airhomestays.app.SearchListingEpoxyGroup1
 import com.airhomestays.app.viewholderDisplayTotalPrice
 import com.airhomestays.app.viewholderPagingRetry
 import com.airhomestays.app.vo.ListingInitData
