@@ -164,6 +164,7 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
             viewModel.searchPageResult12.value?.let {
                 if (it.isNotEmpty()) {
                     val scrollPosition = 0
+                    Log.d("check","4")
                     openFragment(ListingMapFragment.newInstance(scrollPosition), "map")
                 }
             }
@@ -253,9 +254,38 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                         models(mutableListOf<ViewholderListingBindingModel_>().apply {
                             recommend.forEachIndexed { index, item ->
                                 val baseGuestValue = item.personCapacity
+                                val sleeps = resources.getString(R.string.total_guest) + "- $baseGuestValue"
+                                var bedrooms = item.bedrooms
+                                bedrooms = if (bedrooms.toInt() > 1) "$bedrooms bedrooms" else "$bedrooms bedroom"
+                                val guestBasePrice = item.guestBasePrice
+                                val additionalPrice = item.additionalPrice
+                                var maxGuest = 0;
+                                if(guestBasePrice>0){
+                                    maxGuest = guestBasePrice;
+                                }else{
+                                    maxGuest = baseGuestValue;
+                                }
+                                val additionalGuest = baseGuestValue - maxGuest;
+                                var additionalString = "";
+                                var visibility = View.GONE
+                                if (additionalPrice != null) {
+                                    if(additionalGuest > 0 && additionalPrice > 0){
+                                        val additionalPriceInt = additionalPrice.toInt();
+                                        visibility = View.VISIBLE
+                                        var guestString = "";
+                                        if(additionalGuest > 1) guestString = "guests"
+                                        else guestString = "guest"
+                                        additionalString = "$additionalGuest additional $guestString @$additionalPriceInt/person"
+                                    }
+                                }
+
+
                                 val priceValue = viewModel.getConvertedRate(item.currency, item.basePrice)
                                 val formattedPrice = NumberFormat.getInstance(Locale.getDefault()).format(priceValue)
-                                val currency = viewModel.getCurrencySymbol() + formattedPrice + " for $baseGuestValue guests"
+                                val currency = viewModel.getCurrencySymbol() + formattedPrice + "";
+
+                                val maxGuestString = if (maxGuest > 1) "for $maxGuest guests" else "for $maxGuest guest"
+
                                 var ratingCount = ""
                                 if (item.reviewsStarRating != null && item.reviewsStarRating != 0 && item.reviewsCount != null && item.reviewsCount != 0) {
                                     ratingCount =
@@ -292,7 +322,10 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                                     .locale(getCurrentLocale(requireContext()))
                                     .reviewsCount(item.reviewsCount).ratingsCount(ratingCount)
                                     .bedsCount(bedsCount).reviewsStarRating(item.reviewsStarRating)
-                                    .currency(currency).wishListStatus(item.wishListStatus)
+                                    .currency(currency).maxGuestString(maxGuestString)
+                                    .bedroomsRecommend(bedrooms).sleepsRecommend(sleeps)
+                                    .additionalGuestRecommend(additionalString).visibilityRecommend(visibility)
+                                    .wishListStatus(item.wishListStatus)
                                     .isOwnerList(item.isListOwner)
                                     .heartClickListener(View.OnClickListener {
                                         Utils.clickWithDebounce(it) {
@@ -398,11 +431,23 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                         locale(getCurrentLocale(requireContext()))
                     }
                     mostViewed.forEachIndexed { index, item ->
-                        val currency = viewModel.getCurrencySymbol() + Utils.formatDecimal(
-                            viewModel.getConvertedRate(
-                                item.currency, item.basePrice
-                            )
-                        )
+                        val baseGuestValue = item.personCapacity;
+                        val guestBasePrice = item.guestBasePrice
+                        val additionalPrice = item.additionalPrice
+                        var maxGuest = 0;
+                        if(guestBasePrice>0){
+                            maxGuest = guestBasePrice;
+                        }else{
+                            maxGuest = baseGuestValue;
+                        }
+                        val additionalGuest = baseGuestValue - maxGuest;
+                        val sleeps = "Sleeps - $baseGuestValue"
+                        val priceValue = viewModel.getConvertedRate(item.currency, item.basePrice)
+                        val formattedPrice = NumberFormat.getInstance(Locale.getDefault()).format(priceValue)
+                        val currency = viewModel.getCurrencySymbol() + formattedPrice + "";
+
+                        val maxGuestString = if (maxGuest > 1) "for $maxGuest guests" else "for $maxGuest guest"
+
                         var ratingCount = ""
                         if (item.reviewsStarRating != null && item.reviewsStarRating != 0 && item.reviewsCount != null && item.reviewsCount != 0) {
                             ratingCount =
@@ -432,12 +477,31 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                         } else {
                             ""
                         }
+                        var bedrooms = item.bedrooms
+                        bedrooms = if (bedrooms.toInt() > 1) "$bedrooms bedrooms" else "$bedrooms bedroom"
+
+                        var additionalString = "";
+                        var visibility = View.GONE
+                        if (additionalPrice != null) {
+                            if(additionalGuest > 0 && additionalPrice > 0){
+                                val additionalPriceInt = additionalPrice.toInt();
+                                visibility = View.VISIBLE
+                                var guestString = "";
+                                if(additionalGuest > 1) guestString = "guests"
+                                else guestString = "guest"
+                                additionalString = "$additionalGuest additional $guestString @$additionalPriceInt/person"
+                            }
+                        }
 
                         add(ViewholderSavedListingBindingModel_().id("recommend - ${item.id}")
                             .title(item.title.trim().replace("\\s+", " ")).roomType(item.roomType)
                             .url(item.listPhotoName).bookType(mostViewed.get(index).bookingType)
-                            .reviewsCount(item.reviewsCount).bedsCount(bedsCount)
+                            .reviewsCount(item.reviewsCount)
+                            .bedsCount(bedsCount)
                             .reviewsStarRating(item.reviewsStarRating).price(currency)
+                            .maxGuestStringMostViewed(maxGuestString)
+                            .bedroomsMostViewed(bedrooms).sleepsMostViewed(sleeps)
+                            .additionalGuestMostViewed(additionalString).visibilityMostViewed(visibility)
                             .ratingsCount(ratingCount).wishListStatus(item.wishListStatus)
                             .isOwnerList(item.isListOwner).heartClickListener(View.OnClickListener {
                                 Utils.clickWithDebounce(it) {
@@ -691,7 +755,7 @@ class ExploreFragment : BaseFragment<FragmentExplore1Binding, ExploreViewModel>(
                     mBinding.exploreLl.elevation = 0f
                     mBinding.exploreLl.setBackgroundColor(
                         getColor(
-                            context!!, R.color.explore_header_bg
+                            requireContext()!!, R.color.explore_header_bg
                         )
                     )
                 } else {

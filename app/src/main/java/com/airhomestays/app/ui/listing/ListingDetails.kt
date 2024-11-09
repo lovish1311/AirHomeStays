@@ -71,6 +71,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import org.json.JSONArray
 import timber.log.Timber
+import java.text.NumberFormat
 import java.util.*
 import javax.inject.Inject
 import kotlin.math.ceil
@@ -1613,19 +1614,50 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
                                     setDefaultGlobalSnapHelperFactory(snapHelperFactory)
                                     models(mutableListOf<ViewholderListingDetailsSimilarCarouselBindingModel_>().apply {
                                         similarListing.forEachIndexed { index, item ->
-                                            val currency =
-                                                viewModel.getCurrencySymbol() + Utils.formatDecimal(
-                                                    viewModel.getConvertedRate(
-                                                        item.listingData!!.currency!!,
-                                                        item.listingData!!.basePrice!!
-                                                            .toDouble()
-                                                    )
-                                                )
+                                            val priceValue = viewModel.getConvertedRate(item.listingData?.currency ?: "", item.listingData?.basePrice ?: 0.0)
+                                            val formattedPrice =
+                                                NumberFormat.getInstance(Locale.getDefault()).format(priceValue)
+                                            val currency = viewModel.getCurrencySymbol() + formattedPrice + "";
+
+                                            var maxGuestString = "";
+                                            var baseGuest = 0;
+                                            if(item.listingData?.guestBasePrice != null &&  item.listingData.guestBasePrice > 0) {
+                                                baseGuest = item.listingData.guestBasePrice.toInt()
+                                            }else {
+                                                baseGuest = item.personCapacity!!
+                                            }
+                                            if(baseGuest > 1) {
+                                                maxGuestString = " for ${baseGuest} guests"
+                                            }else {
+                                                maxGuestString = " for ${baseGuest} guests"
+                                            }
+
+                                            var additionalString = ""
+                                            val additionalGuests = item.personCapacity!! - baseGuest
+                                            val additionalPrice = item.listingData?.additionalPrice
+                                            var visibility = View.GONE
+                                            if(additionalGuests > 0 && additionalPrice != null && additionalPrice > 0){
+                                                val additionalPriceInt = additionalPrice.toInt()
+                                                visibility = View.VISIBLE
+                                                var guestString = "";
+                                                if(additionalGuests > 1) guestString = "guests"
+                                                else guestString = "guest"
+                                                additionalString = "$additionalGuests additional $guestString @$additionalPriceInt/person"
+                                            }
+
+                                            var bedroomsString = ""
+                                            if(item.bedrooms!!.toInt() > 1) bedroomsString = "${item.bedrooms} bedrooms"
+                                            else bedroomsString = "${item.bedrooms} bedroom"
+
                                             add(
                                                 ViewholderListingDetailsSimilarCarouselBindingModel_()
                                                     .id(index)
                                                     .title(item.title)
                                                     .type(item.roomType)
+                                                    .bedroomsSimilarListing(bedroomsString)
+                                                    .sleepsSimilarListing("Sleeps - ${item.personCapacity}")
+                                                    .maxGuestSimilarListing(maxGuestString)
+                                                    .additionalGuestSimilarListing(additionalString).visibilitySimilarListing(visibility)
                                                     .bedsCount(item.beds)
                                                     .price(currency)
                                                     .reviewsCount(item.reviewsCount)
@@ -1720,6 +1752,7 @@ class ListingDetails : BaseActivity<ActivityListingDetailsEpoxyBinding, ListingD
     }
 
     override fun onBackPressed() {
+        super.onBackPressed()
         if (supportFragmentManager.backStackEntryCount <= 1) {
             setWishListIntent()
             movePosition(viewModel.carouselPosition.value)

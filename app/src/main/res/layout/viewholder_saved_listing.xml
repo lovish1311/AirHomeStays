@@ -17,6 +17,21 @@
             name="price"
             type="String"/>
         <variable
+            name="additionalGuestMostViewed"
+            type="String" />
+        <variable
+            name="visibilityMostViewed"
+            type="Integer" />
+        <variable
+            name="maxGuestStringMostViewed"
+            type="String" />
+        <variable
+            name="bedroomsMostViewed"
+            type="String" />
+        <variable
+            name="sleepsMostViewed"
+            type="String" />
+        <variable
             name="reviewsStarRating"
             type="Integer"/>
         <variable
@@ -135,6 +150,19 @@
                 android:layout_marginBottom="3dp"
                 android:layout_toEndOf="@id/tv_item_explore_search_listing_price_night"
                 tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/tv_item_explore_search_listing_price_night_base_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_item_explore_search_listing_price"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/iv_item_listing_instant_image"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@{` ` + maxGuestStringMostViewed}"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_h1" />
 
             <ImageView
                 android:id="@+id/tv_item_listing_similar_rating"
@@ -151,6 +179,8 @@
                 android:src="@drawable/ic_star_red"
                 android:stepSize="1"
                 android:visibility="@{reviewsCount==0 ? View.INVISIBLE : View.VISIBLE}" />
+
+
 
             <TextView
                 android:id="@+id/tv_item_listing_similar_ratingNumber"
@@ -185,50 +215,51 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_explore_search_listing_title"
                 android:layout_marginTop="3dp"
-                android:text="@{roomType + (bedsCount!=``? ` /` : ``)}"
+                android:text="@{roomType + ` / ` + bedroomsMostViewed + ` / ` + sleepsMostViewed}"
                 android:textDirection="locale"
                 android:textSize="@dimen/text_size_13" />
 
             <TextView
-                android:id="@+id/tv_item_explore_search_listing_beds"
+                android:id="@+id/tv_item_explore_search_listing_addtional_guest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_item_explore_search_listing_title"
-                android:layout_marginStart="3dp"
+                android:layout_below="@id/tv_item_explore_search_listing_type"
                 android:layout_marginTop="3dp"
-                android:layout_toEndOf="@id/tv_item_explore_search_listing_type"
-                android:text="@{bedsCount}"
+                android:text="@{additionalGuestMostViewed}"
+                android:visibility="@{visibilityMostViewed}"
                 android:textDirection="locale"
+                android:textColor="@color/status_bar_color"
                 android:textSize="@dimen/text_size_13" />
+
         </RelativeLayout>
 
 
-<!--        <RatingBar-->
-<!--            android:id="@+id/tv_item_explore_search_listing_rating"-->
-<!--            style="?android:attr/ratingBarStyleSmall"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="0dp"-->
-<!--            android:numStars="5"-->
-<!--            android:progressTint="@color/status_bar_color"-->
-<!--            reviewsCount="@{reviewsCount}"-->
-<!--            ratingCount="@{ratingStarCount}"-->
-<!--            android:secondaryProgressTint="@color/status_bar_color"-->
-<!--            android:stepSize="1"-->
-<!--            android:textSize="12sp"-->
-<!--            android:layout_below="@id/tv_item_explore_search_listing_price"/>-->
+        <!--        <RatingBar-->
+        <!--            android:id="@+id/tv_item_explore_search_listing_rating"-->
+        <!--            style="?android:attr/ratingBarStyleSmall"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="0dp"-->
+        <!--            android:numStars="5"-->
+        <!--            android:progressTint="@color/status_bar_color"-->
+        <!--            reviewsCount="@{reviewsCount}"-->
+        <!--            ratingCount="@{ratingStarCount}"-->
+        <!--            android:secondaryProgressTint="@color/status_bar_color"-->
+        <!--            android:stepSize="1"-->
+        <!--            android:textSize="12sp"-->
+        <!--            android:layout_below="@id/tv_item_explore_search_listing_price"/>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/tv_item_explore_search_listing_ratingNumber"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="0dp"-->
-<!--            android:layout_marginStart="0dp"-->
-<!--            android:visibility="@{(reviewsCount == 0 )? View.GONE : View.VISIBLE}"-->
-<!--            android:text="@{String.valueOf(reviewsCount)}"-->
-<!--            android:layout_below="@id/tv_item_explore_search_listing_price"-->
-<!--            android:layout_toEndOf="@id/tv_item_explore_search_listing_rating"-->
-<!--            android:textDirection="locale"/>-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_item_explore_search_listing_ratingNumber"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="0dp"-->
+        <!--            android:layout_marginStart="0dp"-->
+        <!--            android:visibility="@{(reviewsCount == 0 )? View.GONE : View.VISIBLE}"-->
+        <!--            android:text="@{String.valueOf(reviewsCount)}"-->
+        <!--            android:layout_below="@id/tv_item_explore_search_listing_price"-->
+        <!--            android:layout_toEndOf="@id/tv_item_explore_search_listing_rating"-->
+        <!--            android:textDirection="locale"/>-->
 
     </RelativeLayout>
 

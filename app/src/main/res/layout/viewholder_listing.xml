@@ -34,6 +34,21 @@
             name="currency"
             type="String"/>
         <variable
+            name="maxGuestString"
+            type="String"/>
+        <variable
+            name="additionalGuestRecommend"
+            type="String"/>
+        <variable
+            name="visibilityRecommend"
+            type="Integer" />
+        <variable
+            name = "bedroomsRecommend"
+            type="String"/>
+        <variable
+            name = "sleepsRecommend"
+            type="String"/>
+        <variable
             name="wishListStatus"
             type="Boolean"/>
         <variable
@@ -56,8 +71,8 @@
             type="Boolean"/>
     </data>
 
-<!--            android:background="@drawable/curve_bg"
--->
+    <!--            android:background="@drawable/curve_bg"
+    -->
     <RelativeLayout
         android:layout_width="270dp"
         android:layout_height="wrap_content"
@@ -96,7 +111,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/iv_item_listing_similar_image"
             android:paddingStart="0dp"
             android:paddingTop="8dp"
@@ -137,6 +152,20 @@
                 android:layout_toEndOf="@id/tv_item_listing_similar_price_night"
                 tools:ignore="ContentDescription" />
 
+            <TextView
+                android:id="@+id/tv_item_listing_similar_price_base_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_item_listing_similar_price"
+
+                android:layout_toEndOf="@+id/iv_item_listing_instant_image"
+                android:fontFamily="@font/be_vietnampro_medium"
+                android:text="@{` ` + maxGuestString}"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/black"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
             <ImageView
                 android:id="@+id/tv_item_listing_similar_rating"
                 style="?android:attr/ratingBarStyleSmall"
@@ -156,7 +185,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/tv_item_listing_similar_price"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="3dp"
                 android:text="@{ratingsCount != `` ? ratingsCount : ``}"
                 android:textColor="@color/black"
                 android:textDirection="locale"
@@ -170,7 +198,6 @@
                 android:layout_below="@id/tv_item_listing_similar_price"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@{title}"
@@ -178,31 +205,32 @@
                 android:textDirection="locale"
                 android:textSize="@dimen/text_size_15"
                 android:textStyle="bold" />
-
             <TextView
-                android:id="@+id/tv_item_listing_similar_type"
+                android:id="@+id/tv_item_listing_similar_room_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_listing_similar_title"
+                android:layout_marginTop="3dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@{roomType + (bedsCount!=``? ` / ` : ``)}"
+                android:text="@{roomType + ` / ` + bedroomsRecommend + ` / ` + sleepsRecommend}"
+                android:textDirection="locale"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/tv_item_listing_similar_additional_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_listing_similar_room_type"
+                android:layout_marginTop="3dp"
+                android:text="@{additionalGuestRecommend}"
+                android:textColor="@color/status_bar_color"
                 android:textDirection="locale"
                 android:textSize="@dimen/text_size_13" />
 
 
-            <TextView
-                android:id="@+id/tv_beds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_item_listing_similar_title"
-                android:layout_toStartOf="@id/tv_item_listing_similar_rating"
-                android:layout_toEndOf="@+id/tv_item_listing_similar_type"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="@{bedsCount}"
-                android:textDirection="locale"
-                android:textSize="@dimen/text_size_13" />
+
+
         </RelativeLayout>
     </RelativeLayout>
 </layout>

@@ -14,10 +14,13 @@ query getSimilarListing (
         title
         personCapacity
         beds
+           bedrooms
         bookingType
         reviewsCount,
         reviewsStarRating,
         listingData {
+            guestBasePrice
+            additionalPrice
             basePrice
             currency
             cleaningPrice

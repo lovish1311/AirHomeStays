@@ -277,6 +277,7 @@ data class DefaultListing(
         val title: String,
         val personCapacity: Int,
         val beds: Int,
+        val bedrooms: String,
         val bookingType: String,
         val coverPhoto: Int?,
         val reviewsCount: Int?,
@@ -287,7 +288,9 @@ data class DefaultListing(
         val roomType: String?,
         val basePrice: Double,
         val currency: String,
-        var wishListGroupCount: Int? = 0
+        var wishListGroupCount: Int? = 0,
+        val guestBasePrice: Int,
+        val additionalPrice:Double?
 )
 
 data class SearchListing(
