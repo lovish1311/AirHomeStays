@@ -1086,5 +1086,8 @@
     <string name="bank_detail">Bank Detail</string>
     <string name="gst_tcs_u_s_52_of_gst_for_gst_number">GST TCS – U/S 52 of GST for GST Number</string>
     <string name="get_direction">Get Direction</string>
+    <string name="need_help_with_your_booking">Need help with your booking?</string>
+    <string name="call_to_book_homestay_or_enquire">Call to book homestay or enquire</string>
+    <string name="call_us_now">Call us now</string>
 
 </resources>

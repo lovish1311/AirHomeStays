@@ -80,9 +80,9 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
         mBinding.breakDownToolbar.ivNavigateup.onClick { baseActivity?.onBackPressed() }
         mBinding.btnBook.onClick {
             if (viewModel.billingCalculation.value != null) {
-                if (viewModel.msg.get()!!.trim().isEmpty()) {
-                    showToast( baseActivity!!.resources.getString(R.string.please_enter_the_message))
-                } else {
+//                if (viewModel.msg.get()!!.trim().isEmpty()) {
+//                    showToast( baseActivity!!.resources.getString(R.string.please_enter_the_message))
+//                } else {
                     hideKeyboard()
                     if (viewModel.listingDetails.value!!.userId != viewModel.getUserId()) {
                         if (viewModel.initialValue.value?.bookingType =="request"&&!viewModel.inboxIntent.value!!){
@@ -93,7 +93,7 @@ class PriceBreakDownFragment: BaseFragment<FragmentListingPricebreakdownBinding,
                     } else {
                         Toast.makeText(context,  baseActivity!!.resources.getString(R.string.you_cannot_book_your_own_list), Toast.LENGTH_LONG).show()
                     }
-                }
+//                }
             } else {
                 showSnackbar( baseActivity!!.resources.getString(R.string.info),  baseActivity!!.resources.getString(R.string.please_select_another_date_to_book))
             }
